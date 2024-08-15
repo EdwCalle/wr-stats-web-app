@@ -1,0 +1,76 @@
+.card-details {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+}
+.card-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  row-gap: 10px;
+}
+/* card details */
+.card-range {
+  text-align: center;
+  /* border: 1px solid; */
+}
+.card-range-image {
+  display: block;
+  width: 70px;
+  margin: auto;
+}
+.card-range-tier {
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+.card-range-division {
+  font-size: 16px;
+  color: var(--secondary-color);
+}
+.card-range-marks {
+  width: 20px;
+}
+.card-info {
+  /* border: 1px solid; */
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  row-gap: 3px;
+}
+.card-info p {
+  margin: 0;
+}
+.card-info-title {
+  /* border: 1px solid; */
+  width: 100%;
+}
+.card-info-value {
+  text-align: center;
+  width: 40px;
+  background-color: var(--third-color);
+  padding: 4px;
+  border-radius: 20px;
+  /* border: 1px solid; */
+}
+.card-info-value.default {
+  background-color: #86909e;
+}
+.card-info-value.good {
+  background-color: green;
+}
+.card-info-value.normal {
+  background-color: aqua;
+}
+.card-info-value.regular {
+  background-color: orange;
+}
+.card-info-value.bad {
+  background-color: red;
+}

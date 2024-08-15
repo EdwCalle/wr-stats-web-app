@@ -1,0 +1,29 @@
+.card {
+  /* border: 1px solid; */
+
+  padding: 10px;
+}
+.card-header {
+  width: 100%;
+  text-align: end;
+}
+.card-title {
+  font-size: 12px;
+  color: var(--third-color);
+  border-bottom: 3px solid;
+  border-radius: 2px;
+}
+.card-subtitle {
+  color: var(--secondary-color);
+}
+.card-button {
+  /* width: 20px; */
+  /* font-size: 16px;
+  display: block; */
+  /* margin: 10px 0; */
+  padding: 8px 5px;
+  border: 0;
+  border-radius: 10px;
+  color: var(--primary-color);
+  background-color: var(--third-color);
+}

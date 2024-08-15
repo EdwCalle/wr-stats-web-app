@@ -1,0 +1,16 @@
+.card-calendar {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.card-calendarView {
+  width: 100%;
+  max-width: 300px;
+  min-width: 150px;
+  padding: 10px;
+  box-sizing: border-box;
+  /* border: 1px solid; */
+  display: block;
+}
