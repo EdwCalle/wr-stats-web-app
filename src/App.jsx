@@ -6,23 +6,21 @@ function App() {
   return (
     <>
       <header className='header'>
-        <nav className='nav'>
-          <h1>WR STATS</h1>
-          <button>
-            <CiLogout size={48} />
-          </button>
-          <button>
-            <CiSettings size={48} />
-          </button>
-        </nav>
+        {/* <nav className='nav'></nav> */}
+        <h1>WR STATS</h1>
+        <button>
+          <CiLogout size={48} />
+        </button>
+        <button>
+          <CiSettings size={48} />
+        </button>
       </header>
-      <aside className='aside'>
-        <nav>
-          <a className='active'>HOME</a>
-          <a>STATS</a>
-          <a>SHEETS</a>
-        </nav>
-      </aside>
+
+      <nav className='nav'>
+        <a className='active'>HOME</a>
+        <a>STATS</a>
+        <a>SHEETS</a>
+      </nav>
       <main className='content'>
         <h2 className='content-title'>wr Stats\home </h2>
         <section className='section'>
