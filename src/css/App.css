@@ -30,15 +30,15 @@ body {
   grid-template-rows: 70px 1fr;
   grid-template-areas:
     'header header header'
-    'menu content content';
+    'nav content content';
   gap: 10px;
-  padding: 0 10px;
-  row-gap: 10px;
+  padding: 10px 10px;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 .header,
-.aside,
+.nav,
 .content {
   background-color: var(--secondary-bg-color);
   border-radius: 20px;
@@ -46,17 +46,16 @@ body {
 }
 .header {
   grid-area: header;
-  margin-top: 10px;
 }
 .content {
   grid-area: content;
 }
-.aside {
-  grid-area: menu;
+.nav {
+  grid-area: nav;
 }
 
 /* header */
-.nav {
+.header {
   display: grid;
   grid-template-columns: 1fr 70px 70px;
   gap: 10px;
@@ -64,11 +63,11 @@ body {
   height: 100%;
   align-items: center;
 }
-.nav h1 {
+.header h1 {
   font-size: 20px;
   margin-left: 10px;
 }
-.nav button {
+.header button {
   display: block;
   background-color: transparent;
   color: white;
@@ -80,7 +79,7 @@ body {
   padding-top: 10px;
   border: 1px solid;
 } */
-.aside nav a {
+.nav a {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,7 +88,7 @@ body {
   height: 40px;
   border-radius: 10px;
 }
-.aside nav a.active {
+.nav a.active {
   background-color: var(--third-bg-color);
 }
 /* main */
@@ -108,7 +107,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  justify-items: strech;
+  /* justify-items: strech; */
   /* border: 1px solid; */
   gap: 10px;
 }
