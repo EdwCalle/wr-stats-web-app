@@ -1,7 +1,7 @@
 import './css/App.css'
 import CardDetails from './components/cardDetails'
 import CardCalendar from './components/CardCalendar'
-
+import Settings from './components/Settings'
 import { CiLogout, CiSettings, CiMenuBurger } from 'react-icons/ci'
 import { useState } from 'react'
 function App() {
@@ -10,18 +10,25 @@ function App() {
   const toggleMenu = () => {
     setIsToggleMenu(!isToggleMenu)
   }
+  const handleShowModal = (id) => {
+    document.getElementById(id).showModal()
+  }
   return (
     <>
       <header className='header'>
         <button onClick={toggleMenu}>
-          <CiMenuBurger size={48} />
+          <CiMenuBurger size={28} />
         </button>
         <h1>WR STATS</h1>
         <button>
-          <CiLogout size={48} />
+          <CiLogout size={28} />
         </button>
-        <button>
-          <CiSettings size={48} />
+        <button
+          onClick={() => {
+            handleShowModal('settings')
+          }}
+        >
+          <CiSettings size={28} />
         </button>
       </header>
 
@@ -33,6 +40,7 @@ function App() {
       <main className={`content ${isToggleMenu ? '' : 'closed'}`}>
         <h2 className='content-title'>wr Stats\home </h2>
         <section className='section'>
+          <Settings />
           <CardCalendar />
           <CardDetails />
         </section>
