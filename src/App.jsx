@@ -1,7 +1,8 @@
 import './css/App.css'
 import CardDetails from './components/cardDetails'
 import CardCalendar from './components/CardCalendar'
-import Settings from './components/Settings'
+import Settings from './components/modals/Settings'
+import CrudMatch from './components/modals/CrudMatch'
 import { CiLogout, CiSettings, CiMenuBurger } from 'react-icons/ci'
 import { useState } from 'react'
 function App() {
@@ -41,8 +42,9 @@ function App() {
         <h2 className='content-title'>wr Stats\home </h2>
         <section className='section'>
           <Settings />
+          <CrudMatch />
           <CardCalendar />
-          <CardDetails />
+          <CardDetails showCrudMatch={() => handleShowModal('crudMatch')} />
         </section>
       </main>
     </>

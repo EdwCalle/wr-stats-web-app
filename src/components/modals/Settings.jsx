@@ -1,14 +1,14 @@
-import '../css/Settings.css'
+import '../../css/Modal.css'
 import { CiUser } from 'react-icons/ci'
 import { IoIosCloseCircle } from 'react-icons/io'
 function Settings() {
   return (
     <dialog id='settings' className='modal'>
       <header className='modal-header'>
+        <h3 className='modal-header-title'>Settings</h3>
         <button className='modal-header-exitButton'>
           <IoIosCloseCircle className='icon' size={48} />
         </button>
-        <h3 className='modal-header-title'>Settings</h3>
       </header>
       <article className='modal-content'>
         <form action='dialog' className='modal-form'>
