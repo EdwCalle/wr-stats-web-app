@@ -14,26 +14,7 @@
   row-gap: 10px;
 }
 /* card details */
-.card-range {
-  text-align: center;
-  /* border: 1px solid; */
-}
-.card-range-image {
-  display: block;
-  width: 70px;
-  margin: auto;
-}
-.card-range-tier {
-  color: var(--secondary-color);
-  font-size: 16px;
-}
-.card-range-division {
-  font-size: 16px;
-  color: var(--secondary-color);
-}
-.card-range-marks {
-  width: 20px;
-}
+
 .card-info {
   /* border: 1px solid; */
   font-size: 10px;

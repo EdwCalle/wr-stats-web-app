@@ -1,7 +1,8 @@
 import './../css/Card.css'
 import './../css/CardDetails.css'
-import imgDiamond from './../assets/diamond.webp'
-function CardDetails() {
+// import imgDiamond from './../assets/diamond.webp'
+import Range from '../components/Range'
+function CardDetails({ showCrudMatch }) {
   return (
     <article className='card card-details'>
       <div className='card-header'>
@@ -9,7 +10,8 @@ function CardDetails() {
         <h4 className='card-subtitle'>Season 14</h4>
       </div>
       <article className='card-content'>
-        <article className='card-range'>
+        <Range></Range>
+        {/* <article className='card-range'>
           <img
             className='card-range-image'
             src={imgDiamond}
@@ -19,7 +21,7 @@ function CardDetails() {
           <p className='card-range-division'>
             500/500 <img src={imgDiamond} className='card-range-marks' />
           </p>
-        </article>
+        </article> */}
         <article className='card-info'>
           <p className='card-info-title'>ESTIMATED PLAYED TIME</p>
           <p className='card-info-value bad'>-100</p>
@@ -32,7 +34,9 @@ function CardDetails() {
         </article>
       </article>
 
-      <button className='card-button'>edit wr stats</button>
+      <button className='card-button' onClick={showCrudMatch}>
+        edit wr stats
+      </button>
     </article>
   )
 }
