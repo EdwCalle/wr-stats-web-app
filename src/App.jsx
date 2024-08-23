@@ -5,13 +5,14 @@ import Settings from './components/modals/Settings'
 import CrudMatch from './components/modals/CrudMatch'
 import { CiLogout, CiSettings, CiMenuBurger } from 'react-icons/ci'
 import { useState } from 'react'
+import Confirm from './components/modals/Confirm'
 function App() {
   const [isToggleMenu, setIsToggleMenu] = useState(false)
 
   const toggleMenu = () => {
     setIsToggleMenu(!isToggleMenu)
   }
-  const handleShowModal = (id) => {
+  const handleShowModal = (id, props) => {
     document.getElementById(id).showModal()
   }
   return (
@@ -21,7 +22,11 @@ function App() {
           <CiMenuBurger size={28} />
         </button>
         <h1>WR STATS</h1>
-        <button>
+        <button
+          onClick={() => {
+            handleShowModal('confirm')
+          }}
+        >
           <CiLogout size={28} />
         </button>
         <button
@@ -43,6 +48,7 @@ function App() {
         <section className='section'>
           <Settings />
           <CrudMatch />
+          <Confirm titleMessage='are you sure to log out?' />
           <CardCalendar />
           <CardDetails showCrudMatch={() => handleShowModal('crudMatch')} />
         </section>
