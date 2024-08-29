@@ -1,0 +1,45 @@
+.chart {
+  width: 90%;
+  min-height: 200px;
+  height: auto;
+  max-height: 400px;
+  display: block;
+  background: linear-gradient(225deg, #3f403d 0%, #1320d38f 100%);
+  /* background-color: red; */
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.chart-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+  /* border: 1px solid; */
+
+  /* border: 1px solid red; */
+  /* box-sizing: border-box; */
+}
+.selector-container {
+  display: flex;
+  align-items: start;
+}
+.selector-test {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 50px;
+  overflow-y: scroll;
+  /* border: 1px solid; */
+}
+.selector-test label {
+  background-color: var(--third-color);
+  box-sizing: border-box;
+  padding: 1px;
+  margin: 0;
+  width: 30px;
+  text-align: center;
+  border: 1px solid;
+}
+.selector-test input {
+  display: none;
+}
