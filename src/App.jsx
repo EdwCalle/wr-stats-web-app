@@ -1,13 +1,10 @@
-import './css/App.css'
-import CardDetails from './components/cardDetails'
-import CardCalendar from './components/CardCalendar'
-import Settings from './components/modals/Settings'
-import CrudMatch from './components/modals/CrudMatch'
-import { CiLogout, CiSettings, CiMenuBurger } from 'react-icons/ci'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Navbar from './components/NavBar'
+import Header from './components/Header'
 import { useState } from 'react'
-import Confirm from './components/modals/Confirm'
-import Stats from './components/Stats'
-import CardChart from './components/CardChart'
+import StatsPage from './pages/StatsPage'
+
 function App() {
   const [isToggleMenu, setIsToggleMenu] = useState(false)
 
@@ -19,46 +16,41 @@ function App() {
   }
   return (
     <>
-      <header className='header'>
-        <button onClick={toggleMenu}>
-          <CiMenuBurger size={28} />
-        </button>
-        <h1>WR STATS</h1>
-        <button
-          onClick={() => {
-            handleShowModal('confirm')
-          }}
-        >
-          <CiLogout size={28} />
-        </button>
-        <button
-          onClick={() => {
-            handleShowModal('settings')
-          }}
-        >
-          <CiSettings size={28} />
-        </button>
-      </header>
-
-      <nav className={`nav ${isToggleMenu ? '' : 'closed'}`}>
-        <a className='active'>HOME</a>
-        <a>STATS</a>
-        <a>SHEETS</a>
-      </nav>
-      <main className={`content ${isToggleMenu ? '' : 'closed'}`}>
-        <h2 className='content-title'>wr Stats\home </h2>
-        <section className='section'>
-          <Settings />
-          <CrudMatch />
-          <Confirm titleMessage='are you sure to log out?' />
-
-          <CardChart></CardChart>
-          <CardChart></CardChart>
-
-          <CardCalendar />
-          <CardDetails showCrudMatch={() => handleShowModal('crudMatch')} />
-        </section>
-      </main>
+      <Header toggleMenu={toggleMenu} handleShowModal={handleShowModal} />
+      <BrowserRouter>
+        <Navbar isToggleMenu={isToggleMenu} />
+        <Routes>
+          <Route path='/' element={<Navigate to='/home' />} />
+          <Route
+            path='/home'
+            element={
+              <Home
+                isToggleMenu={isToggleMenu}
+                handleShowModal={handleShowModal}
+              />
+            }
+          ></Route>
+          <Route
+            path='/stats'
+            element={
+              <StatsPage
+                isToggleMenu={isToggleMenu}
+                handleShowModal={handleShowModal}
+              />
+            }
+          ></Route>
+          <Route
+            path='/sheets'
+            element={
+              <Home
+                isToggleMenu={isToggleMenu}
+                handleShowModal={handleShowModal}
+              />
+            }
+          ></Route>
+          <Route path='*' element={<>404 not found page</>}></Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
