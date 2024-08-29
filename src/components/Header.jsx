@@ -1,8 +1,10 @@
 import { CiLogout, CiMenuBurger, CiSettings } from 'react-icons/ci'
-
+import Confirm from './modals/Confirm'
+import Settings from './modals/Settings'
+import css from '../css/Header.module.css'
 function Header({ toggleMenu, handleShowModal }) {
   return (
-    <header className='header'>
+    <header className={css.header}>
       <button onClick={toggleMenu}>
         <CiMenuBurger size={28} />
       </button>
@@ -21,6 +23,8 @@ function Header({ toggleMenu, handleShowModal }) {
       >
         <CiSettings size={28} />
       </button>
+      <Settings />
+      <Confirm titleMessage='are you sure to log out?' />
     </header>
   )
 }
