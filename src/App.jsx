@@ -4,7 +4,9 @@ import Navbar from './components/NavBar'
 import Header from './components/Header'
 import { useState } from 'react'
 import StatsPage from './pages/StatsPage'
-
+import Sheets from './pages/Sheets'
+import 'normalize.css'
+import './css/App.css'
 function App() {
   const [isToggleMenu, setIsToggleMenu] = useState(false)
 
@@ -23,31 +25,10 @@ function App() {
           <Route path='/' element={<Navigate to='/home' />} />
           <Route
             path='/home'
-            element={
-              <Home
-                isToggleMenu={isToggleMenu}
-                handleShowModal={handleShowModal}
-              />
-            }
+            element={<Home handleShowModal={handleShowModal} />}
           ></Route>
-          <Route
-            path='/stats'
-            element={
-              <StatsPage
-                isToggleMenu={isToggleMenu}
-                handleShowModal={handleShowModal}
-              />
-            }
-          ></Route>
-          <Route
-            path='/sheets'
-            element={
-              <Home
-                isToggleMenu={isToggleMenu}
-                handleShowModal={handleShowModal}
-              />
-            }
-          ></Route>
+          <Route path='/stats' element={<StatsPage />}></Route>
+          <Route path='/sheets' element={<Sheets />}></Route>
           <Route path='*' element={<>404 not found page</>}></Route>
         </Routes>
       </BrowserRouter>
