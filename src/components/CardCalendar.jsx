@@ -1,26 +1,21 @@
 import '../css/Calendar.css'
-import '../css/CardCalendar.css'
+import Card from './Card'
 import CounterView from './CounterView'
-// import calendar from '../assets/calendar.jpg'
 import Calendar from 'react-calendar'
-import '../css/Card.css'
 
+import css from '../css/CardCalendar.module.css'
 function CardCalendar() {
   return (
-    <article className='card card-calendar'>
-      <div className='card-header'>
-        <h3 className='card-title'>Stats from date Selected</h3>
-        <h4 className='card-subtitle'>12/12/24</h4>
-      </div>
-      <CounterView></CounterView>
-      {/* <img src={calendar} alt='' className='card-calendarView' /> */}
-      <Calendar
-        calendarType='gregory'
-        maxDate={new Date()}
-        minDate={new Date('01/01/2020')}
-      />
-      <button className='card-button'>select a date</button>
-    </article>
+    <Card title='i dont remember the title'>
+      <section className={css.cardCalendar}>
+        <CounterView />
+        <Calendar
+          calendarType='gregory'
+          maxDate={new Date()}
+          minDate={new Date('01/01/2020')}
+        />
+      </section>
+    </Card>
   )
 }
 

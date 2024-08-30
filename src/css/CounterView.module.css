@@ -1,4 +1,4 @@
-.card-counterView {
+.counterView {
   display: flex;
   flex-wrap: nowrap;
   /* border: 1px solid; */
@@ -24,39 +24,37 @@
   animation: move-bg-image 10s ease-in infinite alternate;
   /* animation: name duration timing-function delay iteration-count direction fill-mode; */
 }
-.card-counterView-subTitle {
-  color: var(--secondary-color);
-}
-.card-counterView-cell {
+
+.cell {
   /* border: 1px solid; */
   color: var(--secondary-color);
   text-align: center;
 }
-.card-counterView-cellValue {
+.cellValue {
   font-size: 32px;
   margin: 0;
 }
-.card-counterView-cellTitle {
+.cellTitle {
   font-size: 16px;
   margin: 0;
 }
-.card-counterView-cellTitle.victories {
+.cellTitle.victories {
   color: #32c8ff;
 }
-.card-counterView-cellTitle.defeats {
+.cellTitle.defeats {
   color: #da2626;
 }
-.card-counterView-cellDivider {
+.cellDivider {
   /* border: 1px solid; */
   width: 10px;
   height: 70px;
   background: linear-gradient(-0.25turn, #da2626 28%, #32c8ff 67%);
 }
 @media (width< 450px) {
-  .card-counterView-cellValue {
+  .cellValue {
     font-size: 16px;
   }
-  .card-counterView-cellTitle {
+  .cellTitle {
     font-size: 10px;
   }
   /* .card-counterView-cell {

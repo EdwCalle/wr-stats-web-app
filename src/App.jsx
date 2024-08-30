@@ -1,12 +1,13 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { useState } from 'react'
 import Home from './pages/Home'
 import Navbar from './components/NavBar'
 import Header from './components/Header'
-import { useState } from 'react'
 import StatsPage from './pages/StatsPage'
 import Sheets from './pages/Sheets'
 import 'normalize.css'
 import './css/App.css'
+import Card from './components/Card'
 function App() {
   const [isToggleMenu, setIsToggleMenu] = useState(false)
 
@@ -30,6 +31,7 @@ function App() {
           <Route path='/stats' element={<StatsPage />}></Route>
           <Route path='/sheets' element={<Sheets />}></Route>
           <Route path='*' element={<>404 not found page</>}></Route>
+          <Route path='/card' element={<Card />}></Route>
         </Routes>
       </BrowserRouter>
     </>
