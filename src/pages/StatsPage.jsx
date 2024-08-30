@@ -4,8 +4,8 @@ import PageContent from '../components/PageContent'
 function StatsPage() {
   return (
     <PageContent title='STATS'>
-      <CardChart></CardChart>
-      <CardChart></CardChart>
+      <CardChart />
+      <CardChart />
     </PageContent>
   )
 }

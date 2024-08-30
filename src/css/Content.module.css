@@ -1,26 +1,22 @@
-.content {
+.main {
   /* width: 100%; */
   background-color: var(--secondary-bg-color);
   border-radius: 20px;
-  /* border: 1px solid; */
-}
-
-.content {
-  /* grid-area: content; */
-  /* grid-column: 2/-1; */
   grid-row: 2/3;
   grid-column: 1 span;
+  /* border: 1px solid; */
 }
-/* main */
-.content {
-  display: flex;
-  flex-direction: column;
-}
-.content.closed {
+.main.closed {
   grid-column: 2 span;
   transition: all 1s;
 }
-.contentTitle {
+/* main */
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.mainTitle {
   color: var(--third-color);
   font-size: 10px;
 }
@@ -31,6 +27,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
+  margin: 0 5px;
   /* justify-items: strech; */
   /* border: 1px solid; */
   gap: 10px;
