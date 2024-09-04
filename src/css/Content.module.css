@@ -38,3 +38,6 @@
     grid-template-rows: 1fr;
   }
 }
+.section.fullSize {
+  display: block;
+}
