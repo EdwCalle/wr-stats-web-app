@@ -1,12 +1,26 @@
+import Card from '../components/Card'
 import PageContent from '../components/PageContent'
+import Table from '../components/Table'
+import { exampleData } from '../dataWR'
+const HEADER_MATCHS = [
+  'id',
+  'date',
+  'victories',
+  'defeats',
+  'total_matchs',
+  'diff',
+  'acumDiff',
+  'playedTime',
+  'range',
+  'points',
+]
 
 function Sheets() {
   return (
-    <PageContent title='SHEETS'>
-      nohitng to show yet... Lorem ipsum dolor, sit amet consectetur adipisicing
-      elit. Atque sequi maiores, doloribus nemo pariatur quia, sunt, molestiae
-      corrupti suscipit nesciunt ipsum. Consectetur sint adipisci atque nihil
-      fuga rerum mollitia temporibus.
+    <PageContent title='SHEETS' isFullSize={true}>
+      <Card>
+        <Table header={HEADER_MATCHS} data={exampleData.splice(10, 20)} />
+      </Card>
     </PageContent>
   )
 }

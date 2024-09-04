@@ -1,10 +1,13 @@
 import css from '../css/Content.module.css'
 
-function PageContent({ title, children }) {
+function PageContent({ title, children, isFullSize }) {
+  const sectionClassName = isFullSize
+    ? `${css.section} ${css.fullSize}`
+    : css.section
   return (
     <main className={`${css.main} ${css.closed}`}>
       <h2 className={css.mainTitle}>WR STATS / {title}</h2>
-      <section className={css.section}>{children}</section>
+      <section className={sectionClassName}>{children}</section>
     </main>
   )
 }
