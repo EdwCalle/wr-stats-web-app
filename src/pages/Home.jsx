@@ -2,8 +2,9 @@ import CardDetails from '../components/cardDetails'
 import CardCalendar from '../components/CardCalendar'
 import CrudMatch from '../components/modals/CrudMatch'
 import PageContent from '../components/PageContent'
+import { handleShowModal } from '../logic'
 
-function Home({ handleShowModal }) {
+function Home() {
   return (
     <PageContent title='HOME'>
       <CrudMatch />

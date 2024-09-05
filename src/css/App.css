@@ -15,10 +15,24 @@ body {
   background-color: var(--primary-bg-color);
   color: var(--primary-color);
 }
-#root {
+
+.body {
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-template-rows: 70px 1fr;
+  /* grid-template-areas:
+    'header header header'
+    'nav content content'; */
+  gap: 10px;
+  padding: 10px 10px;
+  height: 100vh;
+  box-sizing: border-box;
+}
+.body-landingPage {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 1fr;
+  /* align-items: center; */
   /* grid-template-areas:
     'header header header'
     'nav content content'; */
