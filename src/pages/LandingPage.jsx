@@ -1,4 +1,5 @@
 import Login from '../components/Login'
+import Register from '../components/Register'
 import css from '../css/LandingPage.module.css'
 function LandingPage() {
   return (
@@ -9,7 +10,8 @@ function LandingPage() {
           <h1 className={css.h1}>WR STATS</h1>
         </header>
         <main className={css.main}>
-          <Login />
+          <Register />
+          <div></div>
           <Login />
         </main>
       </div>

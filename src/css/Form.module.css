@@ -1,10 +1,7 @@
-.form {
-  /* width: auto; */
-}
 .form fieldset {
   /* margin: 0; */
   border-color: transparent;
-  min-width: 300px;
+  min-width: 280px;
   width: auto;
   border-radius: 10px;
   box-shadow: 0px 0px 15px 3px rgba(159, 136, 86, 0.184);
@@ -56,6 +53,7 @@
   background-color: var(--secondary-color);
   display: block;
 }
+
 /* crud Match */
 /* .form select {
   width: 100%;
