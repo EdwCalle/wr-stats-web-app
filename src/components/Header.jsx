@@ -2,7 +2,8 @@ import { CiLogout, CiMenuBurger, CiSettings } from 'react-icons/ci'
 import Confirm from './modals/Confirm'
 import Settings from './modals/Settings'
 import css from '../css/Header.module.css'
-function Header({ toggleMenu, handleShowModal }) {
+import { handleShowModal } from '../logic'
+function Header({ toggleMenu }) {
   return (
     <header className={css.header}>
       <button onClick={toggleMenu}>
