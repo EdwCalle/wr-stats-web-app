@@ -20,14 +20,20 @@ body {
   display: grid;
   grid-template-columns: 100px 1fr;
   grid-template-rows: 70px 1fr;
-  /* grid-template-areas:
-    'header header header'
-    'nav content content'; */
+
   gap: 10px;
   padding: 10px 10px;
   height: 100vh;
   box-sizing: border-box;
 }
+.body:has(.toggleMenu:checked) {
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 1fr;
+}
+.body:has(input[type='checkbox']:checked) > nav {
+  display: none;
+}
+
 .body-landingPage {
   display: grid;
   grid-template-columns: 1fr;

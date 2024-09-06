@@ -10,7 +10,9 @@
   flex-direction: column;
   align-items: center;
 }
-
+.card:has(table) {
+  overflow-x: auto;
+}
 .cardHeader {
   width: 100%;
   text-align: end;

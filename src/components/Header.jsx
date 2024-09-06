@@ -3,12 +3,13 @@ import Confirm from './modals/Confirm'
 import Settings from './modals/Settings'
 import css from '../css/Header.module.css'
 import { handleShowModal } from '../logic'
-function Header({ toggleMenu }) {
+function Header() {
   return (
     <header className={css.header}>
-      <button onClick={toggleMenu}>
+      <label>
+        <input type='checkbox' name='toggleMenu' className='toggleMenu' />
         <CiMenuBurger size={28} />
-      </button>
+      </label>
       <h1>WR STATS</h1>
       <button
         onClick={() => {

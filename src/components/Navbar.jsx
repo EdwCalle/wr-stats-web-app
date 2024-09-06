@@ -1,12 +1,12 @@
 import { NavLink } from 'react-router-dom'
 import css from '../css/Navbar.module.css'
-function Navbar({ isToggleMenu }) {
+function Navbar() {
   const activateLink = (value) => {
-    console.log(value)
     return value === true ? css.active : ''
   }
+
   return (
-    <nav className={`${css.nav} ${isToggleMenu ? '' : css.closed}`}>
+    <nav className={css.nav}>
       <NavLink to='home' className={({ isActive }) => activateLink(isActive)}>
         HOME
       </NavLink>

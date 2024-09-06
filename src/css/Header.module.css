@@ -6,8 +6,9 @@
 }
 .header {
   /* grid-area: header; */
+  /* grid-column: 1/-1;
+  grid-row: 1/2; */
   grid-column: 1/-1;
-  grid-row: 1/2;
 }
 
 /* header */
@@ -28,4 +29,12 @@
   background-color: transparent;
   color: white;
   border: 0;
+}
+.header input {
+  display: none;
+}
+.header label {
+  cursor: pointer;
+  width: min-content;
+  margin: auto;
 }
