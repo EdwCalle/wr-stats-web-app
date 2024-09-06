@@ -2,14 +2,13 @@
   /* width: 100%; */
   background-color: var(--secondary-bg-color);
   border-radius: 20px;
-  grid-row: 2/3;
+  /* grid-row: 2/3; */
   grid-column: 1 span;
   /* border: 1px solid; */
 }
-.main.closed {
+/* .main.closed {
   grid-column: 2 span;
-  transition: all 1s;
-}
+} */
 /* main */
 .main {
   display: flex;
@@ -39,5 +38,6 @@
   }
 }
 .section.fullSize {
-  display: block;
+  /* width: 500px; */
+  grid-template-columns: 1fr;
 }
