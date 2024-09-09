@@ -9,13 +9,13 @@
     'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
     sans-serif;
   --secondary-font: system-ui, sans-serif;
-}
-body {
+
   font-family: var(--main-font);
   background-color: var(--primary-bg-color);
   color: var(--primary-color);
 }
 
+/* handle BODY and menu */
 .body {
   display: grid;
   grid-template-columns: 100px 1fr;
@@ -30,7 +30,7 @@ body {
   grid-template-columns: 1fr;
   grid-template-rows: 70px 1fr;
 }
-.body:has(input[type='checkbox']:checked) > nav {
+.body:has(.toggleMenu:checked) > nav {
   display: none;
 }
 
@@ -40,8 +40,8 @@ body {
   grid-template-rows: 70px 1fr;
   /* align-items: center; */
   /* grid-template-areas:
-    'header header header'
-    'nav content content'; */
+      'header header header'
+      'nav content content'; */
   gap: 10px;
   padding: 10px 10px;
   height: 100vh;
