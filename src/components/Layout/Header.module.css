@@ -30,7 +30,7 @@
   color: white;
   border: 0;
 }
-.header input {
+.header input[type='checkbox'] {
   display: none;
 }
 .header label {

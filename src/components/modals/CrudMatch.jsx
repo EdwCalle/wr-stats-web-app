@@ -1,9 +1,7 @@
-import CounterView from '../CounterView'
-import { CiUser } from 'react-icons/ci'
 import { IoIosCloseCircle } from 'react-icons/io'
-import { TIER, DIVISION } from '../../constants'
+import { TIER, DIVISION } from '@/constants'
 import Range from '../Range'
-import Counter from '../modals/Counter'
+import Counter from '@/components/modals/Counter'
 function CrudMatch() {
   return (
     <dialog id='crudMatch' className='modal'>

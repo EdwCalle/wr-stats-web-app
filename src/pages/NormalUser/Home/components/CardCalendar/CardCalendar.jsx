@@ -1,9 +1,10 @@
-import '../css/Calendar.css'
-import Card from './Card'
-import CounterView from './CounterView'
+import Card from '@/components/Card'
+import CounterView from './CounterView/CounterView'
 import Calendar from 'react-calendar'
 
-import css from '../css/CardCalendar.module.css'
+import './Calendar.css'
+import css from './CardCalendar.module.css'
+
 function CardCalendar() {
   return (
     <Card title='i dont remember the title'>

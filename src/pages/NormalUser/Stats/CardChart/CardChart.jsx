@@ -1,7 +1,7 @@
-import Card from './Card'
+import Card from '@/components/Card'
 import LineChart from './LineChart'
 import FilterSelect from './FilterSelect'
-import css from '../css/CardChart.module.css'
+import css from './CardChart.module.css'
 const TIME_SCALE = [
   'day',
   'month',

@@ -1,4 +1,4 @@
-import css from '../css/FilterSelect.module.css'
+import css from './FilterSelect.module.css'
 function FilterSelect({ options }) {
   return (
     <section className={css.selectContent}>

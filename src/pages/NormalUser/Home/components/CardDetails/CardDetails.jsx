@@ -1,6 +1,6 @@
-import css from './../css/CardDetails.module.css'
-import Range from '../components/Range'
-import Card from './Card'
+import css from './CardDetails.module.css'
+import Range from '@/components/Range'
+import Card from '@/components/Card'
 function CardDetails({ showCrudMatch }) {
   return (
     <Card>

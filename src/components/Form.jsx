@@ -1,5 +1,5 @@
-import css from '../css/Form.module.css'
-import Card from './Card'
+import css from './Form.module.css'
+import Card from '@/components/Card'
 function Form({
   title = 'title form card',
   subtitle = 'subtitle form card',

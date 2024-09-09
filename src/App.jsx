@@ -1,12 +1,11 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-// import { useState } from 'react'
-import LandingPage from './pages/LandingPage'
-import PlayerPage from './pages/PlayerPage'
-import Home from './pages/Home'
-import StatsPage from './pages/StatsPage'
-import Sheets from './pages/Sheets'
+import LandingPage from './pages/LandingProfile/LandingPage'
+import UserProfile from './pages/NormalUser/UserProfile'
+import StatsPage from './pages/NormalUser/Stats/StatsPage'
+import MatchesPage from './pages/NormalUser/Matches/MatchesPage'
+import HomePage from './pages/NormalUser/Home/HomePage'
 import 'normalize.css'
-import './css/App.css'
+import './App.css'
 
 function App() {
   return (
@@ -16,10 +15,10 @@ function App() {
           <Route path='/landingPage' element={<LandingPage />}></Route>
           <Route path='/' element={<Navigate to='/landingPage' />} />
           <Route path='/player' element={<Navigate to='/player/home' />} />
-          <Route path='/player/*' element={<PlayerPage />}>
-            <Route path='home' element={<Home />}></Route>
+          <Route path='/player/*' element={<UserProfile />}>
+            <Route path='home' element={<HomePage />}></Route>
             <Route path='stats' element={<StatsPage />}></Route>
-            <Route path='sheets' element={<Sheets />}></Route>
+            <Route path='sheets' element={<MatchesPage />}></Route>
             <Route path='*' element={<>404 not found page</>}></Route>
           </Route>
           <Route path='*' element={<>404 not found page</>}></Route>

@@ -1,5 +1,5 @@
-import Form from './Form'
-import loginIMG from '../assets/login_google.png'
+import Form from '@/components/Form'
+import loginIMG from '@/assets/login_google.png'
 function Login() {
   return (
     <Form action='player'>

@@ -1,9 +1,8 @@
-import { useState } from 'react'
-import Header from '../components/Header'
-import Navbar from '../components/Navbar'
+import Header from '@/components/Layout/Header'
+import Navbar from '@/components/Layout/Navbar'
 import { Outlet } from 'react-router-dom'
 
-function PlayerPage() {
+function UserProfile() {
   // const [isToggleMenu, setIsToggleMenu] = useState(false)
   // const toggleMenu = () => {
   //   setIsToggleMenu(!isToggleMenu)
@@ -18,4 +17,4 @@ function PlayerPage() {
     </div>
   )
 }
-export default PlayerPage
+export default UserProfile
