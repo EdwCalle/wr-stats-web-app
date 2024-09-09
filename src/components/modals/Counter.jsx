@@ -1,4 +1,4 @@
-import '../../css/Counter.css'
+import './Counter.css'
 
 function Counter() {
   return (

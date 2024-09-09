@@ -1,4 +1,4 @@
-import '../../css/Modal.css'
+import './Modal.css'
 import { CiUser } from 'react-icons/ci'
 import { IoIosCloseCircle } from 'react-icons/io'
 function Settings() {

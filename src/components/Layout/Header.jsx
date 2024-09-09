@@ -1,8 +1,8 @@
 import { CiLogout, CiMenuBurger, CiSettings } from 'react-icons/ci'
-import Confirm from './modals/Confirm'
-import Settings from './modals/Settings'
-import css from '../css/Header.module.css'
-import { handleShowModal } from '../logic'
+import Confirm from '@/components/modals/Confirm'
+import Settings from '@/components/modals/Settings'
+import css from './Header.module.css'
+import { handleShowModal } from '@/logic'
 function Header() {
   return (
     <header className={css.header}>

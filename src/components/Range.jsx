@@ -1,5 +1,5 @@
-import imgDiamond from './../assets/diamond.webp'
-import css from './../css/Range.module.css'
+import imgDiamond from '@/assets/diamond.webp'
+import css from './Range.module.css'
 function Range({ children, isRangeForm }) {
   const classNameRange = isRangeForm === true ? css.rangeGrid : css.range
 

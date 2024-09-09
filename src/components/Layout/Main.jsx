@@ -1,6 +1,6 @@
-import css from '../css/Content.module.css'
+import css from './Main.module.css'
 
-function PageContent({ title, children, isFullSize }) {
+function Main({ title, children, isFullSize }) {
   const sectionClassName = isFullSize
     ? `${css.section} ${css.fullSize}`
     : css.section
@@ -11,4 +11,4 @@ function PageContent({ title, children, isFullSize }) {
     </main>
   )
 }
-export default PageContent
+export default Main

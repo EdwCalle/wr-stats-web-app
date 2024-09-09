@@ -1,6 +1,6 @@
-import Login from '../components/Login'
-import Register from '../components/Register'
-import css from '../css/LandingPage.module.css'
+import Login from './components/Login'
+import Register from './components/Register'
+import css from './LandingPage.module.css'
 function LandingPage() {
   return (
     <>

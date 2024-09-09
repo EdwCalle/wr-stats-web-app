@@ -1,4 +1,4 @@
-import css from '../css/Table.module.css'
+import css from './MatchTable.module.css'
 function Table({ header, data }) {
   return (
     <section className={css.section}>

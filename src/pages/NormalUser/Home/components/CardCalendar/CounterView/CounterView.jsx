@@ -1,4 +1,4 @@
-import css from './../css/CounterView.module.css'
+import css from './CounterView.module.css'
 function CounterView() {
   return (
     <>

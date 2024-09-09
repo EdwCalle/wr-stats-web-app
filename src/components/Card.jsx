@@ -1,4 +1,4 @@
-import css from '../css/Card.module.css'
+import css from './Card.module.css'
 function Card(props) {
   const {
     title = 'some title',

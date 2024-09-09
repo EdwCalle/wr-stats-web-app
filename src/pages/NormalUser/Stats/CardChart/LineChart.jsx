@@ -1,6 +1,6 @@
 import { createChart } from 'lightweight-charts'
 import { useEffect, useRef } from 'react'
-import { exampleData } from '../dataWR'
+import { exampleData } from '@/dataWR'
 export const ChartComponent = (props) => {
   const {
     data,
