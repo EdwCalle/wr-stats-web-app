@@ -20,20 +20,20 @@
   height: 100%;
   align-items: center;
 }
-.header h1 {
+.h1 {
   font-size: 20px;
   margin-left: 10px;
 }
-.header button {
+.button {
   display: block;
   background-color: transparent;
   color: white;
   border: 0;
 }
-.header input[type='checkbox'] {
+.checkbox {
   display: none;
 }
-.header label {
+.label {
   cursor: pointer;
   width: min-content;
   margin: auto;
