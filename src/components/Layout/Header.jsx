@@ -6,12 +6,17 @@ import { handleShowModal } from '@/logic'
 function Header() {
   return (
     <header className={css.header}>
-      <label>
-        <input type='checkbox' name='toggleMenu' className='toggleMenu' />
+      <label className={css.label}>
+        <input
+          type='checkbox'
+          name='toggleMenu'
+          className={`toggleMenu ${css.checkbox}`}
+        />
         <CiMenuBurger size={28} />
       </label>
-      <h1>WR STATS</h1>
+      <h1 className={css.h1}>WR STATS</h1>
       <button
+        className={css.button}
         onClick={() => {
           handleShowModal('confirm')
         }}
@@ -19,6 +24,7 @@ function Header() {
         <CiLogout size={28} />
       </button>
       <button
+        className={css.button}
         onClick={() => {
           handleShowModal('settings')
         }}

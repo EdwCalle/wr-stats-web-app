@@ -1,0 +1,51 @@
+.modal[open] {
+  padding: 5px;
+  min-width: 100px;
+  width: max-content;
+
+  background-color: var(--secondary-bg-color);
+  border-radius: 20px;
+  color: var(--secondary-color);
+  border: none;
+  box-sizing: border-box;
+}
+.modal[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.721);
+}
+
+/* header */
+.modalHeader {
+  display: flex;
+  /* flex-direction: column-reverse; */
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  /* padding-left: 10px; */
+  border-radius: 10px;
+  /* box-shadow: 0px 0px 15px 3px rgba(159, 136, 86, 0.184); */
+}
+.modalHeaderTitle {
+  /* width: 100%; */
+  /* border-top: 1px solid;
+  border-right: 1px solid; */
+  border-radius: 10px;
+  padding: 10px;
+  /* box-shadow: 0px 6px 30px rgba(159, 136, 86, 0.184); */
+  text-transform: uppercase;
+  /* text-align: center; */
+  margin: 0;
+  font-size: 20px;
+  color: var(--secondary-color);
+}
+.modalHeaderExitButton {
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: var(--secondary-color);
+
+  width: min-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
