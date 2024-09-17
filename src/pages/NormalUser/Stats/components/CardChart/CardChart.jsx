@@ -14,11 +14,12 @@ function CardChart() {
           data={FILTER_SEASONS}
           valueSelected={FILTER_SEASONS[0].value}
         />
-        <MultipleSelect data={SEASONS} title='Select title' />
+        <MultipleSelect data={SEASONS} title='seasons' />
       </form>
       <section className={css.chartContainer}>
         <LineChart className={css.chart} />
       </section>
+
       <form>
         <SingleSelect
           name='timeScale'
