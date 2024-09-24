@@ -11,7 +11,7 @@ function HomePage() {
   return (
     <Main title='HOME'>
       <CrudMatch />
-      <CardCalendar />
+      <CardCalendar data={exampleData[random]} />
       <CardDetails data={exampleData[random]} />
     </Main>
   )
