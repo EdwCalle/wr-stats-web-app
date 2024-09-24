@@ -58,3 +58,16 @@ export const SEASONS = [
   { label: 'S13', value: 'S13' },
   { label: 'S14', value: 'S14' },
 ]
+
+export const imagesTier = {
+  iron: '/src/assets/ranks/iron.webp',
+  bronze: '/src/assets/ranks/bronze.webp',
+  silver: '/src/assets/ranks/silver.webp',
+  gold: '/src/assets/ranks/gold.webp',
+  platinum: '/src/assets/ranks/platinum.webp',
+  emerald: '/src/assets/ranks/emerald.webp',
+  diamond: '/src/assets/ranks/diamond.webp',
+  master: '/src/assets/ranks/master.webp',
+  grandmaster: '/src/assets/ranks/grandmaster.webp',
+  chanllenger: '/src/assets/ranks/challenger.webp',
+}
