@@ -1,8 +1,8 @@
 import css from './CardDetails.module.css'
 import Range from '@/components/Range'
 import Card from '@/components/Card'
-import { getRange } from '@/logic'
-function CardDetails({ showCrudMatch, data }) {
+import { getRange, handleShowModal } from '@/logic'
+function CardDetails({ data }) {
   const newData = getRange(data)
   const { playedTime, totalMatches, diff, acumDiff } = data
 
@@ -42,7 +42,10 @@ function CardDetails({ showCrudMatch, data }) {
           <p className={`${css.infoValue} ${css.default}`}>FILL</p>
         </section>
       </section>
-      <button className={css.button} onClick={showCrudMatch}>
+      <button
+        className={css.button}
+        onClick={() => handleShowModal('crudMatch')}
+      >
         edit wr stats
       </button>
     </Card>
