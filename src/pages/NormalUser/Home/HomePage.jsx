@@ -12,10 +12,7 @@ function HomePage() {
     <Main title='HOME'>
       <CrudMatch />
       <CardCalendar />
-      <CardDetails
-        showCrudMatch={() => handleShowModal('crudMatch')}
-        data={exampleData[random]}
-      />
+      <CardDetails data={exampleData[random]} />
     </Main>
   )
 }
