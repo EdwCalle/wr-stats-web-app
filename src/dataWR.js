@@ -1,6 +1,6 @@
 export const exampleData = [
   {
-    ID: 1,
+    id: 1,
     date: '2022-07-28',
     victories: 4,
     defeats: 11,
@@ -12,7 +12,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 2,
+    id: 2,
     date: '2022-07-29',
     victories: 8,
     defeats: 7,
@@ -24,7 +24,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 3,
+    id: 3,
     date: '2022-07-30',
     victories: 3,
     defeats: 4,
@@ -36,7 +36,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 4,
+    id: 4,
     date: '2022-07-31',
     victories: 0,
     defeats: 0,
@@ -48,7 +48,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 5,
+    id: 5,
     date: '2022-08-01',
     victories: 8,
     defeats: 5,
@@ -60,7 +60,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 6,
+    id: 6,
     date: '2022-08-02',
     victories: 5,
     defeats: 12,
@@ -72,7 +72,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 7,
+    id: 7,
     date: '2022-08-03',
     victories: 2,
     defeats: 4,
@@ -84,7 +84,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 8,
+    id: 8,
     date: '2022-08-04',
     victories: 3,
     defeats: 6,
@@ -96,7 +96,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 9,
+    id: 9,
     date: '2022-08-05',
     victories: 7,
     defeats: 5,
@@ -108,7 +108,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 10,
+    id: 10,
     date: '2022-08-06',
     victories: 9,
     defeats: 13,
@@ -120,7 +120,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 11,
+    id: 11,
     date: '2022-08-07',
     victories: 3,
     defeats: 6,
@@ -132,7 +132,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 12,
+    id: 12,
     date: '2022-08-08',
     victories: 11,
     defeats: 14,
@@ -144,7 +144,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 13,
+    id: 13,
     date: '2022-08-09',
     victories: 10,
     defeats: 9,
@@ -156,7 +156,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 14,
+    id: 14,
     date: '2022-08-10',
     victories: 2,
     defeats: 0,
@@ -168,7 +168,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 15,
+    id: 15,
     date: '2022-08-11',
     victories: 0,
     defeats: 0,
@@ -180,7 +180,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 16,
+    id: 16,
     date: '2022-08-12',
     victories: 0,
     defeats: 0,
@@ -192,7 +192,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 17,
+    id: 17,
     date: '2022-08-13',
     victories: 6,
     defeats: 2,
@@ -204,7 +204,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 18,
+    id: 18,
     date: '2022-08-14',
     victories: 1,
     defeats: 0,
@@ -216,7 +216,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 19,
+    id: 19,
     date: '2022-08-15',
     victories: 5,
     defeats: 3,
@@ -228,7 +228,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 20,
+    id: 20,
     date: '2022-08-16',
     victories: 1,
     defeats: 5,
@@ -240,7 +240,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 21,
+    id: 21,
     date: '2022-08-17',
     victories: 8,
     defeats: 9,
@@ -252,7 +252,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 22,
+    id: 22,
     date: '2022-08-18',
     victories: 0,
     defeats: 0,
@@ -264,7 +264,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 23,
+    id: 23,
     date: '2022-08-19',
     victories: 0,
     defeats: 0,
@@ -276,7 +276,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 24,
+    id: 24,
     date: '2022-08-20',
     victories: 2,
     defeats: 7,
@@ -288,7 +288,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 25,
+    id: 25,
     date: '2022-08-21',
     victories: 5,
     defeats: 5,
@@ -300,7 +300,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 26,
+    id: 26,
     date: '2022-08-22',
     victories: 6,
     defeats: 3,
@@ -312,7 +312,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 27,
+    id: 27,
     date: '2022-08-23',
     victories: 5,
     defeats: 5,
@@ -324,7 +324,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 28,
+    id: 28,
     date: '2022-08-24',
     victories: 3,
     defeats: 3,
@@ -336,7 +336,7 @@ export const exampleData = [
     points: -1,
   },
   {
-    ID: 29,
+    id: 29,
     date: '2022-08-25',
     victories: 6,
     defeats: 6,
@@ -348,7 +348,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 30,
+    id: 30,
     date: '2022-08-26',
     victories: 5,
     defeats: 1,
@@ -360,7 +360,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 31,
+    id: 31,
     date: '2022-08-27',
     victories: 3,
     defeats: 3,
@@ -372,7 +372,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 32,
+    id: 32,
     date: '2022-08-28',
     victories: 6,
     defeats: 4,
@@ -384,7 +384,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 33,
+    id: 33,
     date: '2022-08-29',
     victories: 6,
     defeats: 2,
@@ -396,7 +396,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 34,
+    id: 34,
     date: '2022-08-30',
     victories: 5,
     defeats: 10,
@@ -408,7 +408,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 35,
+    id: 35,
     date: '2022-08-31',
     victories: 8,
     defeats: 5,
@@ -420,7 +420,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 36,
+    id: 36,
     date: '2022-09-01',
     victories: 7,
     defeats: 4,
@@ -432,7 +432,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 37,
+    id: 37,
     date: '2022-09-02',
     victories: 4,
     defeats: 11,
@@ -444,7 +444,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 38,
+    id: 38,
     date: '2022-09-03',
     victories: 6,
     defeats: 6,
@@ -456,7 +456,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 39,
+    id: 39,
     date: '2022-09-04',
     victories: 9,
     defeats: 11,
@@ -468,7 +468,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 40,
+    id: 40,
     date: '2022-09-05',
     victories: 5,
     defeats: 16,
@@ -480,7 +480,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 41,
+    id: 41,
     date: '2022-09-06',
     victories: 7,
     defeats: 14,
@@ -492,7 +492,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 42,
+    id: 42,
     date: '2022-09-07',
     victories: 4,
     defeats: 8,
@@ -504,7 +504,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 43,
+    id: 43,
     date: '2022-09-08',
     victories: 15,
     defeats: 15,
@@ -516,7 +516,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 44,
+    id: 44,
     date: '2022-09-09',
     victories: 11,
     defeats: 11,
@@ -528,7 +528,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 45,
+    id: 45,
     date: '2022-09-10',
     victories: 11,
     defeats: 6,
@@ -540,7 +540,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 46,
+    id: 46,
     date: '2022-09-11',
     victories: 12,
     defeats: 7,
@@ -552,7 +552,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 47,
+    id: 47,
     date: '2022-09-12',
     victories: 5,
     defeats: 15,
@@ -564,7 +564,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 48,
+    id: 48,
     date: '2022-09-13',
     victories: 12,
     defeats: 7,
@@ -576,7 +576,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 49,
+    id: 49,
     date: '2022-09-14',
     victories: 15,
     defeats: 9,
@@ -588,7 +588,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 50,
+    id: 50,
     date: '2022-09-15',
     victories: 5,
     defeats: 7,
@@ -600,7 +600,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 51,
+    id: 51,
     date: '2022-09-16',
     victories: 7,
     defeats: 11,
@@ -612,7 +612,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 52,
+    id: 52,
     date: '2022-09-17',
     victories: 4,
     defeats: 7,
@@ -624,7 +624,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 53,
+    id: 53,
     date: '2022-09-18',
     victories: 11,
     defeats: 7,
@@ -636,7 +636,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 54,
+    id: 54,
     date: '2022-09-19',
     victories: 3,
     defeats: 5,
@@ -648,7 +648,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 55,
+    id: 55,
     date: '2022-09-20',
     victories: 5,
     defeats: 8,
@@ -660,7 +660,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 56,
+    id: 56,
     date: '2022-09-21',
     victories: 7,
     defeats: 7,
@@ -672,7 +672,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 57,
+    id: 57,
     date: '2022-09-22',
     victories: 8,
     defeats: 4,
@@ -684,7 +684,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 58,
+    id: 58,
     date: '2022-09-23',
     victories: 3,
     defeats: 2,
@@ -696,7 +696,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 59,
+    id: 59,
     date: '2022-09-24',
     victories: 11,
     defeats: 7,
@@ -708,7 +708,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 60,
+    id: 60,
     date: '2022-09-25',
     victories: 4,
     defeats: 5,
@@ -720,7 +720,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 61,
+    id: 61,
     date: '2022-09-26',
     victories: 5,
     defeats: 5,
@@ -732,7 +732,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 62,
+    id: 62,
     date: '2022-09-27',
     victories: 5,
     defeats: 5,
@@ -744,7 +744,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 63,
+    id: 63,
     date: '2022-09-28',
     victories: 6,
     defeats: 6,
@@ -756,7 +756,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 64,
+    id: 64,
     date: '2022-09-29',
     victories: 10,
     defeats: 17,
@@ -768,7 +768,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 65,
+    id: 65,
     date: '2022-09-30',
     victories: 9,
     defeats: 5,
@@ -780,7 +780,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 66,
+    id: 66,
     date: '2022-10-01',
     victories: 5,
     defeats: 5,
@@ -792,7 +792,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 67,
+    id: 67,
     date: '2022-10-02',
     victories: 6,
     defeats: 7,
@@ -804,7 +804,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 68,
+    id: 68,
     date: '2022-10-03',
     victories: 5,
     defeats: 10,
@@ -816,7 +816,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 69,
+    id: 69,
     date: '2022-10-04',
     victories: 5,
     defeats: 8,
@@ -828,7 +828,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 70,
+    id: 70,
     date: '2022-10-05',
     victories: 7,
     defeats: 10,
@@ -840,7 +840,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 71,
+    id: 71,
     date: '2022-10-06',
     victories: 3,
     defeats: 1,
@@ -852,7 +852,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 72,
+    id: 72,
     date: '2022-10-07',
     victories: 5,
     defeats: 3,
@@ -864,7 +864,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 73,
+    id: 73,
     date: '2022-10-08',
     victories: 4,
     defeats: 3,
@@ -876,7 +876,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 74,
+    id: 74,
     date: '2022-10-09',
     victories: 1,
     defeats: 2,
@@ -888,7 +888,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 75,
+    id: 75,
     date: '2022-10-10',
     victories: 0,
     defeats: 0,
@@ -900,7 +900,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 76,
+    id: 76,
     date: '2022-10-11',
     victories: 7,
     defeats: 12,
@@ -912,7 +912,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 77,
+    id: 77,
     date: '2022-10-12',
     victories: 0,
     defeats: 0,
@@ -924,7 +924,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 78,
+    id: 78,
     date: '2022-10-13',
     victories: 2,
     defeats: 9,
@@ -936,7 +936,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 79,
+    id: 79,
     date: '2022-10-14',
     victories: 6,
     defeats: 1,
@@ -948,7 +948,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 80,
+    id: 80,
     date: '2022-10-15',
     victories: 0,
     defeats: 0,
@@ -960,7 +960,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 81,
+    id: 81,
     date: '2022-10-16',
     victories: 0,
     defeats: 0,
@@ -972,7 +972,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 82,
+    id: 82,
     date: '2022-10-17',
     victories: 14,
     defeats: 12,
@@ -984,7 +984,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 83,
+    id: 83,
     date: '2022-10-18',
     victories: 11,
     defeats: 11,
@@ -996,7 +996,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 84,
+    id: 84,
     date: '2022-10-19',
     victories: 3,
     defeats: 1,
@@ -1008,7 +1008,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 85,
+    id: 85,
     date: '2022-10-20',
     victories: 4,
     defeats: 4,
@@ -1020,7 +1020,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 86,
+    id: 86,
     date: '2022-10-21',
     victories: 2,
     defeats: 3,
@@ -1032,7 +1032,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 87,
+    id: 87,
     date: '2022-10-22',
     victories: 5,
     defeats: 8,
@@ -1044,7 +1044,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 88,
+    id: 88,
     date: '2022-10-23',
     victories: 12,
     defeats: 7,
@@ -1056,7 +1056,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 89,
+    id: 89,
     date: '2022-10-24',
     victories: 5,
     defeats: 11,
@@ -1068,7 +1068,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 90,
+    id: 90,
     date: '2022-10-25',
     victories: 9,
     defeats: 8,
@@ -1080,7 +1080,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 91,
+    id: 91,
     date: '2022-10-26',
     victories: 10,
     defeats: 13,
@@ -1092,7 +1092,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 92,
+    id: 92,
     date: '2022-10-27',
     victories: 5,
     defeats: 2,
@@ -1104,7 +1104,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 93,
+    id: 93,
     date: '2022-10-28',
     victories: 6,
     defeats: 3,
@@ -1116,7 +1116,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 94,
+    id: 94,
     date: '2022-10-29',
     victories: 1,
     defeats: 0,
@@ -1128,7 +1128,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 95,
+    id: 95,
     date: '2022-10-30',
     victories: 1,
     defeats: 1,
@@ -1140,7 +1140,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 96,
+    id: 96,
     date: '2022-10-31',
     victories: 3,
     defeats: 2,
@@ -1152,7 +1152,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 97,
+    id: 97,
     date: '2022-11-01',
     victories: 3,
     defeats: 3,
@@ -1164,7 +1164,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 98,
+    id: 98,
     date: '2022-11-02',
     victories: 10,
     defeats: 14,
@@ -1176,7 +1176,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 99,
+    id: 99,
     date: '2022-11-03',
     victories: 5,
     defeats: 1,
@@ -1188,7 +1188,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 100,
+    id: 100,
     date: '2022-11-04',
     victories: 6,
     defeats: 13,
@@ -1200,7 +1200,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 101,
+    id: 101,
     date: '2022-11-05',
     victories: 2,
     defeats: 0,
@@ -1212,7 +1212,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 102,
+    id: 102,
     date: '2022-11-06',
     victories: 0,
     defeats: 0,
@@ -1224,7 +1224,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 103,
+    id: 103,
     date: '2022-11-07',
     victories: 2,
     defeats: 3,
@@ -1236,7 +1236,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 104,
+    id: 104,
     date: '2022-11-08',
     victories: 6,
     defeats: 6,
@@ -1248,7 +1248,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 105,
+    id: 105,
     date: '2022-11-09',
     victories: 1,
     defeats: 3,
@@ -1260,7 +1260,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 106,
+    id: 106,
     date: '2022-11-10',
     victories: 0,
     defeats: 0,
@@ -1272,7 +1272,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 107,
+    id: 107,
     date: '2022-11-11',
     victories: 9,
     defeats: 17,
@@ -1284,7 +1284,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 108,
+    id: 108,
     date: '2022-11-12',
     victories: 1,
     defeats: 0,
@@ -1296,7 +1296,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 109,
+    id: 109,
     date: '2022-11-13',
     victories: 0,
     defeats: 0,
@@ -1308,7 +1308,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 110,
+    id: 110,
     date: '2022-11-14',
     victories: 3,
     defeats: 2,
@@ -1320,7 +1320,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 111,
+    id: 111,
     date: '2022-11-15',
     victories: 6,
     defeats: 7,
@@ -1332,7 +1332,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 112,
+    id: 112,
     date: '2022-11-16',
     victories: 1,
     defeats: 0,
@@ -1344,7 +1344,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 113,
+    id: 113,
     date: '2022-11-17',
     victories: 4,
     defeats: 6,
@@ -1356,7 +1356,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 114,
+    id: 114,
     date: '2022-11-18',
     victories: 9,
     defeats: 12,
@@ -1368,7 +1368,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 115,
+    id: 115,
     date: '2022-11-19',
     victories: 4,
     defeats: 4,
@@ -1380,7 +1380,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 116,
+    id: 116,
     date: '2022-11-20',
     victories: 2,
     defeats: 1,
@@ -1392,7 +1392,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 117,
+    id: 117,
     date: '2022-11-21',
     victories: 0,
     defeats: 0,
@@ -1404,7 +1404,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 118,
+    id: 118,
     date: '2022-11-22',
     victories: 0,
     defeats: 0,
@@ -1416,7 +1416,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 119,
+    id: 119,
     date: '2022-11-23',
     victories: 0,
     defeats: 0,
@@ -1428,7 +1428,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 120,
+    id: 120,
     date: '2022-11-24',
     victories: 0,
     defeats: 0,
@@ -1440,7 +1440,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 121,
+    id: 121,
     date: '2022-11-25',
     victories: 0,
     defeats: 0,
@@ -1452,7 +1452,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 122,
+    id: 122,
     date: '2022-11-26',
     victories: 1,
     defeats: 1,
@@ -1464,7 +1464,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 123,
+    id: 123,
     date: '2022-11-27',
     victories: 0,
     defeats: 0,
@@ -1476,7 +1476,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 124,
+    id: 124,
     date: '2022-11-28',
     victories: 2,
     defeats: 2,
@@ -1488,7 +1488,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 125,
+    id: 125,
     date: '2022-11-29',
     victories: 1,
     defeats: 0,
@@ -1500,7 +1500,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 126,
+    id: 126,
     date: '2022-11-30',
     victories: 0,
     defeats: 0,
@@ -1512,7 +1512,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 127,
+    id: 127,
     date: '2022-12-01',
     victories: 1,
     defeats: 1,
@@ -1524,7 +1524,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 128,
+    id: 128,
     date: '2022-12-02',
     victories: 0,
     defeats: 0,
@@ -1536,7 +1536,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 129,
+    id: 129,
     date: '2022-12-03',
     victories: 0,
     defeats: 0,
@@ -1548,7 +1548,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 130,
+    id: 130,
     date: '2022-12-04',
     victories: 0,
     defeats: 0,
@@ -1560,7 +1560,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 131,
+    id: 131,
     date: '2022-12-05',
     victories: 1,
     defeats: 0,
@@ -1572,7 +1572,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 132,
+    id: 132,
     date: '2022-12-06',
     victories: 0,
     defeats: 0,
@@ -1584,7 +1584,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 133,
+    id: 133,
     date: '2022-12-07',
     victories: 0,
     defeats: 0,
@@ -1596,7 +1596,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 134,
+    id: 134,
     date: '2022-12-08',
     victories: 1,
     defeats: 0,
@@ -1608,7 +1608,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 135,
+    id: 135,
     date: '2022-12-09',
     victories: 0,
     defeats: 0,
@@ -1620,7 +1620,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 136,
+    id: 136,
     date: '2022-12-10',
     victories: 2,
     defeats: 4,
@@ -1632,7 +1632,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 137,
+    id: 137,
     date: '2022-12-11',
     victories: 0,
     defeats: 0,
@@ -1644,7 +1644,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 138,
+    id: 138,
     date: '2022-12-12',
     victories: 1,
     defeats: 0,
@@ -1656,7 +1656,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 139,
+    id: 139,
     date: '2022-12-13',
     victories: 0,
     defeats: 0,
@@ -1668,7 +1668,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 140,
+    id: 140,
     date: '2022-12-14',
     victories: 0,
     defeats: 0,
@@ -1680,7 +1680,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 141,
+    id: 141,
     date: '2022-12-15',
     victories: 0,
     defeats: 0,
@@ -1692,7 +1692,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 142,
+    id: 142,
     date: '2022-12-16',
     victories: 0,
     defeats: 0,
@@ -1704,7 +1704,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 143,
+    id: 143,
     date: '2022-12-17',
     victories: 0,
     defeats: 0,
@@ -1716,7 +1716,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 144,
+    id: 144,
     date: '2022-12-18',
     victories: 8,
     defeats: 13,
@@ -1728,7 +1728,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 145,
+    id: 145,
     date: '2022-12-19',
     victories: 3,
     defeats: 1,
@@ -1740,7 +1740,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 146,
+    id: 146,
     date: '2022-12-20',
     victories: 1,
     defeats: 1,
@@ -1752,7 +1752,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 147,
+    id: 147,
     date: '2022-12-21',
     victories: 0,
     defeats: 0,
@@ -1764,7 +1764,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 148,
+    id: 148,
     date: '2022-12-22',
     victories: 4,
     defeats: 6,
@@ -1776,7 +1776,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 149,
+    id: 149,
     date: '2022-12-23',
     victories: 8,
     defeats: 6,
@@ -1788,7 +1788,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 150,
+    id: 150,
     date: '2022-12-24',
     victories: 0,
     defeats: 0,
@@ -1800,7 +1800,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 151,
+    id: 151,
     date: '2022-12-25',
     victories: 4,
     defeats: 5,
@@ -1812,7 +1812,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 152,
+    id: 152,
     date: '2022-12-26',
     victories: 0,
     defeats: 0,
@@ -1824,7 +1824,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 153,
+    id: 153,
     date: '2022-12-27',
     victories: 4,
     defeats: 3,
@@ -1836,7 +1836,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 154,
+    id: 154,
     date: '2022-12-28',
     victories: 8,
     defeats: 8,
@@ -1848,7 +1848,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 155,
+    id: 155,
     date: '2022-12-29',
     victories: 6,
     defeats: 6,
@@ -1860,7 +1860,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 156,
+    id: 156,
     date: '2022-12-30',
     victories: 4,
     defeats: 6,
@@ -1872,7 +1872,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 157,
+    id: 157,
     date: '2022-12-31',
     victories: 0,
     defeats: 0,
@@ -1884,7 +1884,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 158,
+    id: 158,
     date: '2023-01-01',
     victories: 0,
     defeats: 0,
@@ -1896,7 +1896,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 159,
+    id: 159,
     date: '2023-01-02',
     victories: 2,
     defeats: 3,
@@ -1908,7 +1908,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 160,
+    id: 160,
     date: '2023-01-03',
     victories: 2,
     defeats: 6,
@@ -1920,7 +1920,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 161,
+    id: 161,
     date: '2023-01-04',
     victories: 7,
     defeats: 13,
@@ -1932,7 +1932,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 162,
+    id: 162,
     date: '2023-01-05',
     victories: 4,
     defeats: 0,
@@ -1944,7 +1944,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 163,
+    id: 163,
     date: '2023-01-06',
     victories: 0,
     defeats: 0,
@@ -1956,7 +1956,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 164,
+    id: 164,
     date: '2023-01-07',
     victories: 0,
     defeats: 0,
@@ -1968,7 +1968,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 165,
+    id: 165,
     date: '2023-01-08',
     victories: 5,
     defeats: 5,
@@ -1980,7 +1980,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 166,
+    id: 166,
     date: '2023-01-09',
     victories: 7,
     defeats: 12,
@@ -1992,7 +1992,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 167,
+    id: 167,
     date: '2023-01-10',
     victories: 2,
     defeats: 3,
@@ -2004,7 +2004,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 168,
+    id: 168,
     date: '2023-01-11',
     victories: 4,
     defeats: 1,
@@ -2016,7 +2016,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 169,
+    id: 169,
     date: '2023-01-12',
     victories: 0,
     defeats: 0,
@@ -2028,7 +2028,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 170,
+    id: 170,
     date: '2023-01-13',
     victories: 0,
     defeats: 0,
@@ -2040,7 +2040,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 171,
+    id: 171,
     date: '2023-01-14',
     victories: 0,
     defeats: 0,
@@ -2052,7 +2052,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 172,
+    id: 172,
     date: '2023-01-15',
     victories: 0,
     defeats: 0,
@@ -2064,7 +2064,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 173,
+    id: 173,
     date: '2023-01-16',
     victories: 4,
     defeats: 5,
@@ -2076,7 +2076,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 174,
+    id: 174,
     date: '2023-01-17',
     victories: 10,
     defeats: 6,
@@ -2088,7 +2088,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 175,
+    id: 175,
     date: '2023-01-18',
     victories: 1,
     defeats: 5,
@@ -2100,7 +2100,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 176,
+    id: 176,
     date: '2023-01-19',
     victories: 4,
     defeats: 6,
@@ -2112,7 +2112,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 177,
+    id: 177,
     date: '2023-01-20',
     victories: 17,
     defeats: 17,
@@ -2124,7 +2124,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 178,
+    id: 178,
     date: '2023-01-21',
     victories: 3,
     defeats: 1,
@@ -2136,7 +2136,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 179,
+    id: 179,
     date: '2023-01-22',
     victories: 0,
     defeats: 0,
@@ -2148,7 +2148,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 180,
+    id: 180,
     date: '2023-01-23',
     victories: 0,
     defeats: 0,
@@ -2160,7 +2160,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 181,
+    id: 181,
     date: '2023-01-24',
     victories: 0,
     defeats: 0,
@@ -2172,7 +2172,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 182,
+    id: 182,
     date: '2023-01-25',
     victories: 0,
     defeats: 0,
@@ -2184,7 +2184,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 183,
+    id: 183,
     date: '2023-01-26',
     victories: 0,
     defeats: 0,
@@ -2196,7 +2196,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 184,
+    id: 184,
     date: '2023-01-27',
     victories: 8,
     defeats: 14,
@@ -2208,7 +2208,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 185,
+    id: 185,
     date: '2023-01-28',
     victories: 0,
     defeats: 0,
@@ -2220,7 +2220,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 186,
+    id: 186,
     date: '2023-01-29',
     victories: 0,
     defeats: 0,
@@ -2232,7 +2232,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 187,
+    id: 187,
     date: '2023-01-30',
     victories: 0,
     defeats: 0,
@@ -2244,7 +2244,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 188,
+    id: 188,
     date: '2023-01-31',
     victories: 0,
     defeats: 0,
@@ -2256,7 +2256,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 189,
+    id: 189,
     date: '2023-02-01',
     victories: 10,
     defeats: 11,
@@ -2268,7 +2268,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 190,
+    id: 190,
     date: '2023-02-02',
     victories: 12,
     defeats: 9,
@@ -2280,7 +2280,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 191,
+    id: 191,
     date: '2023-02-03',
     victories: 11,
     defeats: 13,
@@ -2292,7 +2292,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 192,
+    id: 192,
     date: '2023-02-04',
     victories: 3,
     defeats: 9,
@@ -2304,7 +2304,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 193,
+    id: 193,
     date: '2023-02-05',
     victories: 0,
     defeats: 0,
@@ -2316,7 +2316,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 194,
+    id: 194,
     date: '2023-02-06',
     victories: 0,
     defeats: 0,
@@ -2328,7 +2328,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 195,
+    id: 195,
     date: '2023-02-07',
     victories: 3,
     defeats: 0,
@@ -2340,7 +2340,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 196,
+    id: 196,
     date: '2023-02-08',
     victories: 0,
     defeats: 0,
@@ -2352,7 +2352,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 197,
+    id: 197,
     date: '2023-02-09',
     victories: 0,
     defeats: 0,
@@ -2364,7 +2364,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 198,
+    id: 198,
     date: '2023-02-10',
     victories: 1,
     defeats: 0,
@@ -2376,7 +2376,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 199,
+    id: 199,
     date: '2023-02-11',
     victories: 1,
     defeats: 2,
@@ -2388,7 +2388,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 200,
+    id: 200,
     date: '2023-02-12',
     victories: 0,
     defeats: 0,
@@ -2400,7 +2400,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 201,
+    id: 201,
     date: '2023-02-13',
     victories: 4,
     defeats: 3,
@@ -2412,7 +2412,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 202,
+    id: 202,
     date: '2023-02-14',
     victories: 3,
     defeats: 1,
@@ -2424,7 +2424,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 203,
+    id: 203,
     date: '2023-02-15',
     victories: 3,
     defeats: 3,
@@ -2436,7 +2436,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 204,
+    id: 204,
     date: '2023-02-16',
     victories: 0,
     defeats: 0,
@@ -2448,7 +2448,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 205,
+    id: 205,
     date: '2023-02-17',
     victories: 0,
     defeats: 0,
@@ -2460,7 +2460,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 206,
+    id: 206,
     date: '2023-02-18',
     victories: 0,
     defeats: 0,
@@ -2472,7 +2472,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 207,
+    id: 207,
     date: '2023-02-19',
     victories: 8,
     defeats: 6,
@@ -2484,7 +2484,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 208,
+    id: 208,
     date: '2023-02-20',
     victories: 11,
     defeats: 14,
@@ -2496,7 +2496,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 209,
+    id: 209,
     date: '2023-02-21',
     victories: 3,
     defeats: 4,
@@ -2508,7 +2508,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 210,
+    id: 210,
     date: '2023-02-22',
     victories: 1,
     defeats: 0,
@@ -2520,7 +2520,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 211,
+    id: 211,
     date: '2023-02-23',
     victories: 4,
     defeats: 3,
@@ -2532,7 +2532,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 212,
+    id: 212,
     date: '2023-02-24',
     victories: 0,
     defeats: 0,
@@ -2544,7 +2544,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 213,
+    id: 213,
     date: '2023-02-25',
     victories: 2,
     defeats: 0,
@@ -2556,7 +2556,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 214,
+    id: 214,
     date: '2023-02-26',
     victories: 16,
     defeats: 15,
@@ -2568,7 +2568,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 215,
+    id: 215,
     date: '2023-02-27',
     victories: 2,
     defeats: 0,
@@ -2580,7 +2580,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 216,
+    id: 216,
     date: '2023-02-28',
     victories: 2,
     defeats: 5,
@@ -2592,7 +2592,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 217,
+    id: 217,
     date: '2023-03-01',
     victories: 2,
     defeats: 2,
@@ -2604,7 +2604,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 218,
+    id: 218,
     date: '2023-03-02',
     victories: 2,
     defeats: 3,
@@ -2616,7 +2616,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 219,
+    id: 219,
     date: '2023-03-03',
     victories: 5,
     defeats: 6,
@@ -2628,7 +2628,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 220,
+    id: 220,
     date: '2023-03-04',
     victories: 0,
     defeats: 0,
@@ -2640,7 +2640,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 221,
+    id: 221,
     date: '2023-03-05',
     victories: 8,
     defeats: 6,
@@ -2652,7 +2652,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 222,
+    id: 222,
     date: '2023-03-06',
     victories: 10,
     defeats: 9,
@@ -2664,7 +2664,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 223,
+    id: 223,
     date: '2023-03-07',
     victories: 8,
     defeats: 6,
@@ -2676,7 +2676,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 224,
+    id: 224,
     date: '2023-03-08',
     victories: 0,
     defeats: 0,
@@ -2688,7 +2688,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 225,
+    id: 225,
     date: '2023-03-09',
     victories: 0,
     defeats: 0,
@@ -2700,7 +2700,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 226,
+    id: 226,
     date: '2023-03-10',
     victories: 0,
     defeats: 0,
@@ -2712,7 +2712,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 227,
+    id: 227,
     date: '2023-03-11',
     victories: 0,
     defeats: 0,
@@ -2724,7 +2724,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 228,
+    id: 228,
     date: '2023-03-12',
     victories: 0,
     defeats: 0,
@@ -2736,7 +2736,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 229,
+    id: 229,
     date: '2023-03-13',
     victories: 0,
     defeats: 0,
@@ -2748,7 +2748,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 230,
+    id: 230,
     date: '2023-03-14',
     victories: 0,
     defeats: 0,
@@ -2760,7 +2760,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 231,
+    id: 231,
     date: '2023-03-15',
     victories: 0,
     defeats: 0,
@@ -2772,7 +2772,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 232,
+    id: 232,
     date: '2023-03-16',
     victories: 0,
     defeats: 0,
@@ -2784,7 +2784,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 233,
+    id: 233,
     date: '2023-03-17',
     victories: 0,
     defeats: 0,
@@ -2796,7 +2796,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 234,
+    id: 234,
     date: '2023-03-18',
     victories: 0,
     defeats: 0,
@@ -2808,7 +2808,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 235,
+    id: 235,
     date: '2023-03-19',
     victories: 0,
     defeats: 0,
@@ -2820,7 +2820,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 236,
+    id: 236,
     date: '2023-03-20',
     victories: 0,
     defeats: 0,
@@ -2832,7 +2832,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 237,
+    id: 237,
     date: '2023-03-21',
     victories: 0,
     defeats: 0,
@@ -2844,7 +2844,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 238,
+    id: 238,
     date: '2023-03-22',
     victories: 0,
     defeats: 0,
@@ -2856,7 +2856,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 239,
+    id: 239,
     date: '2023-03-23',
     victories: 0,
     defeats: 0,
@@ -2868,7 +2868,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 240,
+    id: 240,
     date: '2023-03-24',
     victories: 0,
     defeats: 0,
@@ -2880,7 +2880,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 241,
+    id: 241,
     date: '2023-03-25',
     victories: 0,
     defeats: 0,
@@ -2892,7 +2892,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 242,
+    id: 242,
     date: '2023-03-26',
     victories: 0,
     defeats: 0,
@@ -2904,7 +2904,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 243,
+    id: 243,
     date: '2023-03-27',
     victories: 0,
     defeats: 0,
@@ -2916,7 +2916,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 244,
+    id: 244,
     date: '2023-03-28',
     victories: 0,
     defeats: 0,
@@ -2928,7 +2928,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 245,
+    id: 245,
     date: '2023-03-29',
     victories: 0,
     defeats: 0,
@@ -2940,7 +2940,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 246,
+    id: 246,
     date: '2023-03-30',
     victories: 0,
     defeats: 0,
@@ -2952,7 +2952,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 247,
+    id: 247,
     date: '2023-03-31',
     victories: 0,
     defeats: 0,
@@ -2964,7 +2964,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 248,
+    id: 248,
     date: '2023-04-01',
     victories: 0,
     defeats: 0,
@@ -2976,7 +2976,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 249,
+    id: 249,
     date: '2023-04-02',
     victories: 0,
     defeats: 0,
@@ -2988,7 +2988,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 250,
+    id: 250,
     date: '2023-04-03',
     victories: 0,
     defeats: 0,
@@ -3000,7 +3000,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 251,
+    id: 251,
     date: '2023-04-04',
     victories: 0,
     defeats: 0,
@@ -3012,7 +3012,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 252,
+    id: 252,
     date: '2023-04-05',
     victories: 0,
     defeats: 0,
@@ -3024,7 +3024,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 253,
+    id: 253,
     date: '2023-04-06',
     victories: 0,
     defeats: 0,
@@ -3036,7 +3036,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 254,
+    id: 254,
     date: '2023-04-07',
     victories: 0,
     defeats: 0,
@@ -3048,7 +3048,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 255,
+    id: 255,
     date: '2023-04-08',
     victories: 0,
     defeats: 0,
@@ -3060,7 +3060,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 256,
+    id: 256,
     date: '2023-04-09',
     victories: 0,
     defeats: 0,
@@ -3072,7 +3072,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 257,
+    id: 257,
     date: '2023-04-10',
     victories: 0,
     defeats: 0,
@@ -3084,7 +3084,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 258,
+    id: 258,
     date: '2023-04-11',
     victories: 0,
     defeats: 0,
@@ -3096,7 +3096,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 259,
+    id: 259,
     date: '2023-04-12',
     victories: 0,
     defeats: 0,
@@ -3108,7 +3108,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 260,
+    id: 260,
     date: '2023-04-13',
     victories: 0,
     defeats: 0,
@@ -3120,7 +3120,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 261,
+    id: 261,
     date: '2023-04-14',
     victories: 0,
     defeats: 0,
@@ -3132,7 +3132,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 262,
+    id: 262,
     date: '2023-04-15',
     victories: 0,
     defeats: 0,
@@ -3144,7 +3144,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 263,
+    id: 263,
     date: '2023-04-16',
     victories: 0,
     defeats: 0,
@@ -3156,7 +3156,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 264,
+    id: 264,
     date: '2023-04-17',
     victories: 0,
     defeats: 0,
@@ -3168,7 +3168,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 265,
+    id: 265,
     date: '2023-04-18',
     victories: 0,
     defeats: 0,
@@ -3180,7 +3180,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 266,
+    id: 266,
     date: '2023-04-19',
     victories: 5,
     defeats: 5,
@@ -3192,7 +3192,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 267,
+    id: 267,
     date: '2023-04-20',
     victories: 5,
     defeats: 5,
@@ -3204,7 +3204,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 268,
+    id: 268,
     date: '2023-04-21',
     victories: 6,
     defeats: 2,
@@ -3216,7 +3216,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 269,
+    id: 269,
     date: '2023-04-22',
     victories: 7,
     defeats: 7,
@@ -3228,7 +3228,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 270,
+    id: 270,
     date: '2023-04-23',
     victories: 6,
     defeats: 4,
@@ -3240,7 +3240,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 271,
+    id: 271,
     date: '2023-04-24',
     victories: 0,
     defeats: 0,
@@ -3252,7 +3252,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 272,
+    id: 272,
     date: '2023-04-25',
     victories: 2,
     defeats: 1,
@@ -3264,7 +3264,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 273,
+    id: 273,
     date: '2023-04-26',
     victories: 6,
     defeats: 3,
@@ -3276,7 +3276,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 274,
+    id: 274,
     date: '2023-04-27',
     victories: 0,
     defeats: 0,
@@ -3288,7 +3288,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 275,
+    id: 275,
     date: '2023-04-28',
     victories: 15,
     defeats: 9,
@@ -3300,7 +3300,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 276,
+    id: 276,
     date: '2023-04-29',
     victories: 1,
     defeats: 2,
@@ -3312,7 +3312,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 277,
+    id: 277,
     date: '2023-04-30',
     victories: 0,
     defeats: 0,
@@ -3324,7 +3324,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 278,
+    id: 278,
     date: '2023-05-01',
     victories: 0,
     defeats: 0,
@@ -3336,7 +3336,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 279,
+    id: 279,
     date: '2023-05-02',
     victories: 0,
     defeats: 0,
@@ -3348,7 +3348,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 280,
+    id: 280,
     date: '2023-05-03',
     victories: 0,
     defeats: 0,
@@ -3360,7 +3360,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 281,
+    id: 281,
     date: '2023-05-04',
     victories: 12,
     defeats: 11,
@@ -3372,7 +3372,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 282,
+    id: 282,
     date: '2023-05-05',
     victories: 13,
     defeats: 16,
@@ -3384,7 +3384,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 283,
+    id: 283,
     date: '2023-05-06',
     victories: 0,
     defeats: 0,
@@ -3396,7 +3396,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 284,
+    id: 284,
     date: '2023-05-07',
     victories: 3,
     defeats: 7,
@@ -3408,7 +3408,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 285,
+    id: 285,
     date: '2023-05-08',
     victories: 0,
     defeats: 0,
@@ -3420,7 +3420,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 286,
+    id: 286,
     date: '2023-05-09',
     victories: 0,
     defeats: 0,
@@ -3432,7 +3432,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 287,
+    id: 287,
     date: '2023-05-10',
     victories: 8,
     defeats: 7,
@@ -3444,7 +3444,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 288,
+    id: 288,
     date: '2023-05-11',
     victories: 9,
     defeats: 11,
@@ -3456,7 +3456,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 289,
+    id: 289,
     date: '2023-05-12',
     victories: 9,
     defeats: 9,
@@ -3468,7 +3468,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 290,
+    id: 290,
     date: '2023-05-13',
     victories: 0,
     defeats: 0,
@@ -3480,7 +3480,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 291,
+    id: 291,
     date: '2023-05-14',
     victories: 1,
     defeats: 5,
@@ -3492,7 +3492,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 292,
+    id: 292,
     date: '2023-05-15',
     victories: 8,
     defeats: 7,
@@ -3504,7 +3504,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 293,
+    id: 293,
     date: '2023-05-16',
     victories: 2,
     defeats: 1,
@@ -3516,7 +3516,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 294,
+    id: 294,
     date: '2023-05-17',
     victories: 5,
     defeats: 1,
@@ -3528,7 +3528,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 295,
+    id: 295,
     date: '2023-05-18',
     victories: 0,
     defeats: 0,
@@ -3540,7 +3540,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 296,
+    id: 296,
     date: '2023-05-19',
     victories: 6,
     defeats: 5,
@@ -3552,7 +3552,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 297,
+    id: 297,
     date: '2023-05-20',
     victories: 6,
     defeats: 5,
@@ -3564,7 +3564,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 298,
+    id: 298,
     date: '2023-05-21',
     victories: 7,
     defeats: 2,
@@ -3576,7 +3576,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 299,
+    id: 299,
     date: '2023-05-22',
     victories: 0,
     defeats: 0,
@@ -3588,7 +3588,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 300,
+    id: 300,
     date: '2023-05-23',
     victories: 0,
     defeats: 0,
@@ -3600,7 +3600,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 301,
+    id: 301,
     date: '2023-05-24',
     victories: 6,
     defeats: 6,
@@ -3612,7 +3612,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 302,
+    id: 302,
     date: '2023-05-25',
     victories: 0,
     defeats: 0,
@@ -3624,7 +3624,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 303,
+    id: 303,
     date: '2023-05-26',
     victories: 12,
     defeats: 16,
@@ -3636,7 +3636,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 304,
+    id: 304,
     date: '2023-05-27',
     victories: 0,
     defeats: 0,
@@ -3648,7 +3648,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 305,
+    id: 305,
     date: '2023-05-28',
     victories: 0,
     defeats: 0,
@@ -3660,7 +3660,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 306,
+    id: 306,
     date: '2023-05-29',
     victories: 0,
     defeats: 0,
@@ -3672,7 +3672,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 307,
+    id: 307,
     date: '2023-05-30',
     victories: 0,
     defeats: 0,
@@ -3684,7 +3684,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 308,
+    id: 308,
     date: '2023-05-31',
     victories: 6,
     defeats: 2,
@@ -3696,7 +3696,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 309,
+    id: 309,
     date: '2023-06-01',
     victories: 0,
     defeats: 0,
@@ -3708,7 +3708,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 310,
+    id: 310,
     date: '2023-06-02',
     victories: 0,
     defeats: 0,
@@ -3720,7 +3720,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 311,
+    id: 311,
     date: '2023-06-03',
     victories: 0,
     defeats: 0,
@@ -3732,7 +3732,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 312,
+    id: 312,
     date: '2023-06-04',
     victories: 2,
     defeats: 0,
@@ -3744,7 +3744,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 313,
+    id: 313,
     date: '2023-06-05',
     victories: 5,
     defeats: 3,
@@ -3756,7 +3756,7 @@ export const exampleData = [
     points: 12,
   },
   {
-    ID: 314,
+    id: 314,
     date: '2023-06-06',
     victories: 2,
     defeats: 6,
@@ -3768,7 +3768,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 315,
+    id: 315,
     date: '2023-06-07',
     victories: 5,
     defeats: 2,
@@ -3780,7 +3780,7 @@ export const exampleData = [
     points: 12,
   },
   {
-    ID: 316,
+    id: 316,
     date: '2023-06-08',
     victories: 6,
     defeats: 17,
@@ -3792,7 +3792,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 317,
+    id: 317,
     date: '2023-06-09',
     victories: 0,
     defeats: 0,
@@ -3804,7 +3804,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 318,
+    id: 318,
     date: '2023-06-10',
     victories: 0,
     defeats: 0,
@@ -3816,7 +3816,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 319,
+    id: 319,
     date: '2023-06-11',
     victories: 0,
     defeats: 0,
@@ -3828,7 +3828,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 320,
+    id: 320,
     date: '2023-06-12',
     victories: 3,
     defeats: 8,
@@ -3840,7 +3840,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 321,
+    id: 321,
     date: '2023-06-13',
     victories: 11,
     defeats: 7,
@@ -3852,7 +3852,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 322,
+    id: 322,
     date: '2023-06-14',
     victories: 8,
     defeats: 8,
@@ -3864,7 +3864,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 323,
+    id: 323,
     date: '2023-06-15',
     victories: 0,
     defeats: 0,
@@ -3876,7 +3876,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 324,
+    id: 324,
     date: '2023-06-16',
     victories: 0,
     defeats: 0,
@@ -3888,7 +3888,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 325,
+    id: 325,
     date: '2023-06-17',
     victories: 0,
     defeats: 0,
@@ -3900,7 +3900,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 326,
+    id: 326,
     date: '2023-06-18',
     victories: 4,
     defeats: 3,
@@ -3912,7 +3912,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 327,
+    id: 327,
     date: '2023-06-19',
     victories: 3,
     defeats: 3,
@@ -3924,7 +3924,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 328,
+    id: 328,
     date: '2023-06-20',
     victories: 4,
     defeats: 1,
@@ -3936,7 +3936,7 @@ export const exampleData = [
     points: 12,
   },
   {
-    ID: 329,
+    id: 329,
     date: '2023-06-21',
     victories: 12,
     defeats: 6,
@@ -3948,7 +3948,7 @@ export const exampleData = [
     points: 21,
   },
   {
-    ID: 330,
+    id: 330,
     date: '2023-06-22',
     victories: 8,
     defeats: 9,
@@ -3960,7 +3960,7 @@ export const exampleData = [
     points: 22,
   },
   {
-    ID: 331,
+    id: 331,
     date: '2023-06-23',
     victories: 9,
     defeats: 9,
@@ -3972,7 +3972,7 @@ export const exampleData = [
     points: 23,
   },
   {
-    ID: 332,
+    id: 332,
     date: '2023-06-24',
     victories: 4,
     defeats: 4,
@@ -3984,7 +3984,7 @@ export const exampleData = [
     points: 24,
   },
   {
-    ID: 333,
+    id: 333,
     date: '2023-06-25',
     victories: 4,
     defeats: 1,
@@ -3996,7 +3996,7 @@ export const exampleData = [
     points: 28,
   },
   {
-    ID: 334,
+    id: 334,
     date: '2023-06-26',
     victories: 0,
     defeats: 0,
@@ -4008,7 +4008,7 @@ export const exampleData = [
     points: 28,
   },
   {
-    ID: 335,
+    id: 335,
     date: '2023-06-27',
     victories: 0,
     defeats: 0,
@@ -4020,7 +4020,7 @@ export const exampleData = [
     points: 28,
   },
   {
-    ID: 336,
+    id: 336,
     date: '2023-06-28',
     victories: 0,
     defeats: 0,
@@ -4032,7 +4032,7 @@ export const exampleData = [
     points: 28,
   },
   {
-    ID: 337,
+    id: 337,
     date: '2023-06-29',
     victories: 0,
     defeats: 0,
@@ -4044,7 +4044,7 @@ export const exampleData = [
     points: 28,
   },
   {
-    ID: 338,
+    id: 338,
     date: '2023-06-30',
     victories: 4,
     defeats: 1,
@@ -4056,7 +4056,7 @@ export const exampleData = [
     points: 31,
   },
   {
-    ID: 339,
+    id: 339,
     date: '2023-07-01',
     victories: 0,
     defeats: 0,
@@ -4068,7 +4068,7 @@ export const exampleData = [
     points: 31,
   },
   {
-    ID: 340,
+    id: 340,
     date: '2023-07-02',
     victories: 3,
     defeats: 1,
@@ -4080,7 +4080,7 @@ export const exampleData = [
     points: 34,
   },
   {
-    ID: 341,
+    id: 341,
     date: '2023-07-03',
     victories: 0,
     defeats: 5,
@@ -4092,7 +4092,7 @@ export const exampleData = [
     points: 30,
   },
   {
-    ID: 342,
+    id: 342,
     date: '2023-07-04',
     victories: 0,
     defeats: 0,
@@ -4104,7 +4104,7 @@ export const exampleData = [
     points: 30,
   },
   {
-    ID: 343,
+    id: 343,
     date: '2023-07-05',
     victories: 0,
     defeats: 0,
@@ -4116,7 +4116,7 @@ export const exampleData = [
     points: 30,
   },
   {
-    ID: 344,
+    id: 344,
     date: '2023-07-06',
     victories: 1,
     defeats: 2,
@@ -4128,7 +4128,7 @@ export const exampleData = [
     points: 30,
   },
   {
-    ID: 345,
+    id: 345,
     date: '2023-07-07',
     victories: 1,
     defeats: 3,
@@ -4140,7 +4140,7 @@ export const exampleData = [
     points: 28,
   },
   {
-    ID: 346,
+    id: 346,
     date: '2023-07-08',
     victories: 0,
     defeats: 0,
@@ -4152,7 +4152,7 @@ export const exampleData = [
     points: 28,
   },
   {
-    ID: 347,
+    id: 347,
     date: '2023-07-09',
     victories: 4,
     defeats: 2,
@@ -4164,7 +4164,7 @@ export const exampleData = [
     points: 31,
   },
   {
-    ID: 348,
+    id: 348,
     date: '2023-07-10',
     victories: 0,
     defeats: 0,
@@ -4176,7 +4176,7 @@ export const exampleData = [
     points: 31,
   },
   {
-    ID: 349,
+    id: 349,
     date: '2023-07-11',
     victories: 4,
     defeats: 5,
@@ -4188,7 +4188,7 @@ export const exampleData = [
     points: 30,
   },
   {
-    ID: 350,
+    id: 350,
     date: '2023-07-12',
     victories: 0,
     defeats: 0,
@@ -4200,7 +4200,7 @@ export const exampleData = [
     points: 30,
   },
   {
-    ID: 351,
+    id: 351,
     date: '2023-07-13',
     victories: 0,
     defeats: 0,
@@ -4212,7 +4212,7 @@ export const exampleData = [
     points: 30,
   },
   {
-    ID: 352,
+    id: 352,
     date: '2023-07-14',
     victories: 1,
     defeats: 4,
@@ -4224,7 +4224,7 @@ export const exampleData = [
     points: 28,
   },
   {
-    ID: 353,
+    id: 353,
     date: '2023-07-15',
     victories: 0,
     defeats: 0,
@@ -4236,7 +4236,7 @@ export const exampleData = [
     points: 28,
   },
   {
-    ID: 354,
+    id: 354,
     date: '2023-07-16',
     victories: 5,
     defeats: 3,
@@ -4248,7 +4248,7 @@ export const exampleData = [
     points: 31,
   },
   {
-    ID: 355,
+    id: 355,
     date: '2023-07-17',
     victories: 0,
     defeats: 0,
@@ -4260,7 +4260,7 @@ export const exampleData = [
     points: 31,
   },
   {
-    ID: 356,
+    id: 356,
     date: '2023-07-18',
     victories: 0,
     defeats: 0,
@@ -4272,7 +4272,7 @@ export const exampleData = [
     points: 31,
   },
   {
-    ID: 357,
+    id: 357,
     date: '2023-07-19',
     victories: 4,
     defeats: 6,
@@ -4284,7 +4284,7 @@ export const exampleData = [
     points: 29,
   },
   {
-    ID: 358,
+    id: 358,
     date: '2023-07-20',
     victories: 0,
     defeats: 0,
@@ -4296,7 +4296,7 @@ export const exampleData = [
     points: 29,
   },
   {
-    ID: 359,
+    id: 359,
     date: '2023-07-21',
     victories: 0,
     defeats: 0,
@@ -4308,7 +4308,7 @@ export const exampleData = [
     points: 29,
   },
   {
-    ID: 360,
+    id: 360,
     date: '2023-07-22',
     victories: 4,
     defeats: 7,
@@ -4320,7 +4320,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 361,
+    id: 361,
     date: '2023-07-23',
     victories: 0,
     defeats: 0,
@@ -4332,7 +4332,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 362,
+    id: 362,
     date: '2023-07-24',
     victories: 5,
     defeats: 11,
@@ -4344,7 +4344,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 363,
+    id: 363,
     date: '2023-07-25',
     victories: 0,
     defeats: 0,
@@ -4356,7 +4356,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 364,
+    id: 364,
     date: '2023-07-26',
     victories: 0,
     defeats: 0,
@@ -4368,7 +4368,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 365,
+    id: 365,
     date: '2023-07-27',
     victories: 0,
     defeats: 1,
@@ -4380,7 +4380,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 366,
+    id: 366,
     date: '2023-07-28',
     victories: 5,
     defeats: 4,
@@ -4392,7 +4392,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 367,
+    id: 367,
     date: '2023-07-29',
     victories: 13,
     defeats: 19,
@@ -4404,7 +4404,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 368,
+    id: 368,
     date: '2023-07-30',
     victories: 0,
     defeats: 0,
@@ -4416,7 +4416,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 369,
+    id: 369,
     date: '2023-07-31',
     victories: 0,
     defeats: 0,
@@ -4428,7 +4428,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 370,
+    id: 370,
     date: '2023-08-01',
     victories: 0,
     defeats: 0,
@@ -4440,7 +4440,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 371,
+    id: 371,
     date: '2023-08-02',
     victories: 0,
     defeats: 0,
@@ -4452,7 +4452,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 372,
+    id: 372,
     date: '2023-08-03',
     victories: 3,
     defeats: 0,
@@ -4464,7 +4464,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 373,
+    id: 373,
     date: '2023-08-04',
     victories: 0,
     defeats: 0,
@@ -4476,7 +4476,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 374,
+    id: 374,
     date: '2023-08-05',
     victories: 3,
     defeats: 1,
@@ -4488,7 +4488,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 375,
+    id: 375,
     date: '2023-08-06',
     victories: 10,
     defeats: 15,
@@ -4500,7 +4500,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 376,
+    id: 376,
     date: '2023-08-07',
     victories: 4,
     defeats: 9,
@@ -4512,7 +4512,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 377,
+    id: 377,
     date: '2023-08-08',
     victories: 0,
     defeats: 0,
@@ -4524,7 +4524,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 378,
+    id: 378,
     date: '2023-08-09',
     victories: 5,
     defeats: 2,
@@ -4536,7 +4536,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 379,
+    id: 379,
     date: '2023-08-10',
     victories: 3,
     defeats: 2,
@@ -4548,7 +4548,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 380,
+    id: 380,
     date: '2023-08-11',
     victories: 0,
     defeats: 0,
@@ -4560,7 +4560,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 381,
+    id: 381,
     date: '2023-08-12',
     victories: 8,
     defeats: 3,
@@ -4572,7 +4572,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 382,
+    id: 382,
     date: '2023-08-13',
     victories: 5,
     defeats: 1,
@@ -4584,7 +4584,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 383,
+    id: 383,
     date: '2023-08-14',
     victories: 4,
     defeats: 2,
@@ -4596,7 +4596,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 384,
+    id: 384,
     date: '2023-08-15',
     victories: 2,
     defeats: 1,
@@ -4608,7 +4608,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 385,
+    id: 385,
     date: '2023-08-16',
     victories: 0,
     defeats: 0,
@@ -4620,7 +4620,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 386,
+    id: 386,
     date: '2023-08-17',
     victories: 0,
     defeats: 0,
@@ -4632,7 +4632,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 387,
+    id: 387,
     date: '2023-08-18',
     victories: 2,
     defeats: 0,
@@ -4644,7 +4644,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 388,
+    id: 388,
     date: '2023-08-19',
     victories: 9,
     defeats: 4,
@@ -4656,7 +4656,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 389,
+    id: 389,
     date: '2023-08-20',
     victories: 3,
     defeats: 0,
@@ -4668,7 +4668,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 390,
+    id: 390,
     date: '2023-08-21',
     victories: 0,
     defeats: 0,
@@ -4680,7 +4680,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 391,
+    id: 391,
     date: '2023-08-22',
     victories: 3,
     defeats: 0,
@@ -4692,7 +4692,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 392,
+    id: 392,
     date: '2023-08-23',
     victories: 2,
     defeats: 1,
@@ -4704,7 +4704,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 393,
+    id: 393,
     date: '2023-08-24',
     victories: 2,
     defeats: 4,
@@ -4716,7 +4716,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 394,
+    id: 394,
     date: '2023-08-25',
     victories: 0,
     defeats: 0,
@@ -4728,7 +4728,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 395,
+    id: 395,
     date: '2023-08-26',
     victories: 0,
     defeats: 0,
@@ -4740,7 +4740,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 396,
+    id: 396,
     date: '2023-08-27',
     victories: 2,
     defeats: 2,
@@ -4752,7 +4752,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 397,
+    id: 397,
     date: '2023-08-28',
     victories: 0,
     defeats: 0,
@@ -4764,7 +4764,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 398,
+    id: 398,
     date: '2023-08-29',
     victories: 4,
     defeats: 6,
@@ -4776,7 +4776,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 399,
+    id: 399,
     date: '2023-08-30',
     victories: 2,
     defeats: 7,
@@ -4788,7 +4788,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 400,
+    id: 400,
     date: '2023-08-31',
     victories: 0,
     defeats: 0,
@@ -4800,7 +4800,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 401,
+    id: 401,
     date: '2023-09-01',
     victories: 0,
     defeats: 0,
@@ -4812,7 +4812,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 402,
+    id: 402,
     date: '2023-09-02',
     victories: 0,
     defeats: 0,
@@ -4824,7 +4824,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 403,
+    id: 403,
     date: '2023-09-03',
     victories: 0,
     defeats: 0,
@@ -4836,7 +4836,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 404,
+    id: 404,
     date: '2023-09-04',
     victories: 0,
     defeats: 0,
@@ -4848,7 +4848,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 405,
+    id: 405,
     date: '2023-09-05',
     victories: 8,
     defeats: 6,
@@ -4860,7 +4860,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 406,
+    id: 406,
     date: '2023-09-06',
     victories: 0,
     defeats: 0,
@@ -4872,7 +4872,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 407,
+    id: 407,
     date: '2023-09-07',
     victories: 0,
     defeats: 0,
@@ -4884,7 +4884,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 408,
+    id: 408,
     date: '2023-09-08',
     victories: 4,
     defeats: 2,
@@ -4896,7 +4896,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 409,
+    id: 409,
     date: '2023-09-09',
     victories: 0,
     defeats: 0,
@@ -4908,7 +4908,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 410,
+    id: 410,
     date: '2023-09-10',
     victories: 9,
     defeats: 11,
@@ -4920,7 +4920,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 411,
+    id: 411,
     date: '2023-09-11',
     victories: 0,
     defeats: 0,
@@ -4932,7 +4932,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 412,
+    id: 412,
     date: '2023-09-12',
     victories: 0,
     defeats: 0,
@@ -4944,7 +4944,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 413,
+    id: 413,
     date: '2023-09-13',
     victories: 0,
     defeats: 0,
@@ -4956,7 +4956,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 414,
+    id: 414,
     date: '2023-09-14',
     victories: 0,
     defeats: 0,
@@ -4968,7 +4968,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 415,
+    id: 415,
     date: '2023-09-15',
     victories: 7,
     defeats: 5,
@@ -4980,7 +4980,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 416,
+    id: 416,
     date: '2023-09-16',
     victories: 0,
     defeats: 0,
@@ -4992,7 +4992,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 417,
+    id: 417,
     date: '2023-09-17',
     victories: 14,
     defeats: 14,
@@ -5004,7 +5004,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 418,
+    id: 418,
     date: '2023-09-18',
     victories: 3,
     defeats: 3,
@@ -5016,7 +5016,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 419,
+    id: 419,
     date: '2023-09-19',
     victories: 2,
     defeats: 3,
@@ -5028,7 +5028,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 420,
+    id: 420,
     date: '2023-09-20',
     victories: 0,
     defeats: 0,
@@ -5040,7 +5040,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 421,
+    id: 421,
     date: '2023-09-21',
     victories: 8,
     defeats: 9,
@@ -5052,7 +5052,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 422,
+    id: 422,
     date: '2023-09-22',
     victories: 7,
     defeats: 11,
@@ -5064,7 +5064,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 423,
+    id: 423,
     date: '2023-09-23',
     victories: 11,
     defeats: 6,
@@ -5076,7 +5076,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 424,
+    id: 424,
     date: '2023-09-24',
     victories: 11,
     defeats: 17,
@@ -5088,7 +5088,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 425,
+    id: 425,
     date: '2023-09-25',
     victories: 0,
     defeats: 0,
@@ -5100,7 +5100,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 426,
+    id: 426,
     date: '2023-09-26',
     victories: 0,
     defeats: 0,
@@ -5112,7 +5112,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 427,
+    id: 427,
     date: '2023-09-27',
     victories: 0,
     defeats: 0,
@@ -5124,7 +5124,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 428,
+    id: 428,
     date: '2023-09-28',
     victories: 3,
     defeats: 3,
@@ -5136,7 +5136,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 429,
+    id: 429,
     date: '2023-09-29',
     victories: 2,
     defeats: 0,
@@ -5148,7 +5148,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 430,
+    id: 430,
     date: '2023-09-30',
     victories: 1,
     defeats: 0,
@@ -5160,7 +5160,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 431,
+    id: 431,
     date: '2023-10-01',
     victories: 4,
     defeats: 1,
@@ -5172,7 +5172,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 432,
+    id: 432,
     date: '2023-10-02',
     victories: 10,
     defeats: 17,
@@ -5184,7 +5184,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 433,
+    id: 433,
     date: '2023-10-03',
     victories: 2,
     defeats: 1,
@@ -5196,7 +5196,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 434,
+    id: 434,
     date: '2023-10-04',
     victories: 0,
     defeats: 0,
@@ -5208,7 +5208,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 435,
+    id: 435,
     date: '2023-10-05',
     victories: 9,
     defeats: 12,
@@ -5220,7 +5220,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 436,
+    id: 436,
     date: '2023-10-06',
     victories: 9,
     defeats: 5,
@@ -5232,7 +5232,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 437,
+    id: 437,
     date: '2023-10-07',
     victories: 4,
     defeats: 3,
@@ -5244,7 +5244,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 438,
+    id: 438,
     date: '2023-10-08',
     victories: 4,
     defeats: 1,
@@ -5256,7 +5256,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 439,
+    id: 439,
     date: '2023-10-09',
     victories: 3,
     defeats: 3,
@@ -5268,7 +5268,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 440,
+    id: 440,
     date: '2023-10-10',
     victories: 4,
     defeats: 3,
@@ -5280,7 +5280,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 441,
+    id: 441,
     date: '2023-10-11',
     victories: 5,
     defeats: 0,
@@ -5292,7 +5292,7 @@ export const exampleData = [
     points: 10,
   },
   {
-    ID: 442,
+    id: 442,
     date: '2023-10-12',
     victories: 2,
     defeats: 1,
@@ -5304,7 +5304,7 @@ export const exampleData = [
     points: 12,
   },
   {
-    ID: 443,
+    id: 443,
     date: '2023-10-13',
     victories: 3,
     defeats: 2,
@@ -5316,7 +5316,7 @@ export const exampleData = [
     points: 14,
   },
   {
-    ID: 444,
+    id: 444,
     date: '2023-10-14',
     victories: 2,
     defeats: 6,
@@ -5328,7 +5328,7 @@ export const exampleData = [
     points: 10,
   },
   {
-    ID: 445,
+    id: 445,
     date: '2023-10-15',
     victories: 5,
     defeats: 6,
@@ -5340,7 +5340,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 446,
+    id: 446,
     date: '2023-10-16',
     victories: 0,
     defeats: 0,
@@ -5352,7 +5352,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 447,
+    id: 447,
     date: '2023-10-17',
     victories: 0,
     defeats: 0,
@@ -5364,7 +5364,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 448,
+    id: 448,
     date: '2023-10-18',
     victories: 4,
     defeats: 5,
@@ -5376,7 +5376,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 449,
+    id: 449,
     date: '2023-10-19',
     victories: 0,
     defeats: 0,
@@ -5388,7 +5388,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 450,
+    id: 450,
     date: '2023-10-20',
     victories: 6,
     defeats: 8,
@@ -5400,7 +5400,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 451,
+    id: 451,
     date: '2023-10-21',
     victories: 0,
     defeats: 0,
@@ -5412,7 +5412,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 452,
+    id: 452,
     date: '2023-10-22',
     victories: 2,
     defeats: 0,
@@ -5424,7 +5424,7 @@ export const exampleData = [
     points: 11,
   },
   {
-    ID: 453,
+    id: 453,
     date: '2023-10-23',
     victories: 0,
     defeats: 0,
@@ -5436,7 +5436,7 @@ export const exampleData = [
     points: 11,
   },
   {
-    ID: 454,
+    id: 454,
     date: '2023-10-24',
     victories: 0,
     defeats: 0,
@@ -5448,7 +5448,7 @@ export const exampleData = [
     points: 11,
   },
   {
-    ID: 455,
+    id: 455,
     date: '2023-10-25',
     victories: 0,
     defeats: 0,
@@ -5460,7 +5460,7 @@ export const exampleData = [
     points: 11,
   },
   {
-    ID: 456,
+    id: 456,
     date: '2023-10-26',
     victories: 6,
     defeats: 12,
@@ -5472,7 +5472,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 457,
+    id: 457,
     date: '2023-10-27',
     victories: 8,
     defeats: 8,
@@ -5484,7 +5484,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 458,
+    id: 458,
     date: '2023-10-28',
     victories: 0,
     defeats: 0,
@@ -5496,7 +5496,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 459,
+    id: 459,
     date: '2023-10-29',
     victories: 7,
     defeats: 4,
@@ -5508,7 +5508,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 460,
+    id: 460,
     date: '2023-10-30',
     victories: 2,
     defeats: 1,
@@ -5520,7 +5520,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 461,
+    id: 461,
     date: '2023-10-31',
     victories: 4,
     defeats: 3,
@@ -5532,7 +5532,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 462,
+    id: 462,
     date: '2023-11-01',
     victories: 7,
     defeats: 8,
@@ -5544,7 +5544,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 463,
+    id: 463,
     date: '2023-11-02',
     victories: 0,
     defeats: 0,
@@ -5556,7 +5556,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 464,
+    id: 464,
     date: '2023-11-03',
     victories: 8,
     defeats: 5,
@@ -5568,7 +5568,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 465,
+    id: 465,
     date: '2023-11-04',
     victories: 4,
     defeats: 2,
@@ -5580,7 +5580,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 466,
+    id: 466,
     date: '2023-11-05',
     victories: 0,
     defeats: 0,
@@ -5592,7 +5592,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 467,
+    id: 467,
     date: '2023-11-06',
     victories: 3,
     defeats: 0,
@@ -5604,7 +5604,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 468,
+    id: 468,
     date: '2023-11-07',
     victories: 0,
     defeats: 0,
@@ -5616,7 +5616,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 469,
+    id: 469,
     date: '2023-11-08',
     victories: 0,
     defeats: 0,
@@ -5628,7 +5628,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 470,
+    id: 470,
     date: '2023-11-09',
     victories: 3,
     defeats: 7,
@@ -5640,7 +5640,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 471,
+    id: 471,
     date: '2023-11-10',
     victories: 0,
     defeats: 0,
@@ -5652,7 +5652,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 472,
+    id: 472,
     date: '2023-11-11',
     victories: 11,
     defeats: 11,
@@ -5664,7 +5664,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 473,
+    id: 473,
     date: '2023-11-12',
     victories: 5,
     defeats: 2,
@@ -5676,7 +5676,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 474,
+    id: 474,
     date: '2023-11-13',
     victories: 0,
     defeats: 0,
@@ -5688,7 +5688,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 475,
+    id: 475,
     date: '2023-11-14',
     victories: 0,
     defeats: 0,
@@ -5700,7 +5700,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 476,
+    id: 476,
     date: '2023-11-15',
     victories: 0,
     defeats: 0,
@@ -5712,7 +5712,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 477,
+    id: 477,
     date: '2023-11-16',
     victories: 9,
     defeats: 7,
@@ -5724,7 +5724,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 478,
+    id: 478,
     date: '2023-11-17',
     victories: 0,
     defeats: 0,
@@ -5736,7 +5736,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 479,
+    id: 479,
     date: '2023-11-18',
     victories: 5,
     defeats: 5,
@@ -5748,7 +5748,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 480,
+    id: 480,
     date: '2023-11-19',
     victories: 0,
     defeats: 0,
@@ -5760,7 +5760,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 481,
+    id: 481,
     date: '2023-11-20',
     victories: 0,
     defeats: 0,
@@ -5772,7 +5772,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 482,
+    id: 482,
     date: '2023-11-21',
     victories: 0,
     defeats: 0,
@@ -5784,7 +5784,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 483,
+    id: 483,
     date: '2023-11-22',
     victories: 4,
     defeats: 7,
@@ -5796,7 +5796,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 484,
+    id: 484,
     date: '2023-11-23',
     victories: 6,
     defeats: 5,
@@ -5808,7 +5808,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 485,
+    id: 485,
     date: '2023-11-24',
     victories: 0,
     defeats: 0,
@@ -5820,7 +5820,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 486,
+    id: 486,
     date: '2023-11-25',
     victories: 1,
     defeats: 1,
@@ -5832,7 +5832,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 487,
+    id: 487,
     date: '2023-11-26',
     victories: 6,
     defeats: 9,
@@ -5844,7 +5844,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 488,
+    id: 488,
     date: '2023-11-27',
     victories: 0,
     defeats: 0,
@@ -5856,7 +5856,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 489,
+    id: 489,
     date: '2023-11-28',
     victories: 0,
     defeats: 0,
@@ -5868,7 +5868,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 490,
+    id: 490,
     date: '2023-11-29',
     victories: 0,
     defeats: 0,
@@ -5880,7 +5880,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 491,
+    id: 491,
     date: '2023-11-30',
     victories: 2,
     defeats: 6,
@@ -5892,7 +5892,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 492,
+    id: 492,
     date: '2023-12-01',
     victories: 2,
     defeats: 1,
@@ -5904,7 +5904,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 493,
+    id: 493,
     date: '2023-12-02',
     victories: 0,
     defeats: 1,
@@ -5916,7 +5916,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 494,
+    id: 494,
     date: '2023-12-03',
     victories: 0,
     defeats: 0,
@@ -5928,7 +5928,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 495,
+    id: 495,
     date: '2023-12-04',
     victories: 0,
     defeats: 0,
@@ -5940,7 +5940,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 496,
+    id: 496,
     date: '2023-12-05',
     victories: 0,
     defeats: 0,
@@ -5952,7 +5952,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 497,
+    id: 497,
     date: '2023-12-06',
     victories: 0,
     defeats: 0,
@@ -5964,7 +5964,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 498,
+    id: 498,
     date: '2023-12-07',
     victories: 5,
     defeats: 6,
@@ -5976,7 +5976,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 499,
+    id: 499,
     date: '2023-12-08',
     victories: 0,
     defeats: 0,
@@ -5988,7 +5988,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 500,
+    id: 500,
     date: '2023-12-09',
     victories: 0,
     defeats: 0,
@@ -6000,7 +6000,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 501,
+    id: 501,
     date: '2023-12-10',
     victories: 5,
     defeats: 9,
@@ -6012,7 +6012,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 502,
+    id: 502,
     date: '2023-12-11',
     victories: 8,
     defeats: 15,
@@ -6024,7 +6024,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 503,
+    id: 503,
     date: '2023-12-12',
     victories: 0,
     defeats: 0,
@@ -6036,7 +6036,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 504,
+    id: 504,
     date: '2023-12-13',
     victories: 8,
     defeats: 2,
@@ -6048,7 +6048,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 505,
+    id: 505,
     date: '2023-12-14',
     victories: 3,
     defeats: 1,
@@ -6060,7 +6060,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 506,
+    id: 506,
     date: '2023-12-15',
     victories: 5,
     defeats: 0,
@@ -6072,7 +6072,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 507,
+    id: 507,
     date: '2023-12-16',
     victories: 10,
     defeats: 8,
@@ -6084,7 +6084,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 508,
+    id: 508,
     date: '2023-12-17',
     victories: 8,
     defeats: 4,
@@ -6096,7 +6096,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 509,
+    id: 509,
     date: '2023-12-18',
     victories: 5,
     defeats: 2,
@@ -6108,7 +6108,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 510,
+    id: 510,
     date: '2023-12-19',
     victories: 6,
     defeats: 4,
@@ -6120,7 +6120,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 511,
+    id: 511,
     date: '2023-12-20',
     victories: 0,
     defeats: 0,
@@ -6132,7 +6132,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 512,
+    id: 512,
     date: '2023-12-21',
     victories: 11,
     defeats: 22,
@@ -6144,7 +6144,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 513,
+    id: 513,
     date: '2023-12-22',
     victories: 0,
     defeats: 0,
@@ -6156,7 +6156,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 514,
+    id: 514,
     date: '2023-12-23',
     victories: 0,
     defeats: 0,
@@ -6168,7 +6168,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 515,
+    id: 515,
     date: '2023-12-24',
     victories: 3,
     defeats: 3,
@@ -6180,7 +6180,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 516,
+    id: 516,
     date: '2023-12-25',
     victories: 1,
     defeats: 6,
@@ -6192,7 +6192,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 517,
+    id: 517,
     date: '2023-12-26',
     victories: 2,
     defeats: 5,
@@ -6204,7 +6204,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 518,
+    id: 518,
     date: '2023-12-27',
     victories: 5,
     defeats: 6,
@@ -6216,7 +6216,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 519,
+    id: 519,
     date: '2023-12-28',
     victories: 0,
     defeats: 0,
@@ -6228,7 +6228,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 520,
+    id: 520,
     date: '2023-12-29',
     victories: 0,
     defeats: 0,
@@ -6240,7 +6240,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 521,
+    id: 521,
     date: '2023-12-30',
     victories: 6,
     defeats: 1,
@@ -6252,7 +6252,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 522,
+    id: 522,
     date: '2023-12-31',
     victories: 5,
     defeats: 4,
@@ -6264,7 +6264,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 523,
+    id: 523,
     date: '2024-01-01',
     victories: 3,
     defeats: 1,
@@ -6276,7 +6276,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 524,
+    id: 524,
     date: '2024-01-02',
     victories: 3,
     defeats: 0,
@@ -6288,7 +6288,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 525,
+    id: 525,
     date: '2024-01-03',
     victories: 2,
     defeats: 6,
@@ -6300,7 +6300,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 526,
+    id: 526,
     date: '2024-01-04',
     victories: 5,
     defeats: 3,
@@ -6312,7 +6312,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 527,
+    id: 527,
     date: '2024-01-05',
     victories: 3,
     defeats: 1,
@@ -6324,7 +6324,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 528,
+    id: 528,
     date: '2024-01-06',
     victories: 2,
     defeats: 1,
@@ -6336,7 +6336,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 529,
+    id: 529,
     date: '2024-01-07',
     victories: 0,
     defeats: 0,
@@ -6348,7 +6348,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 530,
+    id: 530,
     date: '2024-01-08',
     victories: 0,
     defeats: 0,
@@ -6360,7 +6360,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 531,
+    id: 531,
     date: '2024-01-09',
     victories: 0,
     defeats: 0,
@@ -6372,7 +6372,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 532,
+    id: 532,
     date: '2024-01-10',
     victories: 0,
     defeats: 0,
@@ -6384,7 +6384,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 533,
+    id: 533,
     date: '2024-01-11',
     victories: 0,
     defeats: 0,
@@ -6396,7 +6396,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 534,
+    id: 534,
     date: '2024-01-12',
     victories: 0,
     defeats: 0,
@@ -6408,7 +6408,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 535,
+    id: 535,
     date: '2024-01-13',
     victories: 0,
     defeats: 0,
@@ -6420,7 +6420,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 536,
+    id: 536,
     date: '2024-01-14',
     victories: 8,
     defeats: 6,
@@ -6432,7 +6432,7 @@ export const exampleData = [
     points: 10,
   },
   {
-    ID: 537,
+    id: 537,
     date: '2024-01-15',
     victories: 2,
     defeats: 2,
@@ -6444,7 +6444,7 @@ export const exampleData = [
     points: 11,
   },
   {
-    ID: 538,
+    id: 538,
     date: '2024-01-16',
     victories: 2,
     defeats: 5,
@@ -6456,7 +6456,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 539,
+    id: 539,
     date: '2024-01-17',
     victories: 7,
     defeats: 10,
@@ -6468,7 +6468,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 540,
+    id: 540,
     date: '2024-01-18',
     victories: 0,
     defeats: 0,
@@ -6480,7 +6480,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 541,
+    id: 541,
     date: '2024-01-19',
     victories: 0,
     defeats: 0,
@@ -6492,7 +6492,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 542,
+    id: 542,
     date: '2024-01-20',
     victories: 4,
     defeats: 2,
@@ -6504,7 +6504,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 543,
+    id: 543,
     date: '2024-01-21',
     victories: 0,
     defeats: 0,
@@ -6516,7 +6516,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 544,
+    id: 544,
     date: '2024-01-22',
     victories: 2,
     defeats: 3,
@@ -6528,7 +6528,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 545,
+    id: 545,
     date: '2024-01-23',
     victories: 0,
     defeats: 0,
@@ -6540,7 +6540,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 546,
+    id: 546,
     date: '2024-01-24',
     victories: 4,
     defeats: 1,
@@ -6552,7 +6552,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 547,
+    id: 547,
     date: '2024-01-25',
     victories: 2,
     defeats: 3,
@@ -6564,7 +6564,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 548,
+    id: 548,
     date: '2024-01-26',
     victories: 2,
     defeats: 3,
@@ -6576,7 +6576,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 549,
+    id: 549,
     date: '2024-01-27',
     victories: 0,
     defeats: 0,
@@ -6588,7 +6588,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 550,
+    id: 550,
     date: '2024-01-28',
     victories: 0,
     defeats: 0,
@@ -6600,7 +6600,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 551,
+    id: 551,
     date: '2024-01-29',
     victories: 0,
     defeats: 0,
@@ -6612,7 +6612,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 552,
+    id: 552,
     date: '2024-01-30',
     victories: 2,
     defeats: 3,
@@ -6624,7 +6624,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 553,
+    id: 553,
     date: '2024-01-31',
     victories: 4,
     defeats: 1,
@@ -6636,7 +6636,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 554,
+    id: 554,
     date: '2024-02-01',
     victories: 4,
     defeats: 1,
@@ -6648,7 +6648,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 555,
+    id: 555,
     date: '2024-02-02',
     victories: 3,
     defeats: 2,
@@ -6660,7 +6660,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 556,
+    id: 556,
     date: '2024-02-03',
     victories: 3,
     defeats: 2,
@@ -6672,7 +6672,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 557,
+    id: 557,
     date: '2024-02-04',
     victories: 0,
     defeats: 0,
@@ -6684,7 +6684,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 558,
+    id: 558,
     date: '2024-02-05',
     victories: 3,
     defeats: 3,
@@ -6696,7 +6696,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 559,
+    id: 559,
     date: '2024-02-06',
     victories: 3,
     defeats: 2,
@@ -6708,7 +6708,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 560,
+    id: 560,
     date: '2024-02-07',
     victories: 2,
     defeats: 3,
@@ -6720,7 +6720,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 561,
+    id: 561,
     date: '2024-02-08',
     victories: 0,
     defeats: 0,
@@ -6732,7 +6732,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 562,
+    id: 562,
     date: '2024-02-09',
     victories: 3,
     defeats: 2,
@@ -6744,7 +6744,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 563,
+    id: 563,
     date: '2024-02-10',
     victories: 1,
     defeats: 1,
@@ -6756,7 +6756,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 564,
+    id: 564,
     date: '2024-02-11',
     victories: 0,
     defeats: 0,
@@ -6768,7 +6768,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 565,
+    id: 565,
     date: '2024-02-12',
     victories: 8,
     defeats: 7,
@@ -6780,7 +6780,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 566,
+    id: 566,
     date: '2024-02-13',
     victories: 4,
     defeats: 1,
@@ -6792,7 +6792,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 567,
+    id: 567,
     date: '2024-02-14',
     victories: 0,
     defeats: 0,
@@ -6804,7 +6804,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 568,
+    id: 568,
     date: '2024-02-15',
     victories: 0,
     defeats: 0,
@@ -6816,7 +6816,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 569,
+    id: 569,
     date: '2024-02-16',
     victories: 3,
     defeats: 2,
@@ -6828,7 +6828,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 570,
+    id: 570,
     date: '2024-02-17',
     victories: 0,
     defeats: 0,
@@ -6840,7 +6840,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 571,
+    id: 571,
     date: '2024-02-18',
     victories: 5,
     defeats: 9,
@@ -6852,7 +6852,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 572,
+    id: 572,
     date: '2024-02-19',
     victories: 4,
     defeats: 2,
@@ -6864,7 +6864,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 573,
+    id: 573,
     date: '2024-02-20',
     victories: 1,
     defeats: 3,
@@ -6876,7 +6876,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 574,
+    id: 574,
     date: '2024-02-21',
     victories: 3,
     defeats: 1,
@@ -6888,7 +6888,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 575,
+    id: 575,
     date: '2024-02-22',
     victories: 4,
     defeats: 5,
@@ -6900,7 +6900,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 576,
+    id: 576,
     date: '2024-02-23',
     victories: 6,
     defeats: 7,
@@ -6912,7 +6912,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 577,
+    id: 577,
     date: '2024-02-24',
     victories: 2,
     defeats: 3,
@@ -6924,7 +6924,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 578,
+    id: 578,
     date: '2024-02-25',
     victories: 7,
     defeats: 13,
@@ -6936,7 +6936,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 579,
+    id: 579,
     date: '2024-02-26',
     victories: 6,
     defeats: 4,
@@ -6948,7 +6948,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 580,
+    id: 580,
     date: '2024-02-27',
     victories: 8,
     defeats: 3,
@@ -6960,7 +6960,7 @@ export const exampleData = [
     points: 6,
   },
   {
-    ID: 581,
+    id: 581,
     date: '2024-02-28',
     victories: 12,
     defeats: 9,
@@ -6972,7 +6972,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 582,
+    id: 582,
     date: '2024-02-29',
     victories: 3,
     defeats: 3,
@@ -6984,7 +6984,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 583,
+    id: 583,
     date: '2024-03-01',
     victories: 0,
     defeats: 0,
@@ -6996,7 +6996,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 584,
+    id: 584,
     date: '2024-03-02',
     victories: 8,
     defeats: 7,
@@ -7008,7 +7008,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 585,
+    id: 585,
     date: '2024-03-03',
     victories: 2,
     defeats: 2,
@@ -7020,7 +7020,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 586,
+    id: 586,
     date: '2024-03-04',
     victories: 3,
     defeats: 1,
@@ -7032,7 +7032,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 587,
+    id: 587,
     date: '2024-03-05',
     victories: 4,
     defeats: 0,
@@ -7044,7 +7044,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 588,
+    id: 588,
     date: '2024-03-06',
     victories: 2,
     defeats: 3,
@@ -7056,7 +7056,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 589,
+    id: 589,
     date: '2024-03-07',
     victories: 1,
     defeats: 2,
@@ -7068,7 +7068,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 590,
+    id: 590,
     date: '2024-03-08',
     victories: 0,
     defeats: 0,
@@ -7080,7 +7080,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 591,
+    id: 591,
     date: '2024-03-09',
     victories: 1,
     defeats: 2,
@@ -7092,7 +7092,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 592,
+    id: 592,
     date: '2024-03-10',
     victories: 2,
     defeats: 3,
@@ -7104,7 +7104,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 593,
+    id: 593,
     date: '2024-03-11',
     victories: 4,
     defeats: 1,
@@ -7116,7 +7116,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 594,
+    id: 594,
     date: '2024-03-12',
     victories: 2,
     defeats: 3,
@@ -7128,7 +7128,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 595,
+    id: 595,
     date: '2024-03-13',
     victories: 2,
     defeats: 1,
@@ -7140,7 +7140,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 596,
+    id: 596,
     date: '2024-03-14',
     victories: 11,
     defeats: 7,
@@ -7152,7 +7152,7 @@ export const exampleData = [
     points: 9,
   },
   {
-    ID: 597,
+    id: 597,
     date: '2024-03-15',
     victories: 3,
     defeats: 4,
@@ -7164,7 +7164,7 @@ export const exampleData = [
     points: 8,
   },
   {
-    ID: 598,
+    id: 598,
     date: '2024-03-16',
     victories: 0,
     defeats: 0,
@@ -7176,7 +7176,7 @@ export const exampleData = [
     points: 8,
   },
   {
-    ID: 599,
+    id: 599,
     date: '2024-03-17',
     victories: 0,
     defeats: 0,
@@ -7188,7 +7188,7 @@ export const exampleData = [
     points: 8,
   },
   {
-    ID: 600,
+    id: 600,
     date: '2024-03-18',
     victories: 4,
     defeats: 6,
@@ -7200,7 +7200,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 601,
+    id: 601,
     date: '2024-03-19',
     victories: 2,
     defeats: 3,
@@ -7212,7 +7212,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 602,
+    id: 602,
     date: '2024-03-20',
     victories: 0,
     defeats: 0,
@@ -7224,7 +7224,7 @@ export const exampleData = [
     points: 7,
   },
   {
-    ID: 603,
+    id: 603,
     date: '2024-03-21',
     victories: 2,
     defeats: 1,
@@ -7236,7 +7236,7 @@ export const exampleData = [
     points: 8,
   },
   {
-    ID: 604,
+    id: 604,
     date: '2024-03-22',
     victories: 0,
     defeats: 0,
@@ -7248,7 +7248,7 @@ export const exampleData = [
     points: 8,
   },
   {
-    ID: 605,
+    id: 605,
     date: '2024-03-23',
     victories: 9,
     defeats: 3,
@@ -7260,7 +7260,7 @@ export const exampleData = [
     points: 15,
   },
   {
-    ID: 606,
+    id: 606,
     date: '2024-03-24',
     victories: 2,
     defeats: 1,
@@ -7272,7 +7272,7 @@ export const exampleData = [
     points: 17,
   },
   {
-    ID: 607,
+    id: 607,
     date: '2024-03-25',
     victories: 0,
     defeats: 0,
@@ -7284,7 +7284,7 @@ export const exampleData = [
     points: 17,
   },
   {
-    ID: 608,
+    id: 608,
     date: '2024-03-26',
     victories: 8,
     defeats: 11,
@@ -7296,7 +7296,7 @@ export const exampleData = [
     points: 15,
   },
   {
-    ID: 609,
+    id: 609,
     date: '2024-03-27',
     victories: 0,
     defeats: 0,
@@ -7308,7 +7308,7 @@ export const exampleData = [
     points: 15,
   },
   {
-    ID: 610,
+    id: 610,
     date: '2024-03-28',
     victories: 3,
     defeats: 1,
@@ -7320,7 +7320,7 @@ export const exampleData = [
     points: 17,
   },
   {
-    ID: 611,
+    id: 611,
     date: '2024-03-29',
     victories: 3,
     defeats: 5,
@@ -7332,7 +7332,7 @@ export const exampleData = [
     points: 16,
   },
   {
-    ID: 612,
+    id: 612,
     date: '2024-03-30',
     victories: 0,
     defeats: 0,
@@ -7344,7 +7344,7 @@ export const exampleData = [
     points: 16,
   },
   {
-    ID: 613,
+    id: 613,
     date: '2024-03-31',
     victories: 0,
     defeats: 0,
@@ -7356,7 +7356,7 @@ export const exampleData = [
     points: 16,
   },
   {
-    ID: 614,
+    id: 614,
     date: '2024-04-01',
     victories: 3,
     defeats: 3,
@@ -7368,7 +7368,7 @@ export const exampleData = [
     points: 17,
   },
   {
-    ID: 615,
+    id: 615,
     date: '2024-04-02',
     victories: 6,
     defeats: 8,
@@ -7380,7 +7380,7 @@ export const exampleData = [
     points: 17,
   },
   {
-    ID: 616,
+    id: 616,
     date: '2024-04-03',
     victories: 3,
     defeats: 1,
@@ -7392,7 +7392,7 @@ export const exampleData = [
     points: 20,
   },
   {
-    ID: 617,
+    id: 617,
     date: '2024-04-04',
     victories: 0,
     defeats: 0,
@@ -7404,7 +7404,7 @@ export const exampleData = [
     points: 20,
   },
   {
-    ID: 618,
+    id: 618,
     date: '2024-04-05',
     victories: 0,
     defeats: 0,
@@ -7416,7 +7416,7 @@ export const exampleData = [
     points: 20,
   },
   {
-    ID: 619,
+    id: 619,
     date: '2024-04-06',
     victories: 0,
     defeats: 0,
@@ -7428,7 +7428,7 @@ export const exampleData = [
     points: 20,
   },
   {
-    ID: 620,
+    id: 620,
     date: '2024-04-07',
     victories: 0,
     defeats: 0,
@@ -7440,7 +7440,7 @@ export const exampleData = [
     points: 20,
   },
   {
-    ID: 621,
+    id: 621,
     date: '2024-04-08',
     victories: 0,
     defeats: 0,
@@ -7452,7 +7452,7 @@ export const exampleData = [
     points: 20,
   },
   {
-    ID: 622,
+    id: 622,
     date: '2024-04-09',
     victories: 0,
     defeats: 0,
@@ -7464,7 +7464,7 @@ export const exampleData = [
     points: 20,
   },
   {
-    ID: 623,
+    id: 623,
     date: '2024-04-10',
     victories: 0,
     defeats: 0,
@@ -7476,7 +7476,7 @@ export const exampleData = [
     points: 20,
   },
   {
-    ID: 624,
+    id: 624,
     date: '2024-04-11',
     victories: 0,
     defeats: 0,
@@ -7488,7 +7488,7 @@ export const exampleData = [
     points: 20,
   },
   {
-    ID: 625,
+    id: 625,
     date: '2024-04-12',
     victories: 1,
     defeats: 2,
@@ -7500,7 +7500,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 626,
+    id: 626,
     date: '2024-04-13',
     victories: 0,
     defeats: 0,
@@ -7512,7 +7512,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 627,
+    id: 627,
     date: '2024-04-14',
     victories: 0,
     defeats: 0,
@@ -7524,7 +7524,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 628,
+    id: 628,
     date: '2024-04-15',
     victories: 0,
     defeats: 0,
@@ -7536,7 +7536,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 629,
+    id: 629,
     date: '2024-04-16',
     victories: 8,
     defeats: 17,
@@ -7548,7 +7548,7 @@ export const exampleData = [
     points: 0,
   },
   {
-    ID: 630,
+    id: 630,
     date: '2024-04-17',
     victories: 4,
     defeats: 3,
@@ -7560,7 +7560,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 631,
+    id: 631,
     date: '2024-04-18',
     victories: 1,
     defeats: 2,
@@ -7572,7 +7572,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 632,
+    id: 632,
     date: '2024-04-19',
     victories: 0,
     defeats: 0,
@@ -7584,7 +7584,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 633,
+    id: 633,
     date: '2024-04-20',
     victories: 0,
     defeats: 0,
@@ -7596,7 +7596,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 634,
+    id: 634,
     date: '2024-04-21',
     victories: 2,
     defeats: 1,
@@ -7608,7 +7608,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 635,
+    id: 635,
     date: '2024-04-22',
     victories: 3,
     defeats: 2,
@@ -7620,7 +7620,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 636,
+    id: 636,
     date: '2024-04-23',
     victories: 8,
     defeats: 9,
@@ -7632,7 +7632,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 637,
+    id: 637,
     date: '2024-04-24',
     victories: 7,
     defeats: 8,
@@ -7644,7 +7644,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 638,
+    id: 638,
     date: '2024-04-25',
     victories: 0,
     defeats: 0,
@@ -7656,7 +7656,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 639,
+    id: 639,
     date: '2024-04-26',
     victories: 0,
     defeats: 0,
@@ -7668,7 +7668,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 640,
+    id: 640,
     date: '2024-04-27',
     victories: 0,
     defeats: 0,
@@ -7680,7 +7680,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 641,
+    id: 641,
     date: '2024-04-28',
     victories: 9,
     defeats: 15,
@@ -7692,7 +7692,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 642,
+    id: 642,
     date: '2024-04-29',
     victories: 2,
     defeats: 5,
@@ -7704,7 +7704,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 643,
+    id: 643,
     date: '2024-04-30',
     victories: 4,
     defeats: 3,
@@ -7716,7 +7716,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 644,
+    id: 644,
     date: '2024-05-01',
     victories: 9,
     defeats: 4,
@@ -7728,7 +7728,7 @@ export const exampleData = [
     points: 1,
   },
   {
-    ID: 645,
+    id: 645,
     date: '2024-05-02',
     victories: 2,
     defeats: 4,
@@ -7740,7 +7740,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 646,
+    id: 646,
     date: '2024-05-03',
     victories: 0,
     defeats: 0,
@@ -7752,7 +7752,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 647,
+    id: 647,
     date: '2024-05-04',
     victories: 0,
     defeats: 0,
@@ -7764,7 +7764,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 648,
+    id: 648,
     date: '2024-05-05',
     victories: 6,
     defeats: 10,
@@ -7776,7 +7776,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 649,
+    id: 649,
     date: '2024-05-06',
     victories: 6,
     defeats: 7,
@@ -7788,7 +7788,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 650,
+    id: 650,
     date: '2024-05-07',
     victories: 0,
     defeats: 0,
@@ -7800,7 +7800,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 651,
+    id: 651,
     date: '2024-05-08',
     victories: 0,
     defeats: 0,
@@ -7812,7 +7812,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 652,
+    id: 652,
     date: '2024-05-09',
     victories: 12,
     defeats: 9,
@@ -7824,7 +7824,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 653,
+    id: 653,
     date: '2024-05-10',
     victories: 3,
     defeats: 2,
@@ -7836,7 +7836,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 654,
+    id: 654,
     date: '2024-05-11',
     victories: 0,
     defeats: 0,
@@ -7848,7 +7848,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 655,
+    id: 655,
     date: '2024-05-12',
     victories: 0,
     defeats: 0,
@@ -7860,7 +7860,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 656,
+    id: 656,
     date: '2024-05-13',
     victories: 3,
     defeats: 2,
@@ -7872,7 +7872,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 657,
+    id: 657,
     date: '2024-05-14',
     victories: 5,
     defeats: 6,
@@ -7884,7 +7884,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 658,
+    id: 658,
     date: '2024-05-15',
     victories: 15,
     defeats: 13,
@@ -7896,7 +7896,7 @@ export const exampleData = [
     points: 3,
   },
   {
-    ID: 659,
+    id: 659,
     date: '2024-05-16',
     victories: 12,
     defeats: 11,
@@ -7908,7 +7908,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 660,
+    id: 660,
     date: '2024-05-17',
     victories: 0,
     defeats: 0,
@@ -7920,7 +7920,7 @@ export const exampleData = [
     points: 5,
   },
   {
-    ID: 661,
+    id: 661,
     date: '2024-05-18',
     victories: 1,
     defeats: 3,
@@ -7932,7 +7932,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 662,
+    id: 662,
     date: '2024-05-19',
     victories: 0,
     defeats: 0,
@@ -7944,7 +7944,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 663,
+    id: 663,
     date: '2024-05-20',
     victories: 13,
     defeats: 7,
@@ -7956,7 +7956,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 664,
+    id: 664,
     date: '2024-05-21',
     victories: 0,
     defeats: 0,
@@ -7968,7 +7968,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 665,
+    id: 665,
     date: '2024-05-22',
     victories: 0,
     defeats: 0,
@@ -7980,7 +7980,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 666,
+    id: 666,
     date: '2024-05-23',
     victories: 0,
     defeats: 0,
@@ -7992,7 +7992,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 667,
+    id: 667,
     date: '2024-05-24',
     victories: 0,
     defeats: 0,
@@ -8004,7 +8004,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 668,
+    id: 668,
     date: '2024-05-25',
     victories: 0,
     defeats: 0,
@@ -8016,7 +8016,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 669,
+    id: 669,
     date: '2024-05-26',
     victories: 0,
     defeats: 0,
@@ -8028,7 +8028,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 670,
+    id: 670,
     date: '2024-05-27',
     victories: 0,
     defeats: 0,
@@ -8040,7 +8040,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 671,
+    id: 671,
     date: '2024-05-28',
     victories: 0,
     defeats: 0,
@@ -8052,7 +8052,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 672,
+    id: 672,
     date: '2024-05-29',
     victories: 0,
     defeats: 0,
@@ -8064,7 +8064,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 673,
+    id: 673,
     date: '2024-05-30',
     victories: 0,
     defeats: 0,
@@ -8076,7 +8076,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 674,
+    id: 674,
     date: '2024-05-31',
     victories: 0,
     defeats: 0,
@@ -8088,7 +8088,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 675,
+    id: 675,
     date: '2024-06-01',
     victories: 0,
     defeats: 0,
@@ -8100,7 +8100,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 676,
+    id: 676,
     date: '2024-06-02',
     victories: 0,
     defeats: 0,
@@ -8112,7 +8112,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 677,
+    id: 677,
     date: '2024-06-03',
     victories: 0,
     defeats: 0,
@@ -8124,7 +8124,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 678,
+    id: 678,
     date: '2024-06-04',
     victories: 0,
     defeats: 0,
@@ -8136,7 +8136,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 679,
+    id: 679,
     date: '2024-06-05',
     victories: 0,
     defeats: 0,
@@ -8148,7 +8148,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 680,
+    id: 680,
     date: '2024-06-06',
     victories: 0,
     defeats: 0,
@@ -8160,7 +8160,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 681,
+    id: 681,
     date: '2024-06-07',
     victories: 0,
     defeats: 0,
@@ -8172,7 +8172,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 682,
+    id: 682,
     date: '2024-06-08',
     victories: 0,
     defeats: 0,
@@ -8184,7 +8184,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 683,
+    id: 683,
     date: '2024-06-09',
     victories: 0,
     defeats: 0,
@@ -8196,7 +8196,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 684,
+    id: 684,
     date: '2024-06-10',
     victories: 0,
     defeats: 0,
@@ -8208,7 +8208,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 685,
+    id: 685,
     date: '2024-06-11',
     victories: 0,
     defeats: 0,
@@ -8220,7 +8220,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 686,
+    id: 686,
     date: '2024-06-12',
     victories: 0,
     defeats: 0,
@@ -8232,7 +8232,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 687,
+    id: 687,
     date: '2024-06-13',
     victories: 0,
     defeats: 0,
@@ -8244,7 +8244,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 688,
+    id: 688,
     date: '2024-06-14',
     victories: 0,
     defeats: 0,
@@ -8256,7 +8256,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 689,
+    id: 689,
     date: '2024-06-15',
     victories: 0,
     defeats: 0,
@@ -8268,7 +8268,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 690,
+    id: 690,
     date: '2024-06-16',
     victories: 0,
     defeats: 0,
@@ -8280,7 +8280,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 691,
+    id: 691,
     date: '2024-06-17',
     victories: 0,
     defeats: 0,
@@ -8292,7 +8292,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 692,
+    id: 692,
     date: '2024-06-18',
     victories: 0,
     defeats: 0,
@@ -8304,7 +8304,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 693,
+    id: 693,
     date: '2024-06-19',
     victories: 0,
     defeats: 0,
@@ -8316,7 +8316,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 694,
+    id: 694,
     date: '2024-06-20',
     victories: 0,
     defeats: 0,
@@ -8328,7 +8328,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 695,
+    id: 695,
     date: '2024-06-21',
     victories: 0,
     defeats: 0,
@@ -8340,7 +8340,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 696,
+    id: 696,
     date: '2024-06-22',
     victories: 0,
     defeats: 0,
@@ -8352,7 +8352,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 697,
+    id: 697,
     date: '2024-06-23',
     victories: 0,
     defeats: 0,
@@ -8364,7 +8364,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 698,
+    id: 698,
     date: '2024-06-24',
     victories: 0,
     defeats: 0,
@@ -8376,7 +8376,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 699,
+    id: 699,
     date: '2024-06-25',
     victories: 0,
     defeats: 0,
@@ -8388,7 +8388,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 700,
+    id: 700,
     date: '2024-06-26',
     victories: 0,
     defeats: 0,
@@ -8400,7 +8400,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 701,
+    id: 701,
     date: '2024-06-27',
     victories: 0,
     defeats: 0,
@@ -8412,7 +8412,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 702,
+    id: 702,
     date: '2024-06-28',
     victories: 0,
     defeats: 0,
@@ -8424,7 +8424,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 703,
+    id: 703,
     date: '2024-06-29',
     victories: 0,
     defeats: 0,
@@ -8436,7 +8436,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 704,
+    id: 704,
     date: '2024-06-30',
     victories: 0,
     defeats: 0,
@@ -8448,7 +8448,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 705,
+    id: 705,
     date: '2024-07-01',
     victories: 0,
     defeats: 0,
@@ -8460,7 +8460,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 706,
+    id: 706,
     date: '2024-07-02',
     victories: 0,
     defeats: 0,
@@ -8472,7 +8472,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 707,
+    id: 707,
     date: '2024-07-03',
     victories: 0,
     defeats: 0,
@@ -8484,7 +8484,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 708,
+    id: 708,
     date: '2024-07-04',
     victories: 0,
     defeats: 0,
@@ -8496,7 +8496,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 709,
+    id: 709,
     date: '2024-07-05',
     victories: 0,
     defeats: 0,
@@ -8508,7 +8508,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 710,
+    id: 710,
     date: '2024-07-06',
     victories: 0,
     defeats: 0,
@@ -8520,7 +8520,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 711,
+    id: 711,
     date: '2024-07-07',
     victories: 0,
     defeats: 0,
@@ -8532,7 +8532,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 712,
+    id: 712,
     date: '2024-07-08',
     victories: 0,
     defeats: 0,
@@ -8544,7 +8544,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 713,
+    id: 713,
     date: '2024-07-09',
     victories: 0,
     defeats: 0,
@@ -8556,7 +8556,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 714,
+    id: 714,
     date: '2024-07-10',
     victories: 0,
     defeats: 0,
@@ -8568,7 +8568,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 715,
+    id: 715,
     date: '2024-07-11',
     victories: 0,
     defeats: 0,
@@ -8580,7 +8580,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 716,
+    id: 716,
     date: '2024-07-12',
     victories: 0,
     defeats: 0,
@@ -8592,7 +8592,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 717,
+    id: 717,
     date: '2024-07-13',
     victories: 0,
     defeats: 0,
@@ -8604,7 +8604,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 718,
+    id: 718,
     date: '2024-07-14',
     victories: 0,
     defeats: 0,
@@ -8616,7 +8616,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 719,
+    id: 719,
     date: '2024-07-15',
     victories: 0,
     defeats: 0,
@@ -8628,7 +8628,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 720,
+    id: 720,
     date: '2024-07-16',
     victories: 0,
     defeats: 0,
@@ -8640,7 +8640,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 721,
+    id: 721,
     date: '2024-07-17',
     victories: 3,
     defeats: 3,
@@ -8652,7 +8652,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 722,
+    id: 722,
     date: '2024-07-18',
     victories: 0,
     defeats: 0,
@@ -8664,7 +8664,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 723,
+    id: 723,
     date: '2024-07-19',
     victories: 0,
     defeats: 0,
@@ -8676,7 +8676,7 @@ export const exampleData = [
     points: 2,
   },
   {
-    ID: 724,
+    id: 724,
     date: '2024-07-20',
     victories: 3,
     defeats: 1,
@@ -8688,7 +8688,7 @@ export const exampleData = [
     points: 4,
   },
   {
-    ID: 725,
+    id: 725,
     date: '2024-07-21',
     victories: '',
     defeats: '',
@@ -8700,7 +8700,7 @@ export const exampleData = [
     points: '',
   },
   {
-    ID: 726,
+    id: 726,
     date: '2024-07-22',
     victories: '',
     defeats: '',
@@ -8712,7 +8712,7 @@ export const exampleData = [
     points: '',
   },
   {
-    ID: 727,
+    id: 727,
     date: '2024-07-23',
     victories: '',
     defeats: '',
@@ -8724,7 +8724,7 @@ export const exampleData = [
     points: '',
   },
   {
-    ID: 728,
+    id: 728,
     date: '2024-07-24',
     victories: '',
     defeats: '',
@@ -8736,7 +8736,7 @@ export const exampleData = [
     points: '',
   },
   {
-    ID: 729,
+    id: 729,
     date: '2024-07-25',
     victories: '',
     defeats: '',
@@ -8748,7 +8748,7 @@ export const exampleData = [
     points: '',
   },
   {
-    ID: 730,
+    id: 730,
     date: '2024-07-26',
     victories: '',
     defeats: '',

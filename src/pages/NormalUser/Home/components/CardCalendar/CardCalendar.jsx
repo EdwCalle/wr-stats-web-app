@@ -6,28 +6,20 @@ import './Calendar.css'
 import css from './CardCalendar.module.css'
 import { useState } from 'react'
 
-function CardCalendar({ data }) {
+function CardCalendar({ data, onSelectDate }) {
   const [currentDate, setCurrentDate] = useState(new Date())
-  const [currentMatch, setCurrentMatch] = useState({
-    victories: '00',
-    defeats: '00',
-  })
 
-  const onClick = (value) => {
-    const formatedDate = value.toISOString().split('T')[0]
-    // console.log(formatedDate)
-
-    const match = data.find((item) => item.date === formatedDate)
-    setCurrentMatch(match ? match : { victories: 's/n', defeats: 's/n' })
+  const onChange = (value) => {
     setCurrentDate(value)
+    onSelectDate(value)
   }
 
   return (
     <Card title='i dont remember the title'>
       <section className={css.cardCalendar}>
-        <CounterView data={currentMatch} />
+        <CounterView data={data} />
         <Calendar
-          onChange={(value) => onClick(value)}
+          onChange={(value) => onChange(value)}
           value={currentDate}
           calendarType='gregory'
           maxDate={new Date()}
