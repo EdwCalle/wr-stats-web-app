@@ -7,7 +7,7 @@ export const handleCloseModal = (id) => {
 export const getRange = (data) => {
   const { rankedTier, points } = data
   const ranges = rankedTier.split(' ')
-  console.log(ranges)
+  // console.log(ranges)
   const marks = points || 's/n'
   // if (!rankedTier) return { tier: 's/n', division: 's/n', marks: marks }
   if (ranges.length === 2)
