@@ -2,16 +2,24 @@ import Main from '@/components/Layout/Main'
 import CrudMatch from '@/components/modals/CrudMatch'
 import CardCalendar from './components/CardCalendar/CardCalendar'
 import CardDetails from './components/CardDetails/CardDetails'
-import { exampleData } from '@/dataWR'
+// import { exampleData } from '@/dataWR'
+import { useState } from 'react'
+import { getMatchByDate } from '@/services/Match'
 
 function HomePage() {
-  const random = Math.floor(Math.random() * 700)
+  // const random = Math.floor(Math.random() * 700)
   // console.log(random)
+  const [currentMatch, setCurrentMatch] = useState(getMatchByDate(new Date()))
+  const onSelectDate = (date) => {
+    const match = getMatchByDate(date)
+    setCurrentMatch(match)
+  }
+
   return (
     <Main title='HOME'>
       <CrudMatch />
-      <CardCalendar data={exampleData} />
-      <CardDetails data={exampleData[random]} />
+      <CardCalendar onSelectDate={onSelectDate} data={currentMatch} />
+      <CardDetails data={currentMatch} />
     </Main>
   )
 }

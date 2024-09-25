@@ -5,7 +5,10 @@ export const handleCloseModal = (id) => {
   document.getElementById(id).close()
 }
 export const getRange = (data) => {
+  // if (!data) return { tier: 's/n', division: 's/n', marks: 's/n' }
   const { rankedTier, points } = data
+  if (!rankedTier || rankedTier === null)
+    return { tier: 's/n', division: 's/n', marks: 's/n' }
   const ranges = rankedTier.split(' ')
   // console.log(ranges)
   const marks = points || 's/n'
