@@ -7,13 +7,11 @@ function CardDetails({ data }) {
   const { playedTime, totalMatches, diff, acumDiff } = data
 
   const getBGColor = (value, { bad, regular, normal }) => {
-    console.log(value)
     if (value <= bad) return css.bad
     if ((value > bad) & (value <= regular)) return css.regular
     if ((value > regular) & (value <= normal)) return css.normal
     if (value > normal) return css.good
   }
-  // console.log(data)
 
   return (
     <Card>
