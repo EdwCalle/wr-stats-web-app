@@ -17,7 +17,7 @@ function HomePage() {
 
   return (
     <Main title='HOME'>
-      <CrudMatch />
+      <CrudMatch data={currentMatch} />
       <CardCalendar onSelectDate={onSelectDate} data={currentMatch} />
       <CardDetails data={currentMatch} />
     </Main>
