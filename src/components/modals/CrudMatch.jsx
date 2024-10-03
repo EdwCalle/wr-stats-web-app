@@ -3,11 +3,12 @@ import Range from '../Range'
 import Counter from '../Counter'
 import Modal from './Modal'
 import Form from '../Form'
+import { useState } from 'react'
 function CrudMatch() {
   return (
     <Modal id={'crudMatch'}>
       <Form>
-        <fieldset className='modal-form-fieldset'>
+        <fieldset>
           <legend>Match info</legend>
           <h3>Season 14</h3>
           <span>12/12/2024</span>
