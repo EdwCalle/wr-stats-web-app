@@ -11,17 +11,17 @@ export const getMatchByDate = (date) => {
   //TO DO: If date doesnt exist, search match with the latest date from selected date, and
   const match = data.find((item) => item.date === formatedDate)
 
-  return match ? match : getNewMatch()
+  return match ? match : getNewMatch(formatedDate)
 
   // console.log(formatedDate)
 }
 
-export const getNewMatch = () => {
+export const getNewMatch = (formatedDate) => {
   return {
-    ID: 1,
-    date: null,
-    victories: null,
-    defeats: null,
+    ID: 0,
+    date: formatedDate,
+    victories: 0,
+    defeats: 0,
     totalMatches: null,
     diff: null,
     acumDiff: null,
