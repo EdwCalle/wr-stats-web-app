@@ -1,5 +1,10 @@
+import { Match } from '../../../../utils/interfaces/match.interface'
 import css from './MatchTable.module.css'
-function Table({ header, data }) {
+type TableProps = {
+  header: string[]
+  matches: Match[]
+}
+function Table({ header, matches }: TableProps) {
   return (
     <section className={css.section}>
       <table className={css.table}>
@@ -13,34 +18,34 @@ function Table({ header, data }) {
           </tr>
         </thead>
         <tbody>
-          {data.map((value, index) => (
+          {matches.map((value, index) => (
             <tr className={css.tr} key={index}>
-              <td className={css.td}>{value['ID']}</td>
-              <td className={css.td}>{value['date']}</td>
+              <td className={css.td}>{value['id']}</td>
+              <td className={css.td}>{value['date'].toISOString()}</td>
               <td className={css.td}>
                 <p className={`${css.infoValue} ${css.good}`}>
-                  {value['Victorias']}
+                  {value['victories']}
                 </p>
               </td>
               <td className={css.td}>
                 <p className={`${css.infoValue} ${css.default}`}>
-                  {value['Derrotas']}
+                  {value['defeats']}
                 </p>
               </td>
-              <td className={css.td}>{value['total_matchs']}</td>
+              <td className={css.td}>{value.totalMatches}</td>
               <td className={css.td}>
                 <p className={`${css.infoValue} ${css.regular}`}>
-                  {value['diff']}
+                  {value.diff}
                 </p>
               </td>
               <td className={css.td}>
                 <p className={`${css.infoValue} ${css.bad}`}>
-                  {value['acumDiff']}
+                  {value.acumDiff}
                 </p>
               </td>
-              <td className={css.td}>{value['playedTime']}</td>
-              <td className={css.td}>{value['Rango']}</td>
-              <td className={css.td}>{value['Puntos']}</td>
+              <td className={css.td}>{value.playedTime}</td>
+              <td className={css.td}>{value.range.rankedTier.tierName}</td>
+              <td className={css.td}>{value.range.marks}</td>
             </tr>
           ))}
         </tbody>

@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom'
 import css from './Navbar.module.css'
 function Navbar() {
-  const activateLink = (value) => {
+  const activateLink = (value: boolean) => {
     return value === true ? css.active : ''
   }
 

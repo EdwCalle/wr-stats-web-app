@@ -1,10 +1,14 @@
 import { useState } from 'react'
 import css from './MultipleSelect.module.css'
 import { RiArrowDropDownFill } from 'react-icons/ri'
-
-function MultipleSelect({ data, title = 'items', name = 'select' }) {
-  const [items, setItems] = useState([])
-  const onClick = (event, obj) => {
+import { Scales } from '../../utils/interfaces/season.interface'
+type MultipleSelectProps = {
+  filters: Scales[]
+  title: string
+}
+function MultipleSelect({ filters, title = 'items' }: MultipleSelectProps) {
+  const [items, setItems] = useState<Scales[]>([])
+  const onClick = (event: React.ChangeEvent<HTMLInputElement>, obj: Scales) => {
     if (event.target.checked) {
       setItems([...items, obj])
     } else {
@@ -20,13 +24,13 @@ function MultipleSelect({ data, title = 'items', name = 'select' }) {
         <input type='checkbox' className={css.dropdownButton} />
       </label>
       <div className={css.dropdownList} role='listbox'>
-        {data.map((obj) => (
+        {filters.map((obj) => (
           <label key={obj.value} className={css.dropdownItem} role='listitem'>
             <input
               type='checkbox'
               className={css.itemCheckbox}
               name={obj.label}
-              defaultChecked={items.includes(obj.value)} // this works if options has no values selected by default
+              defaultChecked={items.includes(obj)} // this works if options has no values selected by default
               onChange={(event) => onClick(event, obj)}
             />
             {obj.label}

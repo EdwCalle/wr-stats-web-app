@@ -1,59 +1,70 @@
-import { createChart } from "lightweight-charts";
-import { useEffect, useRef } from "react";
-import { exampleData } from "../../../../../../dataWR";
-export const ChartComponent = (props) => {
+import { createChart, ColorType } from 'lightweight-charts'
+import { useEffect, useRef } from 'react'
+type ChartComponentProps = {
+  data: { time: string; value: number }[]
+  className: string
+  colors?: {
+    backgroundColor?: string
+    lineColor?: string
+    textColor?: string
+    areaTopColor?: string
+    areaBottomColor?: string
+  }
+}
+export const ChartComponent = (props: ChartComponentProps) => {
   const {
     data,
     className,
     colors: {
-      backgroundColor = "transparent",
-      lineColor = "rgba( 239, 83, 80, 1)",
-      textColor = "white",
-      areaTopColor = "rgba( 239, 83, 80, 0.05)",
-      areaBottomColor = "rgba( 239, 83, 80, 0.28)",
+      backgroundColor = 'transparent',
+      lineColor = 'rgba( 239, 83, 80, 1)',
+      textColor = 'white',
+      areaTopColor = 'rgba( 239, 83, 80, 0.05)',
+      areaBottomColor = 'rgba( 239, 83, 80, 0.28)',
     } = {},
-  } = props;
+  } = props
 
-  const chartContainerRef = useRef();
+  const chartContainerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (!chartContainerRef.current) return
     const chart = createChart(chartContainerRef.current, {
       layout: {
-        background: { type: "solid", color: backgroundColor },
+        background: { type: ColorType.Solid, color: backgroundColor },
         textColor,
       },
-      width: chartContainerRef.current.clientWidth,
-      height: chartContainerRef.current.clientHeight,
+      width: chartContainerRef.current?.clientWidth ?? 0,
+      height: chartContainerRef.current?.clientHeight ?? 0,
       grid: {
         vertLines: { visible: false },
         horzLines: { visible: false },
       },
-    });
-    chart.timeScale().fitContent();
+    })
+    chart.timeScale().fitContent()
     const newSeries = chart.addAreaSeries({
       lineColor,
       topColor: areaTopColor,
       bottomColor: areaBottomColor,
-    });
+    })
     newSeries.priceScale().applyOptions({
       borderColor: backgroundColor,
-    });
+    })
 
-    newSeries.setData(data);
+    newSeries.setData(data)
 
     const handleResize = () => {
       chart.applyOptions({
-        width: chartContainerRef.current.clientWidth,
-        height: chartContainerRef.current.clientHeight,
-      });
-    };
-    window.addEventListener("resize", handleResize);
+        width: chartContainerRef.current?.clientWidth ?? 0,
+        height: chartContainerRef.current?.clientHeight ?? 0,
+      })
+    }
+    window.addEventListener('resize', handleResize)
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize)
 
-      chart.remove();
-    };
+      chart.remove()
+    }
   }, [
     data,
     backgroundColor,
@@ -61,19 +72,16 @@ export const ChartComponent = (props) => {
     textColor,
     areaTopColor,
     areaBottomColor,
-  ]);
+  ])
 
-  return <div className={className} ref={chartContainerRef} />;
-};
-function LineChart(props) {
-  const dataWR = exampleData.map((value) => ({
-    time: value.date,
-    value: value.acumDiff,
-  }));
+  return <div className={className} ref={chartContainerRef} />
+}
+
+function LineChart(props: ChartComponentProps) {
   return (
     <>
-      <ChartComponent {...props} data={dataWR}></ChartComponent>
+      <ChartComponent {...props}></ChartComponent>
     </>
-  );
+  )
 }
-export default LineChart;
+export default LineChart

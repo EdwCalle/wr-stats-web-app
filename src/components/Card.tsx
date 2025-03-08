@@ -1,12 +1,16 @@
+import { ReactNode } from 'react'
 import css from './Card.module.css'
-function Card(props) {
-  const {
-    title = 'some title',
-    subtitle = 'some subtitle',
-    children,
-
-    // footerTitle = 'footer title',
-  } = props
+type CardProps = {
+  title?: string
+  subtitle?: string
+  children: ReactNode
+}
+function Card({
+  title = 'some title',
+  subtitle = 'some subtitle',
+  children,
+  // footerTitle = 'footer title',
+}: CardProps) {
   return (
     <article className={css.card}>
       <header className={css.cardHeader}>

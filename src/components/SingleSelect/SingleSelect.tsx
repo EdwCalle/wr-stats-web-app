@@ -1,17 +1,18 @@
+import { Scales } from '../../utils/interfaces/season.interface'
 import css from './SingleSelect.module.css'
-
+type SingleSelectProps = {
+  scales: Scales[]
+  scaleSelected: string | number
+  name: string
+}
 function SingleSelect({
-  data,
-  valueSelected,
-
+  scales,
+  scaleSelected: valueSelected,
   name = 'radio',
-}) {
-  // const handleRadioChange = (event) => {
-  //   setSelectedOption(event.target.value)
-  // }
+}: SingleSelectProps) {
   return (
     <div className={css.filterContainer}>
-      {data.map(({ label, value }) => {
+      {scales.map(({ label, value }) => {
         return (
           <label className={css.filterLabel} key={value}>
             {label}

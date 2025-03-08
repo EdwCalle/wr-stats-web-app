@@ -1,33 +1,42 @@
-import Card from "../../../../../components/Card";
-import MultipleSelect from "../../../../../components/MultipleSelect/MultipleSelect";
-import SingleSelect from "../../../../../components/SingleSelect/SingleSelect";
-import { FILTER_SEASONS, SEASONS, TIME_SCALE } from "../../../../../constants";
-import LineChart from "./LineChart/LineChart";
-import css from "./CardChart.module.css";
+import Card from '../../../../../components/Card'
+import MultipleSelect from '../../../../../components/MultipleSelect/MultipleSelect'
+import SingleSelect from '../../../../../components/SingleSelect/SingleSelect'
+import {
+  FILTER_SEASONS,
+  SEASONS,
+  TIME_SCALE,
+} from '../../../../../utils/constants'
+import LineChart from './LineChart/LineChart'
+import css from './CardChart.module.css'
+import { exampleData } from '../../../../../utils/dataWR'
 
 function CardChart() {
+  const dataWR = exampleData.map((value) => ({
+    time: value.date,
+    value: value.acumDiff,
+  }))
   return (
     <Card>
-      <form action="">
+      <form action=''>
         <SingleSelect
-          name="filterMode"
-          data={FILTER_SEASONS}
-          valueSelected={FILTER_SEASONS[0].value}
+          name='filterMode'
+          scales={FILTER_SEASONS}
+          scaleSelected={FILTER_SEASONS[0].value}
         />
-        <MultipleSelect data={SEASONS} title="seasons" />
+        <MultipleSelect filters={SEASONS} title='seasons' />
       </form>
       <section className={css.chartContainer}>
-        <LineChart className={css.chart} />
+        <LineChart className={css.chart} data={dataWR} />
       </section>
 
       <form>
         <SingleSelect
-          name="timeScale"
-          data={TIME_SCALE}
-          valueSelected={TIME_SCALE[0].value}
+          name='timeScale'
+          scales={TIME_SCALE}
+          scaleSelected={TIME_SCALE[0].value}
         />
       </form>
     </Card>
-  );
+  )
 }
-export default CardChart;
+export default CardChart
