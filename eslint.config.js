@@ -1,42 +1,45 @@
-import js from '@eslint/js'
 import globals from 'globals'
-import react from 'eslint-plugin-react'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import eslinConfigPrettier from 'eslint-config-prettier'
+import pluginJs from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import pluginReact from 'eslint-plugin-react'
+import pluginPrettier from 'eslint-plugin-prettier'
+import configPrettier from 'eslint-config-prettier'
 
+/** @type {import('eslint').Linter.Config[]} */
 export default [
+  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   {
-    files: ['**/*.{js,jsx}'],
-    ignores: ['dist'],
     languageOptions: {
-      ecmaVersion: 2020,
-      globals: globals.browser,
-      parserOptions: {
-        ecmaVersion: 'latest',
-        ecmaFeatures: { jsx: true },
-        sourceType: 'module',
-      },
+      globals: { ...globals.browser, ...globals.node },
+      // parserOptions: { project: './tsconfig.json' },s
     },
-    settings: { react: { version: '18.3' } },
+  },
+  pluginJs.configs.recommended,
+  ...tseslint.configs.recommended,
+  pluginReact.configs.flat.recommended,
+  {
     plugins: {
-      react,
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
+      prettier: pluginPrettier,
     },
     rules: {
-      ...js.configs.recommended.rules,
-      ...react.configs.recommended.rules,
-      ...react.configs['jsx-runtime'].rules,
-      ...reactHooks.configs.recommended.rules,
-      ...eslinConfigPrettier.rules,
-      'no-unused-vars': 'warn',
-      'react/prop-types': 'warn',
-      'react/jsx-no-target-blank': 'off',
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      'prettier/prettier': 'error',
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 'off',
+      // '@typescript-eslint/explicit-function-return-type': 'error', // already in use
+    },
+  },
+  configPrettier, // Add prettier config (turns off conflicting rules)
+
+  {
+    settings: {
+      // 'import/resolver': {
+      //   typescript: {
+      //     project: 'tsconfig.json',
+      //   },
+      // },
+      react: {
+        version: 'detect', // Automatically detect React version
+      },
     },
   },
 ]

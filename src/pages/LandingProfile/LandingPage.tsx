@@ -1,9 +1,9 @@
-import Login from './components/Login'
-import Register from './components/Register'
-import css from './LandingPage.module.css'
+import Login from "./components/Login";
+import Register from "./components/Register";
+import css from "./LandingPage.module.css";
 function LandingPage() {
   return (
-    <div className='body-landingPage'>
+    <div className="body-landingPage">
       {/* the div sytles come from App.css */}
       <header>
         <h1 className={css.h1}>WR STATS</h1>
@@ -14,6 +14,6 @@ function LandingPage() {
         <Login />
       </main>
     </div>
-  )
+  );
 }
-export default LandingPage
+export default LandingPage;

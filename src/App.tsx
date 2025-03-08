@@ -1,9 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import LandingPage from './pages/LandingProfile/LandingPage'
 import UserProfile from './pages/NormalUser/UserProfile'
+import HomePage from './pages/NormalUser/Home/HomePage'
 import StatsPage from './pages/NormalUser/Stats/StatsPage'
 import MatchesPage from './pages/NormalUser/Matches/MatchesPage'
-import HomePage from './pages/NormalUser/Home/HomePage'
 import 'normalize.css'
 import './App.css'
 

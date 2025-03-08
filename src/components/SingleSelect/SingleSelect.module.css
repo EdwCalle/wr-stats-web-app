@@ -27,8 +27,8 @@
 
   white-space: nowrap;
 }
-.filterLabel:hover {
-}
+/* .filterLabel:hover {
+} */
 .filterRadio {
   visibility: hidden;
   position: absolute;

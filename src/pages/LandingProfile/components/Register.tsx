@@ -1,5 +1,5 @@
-import Form from '@/components/Form'
-import loginIMG from '@/assets/login_google.png'
+import loginIMG from '../../../assets/login_google.png'
+import Form from '../../../components/Form'
 function Register() {
   return (
     <Form action='player'>

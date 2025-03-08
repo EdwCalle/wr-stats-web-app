@@ -1,10 +1,14 @@
 import css from './Form.module.css'
-// import Card from '@/components/Card'
+import { ReactNode } from 'react'
+
 function Form({
-  title = 'title form card',
-  subtitle = 'subtitle form card',
+  // title = 'title form card',
+  // subtitle = 'subtitle form card',
   action = '/',
   children,
+}: {
+  action: string
+  children: ReactNode
 }) {
   return (
     // <Card title={title} subtitle={subtitle}>
@@ -14,4 +18,5 @@ function Form({
     // </Card>
   )
 }
+
 export default Form
