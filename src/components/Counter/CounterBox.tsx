@@ -1,31 +1,37 @@
-import Counter from "./Counter";
-import "./CounterBox.css";
+import { Match } from '../../utils/interfaces/match.interface'
+import Counter from './Counter'
+import './CounterBox.css'
 
-function CounterBox({ data, updateMatch }) {
-  const { victories, defeats } = data;
+type CounterBoxProps = {
+  match: Match
+  updateMatch: (victories: number, defeats: number) => void
+}
 
-  const updateVictories = (value) => {
-    updateMatch(value, defeats);
-  };
-  const updateDefeats = (value) => {
-    updateMatch(victories, value);
-  };
+function CounterBox({ match, updateMatch }: CounterBoxProps) {
+  const { victories, defeats } = match
+
+  const updateVictories = (value: number) => {
+    updateMatch(value, defeats)
+  }
+  const updateDefeats = (value: number) => {
+    updateMatch(victories, value)
+  }
 
   return (
-    <section className="counter">
+    <section className='counter'>
       <Counter
-        type="victory"
-        value={victories}
+        counterValue={victories}
         onChangeCounter={updateVictories}
-        title="wins"
+        title='victories'
+        type='victory'
       />
       <Counter
-        type="defeat"
-        value={defeats}
+        type='defeat'
+        counterValue={defeats}
         onChangeCounter={updateDefeats}
-        title="defeats"
+        title='defeats'
       />
     </section>
-  );
+  )
 }
-export default CounterBox;
+export default CounterBox

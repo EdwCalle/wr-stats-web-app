@@ -1,35 +1,45 @@
 // import imgDiamond from '@/assets/diamond.webp'
 import imgMark from '../assets/mark.webp'
 import css from './Range.module.css'
-import { imagesTier } from '../constants'
-function Range({ children, isRangeForm, data }) {
+import { imagesTier } from '../utils/constants'
+import { Range as RangeI } from '../utils/interfaces/match.interface'
+import { TierSeason, TierType } from '../utils/enums/rankedTier.enum'
+//TO DO
+//Change range interface name
+type RangeProps = {
+  range?: RangeI
+  isRangeForm: boolean
+  children?: React.ReactNode
+}
+const rangeTest: RangeI = {
+  divisionLvl: 1,
+  marks: 1,
+  rankedTierID: 'id123123',
+  rankedTier: {
+    id: 'asd',
+    maxMarks: 12,
+    minMarks: 0,
+    tierName: 'grandmaster',
+    tierSeason: TierSeason.DEFAULT,
+    tierType: TierType.MARK,
+  },
+}
+function Range({ children, isRangeForm, range = rangeTest }: RangeProps) {
   const classNameRange = isRangeForm === true ? css.rangeGrid : css.range
   // const value = data()
-  const { tier, division, marks } = data
-
-  // const getRange = () => {
-  //   console.log(RankedTier + ' espera')
-  //   const ranges = RankedTier.split(' ')
-  //   console.log(ranges)
-  //   const marks = points ? points : 's/n'
-  //   console.log('im markssss' + marks)
-  //   if (ranges.lenght == 2)
-  //     return { tier: ranges[0], division: ranges[1], marks: marks }
-  //   if (ranges.lenght == 1)
-  //     return { tier: ranges[0], division: 's/n', marks: marks }
-  //   else return { tier: 's/n', division: 's/n', marks: marks }
-  // }
+  const { rankedTier, divisionLvl, marks } = range
+  const tierName = rankedTier.tierName as keyof typeof imagesTier
 
   return (
     <section className={classNameRange}>
       {children}
       <img
         className={css.rangeImage}
-        src={imagesTier[tier]}
-        alt={`ranked image:${tier}`}
+        src={imagesTier[tierName]}
+        alt={`ranked image:${tierName}`}
       />
       <h5 className={css.rangeTier}>
-        {tier} {division}
+        {tierName} {divisionLvl}
       </h5>
       <p className={css.rangeDivision}>
         {marks} <img src={imgMark} className={css.rangeMarks} />

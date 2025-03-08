@@ -1,9 +1,11 @@
 import Modal from './Modal'
 import Form from '../Form'
-
-function Confirm({ titleMessage }) {
+type ConfirmProps = {
+  titleMessage: string
+}
+function Confirm({ titleMessage }: ConfirmProps) {
   return (
-    <Modal id={'confirm'} title={titleMessage}>
+    <Modal elementID={'confirm'} title={titleMessage}>
       <Form>
         <button>Ok</button>
         <button>Cancel</button>

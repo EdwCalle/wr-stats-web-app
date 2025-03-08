@@ -1,12 +1,12 @@
-import Main from "../../../components/Layout/Main";
-import CardChart from "./components/CardChart/CardChart";
+import Main from '../../../components/Layout/Main'
+import CardChart from './components/CardChart/CardChart'
 
 function StatsPage() {
   return (
-    <Main title="STATS">
+    <Main title='STATS'>
       <CardChart />
       <CardChart />
     </Main>
-  );
+  )
 }
-export default StatsPage;
+export default StatsPage

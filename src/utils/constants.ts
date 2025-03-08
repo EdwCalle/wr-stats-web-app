@@ -1,3 +1,5 @@
+import { Scales } from './interfaces/season.interface'
+
 export const TIER = [
   'bronze',
   'gold',
@@ -28,7 +30,8 @@ export const DIVISION = [
 //   'challenger',
 //   'soberano',
 // ]
-export const TIME_SCALE = [
+
+export const TIME_SCALE: Scales[] = [
   { label: 'day', value: 0 },
   { label: 'month', value: 1 },
   { label: 'year', value: 2 },
@@ -38,7 +41,7 @@ export const TIME_SCALE = [
   { label: '200 matchs', value: 6 },
   { label: '500 matchs', value: 7 },
 ]
-export const FILTER_SEASONS = [
+export const FILTER_SEASONS: Scales[] = [
   { label: 'compare', value: 'compare' },
   { label: 'by season', value: 'by_season' },
 ]

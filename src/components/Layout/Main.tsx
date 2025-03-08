@@ -1,6 +1,11 @@
+import { ReactNode } from 'react'
 import css from './Main.module.css'
-
-function Main({ title, children, isFullSize }) {
+type MainProps = {
+  title: string
+  children: ReactNode
+  isFullSize?: boolean
+}
+function Main({ title, children, isFullSize }: MainProps) {
   const sectionClassName = isFullSize
     ? `${css.section} ${css.fullSize}`
     : css.section
