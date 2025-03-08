@@ -1,7 +1,7 @@
 // import imgDiamond from '@/assets/diamond.webp'
-import imgMark from '@/assets/mark.webp'
+import imgMark from '../assets/mark.webp'
 import css from './Range.module.css'
-import { imagesTier } from '@/constants'
+import { imagesTier } from '../constants'
 function Range({ children, isRangeForm, data }) {
   const classNameRange = isRangeForm === true ? css.rangeGrid : css.range
   // const value = data()

@@ -1,17 +1,18 @@
-import css from './CardDetails.module.css'
-import Range from '@/components/Range'
-import Card from '@/components/Card'
-import { getRange, handleShowModal } from '@/logic'
+import Card from "../../../../../components/Card";
+import Range from "../../../../../components/Range";
+import { getRange, handleShowModal } from "../../../../../logic";
+import css from "./CardDetails.module.css";
+
 function CardDetails({ data }) {
-  const newData = getRange(data)
-  const { playedTime, totalMatches, diff, acumDiff } = data
+  const newData = getRange(data);
+  const { playedTime, totalMatches, diff, acumDiff } = data;
 
   const getBGColor = (value, { bad, regular, normal }) => {
-    if (value <= bad) return css.bad
-    if ((value > bad) & (value <= regular)) return css.regular
-    if ((value > regular) & (value <= normal)) return css.normal
-    if (value > normal) return css.good
-  }
+    if (value <= bad) return css.bad;
+    if ((value > bad) & (value <= regular)) return css.regular;
+    if ((value > regular) & (value <= normal)) return css.normal;
+    if (value > normal) return css.good;
+  };
 
   return (
     <Card>
@@ -24,13 +25,21 @@ function CardDetails({ data }) {
           <p className={`${css.infoValue} ${css.normal}`}>FILL</p>
           <p className={css.infoTitle}>Diff</p>
           <p
-            className={`${css.infoValue} ${getBGColor(diff, { bad: -2, regular: 0, normal: 2 })}`}
+            className={`${css.infoValue} ${getBGColor(diff, {
+              bad: -2,
+              regular: 0,
+              normal: 2,
+            })}`}
           >
             {diff}
           </p>
           <p className={css.infoTitle}>Diff Acumulated</p>
           <p
-            className={`${css.infoValue} ${getBGColor(acumDiff, { bad: -20, regular: 0, normal: 10 })}`}
+            className={`${css.infoValue} ${getBGColor(acumDiff, {
+              bad: -20,
+              regular: 0,
+              normal: 10,
+            })}`}
           >
             {acumDiff}
           </p>
@@ -42,12 +51,12 @@ function CardDetails({ data }) {
       </section>
       <button
         className={css.button}
-        onClick={() => handleShowModal('crudMatch')}
+        onClick={() => handleShowModal("crudMatch")}
       >
         edit wr stats
       </button>
     </Card>
-  )
+  );
 }
 
-export default CardDetails
+export default CardDetails;

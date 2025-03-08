@@ -1,11 +1,11 @@
 // import './Modal.module.css'
-import { CiUser } from 'react-icons/ci'
-import Modal from './Modal'
-import Form from '../Form'
+import { CiUser } from "react-icons/ci";
+import Form from "../Form";
+import Modal from "./Modal";
 function Settings() {
   return (
-    <Modal id={'settings'} title='Settings'>
-      <Form action=''>
+    <Modal id={"settings"} title="Settings">
+      <Form action="">
         <fieldset>
           <legend>Profile info</legend>
           <CiUser size={100}></CiUser>
@@ -15,20 +15,20 @@ function Settings() {
         <fieldset>
           <legend>Change Password</legend>
           <label>
-            Old Password <input type='password' name='oldPassword' />
+            Old Password <input type="password" name="oldPassword" />
           </label>
           <label>
             New Password
-            <input type='password' name='newPassword' />
+            <input type="password" name="newPassword" />
           </label>
           <label>
             Repeat new Password
-            <input type='password' name='r-newPassword' />
+            <input type="password" name="r-newPassword" />
           </label>
           <button>Reset Password</button>
         </fieldset>
       </Form>
     </Modal>
-  )
+  );
 }
-export default Settings
+export default Settings;

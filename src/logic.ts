@@ -1,8 +1,10 @@
-export const handleShowModal = (id) => {
-  document.getElementById(id).showModal()
+export const handleShowModal = (id: string): void => {
+  const modal = document.getElementById(id) as HTMLDialogElement | null
+  modal?.showModal()
 }
-export const handleCloseModal = (id) => {
-  document.getElementById(id).close()
+export const handleCloseModal = (id: string) => {
+  const modal = document.getElementById(id) as HTMLDialogElement | null
+  modal?.close()
 }
 export const getRange = (data) => {
   // if (!data) return { tier: 's/n', division: 's/n', marks: 's/n' }

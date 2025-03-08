@@ -3,6 +3,7 @@ function Counter({ value, onChangeCounter, type = 'victory', title }) {
 
   const onAdd = (event) => {
     event.preventDefault()
+
     // setCounter(counter + 1)
     onChangeCounter(value + 1)
   }

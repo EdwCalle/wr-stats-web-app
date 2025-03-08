@@ -1,28 +1,25 @@
-import { TIER, DIVISION } from '@/constants'
-import Range from '../Range'
+import Modal from "./Modal";
+import Form from "../Form";
+import { useEffect, useState } from "react";
+import CounterBox from "../Counter/CounterBox";
 
-import Modal from './Modal'
-import Form from '../Form'
-import { useEffect, useState } from 'react'
-import { getRange } from '@/logic'
-import CounterBox from '../Counter/CounterBox'
 function CrudMatch({ data }) {
-  const [newMatch, setnewMatch] = useState(data)
+  const [newMatch, setnewMatch] = useState(data);
   useEffect(() => {
-    setnewMatch(data)
-  }, [data])
+    setnewMatch(data);
+  }, [data]);
   // const newMatch = data
   // const rankedTier = getRange(data)
   const onChangeCounter = (victories, defeats) => {
-    const match = { ...newMatch }
-    match.victories = victories
-    match.defeats = defeats
-    setnewMatch(match)
-    console.log(match)
-  }
+    const match = { ...newMatch };
+    match.victories = victories;
+    match.defeats = defeats;
+    setnewMatch(match);
+    console.log(match);
+  };
 
   return (
-    <Modal id={'crudMatch'}>
+    <Modal id={"crudMatch"}>
       <Form>
         {/* <fieldset>
           <legend>Match info</legend>
@@ -73,6 +70,6 @@ function CrudMatch({ data }) {
         </fieldset>
       </Form>
     </Modal>
-  )
+  );
 }
-export default CrudMatch
+export default CrudMatch;
