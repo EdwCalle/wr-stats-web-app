@@ -1,5 +1,5 @@
 import Modal from './Modal'
-import Form from '../Form'
+import Form from '../Form/Form'
 import { useEffect, useState } from 'react'
 import CounterBox from '../Counter/CounterBox'
 import { Match } from '../../utils/interfaces/match.interface'

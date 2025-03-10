@@ -9,9 +9,8 @@ function LandingPage() {
         <h1 className={css.h1}>WR STATS</h1>
       </header>
       <main className={css.main}>
-        <Register />
-        <div></div>
         <Login />
+        <Register />
       </main>
     </div>
   )
