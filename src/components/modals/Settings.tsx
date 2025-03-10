@@ -1,6 +1,6 @@
 // import './Modal.module.css'
 import { CiUser } from 'react-icons/ci'
-import Form from '../Form'
+import Form from '../Form/Form'
 import Modal from './Modal'
 function Settings() {
   return (

@@ -1,5 +1,5 @@
 import Modal from './Modal'
-import Form from '../Form'
+import Form from '../Form/Form'
 type ConfirmProps = {
   titleMessage: string
 }
