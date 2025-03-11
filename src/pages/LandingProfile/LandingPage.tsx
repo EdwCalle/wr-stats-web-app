@@ -1,5 +1,4 @@
-import Login from './components/Login'
-import Register from './components/Register'
+import { Link } from 'react-router-dom'
 import css from './LandingPage.module.css'
 function LandingPage() {
   return (
@@ -9,8 +8,16 @@ function LandingPage() {
         <h1 className={css.h1}>WR STATS</h1>
       </header>
       <main className={css.main}>
-        <Login />
-        <Register />
+        <div>Hello, welcome to wrs stats</div>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+          doloribus aliquam consequatur provident commodi delectus saepe
+          molestias, a cupiditate sunt doloremque, animi blanditiis, dicta
+          itaque atque necessitatibus maxime quisquam placeat?
+        </div>
+        <Link to={'/login'}>sign in</Link>
+        <Link to={'/register'}>sign up</Link>
       </main>
     </div>
   )

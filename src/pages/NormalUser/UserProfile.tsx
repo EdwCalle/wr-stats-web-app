@@ -1,8 +1,12 @@
-import { Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from 'react-router-dom'
 import Header from '../../components/Layout/Header'
 import Navbar from '../../components/Layout/Navbar'
+import useAuth from '../../context/AuthContext'
 
 function UserProfile() {
+  const { currentUser, isLoading } = useAuth()
+  if (isLoading) return <div>its loading.....</div>
+  if (!currentUser && !isLoading) return <Navigate to={'../'} replace />
   return (
     <div className='body'>
       {/* the div sytles come from App.css */}
