@@ -74,3 +74,5 @@ export const imagesTier = {
   grandmaster: '/src/assets/ranks/grandmaster.webp',
   chanllenger: '/src/assets/ranks/challenger.webp',
 }
+
+export const API_BASE_URL = 'http://localhost:3000/api/v1'

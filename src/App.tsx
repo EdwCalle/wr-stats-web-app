@@ -6,24 +6,40 @@ import StatsPage from './pages/NormalUser/Stats/StatsPage'
 import MatchesPage from './pages/NormalUser/Matches/MatchesPage'
 import 'normalize.css'
 import './App.css'
+import { AuthProvider } from './context/AuthContext'
+import RegisterPage from './pages/LandingProfile/RegisterPage'
+import LoginPage from './pages/LandingProfile/LoginPage'
+import { ToastContainer } from 'react-toastify'
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/landingPage' element={<LandingPage />}></Route>
-          <Route path='/' element={<Navigate to='/landingPage' />} />
-          <Route path='/player' element={<Navigate to='/player/home' />} />
-          <Route path='/player/*' element={<UserProfile />}>
-            <Route path='home' element={<HomePage />}></Route>
-            <Route path='stats' element={<StatsPage />}></Route>
-            <Route path='sheets' element={<MatchesPage />}></Route>
-            <Route path='*' element={<>404 not found page</>}></Route>
-          </Route>
-          <Route path='*' element={<>404 not found page</>}></Route>
-        </Routes>
-      </BrowserRouter>
+      {' '}
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<LandingPage />} />
+
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/register' element={<RegisterPage />} />
+
+            <Route path='/player' element={<Navigate to='/player/home' />} />
+            <Route path='/player/*' element={<UserProfile />}>
+              <Route path='home' element={<HomePage />} />
+              <Route path='stats' element={<StatsPage />} />
+              <Route path='sheets' element={<MatchesPage />} />
+              <Route path='*' element={<>404 not found page</>} />
+            </Route>
+
+            <Route path='*' element={<>404 not found page</>} />
+          </Routes>
+        </BrowserRouter>
+        <ToastContainer
+          position='bottom-center'
+          theme='colored'
+          pauseOnHover={false}
+        />
+      </AuthProvider>
     </>
   )
 }

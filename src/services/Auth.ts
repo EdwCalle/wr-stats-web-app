@@ -1,0 +1,59 @@
+import { API_BASE_URL } from '../utils/constants'
+import { LoginCredentials } from '../utils/interfaces/credentials.interface'
+import { RegisterValues } from '../utils/validations/register-schema'
+
+const LOGIN_URL = `${API_BASE_URL}/auth/login`
+const REGISTER_URL = `${API_BASE_URL}/auth/register`
+const CHECK_TOKEN_URL = `${API_BASE_URL}/auth/profile`
+export async function loginRequest(loginCredentials: LoginCredentials) {
+  const response = await fetch(LOGIN_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(loginCredentials),
+  })
+  if (!response.ok) throw await response.json()
+  const result = await response.json()
+  saveToken(result.access_token)
+  return result
+}
+export async function registerRequest(registerValues: RegisterValues) {
+  const response = await fetch(REGISTER_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(registerValues),
+  })
+  if (!response.ok) throw await response.json()
+  const result = await response.json()
+  return result
+}
+export async function checkTokenRequest() {
+  const token = getAuthToken()
+  const response = await fetch(CHECK_TOKEN_URL, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+  })
+  if (!response.ok) throw await response.json()
+  return await response.json()
+}
+export function logut() {
+  removeToken()
+}
+
+async function saveToken(token: string) {
+  localStorage.setItem('authToken', token)
+}
+
+function getAuthToken(): string | null {
+  return localStorage.getItem('authToken')
+}
+
+function removeToken() {
+  localStorage.removeItem('authToken')
+}
