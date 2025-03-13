@@ -2,7 +2,7 @@ import Calendar from 'react-calendar'
 import './Calendar.css'
 import css from './CardCalendar.module.css'
 import { useState } from 'react'
-import Card from '../../../../../components/Card'
+import Card from '../../../../../Card/Card'
 import CounterView from './CounterView/CounterView'
 import { Match } from '../../../../../utils/interfaces/match.interface'
 

@@ -1,5 +1,5 @@
-import Card from '../../../../../components/Card'
-import Range from '../../../../../components/Range'
+import Card from '../../../../../Card/Card'
+import RangeInfo from '../../../../../components/Range/RangeInfo'
 import { Match } from '../../../../../utils/interfaces/match.interface'
 import { handleShowModal } from '../../../../../utils/logic'
 import css from './CardDetails.module.css'
@@ -21,7 +21,7 @@ function CardDetails({ match }: CardDetailsProps) {
   return (
     <Card title='Card Details'>
       <section className={css.content}>
-        <Range range={match.range} isRangeForm={false} />
+        <RangeInfo range={match.range} isRangeForm={false} />
         <section className={css.info}>
           <p className={css.infoTitle}>Total Played Games</p>
           <p className={`${css.infoValue}`}>{totalMatches}</p>

@@ -61,6 +61,7 @@ export const imagesTier = {
   master: '/src/assets/ranks/master.webp',
   grandmaster: '/src/assets/ranks/grandmaster.webp',
   chanllenger: '/src/assets/ranks/challenger.webp',
+  default: '/src/assets/ranks/default.jpeg',
 }
 // TO DO
 // fix ts problems ❌

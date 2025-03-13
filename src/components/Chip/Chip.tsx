@@ -1,13 +1,8 @@
-import { RangeI } from '../../utils/interfaces/match.interface'
 import css from './Chip.module.css'
 //TO DO
 //(global) change type props to interface
 // create styles for ChipType
-export enum ChipType {
-  default,
-  extended,
-  range,
-}
+
 export enum ChipColor {
   default,
   good,
@@ -17,15 +12,10 @@ export enum ChipColor {
 }
 
 interface ChipProps {
-  value: string | number | boolean | RangeI | null
-  type?: ChipType
+  value: string | number | null | boolean
   color?: ChipColor
 }
-const cssTypes: { [key in ChipType]: string } = {
-  [ChipType.default]: '',
-  [ChipType.extended]: css.extended,
-  [ChipType.range]: css.extended,
-}
+
 const cssColors: { [key in ChipColor]: string } = {
   [ChipColor.default]: css.default,
   [ChipColor.good]: css.good,
@@ -33,16 +23,7 @@ const cssColors: { [key in ChipColor]: string } = {
   [ChipColor.regular]: css.regular,
   [ChipColor.bad]: css.bad,
 }
-function Chip({
-  value,
-  type = ChipType.default,
-  color = ChipColor.default,
-}: ChipProps) {
-  return (
-    <output
-      className={`${css.chip} ${cssTypes[type]} ${cssColors[color]}`}
-    ></output>
-  )
+function Chip({ value, color = ChipColor.default }: ChipProps) {
+  return <output className={`${css.chip} ${cssColors[color]}`}>{value}</output>
 }
-
 export default Chip
