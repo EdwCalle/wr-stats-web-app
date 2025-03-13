@@ -7,7 +7,7 @@ export interface Match {
   victories: number
   defeats: number
   seasonProfileID: string
-  range: RangeI
+  range: Ranges
   //TO DO
   // extra fields
   id: number
@@ -23,7 +23,7 @@ export interface Match {
 // }
 //TO DO
 //Fix conflic with global name Range
-export interface RangeI {
+export interface Ranges {
   rankedTierID: string
   divisionLvl: number
   marks: number

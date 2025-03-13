@@ -27,7 +27,7 @@
 
   grid-area: 2 /2 /3/ 3;
 }
-.rangeDivision {
+.rangeViewMarks {
   font-size: 16px;
   color: var(--secondary-color);
   margin: 0;

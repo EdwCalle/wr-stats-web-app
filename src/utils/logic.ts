@@ -19,3 +19,7 @@ export function formatedDate(isoDate: string): string {
   const date = new Date(isoDate)
   return date.toISOString().substring(0, 10)
 }
+
+export function getTableHeaders(params: object) {
+  return Object.keys(params)
+}
