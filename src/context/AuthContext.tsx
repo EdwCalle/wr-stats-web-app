@@ -3,7 +3,7 @@ import {
   checkTokenRequest,
   loginRequest,
   registerRequest,
-} from '../services/Auth'
+} from '../services/auth.service'
 import { User } from '../utils/interfaces/user.interface'
 import { LoginValues } from '../utils/validations/login-schema'
 import { useEffect } from 'react'

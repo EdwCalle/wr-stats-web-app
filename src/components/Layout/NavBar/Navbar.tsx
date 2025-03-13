@@ -8,13 +8,16 @@ function Navbar() {
   return (
     <nav className={css.nav}>
       <NavLink to='home' className={({ isActive }) => activateLink(isActive)}>
-        HOME
+        DASHBOARD
       </NavLink>
       <NavLink to='stats' className={({ isActive }) => activateLink(isActive)}>
         STATS
       </NavLink>
-      <NavLink to='sheets' className={({ isActive }) => activateLink(isActive)}>
-        SHEETS
+      <NavLink
+        to='matches'
+        className={({ isActive }) => activateLink(isActive)}
+      >
+        MATCHES
       </NavLink>
     </nav>
   )

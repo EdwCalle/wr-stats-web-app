@@ -2,7 +2,7 @@
 import imgMark from '../assets/mark.webp'
 import css from './Range.module.css'
 import { imagesTier } from '../utils/constants'
-import { Range as RangeI } from '../utils/interfaces/match.interface'
+import { RangeI as RangeI } from '../utils/interfaces/match.interface'
 import { TierSeason, TierType } from '../utils/enums/rankedTier.enum'
 //TO DO
 //Change range interface name

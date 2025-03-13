@@ -1,17 +1,17 @@
 import { API_BASE_URL } from '../utils/constants'
-import { LoginCredentials } from '../utils/interfaces/credentials.interface'
+import { LoginValues } from '../utils/validations/login-schema'
 import { RegisterValues } from '../utils/validations/register-schema'
 
 const LOGIN_URL = `${API_BASE_URL}/auth/login`
 const REGISTER_URL = `${API_BASE_URL}/auth/register`
 const CHECK_TOKEN_URL = `${API_BASE_URL}/auth/profile`
-export async function loginRequest(loginCredentials: LoginCredentials) {
+export async function loginRequest(loginValues: LoginValues) {
   const response = await fetch(LOGIN_URL, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(loginCredentials),
+    body: JSON.stringify(loginValues),
   })
   if (!response.ok) throw await response.json()
   const result = await response.json()
@@ -50,7 +50,7 @@ async function saveToken(token: string) {
   localStorage.setItem('authToken', token)
 }
 
-function getAuthToken(): string | null {
+export function getAuthToken(): string | null {
   return localStorage.getItem('authToken')
 }
 

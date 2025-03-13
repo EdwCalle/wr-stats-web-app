@@ -19,18 +19,6 @@ export const DIVISION = [
   'IV',
 ]
 
-// export const MARK = [
-//   'bronze',
-//   'gold',
-//   // '',
-//   'emerald',
-//   'diamond',
-//   'master',
-//   'grand master',
-//   'challenger',
-//   'soberano',
-// ]
-
 export const TIME_SCALE: Scales[] = [
   { label: 'day', value: 0 },
   { label: 'month', value: 1 },
@@ -74,5 +62,7 @@ export const imagesTier = {
   grandmaster: '/src/assets/ranks/grandmaster.webp',
   chanllenger: '/src/assets/ranks/challenger.webp',
 }
-
-export const API_BASE_URL = 'http://localhost:3000/api/v1'
+// TO DO
+// fix ts problems ❌
+export const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api/v1'

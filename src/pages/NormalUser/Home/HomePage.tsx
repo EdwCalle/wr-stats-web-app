@@ -1,10 +1,10 @@
 // import { exampleData } from '@/dataWR'
 import { useState } from 'react'
-import Main from '../../../components/Layout/Main'
+import Main from '../../../components/Layout/Main/Main'
 import CrudMatch from '../../../components/modals/CrudMatch'
 import CardCalendar from './components/CardCalendar/CardCalendar'
 import CardDetails from './components/CardDetails/CardDetails'
-import { getMatchByDate } from '../../../services/Match'
+import { getMatchByDate } from '../../../services/match.service'
 
 function HomePage() {
   const [currentMatch, setCurrentMatch] = useState(getMatchByDate(new Date()))

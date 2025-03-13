@@ -27,7 +27,7 @@ function App() {
             <Route path='/player/*' element={<UserProfile />}>
               <Route path='home' element={<HomePage />} />
               <Route path='stats' element={<StatsPage />} />
-              <Route path='sheets' element={<MatchesPage />} />
+              <Route path='matches' element={<MatchesPage />} />
               <Route path='*' element={<>404 not found page</>} />
             </Route>
 
