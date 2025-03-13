@@ -1,0 +1,35 @@
+/* repeated, PLEASE REDUCE CODE */
+
+.chip {
+  text-align: center;
+  width: 40px;
+  margin: 0 auto;
+  color: var(--primary-color);
+  background-color: var(--third-color);
+  padding: 4px;
+  border-radius: 20px;
+  /* border: 1px solid; */
+}
+
+/* types */
+
+.extended {
+  width: auto;
+}
+
+/* Colors */
+.default {
+  background-color: #86909e;
+}
+.good {
+  background-color: green;
+}
+.neutral {
+  background-color: aqua;
+}
+.regular {
+  background-color: orange;
+}
+.bad {
+  background-color: red;
+}

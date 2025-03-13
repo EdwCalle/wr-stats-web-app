@@ -7,7 +7,7 @@ export interface Match {
   victories: number
   defeats: number
   seasonProfileID: string
-  range: Range
+  range: RangeI
   //TO DO
   // extra fields
   id: number
@@ -17,7 +17,13 @@ export interface Match {
   diff: number
   acumDiff: number
 }
-export interface Range {
+// export type MatchKeys = keyof Match
+// export function getKeys(obj: Match): (keyof MatchKeys)[] {
+//   return Object.keys(obj) as (keyof MatchKeys)[]
+// }
+//TO DO
+//Fix conflic with global name Range
+export interface RangeI {
   rankedTierID: string
   divisionLvl: number
   marks: number
@@ -25,6 +31,7 @@ export interface Range {
   //Extra fields
   rankedTier: rankedTier
 }
+
 export const exampleMatch: Match = {
   id: 1,
   _id: 'asdasd',

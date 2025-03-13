@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  max-height: 600px;
+  max-height: 100%;
   overflow: auto;
   text-align: end;
   font-size: small;
@@ -35,31 +35,4 @@
 .td {
   white-space: nowrap;
   padding: 5px 20px;
-}
-
-/* repeated, PLEASE REDUCE CODE */
-.infoValue {
-  text-align: center;
-  width: 40px;
-  margin: 0 auto;
-  color: var(--primary-color);
-  background-color: var(--third-color);
-  padding: 4px;
-  border-radius: 20px;
-  /* border: 1px solid; */
-}
-.infoValue.default {
-  background-color: #86909e;
-}
-.infoValue.good {
-  background-color: green;
-}
-.infoValue.normal {
-  background-color: aqua;
-}
-.infoValue.regular {
-  background-color: orange;
-}
-.infoValue.bad {
-  background-color: red;
 }

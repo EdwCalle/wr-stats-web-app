@@ -1,4 +1,4 @@
-import Main from '../../../components/Layout/Main'
+import Main from '../../../components/Layout/Main/Main'
 import CardChart from './components/CardChart/CardChart'
 
 function StatsPage() {
