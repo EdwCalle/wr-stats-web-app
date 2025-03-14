@@ -1,4 +1,4 @@
-import Card from '../../../../../Card/Card'
+import Card from '../../../../../components/Card/Card'
 import MultipleSelect from '../../../../../components/MultipleSelect/MultipleSelect'
 import SingleSelect from '../../../../../components/SingleSelect/SingleSelect'
 import {

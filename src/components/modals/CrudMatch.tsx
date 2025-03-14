@@ -2,7 +2,7 @@ import Modal from './Modal'
 import Form from '../Form/Form'
 import { useEffect, useState } from 'react'
 import CounterBox from '../Counter/CounterBox'
-import { Match } from '../../utils/interfaces/match.interface'
+import { Match } from '../../services/Match/match.model'
 
 type CrudMatchProps = {
   match: Match

@@ -2,9 +2,9 @@ import Calendar from 'react-calendar'
 import './Calendar.css'
 import css from './CardCalendar.module.css'
 import { useState } from 'react'
-import Card from '../../../../../Card/Card'
+import Card from '../../../../../components/Card/Card'
 import CounterView from './CounterView/CounterView'
-import { Match } from '../../../../../utils/interfaces/match.interface'
+import { Match } from '../../../../../services/Match/match.model'
 
 type CardCalendarProps = {
   match: Match

@@ -15,11 +15,6 @@ export function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-export function formatedDate(isoDate: string): string {
-  const date = new Date(isoDate)
-  return date.toISOString().substring(0, 10)
-}
-
 export function getTableHeaders(params: object) {
   return Object.keys(params)
 }

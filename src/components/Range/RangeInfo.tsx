@@ -2,7 +2,7 @@
 import imgMark from '../../assets/mark.webp'
 import css from './RangeInfo.module.css'
 import { imagesTier } from '../../utils/constants'
-import { Ranges } from '../../utils/interfaces/match.interface'
+import { Range } from '../../services/Match/match.model'
 import { TierSeason, TierType } from '../../utils/enums/rankedTier.enum'
 //TO DO
 //Change range interface name
@@ -12,10 +12,10 @@ export enum RangeInfoType {
   form,
 }
 type RangeInfoProps = {
-  range?: Ranges
+  range?: Range
   type: RangeInfoType
 }
-const rangeTest: Ranges = {
+const rangeTest: Range = {
   divisionLvl: 1,
   marks: 1,
   rankedTierID: 'id123123',
