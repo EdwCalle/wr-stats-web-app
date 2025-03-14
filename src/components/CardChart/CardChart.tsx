@@ -1,20 +1,19 @@
-import Card from '../../../../../components/Card/Card'
-import MultipleSelect from '../../../../../components/MultipleSelect/MultipleSelect'
-import SingleSelect from '../../../../../components/SingleSelect/SingleSelect'
+// import LineChart from './LineChart/LineChart'
+import css from './CardChart.module.css'
+import Card from '../Card/Card'
+import SingleSelect from '../SingleSelect/SingleSelect'
 import {
   FILTER_SEASONS,
   SEASONS,
   TIME_SCALE,
-} from '../../../../../utils/constants'
-import LineChart from './LineChart/LineChart'
-import css from './CardChart.module.css'
-import { exampleData } from '../../../../../utils/dataWR'
+} from '../../utils/constants/constants'
+import MultipleSelect from '../MultipleSelect/MultipleSelect'
 
 function CardChart() {
-  const dataWR = exampleData.map((value) => ({
-    time: value.date,
-    value: value.acumDiff,
-  }))
+  // const dataWR = exampleData.map((value) => ({
+  //   time: value.date,
+  //   value: value.acumDiff,
+  // }))
   return (
     <Card>
       <form action=''>
@@ -26,7 +25,7 @@ function CardChart() {
         <MultipleSelect filters={SEASONS} title='seasons' />
       </form>
       <section className={css.chartContainer}>
-        <LineChart className={css.chart} data={dataWR} />
+        {/* <LineChart className={css.chart} data={dataWR} /> */}
       </section>
 
       <form>

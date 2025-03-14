@@ -3,7 +3,8 @@
 .chip {
   text-align: center;
   width: 40px;
-  margin: 0 auto;
+  display: block;
+  /* margin: 0 auto; */
   color: var(--primary-color);
   background-color: var(--third-color);
   padding: 4px;

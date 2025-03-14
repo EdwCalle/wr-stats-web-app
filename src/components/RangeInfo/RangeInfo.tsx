@@ -1,9 +1,9 @@
 // import imgDiamond from '@/assets/diamond.webp'
 import imgMark from '../../assets/mark.webp'
 import css from './RangeInfo.module.css'
-import { imagesTier } from '../../utils/constants'
-import { Range } from '../../services/Match/match.model'
 import { TierSeason, TierType } from '../../utils/enums/rankedTier.enum'
+import { imagesTier } from '../../utils/constants/constants'
+import { Ranged } from '../../models/match.model'
 //TO DO
 //Change range interface name
 export enum RangeInfoType {
@@ -12,15 +12,15 @@ export enum RangeInfoType {
   form,
 }
 type RangeInfoProps = {
-  range?: Range
+  range?: Ranged
   type: RangeInfoType
 }
-const rangeTest: Range = {
+const rangeTest: Ranged = {
   divisionLvl: 1,
   marks: 1,
   rankedTierID: 'id123123',
   rankedTier: {
-    id: 'asd',
+    _id: 'asd',
     maxMarks: 12,
     minMarks: 0,
     tierName: 'grandmaster',

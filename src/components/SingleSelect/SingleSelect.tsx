@@ -1,4 +1,4 @@
-import { Scales } from '../../utils/interfaces/season.interface'
+import { Scales } from '../../utils/interfaces/scales.interface'
 import css from './SingleSelect.module.css'
 type SingleSelectProps = {
   scales: Scales[]

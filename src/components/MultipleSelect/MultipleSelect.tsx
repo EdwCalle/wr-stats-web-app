@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import css from './MultipleSelect.module.css'
 import { RiArrowDropDownFill } from 'react-icons/ri'
-import { Scales } from '../../utils/interfaces/season.interface'
+import { Scales } from '../../utils/interfaces/scales.interface'
 type MultipleSelectProps = {
   filters: Scales[]
   title: string
