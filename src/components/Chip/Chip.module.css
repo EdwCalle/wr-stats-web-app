@@ -4,12 +4,12 @@
   text-align: center;
   width: 40px;
   display: block;
-  /* margin: 0 auto; */
+  margin: auto;
+  margin-right: 0;
   color: var(--primary-color);
   background-color: var(--third-color);
   padding: 4px;
-  border-radius: 20px;
-  /* border: 1px solid; */
+  border-radius: 10px;
 }
 
 /* types */
@@ -23,7 +23,8 @@
   background-color: #86909e;
 }
 .good {
-  background-color: green;
+  /* background-color: green; */
+  background: rgba(0, 255, 83, 1) 62%;
 }
 .neutral {
   background-color: aqua;
@@ -33,4 +34,7 @@
 }
 .bad {
   background-color: red;
+}
+.none {
+  background-color: #ffffff00;
 }

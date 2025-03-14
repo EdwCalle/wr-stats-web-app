@@ -9,6 +9,7 @@ export enum ChipColor {
   neutral,
   regular,
   bad,
+  none,
 }
 
 interface ChipProps {
@@ -22,6 +23,7 @@ const cssColors: { [key in ChipColor]: string } = {
   [ChipColor.neutral]: css.neutral,
   [ChipColor.regular]: css.regular,
   [ChipColor.bad]: css.bad,
+  [ChipColor.none]: css.none,
 }
 function Chip({ value, color = ChipColor.default }: ChipProps) {
   return <output className={`${css.chip} ${cssColors[color]}`}>{value}</output>

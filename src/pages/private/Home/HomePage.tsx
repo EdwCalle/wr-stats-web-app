@@ -2,7 +2,7 @@
 // import { getMatchByDate } from '../../../services/match.service'
 import { exampleMatch, Match } from '@/models/match.model'
 import Card from '@components/Card/Card'
-import Chip, { ChipColor } from '@components/Chip/Chip'
+import { ChipColor } from '@components/Chip/Chip'
 import Details from '@components/Details/Details'
 import Main from '@components/Layout/Main/Main'
 import { useState } from 'react'
@@ -21,18 +21,37 @@ function HomePage() {
   return (
     <Main title='HOME'>
       <Card title='Match Details'>
-        <Chip value={currentMatch.victories} color={ChipColor.good} />
         <Details
           data={[
             {
-              label: 'test',
+              label: 'victories',
               chipColor: ChipColor.good,
-              value: currentMatch.victories + '',
+              value: `${currentMatch.victories}`,
             },
             {
-              label: 'test',
+              label: 'defeats',
               chipColor: ChipColor.bad,
-              value: currentMatch.defeats + '',
+              value: `${currentMatch.defeats}`,
+            },
+            {
+              label: 'diff',
+              chipColor: ChipColor.neutral,
+              value: `${currentMatch.stats?.diff}`,
+            },
+            {
+              label: 'total matches',
+              chipColor: ChipColor.default,
+              value: `${currentMatch.stats?.totalMatches}`,
+            },
+            {
+              label: 'acum diff',
+              chipColor: ChipColor.default,
+              value: `${currentMatch.stats?.acumDiff}`,
+            },
+            {
+              label: 'estimated played time',
+              chipColor: ChipColor.default,
+              value: `${currentMatch.stats?.playedTime}`,
             },
           ]}
         />

@@ -25,11 +25,11 @@ function Details({ data }: DetailsProps) {
   // }
 
   return (
-    <section className={css.content}>
+    <div className={css.content}>
       {/* <RangeInfo range={match.range} isRangeForm={false} /> */}
       {data.map((item, index) => (
         <div className={css.detail} key={index}>
-          <output>{item.label}</output>
+          <output className={css.detailInfo}>{item.label}</output>
           <Chip value={item.value} color={item.chipColor} />
         </div>
       ))}
@@ -39,7 +39,7 @@ function Details({ data }: DetailsProps) {
       >
         edit wr stats
       </button> */}
-    </section>
+    </div>
   )
 }
 
