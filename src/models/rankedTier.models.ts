@@ -1,7 +1,7 @@
-import { TierSeason, TierType } from '../enums/rankedTier.enum'
+import { TierSeason, TierType } from '../utils/enums/rankedTier.enum'
 
 export interface rankedTier {
-  id: string
+  _id: string
   tierName: string
   tierSeason: TierSeason
   tierType: TierType

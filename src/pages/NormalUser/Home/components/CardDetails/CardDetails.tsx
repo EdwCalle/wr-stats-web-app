@@ -1,6 +1,6 @@
-import Card from '../../../../../Card/Card'
+import Card from '../../../../../components/Card/Card'
 import RangeInfo from '../../../../../components/Range/RangeInfo'
-import { Match } from '../../../../../utils/interfaces/match.interface'
+import { Match } from '../../../../../services/Match/match.model'
 import { handleShowModal } from '../../../../../utils/logic'
 import css from './CardDetails.module.css'
 type CardDetailsProps = {

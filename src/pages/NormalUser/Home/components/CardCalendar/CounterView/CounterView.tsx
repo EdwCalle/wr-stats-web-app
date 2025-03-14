@@ -1,4 +1,4 @@
-import { Match } from '../../../../../../utils/interfaces/match.interface'
+import { Match } from '../../../../../../services/Match/match.model'
 import css from './CounterView.module.css'
 type CounterViewProps = {
   match: Match

@@ -1,31 +1,27 @@
-// import { exampleData } from '../utils/dataWR'
-import { exampleMatch, Match } from '../utils/interfaces/match.interface'
-import { formatedDate } from '../utils/logic'
 import api from './axios.service'
+import { MatchApi } from '../utils/interfaces/api.interface'
+import { getStats } from '../models/stats.model'
+import { MatchforTable } from '../models/match.model'
 const MATCHES_GET_URL = `matches`
 export const getAllMatches = async () => {
   const params = new URLSearchParams()
   params.append('page', '1')
-  params.append('limit', '5')
+  params.append('limit', '0')
   // params.append('seasonProfileID', '')
   const response = await api.get(MATCHES_GET_URL, { params: params })
   const result = response.data
   // console.log(result)
-  const mappedData = result.map((item: Match) => toMatch(item))
+  const mappedData = mapData(result)
   console.log(mappedData)
   return mappedData
 }
-function toMatch(item) {
-  return {
-    _id: item._id,
-    date: formatedDate(item.date),
-    victories: item.victories,
-    defeats: item.defeats,
-    seasonProfileID: item.seasonProfileID._id,
-    rankedTierID: item.range.rankedTierID.tierName,
-    divisionLvl: item.range.divisionLvl,
-    marks: item.range.marks,
-  }
+function mapData(matchesApi: MatchApi[]) {
+  let totalAcumDiff = 0
+  return matchesApi.map((match: MatchApi) => {
+    const stats = getStats(totalAcumDiff, match.victories, match.defeats)
+    totalAcumDiff += stats.diff
+    return { ...MatchforTable(match), ...stats }
+  })
 }
 
 export const getMatchByDate = (date: Date) => {
@@ -38,5 +34,5 @@ export const getMatchByDate = (date: Date) => {
 
   // return match ?? exampleMatch
   console.log(date)
-  return exampleMatch
+  return {}
 }

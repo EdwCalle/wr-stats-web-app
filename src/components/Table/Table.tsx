@@ -46,7 +46,11 @@ const Table = ({ data, customCells }: TableProps) => {
               <tr key={rowIndex} className={css.tr}>
                 {headers.map((header) => (
                   <td key={header.propName} className={css.td}>
-                    <Chip color={header.color} value={row[header.propName]} />
+                    {header.color != ChipColor.default ? (
+                      <Chip color={header.color} value={row[header.propName]} />
+                    ) : (
+                      <>{row[header.propName]} </>
+                    )}
                   </td>
                 ))}
               </tr>

@@ -1,4 +1,4 @@
-import { Match } from '../../utils/interfaces/match.interface'
+import { Match } from '../../services/Match/match.model'
 import Counter from './Counter'
 import './CounterBox.css'
 
