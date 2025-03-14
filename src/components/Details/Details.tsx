@@ -23,7 +23,6 @@ function Details({ data }: DetailsProps) {
 
   return (
     <div className={css.content}>
-      {/* <RangeInfo range={match.range} isRangeForm={false} /> */}
       {data.map((item, index) => (
         <div className={css.detail} key={index}>
           <output className={css.detailInfo}>{item.label}</output>

@@ -1,24 +1,24 @@
 // import imgDiamond from '@/assets/diamond.webp'
+import Tooltip from '@components/Tooltip/Tooltip'
 import imgMark from '../../assets/mark.webp'
-import css from './RangeInfo.module.css'
-import { TierSeason, TierType } from '../../utils/enums/rankedTier.enum'
-import { imagesTier } from '../../utils/constants/constants'
 import { Ranged } from '../../models/match.model'
+import { imagesTier } from '../../utils/constants/constants'
+import { TierSeason, TierType } from '../../utils/enums/rankedTier.enum'
+import css from './RangeInfo.module.css'
 //TO DO
 //Change range interface name
-export enum RangeInfoType {
+export enum RangeType {
   info,
   compact,
   form,
 }
 type RangeInfoProps = {
   range?: Ranged
-  type: RangeInfoType
+  type?: RangeType
 }
 const rangeTest: Ranged = {
   divisionLvl: 1,
   marks: 1,
-  rankedTierID: 'id123123',
   rankedTier: {
     _id: 'asd',
     maxMarks: 12,
@@ -28,28 +28,36 @@ const rangeTest: Ranged = {
     tierType: TierType.MARK,
   },
 }
-const cssRangeInfoType: { [key in RangeInfoType]: string } = {
-  [RangeInfoType.info]: css.rangeInfo,
-  [RangeInfoType.compact]: css.rangeCompact,
-  [RangeInfoType.form]: css.rangeForm,
+const cssRangeInfoType: { [key in RangeType]: string } = {
+  [RangeType.info]: css.rangeInfo,
+  [RangeType.compact]: css.rangeCompact,
+  [RangeType.form]: css.rangeForm,
 }
-function RangeInfo({ type, range = rangeTest }: RangeInfoProps) {
+function RangeInfo({
+  type = RangeType.info,
+  range = rangeTest,
+}: RangeInfoProps) {
   const classNameRange = cssRangeInfoType[type]
   const { rankedTier, divisionLvl, marks } = range
-  const tierName = (rankedTier.tierName as keyof typeof imagesTier) || 'default'
+  const imageName =
+    (rankedTier.tierName as keyof typeof imagesTier) || 'default'
+
+  const fullTierName = `${rankedTier.tierName} ${divisionLvl}`
+  const fullMarks = `${marks}/${rankedTier.maxMarks}`
+  const minMaxMarks = `${rankedTier.minMarks}/${rankedTier.maxMarks}`
 
   return (
     <div className={classNameRange}>
       <img
         className={css.rangeImage}
-        src={imagesTier[tierName]}
-        alt={`ranked image:${tierName}`}
+        src={imagesTier[imageName]}
+        alt={`ranked image:${imageName}`}
       />
-      <div className={css.rangeTier}>
-        {tierName} {divisionLvl}
-      </div>
+      <span className={css.rangeTier}>{fullTierName}</span>
       <div className={css.viewMarks}>
-        {marks} <img src={imgMark} className={css.rangeMarks} />
+        {fullMarks}
+        <img src={imgMark} className={css.rangeMarks} />
+        <Tooltip label={`current min/max ${minMaxMarks} marks`} />
       </div>
     </div>
   )
