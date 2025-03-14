@@ -1,10 +1,12 @@
 // import { exampleData } from '@/dataWR'
 // import { getMatchByDate } from '../../../services/match.service'
 import { exampleMatch, Match } from '@/models/match.model'
+import Button from '@components/Button/Button'
 import Card from '@components/Card/Card'
 import { ChipColor } from '@components/Chip/Chip'
 import Details from '@components/Details/Details'
 import Main from '@components/Layout/Main/Main'
+import CrudMatch from '@components/modals/CrudMatch'
 import { useState } from 'react'
 function HomePage() {
   const [currentMatch] = useState<Match>(exampleMatch)
@@ -20,7 +22,10 @@ function HomePage() {
 
   return (
     <Main title='HOME'>
-      <Card title='Match Details'>
+      <Card
+        title='Match Details'
+        subtitle={currentMatch.seasonProfile.season.seasonName}
+      >
         <Details
           data={[
             {
@@ -55,8 +60,11 @@ function HomePage() {
             },
           ]}
         />
+        <Button action='openModal' elementId='crudMatch'>
+          Edit Match
+        </Button>
       </Card>
-      {/* <CrudMatch match={currentMatch} /> */}
+      <CrudMatch match={currentMatch} />
       {/* <CardCalendar onSelectDate={onSelectDate} match={currentMatch} /> */}
     </Main>
   )

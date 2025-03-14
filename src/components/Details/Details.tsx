@@ -20,9 +20,6 @@ function Details({ data }: DetailsProps) {
   //   if (value > regular && value <= normal) return css.normal
   //   if (value > normal) return css.good
   // }
-  // const chip = (value: string, detailType: DetailType) => {
-  //   if (detailType === DetailType.chip) return <Chip value={value} />
-  // }
 
   return (
     <div className={css.content}>
@@ -33,12 +30,6 @@ function Details({ data }: DetailsProps) {
           <Chip value={item.value} color={item.chipColor} />
         </div>
       ))}
-      {/* <button
-        className={css.button}
-        onClick={() => handleShowModal('crudMatch')}
-      >
-        edit wr stats
-      </button> */}
     </div>
   )
 }
