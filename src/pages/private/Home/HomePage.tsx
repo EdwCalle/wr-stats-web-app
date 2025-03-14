@@ -7,6 +7,7 @@ import { ChipColor } from '@components/Chip/Chip'
 import Details from '@components/Details/Details'
 import Main from '@components/Layout/Main/Main'
 import CrudMatch from '@components/modals/CrudMatch'
+import RangeInfo from '@components/RangeInfo/RangeInfo'
 import { useState } from 'react'
 function HomePage() {
   const [currentMatch] = useState<Match>(exampleMatch)
@@ -26,6 +27,8 @@ function HomePage() {
         title='Match Details'
         subtitle={currentMatch.seasonProfile.season.seasonName}
       >
+        <RangeInfo range={currentMatch.range} />
+
         <Details
           data={[
             {
