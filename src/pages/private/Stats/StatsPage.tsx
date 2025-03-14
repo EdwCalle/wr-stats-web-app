@@ -1,5 +1,5 @@
+import CardChart from '../../../components/CardChart/CardChart'
 import Main from '../../../components/Layout/Main/Main'
-import CardChart from './components/CardChart/CardChart'
 
 function StatsPage() {
   return (

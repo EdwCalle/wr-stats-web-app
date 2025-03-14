@@ -5,7 +5,7 @@ type MainProps = {
   children: ReactNode
   isFullSize?: boolean
 }
-function Main({ title, children, isFullSize }: MainProps) {
+function Main({ title, children, isFullSize = false }: MainProps) {
   const sectionClassName = isFullSize
     ? `${css.section} ${css.fullSize}`
     : css.section

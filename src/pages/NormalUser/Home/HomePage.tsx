@@ -2,9 +2,9 @@
 import { useState } from 'react'
 import Main from '../../../components/Layout/Main/Main'
 import CrudMatch from '../../../components/modals/CrudMatch'
-import CardCalendar from './components/CardCalendar/CardCalendar'
-import CardDetails from './components/CardDetails/CardDetails'
+import CardCalendar from '../../../components/CardCalendar/CardCalendar'
 import { getMatchByDate } from '../../../services/match.service'
+import Details from '../../../components/Details/Details'
 
 function HomePage() {
   const [currentMatch, setCurrentMatch] = useState(getMatchByDate(new Date()))
@@ -17,7 +17,7 @@ function HomePage() {
     <Main title='HOME' isFullSize={false}>
       <CrudMatch match={currentMatch} />
       <CardCalendar onSelectDate={onSelectDate} match={currentMatch} />
-      <CardDetails match={currentMatch} />
+      <Details data={currentMatch} />
     </Main>
   )
 }

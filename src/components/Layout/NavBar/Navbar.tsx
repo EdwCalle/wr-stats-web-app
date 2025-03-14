@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav className={css.nav}>
       <NavLink to='home' className={({ isActive }) => activateLink(isActive)}>
-        DASHBOARD
+        Home
       </NavLink>
       <NavLink to='stats' className={({ isActive }) => activateLink(isActive)}>
         STATS

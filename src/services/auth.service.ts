@@ -1,4 +1,4 @@
-import { API_BASE_URL } from '../utils/constants'
+import { API_BASE_URL } from '../utils/constants/constants'
 import { LoginValues } from '../utils/validations/login-schema'
 import { RegisterValues } from '../utils/validations/register-schema'
 

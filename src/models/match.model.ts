@@ -1,6 +1,7 @@
 import { TierSeason, TierType } from '../utils/enums/rankedTier.enum'
 import { MatchApi } from '../utils/interfaces/api.interface'
-import { rankedTier } from './rankedTier.models'
+import { RankedTier } from './rankedTier.models'
+import { SeasonProfile } from './seasonProfile.model'
 import { Stats } from './stats.model'
 
 export interface Match {
@@ -8,19 +9,17 @@ export interface Match {
   date: Date
   victories: number
   defeats: number
-  seasonProfileID: string
-  range: Range
+  seasonProfile: SeasonProfile
+  range: Ranged
   stats?: Stats
 }
 //TO DO
 //Fix conflic with global name Range
-export interface Range {
-  rankedTierID: string
+export interface Ranged {
+  // rankedTierID: string
+  rankedTier: RankedTier
   divisionLvl: number
   marks: number
-  //TO DO
-  //Extra fields
-  rankedTier: rankedTier
 }
 
 //extra function
@@ -32,18 +31,27 @@ export const MatchfromApi = (matchApi: MatchApi): Match => {
       date: new Date(matchApi.date),
       victories: matchApi.victories,
       defeats: matchApi.defeats,
-      seasonProfileID: matchApi.seasonProfileID._id,
+      seasonProfile: {
+        ...matchApi.seasonProfileID,
+        season: {
+          ...matchApi.seasonProfileID.seasonID,
+          startDate: new Date(matchApi.seasonProfileID.seasonID.startDate),
+          finishDate: matchApi.seasonProfileID.seasonID.finishDate
+            ? new Date(matchApi.seasonProfileID.seasonID.finishDate)
+            : null,
+        },
+      },
       range: {
-        rankedTierID: matchApi.range.rankedTierID.tierName,
         divisionLvl: matchApi.range.divisionLvl,
         marks: matchApi.range.marks,
         rankedTier: {
-          _id: matchApi.range.rankedTierID._id,
-          tierName: matchApi.range.rankedTierID.tierName,
+          ...matchApi.range.rankedTierID,
           tierType: matchApi.range.rankedTierID.tierType as TierType,
           tierSeason: matchApi.range.rankedTierID.tierSeason as TierSeason,
-          minMarks: matchApi.range.rankedTierID.minMarks,
-          maxMarks: matchApi.range.rankedTierID.maxMarks,
+          // _id: matchApi.range.rankedTierID._id,
+          // tierName: matchApi.range.rankedTierID.tierName,
+          // minMarks: matchApi.range.rankedTierID.minMarks,
+          // maxMarks: matchApi.range.rankedTierID.maxMarks,
         },
       },
     }
@@ -85,29 +93,38 @@ const formatDate = (isoDate: string): string => {
 //   return Object.keys(obj) as (keyof MatchKeys)[]
 // }
 
-// export const exampleMatch: MatchModel = {
-//   id: 1,
-//   _id: 'asdasd',
-//   wins: 10,
-//   playedTime: 120,
-//   totalMatches: 15,
-//   diff: 5,
-//   acumDiff: 20,
-//   date: new Date(),
-//   victories: 10,
-//   defeats: 5,
-//   seasonProfileID: 'season123',
-//   range: {
-//     rankedTierID: 'tier1',
-//     divisionLvl: 2,
-//     marks: 3,
-//     rankedTier: {
-//       id: 'tier1',
-//       tierName: 'emerald',
-//       tierSeason: TierSeason.DEFAULT,
-//       tierType: TierType.MARK,
-//       minMarks: 0,
-//       maxMarks: 12,
-//     },
-//   },
-// }
+export const exampleMatch: Match = {
+  _id: 'exampleId',
+  date: new Date(),
+  victories: 10,
+  defeats: 5,
+  seasonProfile: {
+    _id: 'seasonProfileId',
+    season: {
+      _id: 'seasonId',
+      seasonName: 'Season 1',
+      startDate: new Date(),
+      finishDate: new Date(),
+    },
+    totalMatches: 12,
+    winRate: 12,
+  },
+  range: {
+    divisionLvl: 1,
+    marks: 100,
+    rankedTier: {
+      _id: 'rankedTierId',
+      tierName: 'gold',
+      tierType: TierType.DIVISION,
+      tierSeason: TierSeason.CUSTOM,
+      minMarks: 0,
+      maxMarks: 100,
+    },
+  },
+  stats: {
+    totalMatches: 10,
+    diff: 12,
+    acumDiff: 222,
+    playedTime: 123,
+  },
+}
