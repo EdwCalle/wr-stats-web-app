@@ -1,7 +1,7 @@
-import { Scales } from '../../utils/interfaces/scales.interface'
+import { SelectOption } from '@utils/interfaces/components.interface'
 import css from './SingleSelect.module.css'
 type SingleSelectProps = {
-  scales: Scales[]
+  scales: SelectOption[]
   scaleSelected: string | number
   name: string
 }

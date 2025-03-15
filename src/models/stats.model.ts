@@ -7,11 +7,11 @@ export interface Stats {
 export const getStats = (
   lastAccumDiff: number,
   victories: number,
-  defats: number,
+  defeats: number,
 ): Stats => {
-  const totalMatches = victories + Math.abs(defats)
+  const totalMatches = victories + Math.abs(defeats)
   const playedTime = totalMatches * 20
-  const diff = victories - defats
+  const diff = victories - defeats
   const acumDiff = diff + lastAccumDiff
   return { playedTime, totalMatches, diff, acumDiff }
 }

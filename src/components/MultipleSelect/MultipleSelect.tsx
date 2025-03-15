@@ -1,19 +1,50 @@
 import { useState } from 'react'
-import css from './MultipleSelect.module.css'
 import { RiArrowDropDownFill } from 'react-icons/ri'
-import { Scales } from '../../utils/interfaces/scales.interface'
-type MultipleSelectProps = {
-  filters: Scales[]
-  title: string
+import css from './MultipleSelect.module.css'
+//TO DO
+//in (backend) make unique index for tierName, because,
+export interface options {
+  id: string
+  value: string | number
 }
-function MultipleSelect({ filters, title = 'items' }: MultipleSelectProps) {
-  const [items, setItems] = useState<Scales[]>([])
-  const onClick = (event: React.ChangeEvent<HTMLInputElement>, obj: Scales) => {
+export enum SelectType {
+  single,
+  multiple,
+}
+interface MultipleSelectProps {
+  selectedValue: options
+  options: options[]
+  title: string
+  type?: SelectType
+  name?: string
+}
+function MultipleSelect({
+  options,
+  title = 'select items',
+  type = SelectType.single,
+  name = 'dropdown',
+}: MultipleSelectProps) {
+  const [items, setItems] = useState<options[]>(selectOptions)
+  const onClick = (
+    event: React.ChangeEvent<HTMLInputElement>,
+    selectOption: options,
+  ) => {
     if (event.target.checked) {
-      setItems([...items, obj])
+      setItems([...items, selectOption])
     } else {
-      setItems(items.filter((item) => item !== obj))
+      setItems(items.filter((item) => item !== selectOption))
     }
+  }
+  const getSingleSelect = () => {
+    return (
+      <input
+        type='checkbox'
+        className={css.itemCheckbox}
+        name={name}
+        defaultChecked={false} // this works if options has no values selected by default
+        onChange={(event) => onClick(event, options)}
+      />
+    )
   }
 
   return (
@@ -24,16 +55,16 @@ function MultipleSelect({ filters, title = 'items' }: MultipleSelectProps) {
         <input type='checkbox' className={css.dropdownButton} />
       </label>
       <div className={css.dropdownList} role='listbox'>
-        {filters.map((obj) => (
-          <label key={obj.value} className={css.dropdownItem} role='listitem'>
+        {options.map((options) => (
+          <label key={options.id} className={css.dropdownItem} role='listitem'>
             <input
               type='checkbox'
               className={css.itemCheckbox}
-              name={obj.label}
-              defaultChecked={items.includes(obj)} // this works if options has no values selected by default
-              onChange={(event) => onClick(event, obj)}
+              name={options.id}
+              defaultChecked={items.includes(options)} // this works if options has no values selected by default
+              onChange={(event) => onClick(event, options)}
             />
-            {obj.label}
+            {options.value}
           </label>
         ))}
       </div>

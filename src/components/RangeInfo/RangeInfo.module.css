@@ -1,4 +1,4 @@
-.range {
+.rangeInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,9 @@
 .rangeViewMarks {
   font-size: 16px;
   color: var(--secondary-color);
-  margin: 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
 
   grid-area: 3/2 /4 /3;
 }
