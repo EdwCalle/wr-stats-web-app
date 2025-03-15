@@ -1,8 +1,10 @@
-import Modal from './Modal'
-import Form from '../Form/Form'
+import { Match } from '@/models/match.model'
+import CounterBox from '@components/CounterBox/CounterBox'
+import RangeForm from '@components/RangeForm/RangeForm'
+import RangeInfo, { RangeType } from '@components/RangeInfo/RangeInfo'
 import { useEffect, useState } from 'react'
-import CounterBox from '../Counter/CounterBox'
-import { Match } from '../../services/Match/match.model'
+import Form from '../Form/Form'
+import Modal from './Modal'
 
 type CrudMatchProps = {
   match: Match
@@ -22,55 +24,27 @@ function CrudMatch({ match }: CrudMatchProps) {
     setnewMatch(match)
     console.log(match)
   }
-
+  const onSubmit = () => {
+    console.log('sending new match')
+  }
   return (
     <Modal elementID={'crudMatch'}>
-      <Form action='/home'>
-        {/* <fieldset>
-          <legend>Match info</legend>
-          <h3>Season 14</h3>
-          <span>12/12/2024</span>
-        </fieldset> */}
+      <Form onSubmit={onSubmit}>
+        {/* TO DO 
+        use dt elements
+        */}
         <fieldset>
-          <legend>
-            from date: <strong>{newMatch.date?.toISOString()}</strong>
-          </legend>
-          <h3>Season FILL</h3>
+          <legend>Match info</legend>
+          <h3>{newMatch.seasonProfile.season.seasonName}</h3>
+          <h3>
+            from date: <strong>{newMatch.date.toDateString()}</strong>
+          </h3>
+        </fieldset>
+        <fieldset>
+          <legend>form...</legend>
+          <RangeInfo type={RangeType.info} range={newMatch.range} />
           <CounterBox updateMatch={onChangeCounter} match={newMatch} />
-          {/* <Range isRangeForm={true} data={rankedTier}>
-            <label>
-              <select defaultValue={'DEFAULT'} name='tier'>
-                <option value='DEFAULT' disabled>
-                  Tier
-                </option>
-                {TIER.map((value, i) => (
-                  <option key={i} value={i}>
-                    {value}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              <select defaultValue={'DEFAULT'} name='division'>
-                <option value='DEFAULT' disabled>
-                  Division
-                </option>
-                {DIVISION.map((value, i) => (
-                  <option key={i} value={i}>
-                    {value}
-                  </option>
-                ))}
-              </select>
-            </label>
-            <label>
-              <input
-                type='number'
-                name='marks'
-                placeholder='marks'
-                value={rankedTier.marks}
-              />
-            </label>
-          </Range> */}
+          <RangeForm range={match.range} />
           <button>Save Match</button>
         </fieldset>
       </Form>

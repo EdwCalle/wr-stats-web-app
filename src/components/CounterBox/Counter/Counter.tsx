@@ -1,25 +1,25 @@
 type CounterProps = {
   counterValue: number
-  onChangeCounter: (value: number) => void
+  handleClick: (value: number) => void
   type: string
   title: string
 }
 function Counter({
   counterValue,
-  onChangeCounter,
+  handleClick: onChangeCounter,
   type = 'victory',
   title,
 }: CounterProps) {
   const CounterType = type === 'victory' ? 'blue' : 'red'
 
-  const onAdd = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault()
+  const onAdd = () => {
+    // event.preventDefault()
 
     // setCounter(counter + 1)
     onChangeCounter(counterValue + 1)
   }
-  const onDelete = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault()
+  const onDelete = () => {
+    // event.preventDefault()
     if (counterValue > 0) {
       onChangeCounter(counterValue - 1)
     }
