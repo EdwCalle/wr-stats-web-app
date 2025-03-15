@@ -1,5 +1,3 @@
-import { Scales } from './interfaces/season.interface'
-
 export const TIER = [
   'bronze',
   'gold',
@@ -12,13 +10,16 @@ export const TIER = [
   'soberano',
 ]
 export const DIVISION = [
-  'I',
-  'II',
+  { id: 'I', value: 'I' },
+  { id: 'II', value: 'II' },
   // '',
-  'III',
-  'IV',
+  { id: 'III', value: 'III' },
+  { id: 'IV', value: 'IV' },
 ]
-
+interface Scales {
+  label: string
+  value: number | string
+}
 export const TIME_SCALE: Scales[] = [
   { label: 'day', value: 0 },
   { label: 'month', value: 1 },
@@ -34,20 +35,20 @@ export const FILTER_SEASONS: Scales[] = [
   { label: 'by season', value: 'by_season' },
 ]
 export const SEASONS = [
-  { label: 'S1', value: 'S1' },
-  { label: 'S2', value: 'S2' },
-  { label: 'S3', value: 'S3' },
-  { label: 'S4', value: 'S4' },
-  { label: 'S5', value: 'S5' },
-  { label: 'S6', value: 'S6' },
-  { label: 'S7', value: 'S7' },
-  { label: 'S8', value: 'S8' },
-  { label: 'S9', value: 'S9' },
-  { label: 'S10', value: 'S10' },
-  { label: 'S11', value: 'S11' },
-  { label: 'S12', value: 'S12' },
-  { label: 'S13', value: 'S13' },
-  { label: 'S14', value: 'S14' },
+  { id: 'S1', value: 'S1' },
+  { id: 'S2', value: 'S2' },
+  { id: 'S3', value: 'S3' },
+  { id: 'S4', value: 'S4' },
+  { id: 'S5', value: 'S5' },
+  { id: 'S6', value: 'S6' },
+  { id: 'S7', value: 'S7' },
+  { id: 'S8', value: 'S8' },
+  { id: 'S9', value: 'S9' },
+  { id: 'S10', value: 'S10' },
+  { id: 'S11', value: 'S11' },
+  { id: 'S12', value: 'S12' },
+  { id: 'S13', value: 'S13' },
+  { id: 'S14', value: 'S14' },
 ]
 
 export const imagesTier = {

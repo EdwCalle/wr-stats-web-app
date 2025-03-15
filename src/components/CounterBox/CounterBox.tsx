@@ -1,5 +1,5 @@
-import { Match } from '../../services/Match/match.model'
-import Counter from './Counter'
+import { Match } from '@/models/match.model'
+import Counter from './Counter/Counter'
 import './CounterBox.css'
 
 type CounterBoxProps = {
@@ -21,14 +21,14 @@ function CounterBox({ match, updateMatch }: CounterBoxProps) {
     <section className='counter'>
       <Counter
         counterValue={victories}
-        onChangeCounter={updateVictories}
+        handleClick={updateVictories}
         title='victories'
         type='victory'
       />
       <Counter
         type='defeat'
         counterValue={defeats}
-        onChangeCounter={updateDefeats}
+        handleClick={updateDefeats}
         title='defeats'
       />
     </section>

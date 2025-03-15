@@ -2,7 +2,7 @@
 // import { getMatchByDate } from '../../../services/match.service'
 import { exampleMatch, Match } from '@/models/match.model'
 import Button from '@components/Button/Button'
-import Card from '@components/Card/Card'
+import Card, { CardType } from '@components/Card/Card'
 import { ChipColor } from '@components/Chip/Chip'
 import Details from '@components/Details/Details'
 import Main from '@components/Layout/Main/Main'
@@ -26,9 +26,9 @@ function HomePage() {
       <Card
         title='Match Details'
         subtitle={currentMatch.seasonProfile.season.seasonName}
+        type={CardType.details}
       >
         <RangeInfo range={currentMatch.range} />
-
         <Details
           data={[
             {
@@ -63,6 +63,9 @@ function HomePage() {
             },
           ]}
         />
+        {/* TO DO
+          fix footer, button should go to footer
+        */}
         <Button action='openModal' elementId='crudMatch'>
           Edit Match
         </Button>
