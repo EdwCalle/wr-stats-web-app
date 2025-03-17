@@ -5,7 +5,7 @@ import {
   TIME_SCALE,
 } from '../../utils/constants/constants'
 import Card from '../Card/Card'
-import SingleSelect from '../SingleSelect/SingleSelect'
+import Select from '../Select/Select'
 import css from './CardChart.module.css'
 
 function CardChart() {
@@ -16,7 +16,7 @@ function CardChart() {
   return (
     <Card>
       <form action=''>
-        <SingleSelect
+        <Select
           name='filterMode'
           scales={FILTER_SEASONS}
           scaleSelected={FILTER_SEASONS[0].value}
@@ -28,7 +28,7 @@ function CardChart() {
       </section>
 
       <form>
-        <SingleSelect
+        <Select
           name='timeScale'
           scales={TIME_SCALE}
           scaleSelected={TIME_SCALE[0].value}

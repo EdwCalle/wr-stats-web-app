@@ -1,8 +1,10 @@
 import { Match, Ranged } from '@/models/match.model'
+import { RankedTier } from '@/models/rankedTier.models'
 import CounterBox from '@components/CounterBox/CounterBox'
 import RangeInfo, { RangeType } from '@components/RangeInfo/RangeInfo'
 import RangeInput from '@components/RangeInput/RangeInput'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { RankedTierApi } from '@utils/interfaces/api.interface'
 import { matchSchema, MatchValues } from '@utils/validations/match-schema'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
@@ -11,7 +13,7 @@ import Modal from './Modal'
 
 type CrudMatchProps = {
   currentMatch: Match
-  options: Array<{ id: string; value: string }>
+  options: RankedTierApi[]
 }
 
 function CrudMatch({ currentMatch, options }: CrudMatchProps) {
@@ -23,6 +25,11 @@ function CrudMatch({ currentMatch, options }: CrudMatchProps) {
     resolver: zodResolver(matchSchema),
   })
   const [localMatch, setLocalMatch] = useState(currentMatch)
+  const options2 = options.map(({ _id, tierName }) => ({
+    value: _id,
+    label: tierName,
+  }))
+
   const onChangeCounter = (victories: number, defeats: number) => {
     const match = { ...localMatch }
     match.victories = victories
@@ -31,7 +38,12 @@ function CrudMatch({ currentMatch, options }: CrudMatchProps) {
   }
   const onChangeRange = (range: Ranged) => {
     const match = { ...localMatch }
-    match.range = range
+
+    const rankedTierFounded = options.find(
+      ({ _id }) => _id === range.rankedTier._id,
+    )
+    match.range.rankedTier = rankedTierFounded as RankedTier
+    match.range.divisionLvl = range.divisionLvl
     setLocalMatch(match)
   }
   const onSubmit = handleSubmit(() => {
@@ -44,20 +56,23 @@ function CrudMatch({ currentMatch, options }: CrudMatchProps) {
         use dt elements
         */}
         <fieldset>
-          <legend>Match info</legend>
+          <legend>Info</legend>
           <h3>{localMatch.seasonProfile.season.seasonName}</h3>
           <h3>
             from date: <strong>{localMatch.date.toDateString()}</strong>
           </h3>
         </fieldset>
         <fieldset>
-          <legend>form...</legend>
-          <RangeInfo type={RangeType.info} range={localMatch.range} />
+          <legend>Victories/Defeat</legend>
           <CounterBox updateMatch={onChangeCounter} match={localMatch} />
+        </fieldset>
+        <fieldset>
+          <legend>Range</legend>
+          <RangeInfo type={RangeType.info} range={localMatch.range} />
           <RangeInput
             range={localMatch.range}
             control={control}
-            options={options}
+            options={options2}
             onChangeRangeInput={onChangeRange}
           />
           <button>Save Match</button>
