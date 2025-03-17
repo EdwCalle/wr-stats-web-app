@@ -1,42 +1,62 @@
 import { Ranged } from '@/models/match.model'
-import InputForm from '@components/InputForm/InputForm'
-import SingleSelect from '@components/SingleSelect/SingleSelect'
-import { DIVISION, SEASONS } from '@utils/constants/constants'
+import Input from '@components/Input/Input'
+import SingleSelect, { Option } from '@components/SingleSelect/SingleSelect'
+import { DIVISION } from '@utils/constants/constants'
 import { Control } from 'react-hook-form'
-interface RangeFormProps {
+interface RangeInputProps {
   range: Ranged
+  options: Array<{ id: string; value: string }>
+  onChangeRangeInput: (range: Ranged) => void
   //fix any problems
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: Control<any>
 }
-function RangeInput({ range, control }: RangeFormProps) {
-  const testSelect = ({ id }: { id: string }) => {
-    console.log('from rangeForm:', id)
+function RangeInput({
+  range,
+  control,
+  options,
+  onChangeRangeInput,
+}: RangeInputProps) {
+  const onSelectedTierName = (option: Option) => {
+    const copyRange = { ...range }
+    copyRange.rankedTier._id = option.id
+    copyRange.rankedTier.tierName = option.value as string
+    onChangeRangeInput(copyRange)
   }
+  const onSelectedDivisionLvl = (option: Option) => {
+    const copyRange = { ...range }
+    copyRange.divisionLvl = option.value as number
+    onChangeRangeInput(copyRange)
+  }
+  // const onChangeMarks = (value: number) => {
+  //   const copyRange = { ...range }
+  //   copyRange.marks = value
+  //   onChangeRangeInput(copyRange)
+  // }
   return (
     <div>
-      {/* <Select options={SEASONS} title='seasons' selectedValue={SEASONS[2]} /> */}
       <SingleSelect
         name='tierName'
-        onSelectedOption={testSelect}
-        options={SEASONS}
-        selectedOption={SEASONS[6]}
+        onSelectedOption={onSelectedTierName}
+        options={options}
+        selectedOption={{
+          id: range.rankedTier._id,
+          value: range.rankedTier.tierName,
+        }}
       />
       {/* TO DO
         change way to perform key in selects, due to tierName and DivisionLvl must have the same key
       */}
       <SingleSelect
         name='divisionLvl'
-        onSelectedOption={testSelect}
+        onSelectedOption={onSelectedDivisionLvl}
         options={DIVISION}
-        selectedOption={DIVISION[2]}
+        selectedOption={{
+          value: range.divisionLvl,
+          id: range.divisionLvl + '',
+        }}
       />
-      <InputForm
-        label='soy label'
-        name='marks'
-        type='number'
-        control={control}
-      />
+      <Input label='soy label' name='marks' type='number' control={control} />
     </div>
   )
 }
