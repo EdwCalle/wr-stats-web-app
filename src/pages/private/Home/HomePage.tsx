@@ -9,10 +9,11 @@ import Details from '@components/Details/Details'
 import Main from '@components/Layout/Main/Main'
 import CrudMatch from '@components/modals/CrudMatch'
 import RangeInfo from '@components/RangeInfo/RangeInfo'
+import { RankedTierApi } from '@utils/interfaces/api.interface'
 import { useEffect, useState } from 'react'
 function HomePage() {
   const { currentMatch } = UseMatch()
-  const [options, setSeasons] = useState<Array<{ id: string; value: string }>>()
+  const [rankedTiers, setRankedTiers] = useState<RankedTierApi[]>()
   // const onSelectDate = (date: Date) => {
   //   const match = getMatchByDate(date)
   //   setCurrentMatch(match)
@@ -22,19 +23,15 @@ function HomePage() {
   //   return match[70]
   // }
   const fromSeasons = async () => {
-    const currentSeasons = await getRankedTiers()
-    const options2 = currentSeasons.map((item) => ({
-      id: item._id,
-      value: item.tierName,
-    }))
-    setSeasons([...options2])
+    const currentRankedTiers = await getRankedTiers()
+    setRankedTiers([...currentRankedTiers])
   }
   useEffect(() => {
     console.log('nose imprime:', currentMatch)
     fromSeasons()
   }, [])
 
-  if (options && currentMatch) {
+  if (rankedTiers && currentMatch) {
     return (
       <Main title='HOME'>
         <Card
@@ -84,7 +81,7 @@ function HomePage() {
             Edit Match
           </Button>
         </Card>
-        <CrudMatch currentMatch={currentMatch} options={options} />
+        <CrudMatch currentMatch={currentMatch} options={rankedTiers} />
         {/* <CardCalendar onSelectDate={onSelectDate} match={currentMatch} /> */}
       </Main>
     )

@@ -10,11 +10,11 @@ export const TIER = [
   'soberano',
 ]
 export const DIVISION = [
-  { id: 'I', value: 'I' },
-  { id: 'II', value: 'II' },
+  { value: 1, label: 'I' },
+  { value: 2, label: 'II' },
   // '',
-  { id: 'III', value: 'III' },
-  { id: 'IV', value: 'IV' },
+  { value: 3, label: 'III' },
+  { value: 4, label: 'IV' },
 ]
 interface Scales {
   label: string

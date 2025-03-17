@@ -20,7 +20,8 @@ function Input({
   defaultValue = '',
   error,
 }: InputProps) {
-  const className = error ? `${css.span} ${css.error}` : `${css.span}`
+  const cssError = error ? `${css.span} ${css.error}` : `${css.span}`
+  const cssInput = type === 'number' ? `${css.input} ${css.number}` : css.input
   return (
     //TO DO
     //fix default value
@@ -32,10 +33,10 @@ function Input({
           name={name}
           control={control}
           render={({ field }) => (
-            <input type={type} {...field} className={css.input} />
+            <input type={type} {...field} className={cssInput} />
           )}
         />
-        <span className={className}>{error?.message}</span>
+        <span className={cssError}>{error?.message}</span>
       </label>
     </>
   )

@@ -1,12 +1,12 @@
 import { Ranged } from '@/models/match.model'
 import Input from '@components/Input/Input'
-import SingleSelect, { Option } from '@components/SingleSelect/SingleSelect'
+import Select, { Option } from '@components/Select/Select'
 import { DIVISION } from '@utils/constants/constants'
 import { Control } from 'react-hook-form'
 interface RangeInputProps {
   range: Ranged
-  options: Array<{ id: string; value: string }>
-  onChangeRangeInput: (range: Ranged) => void
+  options: Option[]
+  onChangeRangeInput: (Range: Ranged) => void
   //fix any problems
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   control: Control<any>
@@ -17,16 +17,15 @@ function RangeInput({
   options,
   onChangeRangeInput,
 }: RangeInputProps) {
-  const onSelectedTierName = (option: Option) => {
+  const onSelectedTierName = (id: string) => {
     const copyRange = { ...range }
-    copyRange.rankedTier._id = option.id
-    copyRange.rankedTier.tierName = option.value as string
     onChangeRangeInput(copyRange)
+    console.log('asdasd', id)
   }
-  const onSelectedDivisionLvl = (option: Option) => {
+  const onSelectedDivisionLvl = (id: string) => {
     const copyRange = { ...range }
-    copyRange.divisionLvl = option.value as number
     onChangeRangeInput(copyRange)
+    console.log('asdasd', id)
   }
   // const onChangeMarks = (value: number) => {
   //   const copyRange = { ...range }
@@ -34,30 +33,30 @@ function RangeInput({
   //   onChangeRangeInput(copyRange)
   // }
   return (
-    <div>
-      <SingleSelect
+    <>
+      <Select
         name='tierName'
         onSelectedOption={onSelectedTierName}
         options={options}
         selectedOption={{
-          id: range.rankedTier._id,
-          value: range.rankedTier.tierName,
+          value: range.rankedTier._id,
+          label: range.rankedTier.tierName,
         }}
       />
       {/* TO DO
         change way to perform key in selects, due to tierName and DivisionLvl must have the same key
       */}
-      <SingleSelect
+      <Select
         name='divisionLvl'
         onSelectedOption={onSelectedDivisionLvl}
         options={DIVISION}
         selectedOption={{
           value: range.divisionLvl,
-          id: range.divisionLvl + '',
+          label: range.divisionLvl,
         }}
       />
       <Input label='soy label' name='marks' type='number' control={control} />
-    </div>
+    </>
   )
 }
 export default RangeInput
