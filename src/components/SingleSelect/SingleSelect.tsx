@@ -1,32 +1,50 @@
-import { SelectOption } from '@utils/interfaces/components.interface'
+import { useId } from 'react'
+import { RiArrowDropDownFill } from 'react-icons/ri'
 import css from './SingleSelect.module.css'
-type SingleSelectProps = {
-  scales: SelectOption[]
-  scaleSelected: string | number
+//TO DO
+export interface Option {
+  id: string
+  value: string | number
+}
+
+interface SingleSelectProps {
+  selectedOption: Option
+  options: Option[]
+  label?: string
   name: string
+  onSelectedOption: (option: Option) => void
 }
 function SingleSelect({
-  scales,
-  scaleSelected: valueSelected,
-  name = 'radio',
+  selectedOption,
+  options,
+  onSelectedOption,
+  label = 'select items',
+  name,
 }: SingleSelectProps) {
+  const localID = useId()
   return (
-    <div className={css.filterContainer}>
-      {scales.map(({ label, value }) => {
-        return (
-          <label className={css.filterLabel} key={value}>
-            {label}
+    <div className={css.dropdown} role='list'>
+      {label}
+      <label className={css.dropdownTitle}>
+        {`${selectedOption.value}`}
+        <RiArrowDropDownFill size={30} />
+        <input type='checkbox' className={css.dropdownButton} name={localID} />
+      </label>
+      <div className={css.dropdownList} role='listbox'>
+        {options.map((option) => (
+          <label key={option.id} className={css.dropdownItem} role='listitem'>
             <input
               type='radio'
+              className={css.itemCheckbox}
               name={name}
-              className={css.filterRadio}
-              defaultChecked={valueSelected === value}
-              // onChange={handleRadioChange}
-              // radioGroup={name}
+              defaultValue={''}
+              defaultChecked={selectedOption.value === option.value}
+              onChange={() => onSelectedOption(option)}
             />
+            {option.value}
           </label>
-        )
-      })}
+        ))}
+      </div>
     </div>
   )
 }

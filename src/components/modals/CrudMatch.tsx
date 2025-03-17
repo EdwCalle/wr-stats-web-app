@@ -1,32 +1,42 @@
-import { Match } from '@/models/match.model'
+import { Match, Ranged } from '@/models/match.model'
 import CounterBox from '@components/CounterBox/CounterBox'
-import RangeForm from '@components/RangeForm/RangeForm'
 import RangeInfo, { RangeType } from '@components/RangeInfo/RangeInfo'
-import { useEffect, useState } from 'react'
+import RangeInput from '@components/RangeInput/RangeInput'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { matchSchema, MatchValues } from '@utils/validations/match-schema'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import Form from '../Form/Form'
 import Modal from './Modal'
 
 type CrudMatchProps = {
-  match: Match
+  currentMatch: Match
+  options: Array<{ id: string; value: string }>
 }
 
-function CrudMatch({ match }: CrudMatchProps) {
-  const [newMatch, setnewMatch] = useState(match)
-  useEffect(() => {
-    setnewMatch(match)
-  }, [match])
-  // const newMatch = data
-  // const rankedTier = getRange(data)
+function CrudMatch({ currentMatch, options }: CrudMatchProps) {
+  const {
+    control,
+    handleSubmit,
+    // watch,
+  } = useForm<MatchValues>({
+    resolver: zodResolver(matchSchema),
+  })
+  const [localMatch, setLocalMatch] = useState(currentMatch)
   const onChangeCounter = (victories: number, defeats: number) => {
-    const match = { ...newMatch }
+    const match = { ...localMatch }
     match.victories = victories
     match.defeats = defeats
-    setnewMatch(match)
-    console.log(match)
+    setLocalMatch(match)
   }
-  const onSubmit = () => {
+  const onChangeRange = (range: Ranged) => {
+    const match = { ...localMatch }
+    match.range = range
+    setLocalMatch(match)
+  }
+  const onSubmit = handleSubmit(() => {
     console.log('sending new match')
-  }
+  })
   return (
     <Modal elementID={'crudMatch'}>
       <Form onSubmit={onSubmit}>
@@ -35,16 +45,21 @@ function CrudMatch({ match }: CrudMatchProps) {
         */}
         <fieldset>
           <legend>Match info</legend>
-          <h3>{newMatch.seasonProfile.season.seasonName}</h3>
+          <h3>{localMatch.seasonProfile.season.seasonName}</h3>
           <h3>
-            from date: <strong>{newMatch.date.toDateString()}</strong>
+            from date: <strong>{localMatch.date.toDateString()}</strong>
           </h3>
         </fieldset>
         <fieldset>
           <legend>form...</legend>
-          <RangeInfo type={RangeType.info} range={newMatch.range} />
-          <CounterBox updateMatch={onChangeCounter} match={newMatch} />
-          <RangeForm range={match.range} />
+          <RangeInfo type={RangeType.info} range={localMatch.range} />
+          <CounterBox updateMatch={onChangeCounter} match={localMatch} />
+          <RangeInput
+            range={localMatch.range}
+            control={control}
+            options={options}
+            onChangeRangeInput={onChangeRange}
+          />
           <button>Save Match</button>
         </fieldset>
       </Form>

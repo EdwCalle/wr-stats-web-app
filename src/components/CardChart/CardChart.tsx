@@ -5,7 +5,6 @@ import {
   TIME_SCALE,
 } from '../../utils/constants/constants'
 import Card from '../Card/Card'
-import MultipleSelect from '../MultipleSelect/MultipleSelect'
 import SingleSelect from '../SingleSelect/SingleSelect'
 import css from './CardChart.module.css'
 
@@ -22,7 +21,7 @@ function CardChart() {
           scales={FILTER_SEASONS}
           scaleSelected={FILTER_SEASONS[0].value}
         />
-        <MultipleSelect values={SEASONS} title='seasons' />
+        <Select values={SEASONS} title='seasons' />
       </form>
       <section className={css.chartContainer}>
         {/* <LineChart className={css.chart} data={dataWR} /> */}
