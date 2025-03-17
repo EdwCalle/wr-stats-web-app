@@ -99,7 +99,7 @@ export const exampleMatch: Match = {
   victories: 10,
   defeats: 5,
   seasonProfile: {
-    _id: 'seasonProfileId',
+    _id: 'seasonProfileIdasds',
     season: {
       _id: 'seasonId',
       seasonName: 'Season 1',

@@ -1,9 +1,8 @@
-import { title } from 'process'
 import { useId } from 'react'
 import { RiArrowDropDownFill } from 'react-icons/ri'
 import css from './SingleSelect.module.css'
 //TO DO
-interface Option {
+export interface Option {
   id: string
   value: string | number
 }

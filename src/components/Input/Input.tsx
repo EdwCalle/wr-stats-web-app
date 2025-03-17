@@ -1,6 +1,6 @@
 import { Control, Controller, FieldError } from 'react-hook-form'
-import css from './InputForm.module.css'
-type InputFromProps = {
+import css from './Input.module.css'
+type InputProps = {
   name: string
   //TO DO
   //fix any problems
@@ -9,9 +9,17 @@ type InputFromProps = {
   label: string
   type?: string
   error?: FieldError
+  defaultValue?: string | number
 }
 
-function InputForm({ name, control, label, type, error }: InputFromProps) {
+function Input({
+  name,
+  control,
+  label,
+  type,
+  defaultValue = '',
+  error,
+}: InputProps) {
   const className = error ? `${css.span} ${css.error}` : `${css.span}`
   return (
     //TO DO
@@ -20,7 +28,7 @@ function InputForm({ name, control, label, type, error }: InputFromProps) {
       <label className={css.label}>
         {label}
         <Controller
-          defaultValue={''}
+          defaultValue={defaultValue}
           name={name}
           control={control}
           render={({ field }) => (
@@ -32,4 +40,4 @@ function InputForm({ name, control, label, type, error }: InputFromProps) {
     </>
   )
 }
-export default InputForm
+export default Input
