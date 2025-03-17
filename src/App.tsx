@@ -1,15 +1,16 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import LandingPage from './pages/public/LandingPage'
-import UserProfile from './pages/private/UserProfile'
-import HomePage from './pages/private/Home/HomePage'
-import StatsPage from './pages/private/Stats/StatsPage'
-import MatchesPage from './pages/private/Matches/MatchesPage'
 import 'normalize.css'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import './App.css'
 import { AuthProvider } from './context/AuthContext'
-import RegisterPage from './pages/public/RegisterPage'
+import MatchProvider from './context/MatchContext'
+import HomePage from './pages/private/Home/HomePage'
+import MatchesPage from './pages/private/Matches/MatchesPage'
+import StatsPage from './pages/private/Stats/StatsPage'
+import UserProfile from './pages/private/UserProfile'
+import LandingPage from './pages/public/LandingPage'
 import LoginPage from './pages/public/LoginPage'
-import { ToastContainer } from 'react-toastify'
+import RegisterPage from './pages/public/RegisterPage'
 
 function App() {
   return (
@@ -25,7 +26,14 @@ function App() {
 
             <Route path='/player' element={<Navigate to='/player/home' />} />
             <Route path='/player/*' element={<UserProfile />}>
-              <Route path='home' element={<HomePage />} />
+              <Route
+                path='home'
+                element={
+                  <MatchProvider>
+                    <HomePage />
+                  </MatchProvider>
+                }
+              />
               <Route path='stats' element={<StatsPage />} />
               <Route path='matches' element={<MatchesPage />} />
               <Route path='*' element={<>404 not found page</>} />

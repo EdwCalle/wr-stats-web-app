@@ -1,14 +1,14 @@
 // import loginIMG from './../../../assets/login_google.png'
 
 import { zodResolver } from '@hookform/resolvers/zod'
-import { LoginValues, loginSchema } from '../../utils/validations/login-schema'
-import InputForm from '../../components/InputForm/InputForm'
-import { useForm } from 'react-hook-form'
-import Form from '../../components/Form/Form'
-import { toast, ToastContainer } from 'react-toastify'
-import useAuth from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
+import Form from '../../components/Form/Form'
+import Input from '../../components/Input/Input'
+import useAuth from '../../context/AuthContext'
+import { loginSchema, LoginValues } from '../../utils/validations/login-schema'
 
 function LoginPage() {
   const {
@@ -41,14 +41,14 @@ function LoginPage() {
     <Form onSubmit={onSubmit}>
       <fieldset>
         <legend>Login</legend>
-        <InputForm
+        <Input
           name='email'
           control={control}
           label='username/email'
           type='text'
           error={errors.email}
         />
-        <InputForm
+        <Input
           name='password'
           control={control}
           label='password'

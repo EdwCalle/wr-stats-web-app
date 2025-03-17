@@ -1,15 +1,15 @@
+import { zodResolver } from '@hookform/resolvers/zod'
+import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import Form from '../../components/Form/Form'
-import InputForm from '../../components/InputForm/InputForm'
+import Input from '../../components/Input/Input'
+import useAuth from '../../context/AuthContext'
 import {
   registerSchema,
   RegisterValues,
 } from '../../utils/validations/register-schema'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useEffect } from 'react'
-import { toast } from 'react-toastify'
-import useAuth from '../../context/AuthContext'
-import { useNavigate } from 'react-router-dom'
 function RegisterPage() {
   const {
     control,
@@ -38,27 +38,27 @@ function RegisterPage() {
       <Form onSubmit={onSubmit}>
         <fieldset>
           <legend>Register</legend>
-          <InputForm
+          <Input
             control={control}
             label='username'
             name='username'
             error={errors.username}
           />
-          <InputForm
+          <Input
             control={control}
             label='email'
             name='email'
             type='email'
             error={errors.email}
           />
-          <InputForm
+          <Input
             control={control}
             label='password'
             name='password'
             type='password'
             error={errors.password}
           />
-          <InputForm
+          <Input
             control={control}
             label='confirm Password'
             name='confirmPassword'
