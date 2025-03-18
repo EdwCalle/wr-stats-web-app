@@ -15,7 +15,6 @@ import RegisterPage from './pages/public/RegisterPage'
 function App() {
   return (
     <>
-      {' '}
       <AuthProvider>
         <BrowserRouter>
           <Routes>
