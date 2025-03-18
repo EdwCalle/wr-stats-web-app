@@ -4,10 +4,11 @@ import CounterBox from '@components/CounterBox/CounterBox'
 import Form from '@components/Form/Form'
 import Input from '@components/Input/Input'
 import Modal from '@components/modals/Modal'
-import RangeInfo, { RangeType } from '@components/RangeInfo/RangeInfo'
+import RangeInfo from '@components/RangeInfo/RangeInfo'
 import Select from '@components/Select/Select'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { DIVISION } from '@utils/constants/constants'
+import { TierType } from '@utils/enums/rankedTier.enum'
 import { RankedTierApi } from '@utils/interfaces/api.interface'
 import { matchSchema, MatchValues } from '@utils/validations/match-schema'
 import { useState } from 'react'
@@ -58,15 +59,16 @@ function CrudMatch({ currentMatch, rankedTiers }: CrudMatchProps) {
   return (
     <Modal elementID={'crudMatch'}>
       <Form onSubmit={onSubmit}>
-        {/* TO DO 
-        use dt elements
-        */}
         <fieldset>
           <legend>Info</legend>
-          <h3>{localMatch.seasonProfile.season.seasonName}</h3>
-          <h3>
-            from date: <strong>{localMatch.date.toDateString()}</strong>
-          </h3>
+          <dl>
+            <dt>Season:</dt>
+            <dd>{localMatch.seasonProfile.season.seasonName}</dd>
+            <dt> from date:</dt>
+            <dd>
+              <strong>{localMatch.date.toDateString()}</strong>
+            </dd>
+          </dl>
         </fieldset>
         <fieldset>
           <legend>Victories/Defeat</legend>
@@ -74,7 +76,7 @@ function CrudMatch({ currentMatch, rankedTiers }: CrudMatchProps) {
         </fieldset>
         <fieldset className={`${css.fieldset} ${css.range}`}>
           <legend>Range</legend>
-          <RangeInfo type={RangeType.info} range={localMatch.range} />
+          <RangeInfo range={localMatch.range} />
           <Select
             name='tierName'
             onSelectedOption={onChangeRankedTier}
@@ -84,15 +86,17 @@ function CrudMatch({ currentMatch, rankedTiers }: CrudMatchProps) {
               value: localMatch.range.rankedTier.tierName,
             }}
           />
-          <Select
-            name='divisionLvl'
-            onSelectedOption={onChangeDivisionLvl}
-            options={DIVISION}
-            selectedOption={{
-              id: localMatch.range.divisionLvl,
-              value: localMatch.range.divisionLvl,
-            }}
-          />
+          {localMatch.range.rankedTier.tierType === TierType.DIVISION && (
+            <Select
+              name='divisionLvl'
+              onSelectedOption={onChangeDivisionLvl}
+              options={DIVISION}
+              selectedOption={{
+                id: localMatch.range.divisionLvl,
+                value: localMatch.range.divisionLvl,
+              }}
+            />
+          )}
           <Input
             label='marks'
             name='marks'
