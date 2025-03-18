@@ -43,7 +43,7 @@ function HomePage() {
   }, [])
   if (!rankedTiers || !seasons || !currentMatch)
     return <>not loaded resources</>
-  // throw new Error('error, not loaded resources')
+  // throw new ('error, not loaded resources')
 
   if (rankedTiers && currentMatch) {
     return (
