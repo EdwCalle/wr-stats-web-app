@@ -1,13 +1,13 @@
 // import { exampleData } from '@/dataWR'
 // import { getMatchByDate } from '../../../services/match.service'
 import { UseMatch } from '@/context/MatchContext'
+import CrudMatch from '@/pages/private/Home/CrudMatch/CrudMatch'
 import { getRankedTiers } from '@/services/rankedTier.service'
 import Button from '@components/Button/Button'
 import Card, { CardType } from '@components/Card/Card'
 import { ChipColor } from '@components/Chip/Chip'
 import Details from '@components/Details/Details'
 import Main from '@components/Layout/Main/Main'
-import CrudMatch from '@components/modals/CrudMatch'
 import RangeInfo from '@components/RangeInfo/RangeInfo'
 import { RankedTierApi } from '@utils/interfaces/api.interface'
 import { useEffect, useState } from 'react'
@@ -81,7 +81,7 @@ function HomePage() {
             Edit Match
           </Button>
         </Card>
-        <CrudMatch currentMatch={currentMatch} options={rankedTiers} />
+        <CrudMatch currentMatch={currentMatch} rankedTiers={rankedTiers} />
         {/* <CardCalendar onSelectDate={onSelectDate} match={currentMatch} /> */}
       </Main>
     )

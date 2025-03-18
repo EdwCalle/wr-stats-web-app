@@ -110,10 +110,10 @@ export const exampleMatch: Match = {
     winRate: 12,
   },
   range: {
-    divisionLvl: 1,
+    divisionLvl: 3,
     marks: 100,
     rankedTier: {
-      _id: 'rankedTierId',
+      _id: '67acc1fd7b95c60b11008d21',
       tierName: 'gold',
       tierType: TierType.DIVISION,
       tierSeason: TierSeason.CUSTOM,

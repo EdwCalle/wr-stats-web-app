@@ -1,8 +1,8 @@
 // import imgDiamond from '@/assets/diamond.webp'
 import Tooltip from '@components/Tooltip/Tooltip'
+import { imagesTier } from '@utils/constants/constants'
 import imgMark from '../../assets/mark.webp'
 import { Ranged } from '../../models/match.model'
-import { imagesTier } from '../../utils/constants/constants'
 import css from './RangeInfo.module.css'
 //TO DO
 //Change range interface name

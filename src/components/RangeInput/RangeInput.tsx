@@ -39,8 +39,8 @@ function RangeInput({
         onSelectedOption={onSelectedTierName}
         options={options}
         selectedOption={{
-          value: range.rankedTier._id,
-          label: range.rankedTier.tierName,
+          id: range.rankedTier._id,
+          value: range.rankedTier.tierName,
         }}
       />
       {/* TO DO
@@ -51,8 +51,8 @@ function RangeInput({
         onSelectedOption={onSelectedDivisionLvl}
         options={DIVISION}
         selectedOption={{
+          id: range.divisionLvl,
           value: range.divisionLvl,
-          label: range.divisionLvl,
         }}
       />
       <Input label='soy label' name='marks' type='number' control={control} />

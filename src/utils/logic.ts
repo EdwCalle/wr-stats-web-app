@@ -4,7 +4,7 @@ export const handleShowModal = (id: string): void => {
 }
 export const handleCloseModal = (id: string) => {
   const modal = document.getElementById(id) as HTMLDialogElement | null
-  if (modal && id === 'confirm') {
+  if (modal) {
     modal.close()
   }
 }
