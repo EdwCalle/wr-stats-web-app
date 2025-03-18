@@ -1,7 +1,7 @@
+import { handleCloseModal } from '@utils/logic'
+import { ReactNode } from 'react'
 import { IoIosCloseCircle } from 'react-icons/io'
 import css from './Modal.module.css'
-import { handleCloseModal } from '../../utils/logic'
-import { ReactNode } from 'react'
 
 type ModalProps = {
   elementID: string

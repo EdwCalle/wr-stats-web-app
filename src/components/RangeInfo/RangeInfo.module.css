@@ -32,7 +32,6 @@
   color: var(--secondary-color);
   display: flex;
   align-items: center;
-  width: 100%;
 
   grid-area: 3/2 /4 /3;
 }

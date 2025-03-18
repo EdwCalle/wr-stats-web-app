@@ -10,11 +10,11 @@ export const TIER = [
   'soberano',
 ]
 export const DIVISION = [
-  { value: 1, label: 'I' },
-  { value: 2, label: 'II' },
+  { id: '1', value: 'I' },
+  { id: '2', value: 'II' },
   // '',
-  { value: 3, label: 'III' },
-  { value: 4, label: 'IV' },
+  { id: '3', value: 'III' },
+  { id: '4', value: 'IV' },
 ]
 interface Scales {
   label: string
@@ -61,7 +61,7 @@ export const imagesTier = {
   diamond: '/src/assets/ranks/diamond.webp',
   master: '/src/assets/ranks/master.webp',
   grandmaster: '/src/assets/ranks/grandmaster.webp',
-  chanllenger: '/src/assets/ranks/challenger.webp',
+  challenger: '/src/assets/ranks/challenger.webp',
   default: '/src/assets/ranks/default.jpeg',
 }
 // TO DO

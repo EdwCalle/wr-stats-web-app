@@ -1,8 +1,8 @@
 import css from './Select.module.css'
 //TO DO
 export interface Option {
+  id: string | number
   value: string | number
-  label: string | number
 }
 
 interface SelectProps {
@@ -30,12 +30,12 @@ function Select({
       <select
         name={name}
         className={css.select}
-        value={selectedOption.value}
+        value={selectedOption.id}
         onChange={handleChange}
       >
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
+          <option key={option.id} value={option.id}>
+            {option.value}
           </option>
         ))}
       </select>
