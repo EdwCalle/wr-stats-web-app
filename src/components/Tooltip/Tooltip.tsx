@@ -7,8 +7,8 @@ interface TooltipProps {
 function Tooltip({ label }: TooltipProps) {
   return (
     <div className={css.tooltip}>
-      <CiCircleQuestion></CiCircleQuestion>
       <span className={css.tooltiptext}>{label}</span>
+      <CiCircleQuestion />
     </div>
   )
 }
