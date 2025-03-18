@@ -34,7 +34,9 @@ function RangeInfo({ type = RangeType.info, range }: RangeInfoProps) {
   const classNameRange = cssRangeInfoType[type]
   const { rankedTier, divisionLvl, marks } = range
   const imageName =
-    (rankedTier.tierName as keyof typeof imagesTier) || 'default'
+    rankedTier.tierName in imagesTier
+      ? (rankedTier.tierName as keyof typeof imagesTier)
+      : 'default'
 
   const fullTierName = `${rankedTier.tierName} ${divisionLvl}`
   const fullMarks = `${marks}/${rankedTier.maxMarks}`
@@ -51,7 +53,7 @@ function RangeInfo({ type = RangeType.info, range }: RangeInfoProps) {
       <div className={css.rangeViewMarks}>
         {fullMarks}
         <img src={imgMark} className={css.rangeMarks} />
-        <Tooltip label={`current min/max ${minMaxMarks} marks`} />
+        <Tooltip label={`min-max ${minMaxMarks} marks`} />
       </div>
     </div>
   )
