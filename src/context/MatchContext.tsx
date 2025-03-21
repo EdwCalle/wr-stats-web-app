@@ -17,7 +17,7 @@ const MatchContext = createContext<MatchContextType | undefined>(undefined)
 interface MatchProviderProps {
   children: ReactNode
 }
-export const UseMatch = () => {
+export const useMatch = () => {
   const context = useContext(MatchContext)
   if (!context) throw new Error('UseMatches must be used within a TaskProvider')
   return context

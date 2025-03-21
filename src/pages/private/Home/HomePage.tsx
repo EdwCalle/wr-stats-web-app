@@ -1,4 +1,4 @@
-import { UseMatch } from '@/context/MatchContext'
+import { useMatch } from '@/context/MatchContext'
 import { Season } from '@/models/season.model'
 import { SeasonProfile } from '@/models/seasonProfile.model'
 import CrudMatch from '@/pages/private/Home/CrudMatch/CrudMatch'
@@ -16,6 +16,7 @@ import { ChipColor } from '@components/Chip/Chip'
 import Details from '@components/Details/Details'
 import Main from '@components/Layout/Main/Main'
 import RangeInfo from '@components/RangeInfo/RangeInfo'
+import useModal from '@hooks/useModal'
 import {
   RankedTierApi,
   SeasonApi,
@@ -23,10 +24,11 @@ import {
 } from '@utils/interfaces/api.interface'
 import { useEffect, useState } from 'react'
 function HomePage() {
-  const { currentMatch, matches, createMatch } = UseMatch()
+  const { currentMatch, matches, createMatch } = useMatch()
   const [rankedTiers, setRankedTiers] = useState<RankedTierApi[]>()
   const [seasons, setSeasons] = useState<Season[]>()
   const [seasonsProfile, setSeasonsProfile] = useState<SeasonProfile[]>()
+  const { openModal } = useModal()
 
   const onSelectDate = (date: Date) => {
     const foundedMatch = MatchService.getMatchByDate(matches, date)
@@ -50,30 +52,12 @@ function HomePage() {
     setSeasonsProfile([...newSeasons])
   }
   useEffect(() => {
-    console.log('nose imprime:', currentMatch)
     fromRankedTiers()
     fromSeasons()
     fromSeasonsProfile()
   }, [])
   if (!rankedTiers || !seasons || !currentMatch)
     return <>not loaded resources</>
-  // throw new ('error, not loaded resources')
-  // if (seasonsProfile?.length == 0) {
-  //   return (
-  //     <>
-  //       <Main title='teee'>
-  //         <Card>
-  //           no seasons available...
-  //           <Button action='openModal' elementId='crudSeasonProfile'>
-  //             Create SeasonProfile
-  //           </Button>
-  //           <CrudSeasonProfile seasons={seasons} />
-  //         </Card>
-  //       </Main>
-  //     </>
-  //   )
-  // }
-  //
 
   if (rankedTiers && currentMatch) {
     return (
@@ -126,9 +110,7 @@ function HomePage() {
           {/* TO DO
           fix footer, button should go to footer
           */}
-          <Button action='openModal' elementId='crudMatch'>
-            Edit Match
-          </Button>
+          <Button handleClick={() => openModal('crudMatch')}>Edit Match</Button>
         </Card>
         <CrudMatch currentMatch={currentMatch} rankedTiers={rankedTiers} />
       </Main>
