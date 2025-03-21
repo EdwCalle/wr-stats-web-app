@@ -21,6 +21,7 @@ type Value = ValuePiece | [ValuePiece, ValuePiece]
 
 function CardCalendar({ match, onSelectDate, seasons }: CardCalendarProps) {
   const [currentDate, setCurrentDate] = useState<Value>(new Date())
+  // const
   const options = seasons.map((season) => ({
     id: season._id,
     value: season.seasonName,
@@ -46,8 +47,8 @@ function CardCalendar({ match, onSelectDate, seasons }: CardCalendarProps) {
           onChange={(value) => onChange(value)}
           value={currentDate}
           calendarType='gregory'
-          maxDate={new Date()}
           minDate={new Date('01/01/2020')}
+          maxDate={new Date()}
         />
       </section>
     </Card>

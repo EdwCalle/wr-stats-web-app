@@ -1,8 +1,8 @@
-// import { exampleData } from '@/dataWR'
-// import { getMatchByDate } from '../../../services/match.service'
 import { UseMatch } from '@/context/MatchContext'
 import { Season } from '@/models/season.model'
+import { SeasonProfile } from '@/models/seasonProfile.model'
 import CrudMatch from '@/pages/private/Home/CrudMatch/CrudMatch'
+import MatchService from '@/services/match.service'
 import { getRankedTiers } from '@/services/rankedTier.service'
 import { apiToSeasons, getSeasons } from '@/services/season.service'
 import {
@@ -15,7 +15,6 @@ import CardCalendar from '@components/CardCalendar/CardCalendar'
 import { ChipColor } from '@components/Chip/Chip'
 import Details from '@components/Details/Details'
 import Main from '@components/Layout/Main/Main'
-import CrudSeasonProfile from '@components/modals/CrudSeasonProfile'
 import RangeInfo from '@components/RangeInfo/RangeInfo'
 import {
   RankedTierApi,
@@ -24,20 +23,18 @@ import {
 } from '@utils/interfaces/api.interface'
 import { useEffect, useState } from 'react'
 function HomePage() {
-  const { currentMatch } = UseMatch()
+  const { currentMatch, matches, createMatch } = UseMatch()
   const [rankedTiers, setRankedTiers] = useState<RankedTierApi[]>()
   const [seasons, setSeasons] = useState<Season[]>()
   const [seasonsProfile, setSeasonsProfile] = useState<SeasonProfile[]>()
 
   const onSelectDate = (date: Date) => {
-    // const match = getMatchByDate(date)
-    // setCurrentMatch(match)
-    console.log(date)
+    const foundedMatch = MatchService.getMatchByDate(matches, date)
+    if (foundedMatch) createMatch(foundedMatch)
+
+    console.log(foundedMatch)
   }
-  // const getCurrentMatch = async () => {
-  //   const match = await getMatchByDate()
-  //   return match[70]
-  // }
+
   const fromRankedTiers = async () => {
     const currentRankedTiers = await getRankedTiers()
     setRankedTiers([...currentRankedTiers])
@@ -61,16 +58,22 @@ function HomePage() {
   if (!rankedTiers || !seasons || !currentMatch)
     return <>not loaded resources</>
   // throw new ('error, not loaded resources')
-  if (seasonsProfile?.length == 0) {
-    return (
-      <>
-        <Button action='openModal' elementId='crudSeasonProfile'>
-          Edit Match
-        </Button>
-        <CrudSeasonProfile seasons={seasons} />
-      </>
-    )
-  }
+  // if (seasonsProfile?.length == 0) {
+  //   return (
+  //     <>
+  //       <Main title='teee'>
+  //         <Card>
+  //           no seasons available...
+  //           <Button action='openModal' elementId='crudSeasonProfile'>
+  //             Create SeasonProfile
+  //           </Button>
+  //           <CrudSeasonProfile seasons={seasons} />
+  //         </Card>
+  //       </Main>
+  //     </>
+  //   )
+  // }
+  //
 
   if (rankedTiers && currentMatch) {
     return (
