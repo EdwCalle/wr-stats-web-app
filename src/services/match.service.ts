@@ -55,6 +55,8 @@ class MatchService {
       date.toLocaleString('en-US', { timeZone: 'UTC' }),
     )
     parsedDate.setUTCHours(0)
+    console.log(parsedDate.toISOString())
+    console.log(matches[0].date.toISOString())
     const foundMatch = matches.find(
       (match) => match.date.getTime() === parsedDate.getTime(),
     )

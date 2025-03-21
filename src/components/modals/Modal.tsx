@@ -1,4 +1,4 @@
-import { handleCloseModal } from '@utils/logic'
+import useModal from '@hooks/useModal'
 import { ReactNode } from 'react'
 import { IoIosCloseCircle } from 'react-icons/io'
 import css from './Modal.module.css'
@@ -9,13 +9,14 @@ type ModalProps = {
   children: ReactNode
 }
 function Modal({ elementID, title = 'modal title', children }: ModalProps) {
+  const { closeModal } = useModal()
   return (
     <dialog id={elementID} className={css.modal}>
       <header className={css.modalHeader}>
         <h3 className={css.modalHeaderTitle}>{title}</h3>
         <button
           className={css.modalHeaderExitButton}
-          onClick={() => handleCloseModal(elementID)}
+          onClick={() => closeModal(elementID)}
         >
           <IoIosCloseCircle className='icon' size={40} />
         </button>
