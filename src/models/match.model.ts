@@ -56,7 +56,9 @@ export const MatchfromApi = (matchApi: MatchApi): Match => {
       },
     }
   } catch (error) {
-    throw new Error(`from match.model,  Error on cast api to match: ${error}`)
+    throw new Error(
+      `from match.model,  Error on cast api to match: ${error} ,${matchApi._id}`,
+    )
   }
 }
 export const MatchforTable = (matchApi: MatchApi) => {

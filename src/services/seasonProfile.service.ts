@@ -1,7 +1,7 @@
 import { SeasonProfile } from '@/models/seasonProfile.model'
 import { SeasonProfileApi } from '@utils/interfaces/api.interface'
 import api from './axios.service'
-const SEASONS_URL = `season-progile`
+const SEASONS_URL = `season-profile`
 
 export const getSeasonProfile = async () => {
   const response = await api.get(SEASONS_URL)

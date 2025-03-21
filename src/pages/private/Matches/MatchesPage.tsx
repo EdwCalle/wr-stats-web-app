@@ -1,16 +1,16 @@
+import MatchService from '@/services/match.service'
+import Card from '@components/Card/Card'
+import { ChipColor } from '@components/Chip/Chip'
+import Main from '@components/Layout/Main/Main'
+import Table from '@components/Table/Table'
 import { useEffect, useState } from 'react'
-import { ChipColor } from '../../../components/Chip/Chip'
-import Main from '../../../components/Layout/Main/Main'
-import Table from '../../../components/Table/Table'
-import Card from '../../../components/Card/Card'
-import { getAllMatches } from '../../../services/match.service'
 function MatchesPage() {
   const [matches, setMatches] = useState<
     Array<{ [key: string]: string | number | boolean | null }>
   >([])
 
   const getMatches = async () => {
-    const matches = await getAllMatches()
+    const matches = await MatchService.getAllMatches()
     setMatches(matches)
   }
 
