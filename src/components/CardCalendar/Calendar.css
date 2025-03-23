@@ -192,3 +192,35 @@
 .react-calendar--selectRange .react-calendar__tile--hover {
   background-color: #e6e6e6;
 }
+/* ALL FROM HERE ARE MOD */
+button.match {
+  border-bottom: 1px solid;
+  border-color: #86909e;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  background-color: rgba(0, 0, 0, 0.795);
+}
+button.new {
+}
+/*  */
+button.default {
+  border-color: #86909e;
+}
+button.none {
+  border-color: #ffffff00;
+}
+button.good {
+  border-color: rgb(77, 232, 77);
+}
+button.ok {
+  border-color: rgb(65, 139, 74);
+}
+button.neutral {
+  border-color: rgb(215, 225, 24);
+}
+button.regular {
+  border-color: orange;
+}
+button.bad {
+  border-color: red;
+}

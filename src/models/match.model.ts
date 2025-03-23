@@ -28,7 +28,7 @@ export const MatchfromApi = (matchApi: MatchApi): Match => {
   try {
     return {
       _id: matchApi._id,
-      date: new Date(matchApi.date),
+      date: toLocalDate(matchApi.date),
       victories: matchApi.victories,
       defeats: matchApi.defeats,
       seasonProfile: {
@@ -89,7 +89,12 @@ const formatDate = (isoDate: string): string => {
   const date = new Date(isoDate)
   return date.toISOString().substring(0, 10)
 }
-
+const toLocalDate = (isoDate: string): Date => {
+  const date = new Date(isoDate)
+  date.setHours(0)
+  return date
+}
+// const ParseToLocalDate
 // export type MatchKeys = keyof Match
 // export function getKeys(obj: Match): (keyof MatchKeys)[] {
 //   return Object.keys(obj) as (keyof MatchKeys)[]
