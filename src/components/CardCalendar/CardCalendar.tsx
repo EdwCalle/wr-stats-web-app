@@ -1,16 +1,15 @@
 import { Match } from '@/models/match.model'
-import { Season } from '@/models/season.model'
 import Card from '@components/Card/Card'
 import CounterView from '@components/CounterView/CounterView'
-import Select from '@components/Select/Select'
+import useCalendar from '@hooks/useCalendar'
 import { useState } from 'react'
 import Calendar from 'react-calendar'
 import './Calendar.css'
 import css from './CardCalendar.module.css'
 
 type CardCalendarProps = {
-  match: Match
-  seasons: Season[]
+  currentMatch: Match
+  matches: Match[]
   onSelectDate: (date: Date) => void
 }
 //TO DO
@@ -19,36 +18,30 @@ type ValuePiece = Date | null
 
 type Value = ValuePiece | [ValuePiece, ValuePiece]
 
-function CardCalendar({ match, onSelectDate, seasons }: CardCalendarProps) {
+function CardCalendar({
+  currentMatch,
+  onSelectDate,
+  matches,
+}: CardCalendarProps) {
   const [currentDate, setCurrentDate] = useState<Value>(new Date())
-  // const
-  const options = seasons.map((season) => ({
-    id: season._id,
-    value: season.seasonName,
-  }))
+  const { tileContent } = useCalendar({ matches })
+
   const onChange = (date: Value) => {
     setCurrentDate(date)
     onSelectDate(date as Date)
   }
-  const onSelectedSeason = (seasonID: string) => {
-    console.log(seasonID)
-  }
   return (
     <Card title='i dont remember the title'>
       <section className={css.cardCalendar}>
-        <Select
-          name='seasons'
-          selectedOption={options[0]}
-          options={options}
-          onSelectedOption={onSelectedSeason}
-        />
-        <CounterView match={match} />
+        <CounterView match={currentMatch} />
         <Calendar
+          showNeighboringMonth={false}
+          calendarType='gregory'
+          minDate={new Date('01/08/2021')}
+          maxDate={new Date()}
           onChange={(value) => onChange(value)}
           value={currentDate}
-          calendarType='gregory'
-          minDate={new Date('01/01/2020')}
-          maxDate={new Date()}
+          tileClassName={tileContent}
         />
       </section>
     </Card>

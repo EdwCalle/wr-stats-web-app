@@ -51,14 +51,8 @@ class MatchService {
   }
 
   static getMatchByDate(matches: Match[], date: Date): Match | undefined {
-    const parsedDate = new Date(
-      date.toLocaleString('en-US', { timeZone: 'UTC' }),
-    )
-    parsedDate.setUTCHours(0)
-    console.log(parsedDate.toISOString())
-    console.log(matches[0].date.toISOString())
     const foundMatch = matches.find(
-      (match) => match.date.getTime() === parsedDate.getTime(),
+      (match) => match.date.getTime() === date.getTime(),
     )
     return foundMatch
   }

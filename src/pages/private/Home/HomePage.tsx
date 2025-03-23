@@ -1,36 +1,22 @@
 import { useMatch } from '@/context/MatchContext'
 import { Season } from '@/models/season.model'
-import { SeasonProfile } from '@/models/seasonProfile.model'
 import CrudMatch from '@/pages/private/Home/CrudMatch/CrudMatch'
 import MatchService from '@/services/match.service'
 import { getRankedTiers } from '@/services/rankedTier.service'
 import { apiToSeasons, getSeasons } from '@/services/season.service'
-import {
-  apiToSeasonProfileApi,
-  getSeasonProfile,
-} from '@/services/seasonProfile.service'
-import Button from '@components/Button/Button'
-import Card, { CardType } from '@components/Card/Card'
 import CardCalendar from '@components/CardCalendar/CardCalendar'
-import { ChipColor } from '@components/Chip/Chip'
-import Details from '@components/Details/Details'
 import Main from '@components/Layout/Main/Main'
-import RangeInfo from '@components/RangeInfo/RangeInfo'
-import useModal from '@hooks/useModal'
-import {
-  RankedTierApi,
-  SeasonApi,
-  SeasonProfileApi,
-} from '@utils/interfaces/api.interface'
+import { RankedTierApi, SeasonApi } from '@utils/interfaces/api.interface'
 import { useEffect, useState } from 'react'
+import CardDetails from './CardDetails/CardDetails'
 function HomePage() {
   const { currentMatch, matches, createMatch } = useMatch()
   const [rankedTiers, setRankedTiers] = useState<RankedTierApi[]>()
   const [seasons, setSeasons] = useState<Season[]>()
-  const [seasonsProfile, setSeasonsProfile] = useState<SeasonProfile[]>()
-  const { openModal } = useModal()
+  // const [seasonsProfile, setSeasonsProfile] = useState<SeasonProfile[]>()
 
   const onSelectDate = (date: Date) => {
+    console.log('recived date:', date)
     const foundedMatch = MatchService.getMatchByDate(matches, date)
     if (foundedMatch) createMatch(foundedMatch)
 
@@ -46,72 +32,28 @@ function HomePage() {
     const newSeasons = apiToSeasons(seasonsApi)
     setSeasons([...newSeasons])
   }
-  const fromSeasonsProfile = async () => {
-    const seasonsProfileApi: SeasonProfileApi[] = await getSeasonProfile()
-    const newSeasons = apiToSeasonProfileApi(seasonsProfileApi)
-    setSeasonsProfile([...newSeasons])
-  }
+  // const fromSeasonsProfile = async () => {
+  //   const seasonsProfileApi: SeasonProfileApi[] = await getSeasonProfile()
+  //   const newSeasons = apiToSeasonProfileApi(seasonsProfileApi)
+  //   setSeasonsProfile([...newSeasons])
+  // }
   useEffect(() => {
     fromRankedTiers()
     fromSeasons()
-    fromSeasonsProfile()
+    // fromSeasonsProfile()
   }, [])
   if (!rankedTiers || !seasons || !currentMatch)
     return <>not loaded resources</>
 
-  if (rankedTiers && currentMatch) {
+  if (rankedTiers && currentMatch && matches) {
     return (
       <Main title='HOME'>
         <CardCalendar
           onSelectDate={onSelectDate}
-          match={currentMatch}
-          seasons={seasons}
+          currentMatch={currentMatch}
+          matches={matches}
         />
-        <Card
-          title='Match Details'
-          subtitle={currentMatch.seasonProfile.season.seasonName}
-          type={CardType.details}
-        >
-          <RangeInfo range={currentMatch.range} />
-          <Details
-            data={[
-              {
-                label: 'victories',
-                chipColor: ChipColor.good,
-                value: `${currentMatch.victories}`,
-              },
-              {
-                label: 'defeats',
-                chipColor: ChipColor.bad,
-                value: `${currentMatch.defeats}`,
-              },
-              {
-                label: 'diff',
-                chipColor: ChipColor.neutral,
-                value: `${currentMatch.stats?.diff}`,
-              },
-              {
-                label: 'total matches',
-                chipColor: ChipColor.default,
-                value: `${currentMatch.stats?.totalMatches}`,
-              },
-              {
-                label: 'acum diff',
-                chipColor: ChipColor.default,
-                value: `${currentMatch.stats?.acumDiff}`,
-              },
-              {
-                label: 'estimated played time',
-                chipColor: ChipColor.default,
-                value: `${currentMatch.stats?.playedTime}`,
-              },
-            ]}
-          />
-          {/* TO DO
-          fix footer, button should go to footer
-          */}
-          <Button handleClick={() => openModal('crudMatch')}>Edit Match</Button>
-        </Card>
+        <CardDetails currentMatch={currentMatch} />
         <CrudMatch currentMatch={currentMatch} rankedTiers={rankedTiers} />
       </Main>
     )
