@@ -42,9 +42,6 @@ export async function checkTokenRequest() {
   if (!response.ok) throw await response.json()
   return await response.json()
 }
-export function logut() {
-  removeToken()
-}
 
 async function saveToken(token: string) {
   localStorage.setItem('authToken', token)
@@ -54,6 +51,6 @@ export function getAuthToken(): string | null {
   return localStorage.getItem('authToken')
 }
 
-function removeToken() {
+export function removeToken() {
   localStorage.removeItem('authToken')
 }

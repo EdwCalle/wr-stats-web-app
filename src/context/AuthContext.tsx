@@ -1,18 +1,25 @@
-import { createContext, ReactNode, useContext, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react'
 import {
   checkTokenRequest,
   loginRequest,
   registerRequest,
+  removeToken,
 } from '../services/auth.service'
 import { User } from '../utils/interfaces/user.interface'
-import { LoginValues } from '../utils/validations/login-schema'
-import { useEffect } from 'react'
-import { RegisterValues } from '../utils/validations/register-schema'
 import { delay } from '../utils/logic'
+import { LoginValues } from '../utils/validations/login-schema'
+import { RegisterValues } from '../utils/validations/register-schema'
 
 export interface AuthContextType {
   signin: (user: LoginValues) => void
   signup: (user: RegisterValues) => void
+  logout: () => void
   isLoading: boolean
   currentUser?: User
   authErrors?: Error
@@ -84,13 +91,24 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
+  const logout = () => {
+    setCurrentUser(undefined)
+    removeToken()
+  }
   useEffect(() => {
     autoLogin()
     console.log('first time: authcontext')
   }, [])
   return (
     <AuthContext.Provider
-      value={{ signin, signup, currentUser, authErrors, isLoading: isLoading }}
+      value={{
+        signin,
+        signup,
+        logout,
+        currentUser,
+        authErrors,
+        isLoading: isLoading,
+      }}
     >
       {children}
     </AuthContext.Provider>

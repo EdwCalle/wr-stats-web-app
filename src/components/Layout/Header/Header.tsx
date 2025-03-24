@@ -1,11 +1,19 @@
-import Confirm from '@components/modals/Confirm'
-import Settings from '@components/modals/Settings'
+import useAuth from '@/context/AuthContext'
+import Confirm from '@components/Modal/Confirm'
+import Settings from '@components/Modal/Settings'
 import useModal from '@hooks/useModal'
 import { CiLogout, CiMenuBurger, CiSettings } from 'react-icons/ci'
+import { useNavigate } from 'react-router-dom'
 import css from './Header.module.css'
 
 function Header() {
   const { openModal } = useModal()
+  const navigate = useNavigate()
+  const { logout } = useAuth()
+  const handleLogout = () => {
+    logout()
+    navigate('/')
+  }
   return (
     <header className={css.header}>
       <label className={css.label}>
@@ -34,7 +42,10 @@ function Header() {
         <CiSettings size={28} />
       </button>
       <Settings />
-      <Confirm titleMessage='are you sure to log out?' />
+      <Confirm
+        titleMessage='are you sure to log out?'
+        onConfirm={handleLogout}
+      />
     </header>
   )
 }

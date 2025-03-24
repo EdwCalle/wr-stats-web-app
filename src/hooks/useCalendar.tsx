@@ -14,17 +14,14 @@ const useCalendar = ({ matches }: useCalendarProps) => {
       // Add class to tiles in month view only
       //TO DO
       //fix conflicts with timezone
-      if (view !== 'month' || !(date instanceof Date)) {
-        return 'new'
-      }
+      if (view !== 'month' || !(date instanceof Date)) return null
 
       const foundMatch = matches.find(
         (match) => match.date.getTime() === date.getTime(),
       )
 
-      if (!foundMatch || !foundMatch.stats) {
-        return 'match'
-      }
+      if (!foundMatch) return 'newMatch'
+      if (!foundMatch.stats) return 'noStats'
 
       const { diff } = foundMatch.stats
 
