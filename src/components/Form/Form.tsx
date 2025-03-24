@@ -1,9 +1,9 @@
-import css from './Form.module.css'
 import { BaseSyntheticEvent, ReactNode } from 'react'
+import css from './Form.module.css'
 type FormProps = {
   // action?: string
   children: ReactNode
-  onSubmit: (e?: BaseSyntheticEvent) => Promise<void>
+  onSubmit: (e?: BaseSyntheticEvent) => Promise<void> | void
 }
 function Form({
   // title = 'title form card',

@@ -22,7 +22,12 @@ function Modal({ elementID, title = 'modal title', children }: ModalProps) {
         </button>
       </header>
       {children}
-      {/* <div></div> */}
+      {/* <footer className={css.modalFooter}>
+        <Button type='warning' handleClick={handleModal}>
+          confirm
+        </Button>
+        <Button>cancel</Button>
+      </footer> */}
     </dialog>
   )
 }

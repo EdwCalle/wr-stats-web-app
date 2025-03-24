@@ -10,6 +10,12 @@ import { RankedTierApi, SeasonApi } from '@utils/interfaces/api.interface'
 import { useEffect, useState } from 'react'
 import CardDetails from './CardDetails/CardDetails'
 function HomePage() {
+  // from here:
+  // currentMatch
+  // get matches
+  // get seasonsProfile
+  // get rankedTiers
+
   const { currentMatch, matches, createMatch } = useMatch()
   const [rankedTiers, setRankedTiers] = useState<RankedTierApi[]>()
   const [seasons, setSeasons] = useState<Season[]>()

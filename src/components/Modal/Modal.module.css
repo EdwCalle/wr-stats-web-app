@@ -53,3 +53,7 @@
   align-items: center;
   cursor: pointer;
 }
+.modalFooter {
+  display: flex;
+  justify-content: space-evenly;
+}

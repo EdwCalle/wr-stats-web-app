@@ -22,3 +22,11 @@
   /* border-width: 0; */
   background: none;
 }
+
+.warning {
+  background-color: red;
+}
+
+.secondary {
+  background-color: var(--secondary-color);
+}
