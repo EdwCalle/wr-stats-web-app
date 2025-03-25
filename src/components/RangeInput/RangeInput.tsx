@@ -1,62 +1,72 @@
 import { Ranged } from '@/models/match.model'
-import Input from '@components/Input/Input'
-import Select, { Option } from '@components/Select/Select'
+import { RankedTier } from '@/models/rankedTier.models'
+import RangeInfo from '@components/RangeInfo/RangeInfo'
+import Select from '@components/Select/Select'
 import { DIVISION } from '@utils/constants/constants'
-import { Control } from 'react-hook-form'
+import { TierType } from '@utils/enums/rankedTier.enum'
+// import { Control } from 'react-hook-form'
+// import Slider from '@components/Slider/Slider'
+import css from './RangeInput.module.css'
 interface RangeInputProps {
   range: Ranged
-  options: Option[]
-  onChangeRangeInput: (Range: Ranged) => void
-  //fix any problems
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  control: Control<any>
+  rankedTiers: RankedTier[]
+  onChangeRangeInput: (range: Ranged) => void
 }
 function RangeInput({
   range,
-  control,
-  options,
+  rankedTiers,
   onChangeRangeInput,
 }: RangeInputProps) {
-  const onSelectedTierName = (id: string) => {
-    const copyRange = { ...range }
-    onChangeRangeInput(copyRange)
-    console.log('asdasd', id)
+  const rankedOptions = rankedTiers.map(({ _id, tierName }) => ({
+    id: _id,
+    value: tierName,
+  }))
+  const onChangeRankedTier = (rankedTierID: string) => {
+    const foundRankedTier = rankedTiers.find(
+      (item) => item._id === rankedTierID,
+    )
+    if (foundRankedTier) range.rankedTier = foundRankedTier
+    onChangeRangeInput({ ...range })
   }
-  const onSelectedDivisionLvl = (id: string) => {
-    const copyRange = { ...range }
-    onChangeRangeInput(copyRange)
-    console.log('asdasd', id)
+
+  const onChangeDivisionLvl = (divisionLvl: string) => {
+    range.divisionLvl = Number(divisionLvl)
+    onChangeRangeInput({ ...range })
   }
-  // const onChangeMarks = (value: number) => {
-  //   const copyRange = { ...range }
-  //   copyRange.marks = value
-  //   onChangeRangeInput(copyRange)
-  // }
+  const onChangeMarks = (marks: string) => {
+    range.marks = Number(parseInt(marks))
+    onChangeRangeInput({ ...range })
+  }
   return (
-    <>
+    <div className={css.range}>
+      <RangeInfo range={range} />
       <Select
         name='tierName'
-        onSelectedOption={onSelectedTierName}
-        options={options}
+        onSelectedOption={onChangeRankedTier}
+        options={rankedOptions}
         selectedOption={{
           id: range.rankedTier._id,
           value: range.rankedTier.tierName,
         }}
       />
-      {/* TO DO
-        change way to perform key in selects, due to tierName and DivisionLvl must have the same key
-      */}
-      <Select
-        name='divisionLvl'
-        onSelectedOption={onSelectedDivisionLvl}
-        options={DIVISION}
-        selectedOption={{
-          id: range.divisionLvl,
-          value: range.divisionLvl,
-        }}
-      />
-      <Input label='soy label' name='marks' type='number' control={control} />
-    </>
+      {range.rankedTier.tierType === TierType.DIVISION && (
+        <Select
+          name='divisionLvl'
+          onSelectedOption={onChangeDivisionLvl}
+          options={DIVISION}
+          selectedOption={{
+            id: range.divisionLvl,
+            value: range.divisionLvl,
+          }}
+        />
+      )}
+      {/* <Slider
+        defaultValue={range.marks}
+        min={range.rankedTier.minMarks}
+        max={range.rankedTier.maxMarks}
+        onChange={onChangeMarks}
+      /> */}
+    </div>
   )
 }
 export default RangeInput

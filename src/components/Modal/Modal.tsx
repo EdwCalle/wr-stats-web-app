@@ -1,3 +1,4 @@
+import Button from '@components/Button/Button'
 import useModal from '@hooks/useModal'
 import { ReactNode } from 'react'
 import { IoIosCloseCircle } from 'react-icons/io'
@@ -6,9 +7,17 @@ import css from './Modal.module.css'
 type ModalProps = {
   elementID: string
   title?: string
+  onConfirm?: () => void
+  onCancel?: () => void
   children: ReactNode
 }
-function Modal({ elementID, title = 'modal title', children }: ModalProps) {
+function Modal({
+  elementID,
+  title = 'modal title',
+  children,
+  onCancel,
+  onConfirm,
+}: ModalProps) {
   const { closeModal } = useModal()
   return (
     <dialog id={elementID} className={css.modal}>
@@ -21,13 +30,13 @@ function Modal({ elementID, title = 'modal title', children }: ModalProps) {
           <IoIosCloseCircle className='icon' size={40} />
         </button>
       </header>
-      {children}
-      {/* <footer className={css.modalFooter}>
-        <Button type='warning' handleClick={handleModal}>
+      <main>{children}</main>
+      <footer className={css.modalFooter}>
+        <Button variant='warning' handleClick={onConfirm}>
           confirm
         </Button>
-        <Button>cancel</Button>
-      </footer> */}
+        <Button handleClick={onCancel}>cancel</Button>
+      </footer>
     </dialog>
   )
 }

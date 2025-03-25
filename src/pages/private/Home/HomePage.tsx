@@ -1,13 +1,9 @@
 import { useMatch } from '@/context/MatchContext'
-import { Season } from '@/models/season.model'
 import CrudMatch from '@/pages/private/Home/CrudMatch/CrudMatch'
-import MatchService from '@/services/match.service'
-import { getRankedTiers } from '@/services/rankedTier.service'
-import { apiToSeasons, getSeasons } from '@/services/season.service'
 import CardCalendar from '@components/CardCalendar/CardCalendar'
 import Main from '@components/Layout/Main/Main'
-import { RankedTierApi, SeasonApi } from '@utils/interfaces/api.interface'
-import { useEffect, useState } from 'react'
+import useRankedTiers from '@hooks/useRankedTiers'
+import useSeasons from '@hooks/useSeasons'
 import CardDetails from './CardDetails/CardDetails'
 function HomePage() {
   // from here:
@@ -16,42 +12,18 @@ function HomePage() {
   // get seasonsProfile
   // get rankedTiers
 
-  const { currentMatch, matches, createMatch } = useMatch()
-  const [rankedTiers, setRankedTiers] = useState<RankedTierApi[]>()
-  const [seasons, setSeasons] = useState<Season[]>()
-  // const [seasonsProfile, setSeasonsProfile] = useState<SeasonProfile[]>()
+  const { currentMatch, matches, getMatchByDate } = useMatch()
+  const { seasons } = useSeasons()
+  const { rankedTiers } = useRankedTiers()
 
   const onSelectDate = (date: Date) => {
-    console.log('recived date:', date)
-    const foundedMatch = MatchService.getMatchByDate(matches, date)
-    if (foundedMatch) createMatch(foundedMatch)
-
-    console.log(foundedMatch)
+    console.log('from onSelectDate:', date)
+    getMatchByDate(date)
   }
 
-  const fromRankedTiers = async () => {
-    const currentRankedTiers = await getRankedTiers()
-    setRankedTiers([...currentRankedTiers])
-  }
-  const fromSeasons = async () => {
-    const seasonsApi: SeasonApi[] = await getSeasons()
-    const newSeasons = apiToSeasons(seasonsApi)
-    setSeasons([...newSeasons])
-  }
-  // const fromSeasonsProfile = async () => {
-  //   const seasonsProfileApi: SeasonProfileApi[] = await getSeasonProfile()
-  //   const newSeasons = apiToSeasonProfileApi(seasonsProfileApi)
-  //   setSeasonsProfile([...newSeasons])
-  // }
-  useEffect(() => {
-    fromRankedTiers()
-    fromSeasons()
-    // fromSeasonsProfile()
-  }, [])
-  if (!rankedTiers || !seasons || !currentMatch)
-    return <>not loaded resources</>
+  if (!rankedTiers || !seasons) return <>not loaded resources</>
 
-  if (rankedTiers && currentMatch && matches) {
+  if (rankedTiers && matches) {
     return (
       <Main title='HOME'>
         <CardCalendar
@@ -60,9 +32,10 @@ function HomePage() {
           matches={matches}
         />
         <CardDetails currentMatch={currentMatch} />
+
         <CrudMatch currentMatch={currentMatch} rankedTiers={rankedTiers} />
       </Main>
     )
-  }
+  } else return <>not loaded resources 2</>
 }
 export default HomePage

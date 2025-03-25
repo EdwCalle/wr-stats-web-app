@@ -8,7 +8,7 @@ import './Calendar.css'
 import css from './CardCalendar.module.css'
 
 type CardCalendarProps = {
-  currentMatch: Match
+  currentMatch: Match | undefined
   matches: Match[]
   onSelectDate: (date: Date) => void
 }
@@ -31,13 +31,17 @@ function CardCalendar({
     onSelectDate(date as Date)
   }
   return (
-    <Card title='i dont remember the title'>
+    <Card
+      title='Stats from date selected'
+      subtitle={currentDate?.toLocaleString()}
+    >
       <section className={css.cardCalendar}>
-        <CounterView match={currentMatch} />
+        {currentMatch && <CounterView match={currentMatch} />}
+        {!currentMatch && <>no match</>}
         <Calendar
           showNeighboringMonth={false}
           calendarType='gregory'
-          minDate={new Date('01/08/2021')}
+          minDate={new Date('2021-01-08')}
           maxDate={new Date()}
           onChange={(value) => onChange(value)}
           value={currentDate}

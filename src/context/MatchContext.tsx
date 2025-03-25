@@ -1,4 +1,4 @@
-import { exampleMatch, Match } from '@/models/match.model'
+import { Match } from '@/models/match.model'
 import MatchService from '@/services/match.service'
 import {
   createContext,
@@ -8,9 +8,10 @@ import {
   useState,
 } from 'react'
 interface MatchContextType {
-  currentMatch: Match
-  setCurrentMatch: (newMatch: Match) => void
+  currentMatch: Match | undefined
+  // setCurrentMatch: (newMatch: Match) => void
   createMatch: (newMatch: Match) => void
+  getMatchByDate: (date: Date) => void
   matches: Match[]
 }
 const MatchContext = createContext<MatchContextType | undefined>(undefined)
@@ -24,20 +25,31 @@ export const useMatch = () => {
 }
 function MatchProvider({ children }: MatchProviderProps) {
   const [matches, setMatches] = useState<Match[]>([])
-  const [currentMatch, setCurrentMatch] = useState<Match>(exampleMatch)
+  const [currentMatch, setCurrentMatch] = useState<Match | undefined>()
   const createMatch = (newMatch: Match) => {
     setCurrentMatch(newMatch)
   }
+  const getMatchByDate = (date: Date) => {
+    const foundMatch = MatchService.getMatchByDate(matches, date)
+    if (foundMatch) setCurrentMatch(foundMatch)
+    else setCurrentMatch(undefined)
+  }
   const getMatches = async () => {
-    const m = await MatchService.getAllMatches2()
-    setMatches([...m])
+    const newMatches = await MatchService.getAllMatches2()
+    setMatches([...newMatches])
   }
   useEffect(() => {
     getMatches()
+    getMatchByDate(new Date())
   }, [])
   return (
     <MatchContext.Provider
-      value={{ currentMatch, setCurrentMatch, createMatch, matches }}
+      value={{
+        currentMatch,
+        createMatch,
+        getMatchByDate: getMatchByDate,
+        matches,
+      }}
     >
       {children}
     </MatchContext.Provider>

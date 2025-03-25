@@ -22,6 +22,7 @@ export interface Ranged {
   marks: number
 }
 
+// export type MatchI = Match | undefined
 //extra function
 
 export const MatchfromApi = (matchApi: MatchApi): Match => {
@@ -100,24 +101,24 @@ const toLocalDate = (isoDate: string): Date => {
 //   return Object.keys(obj) as (keyof MatchKeys)[]
 // }
 
-export const exampleMatch: Match = {
-  _id: 'exampleId',
+export const newMatch: Match = {
+  _id: 'new',
   date: new Date(),
-  victories: 10,
-  defeats: 5,
+  victories: 0,
+  defeats: 0,
   seasonProfile: {
-    _id: 'seasonProfileIdasds',
+    _id: 'new',
     season: {
-      _id: 'seasonId',
-      seasonName: 'Season 1',
+      _id: 'new',
+      seasonName: 'no selected',
       startDate: new Date(),
       finishDate: new Date(),
     },
-    totalMatches: 12,
-    winRate: 12,
+    totalMatches: 0,
+    winRate: 0,
   },
   range: {
-    divisionLvl: 3,
+    divisionLvl: 1,
     marks: 100,
     rankedTier: {
       _id: '67acc1fd7b95c60b11008d21',
@@ -127,11 +128,5 @@ export const exampleMatch: Match = {
       minMarks: 0,
       maxMarks: 100,
     },
-  },
-  stats: {
-    totalMatches: 10,
-    diff: 12,
-    acumDiff: 222,
-    playedTime: 123,
   },
 }
