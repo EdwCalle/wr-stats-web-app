@@ -12,7 +12,7 @@ function Confirm({ titleMessage, onConfirm }: ConfirmProps) {
   return (
     <Modal elementID={'confirm'} title={titleMessage}>
       <div style={{ display: 'flex', justifyContent: 'space-evenly' }}>
-        <Button type='warning' handleClick={onConfirm}>
+        <Button variant='warning' handleClick={onConfirm}>
           confirm
         </Button>
         <Button handleClick={() => closeModal('confirm')}>cancel</Button>
