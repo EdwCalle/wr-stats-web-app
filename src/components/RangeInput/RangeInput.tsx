@@ -24,7 +24,10 @@ function RangeInput({
     const foundRankedTier = rankedTiers.find(
       (item) => item._id === rankedTierID,
     )
-    if (foundRankedTier) range.rankedTier = foundRankedTier
+    if (foundRankedTier) {
+      range.rankedTier = foundRankedTier
+      range.marks = range.rankedTier.minMarks
+    }
     onChangeRangeInput({ ...range })
   }
 
