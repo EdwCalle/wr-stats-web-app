@@ -1,10 +1,25 @@
+import { RankedTier } from '@/models/rankedTier.models'
+import { TierSeason, TierType } from '@utils/enums/rankedTier.enum'
 import { RankedTierApi } from '@utils/interfaces/api.interface'
-import api from './axios.service'
+import axios from './axios.service'
 const RANKED_TIERS_API = `ranked-tier`
 export class RankedTierService {
   static findAll = async () => {
-    const response = await api.get(RANKED_TIERS_API)
-    const result: RankedTierApi[] = response.data
-    return result
+    return await axios.get(RANKED_TIERS_API)
+  }
+  static toRankedTiers = (rankedTiersApi: RankedTierApi[]): RankedTier[] => {
+    return rankedTiersApi.map((rankedTier) => this.toRankedTier(rankedTier))
+  }
+  static toRankedTier = (rankedTierApi: RankedTierApi): RankedTier => {
+    try {
+      return {
+        ...rankedTierApi,
+        tierSeason: rankedTierApi.tierSeason as TierSeason,
+        tierType: rankedTierApi.tierType as TierType,
+      }
+    } catch (error) {
+      console.log(error)
+      throw Error(`Error on cast RankedTierApi:${error}`)
+    }
   }
 }

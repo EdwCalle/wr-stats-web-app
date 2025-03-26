@@ -10,7 +10,7 @@ function MatchesPage() {
   >([])
 
   const getMatches = async () => {
-    const matches = await MatchService.getAllMatches()
+    const matches = await MatchService.findAll()
     setMatches(matches)
   }
 
