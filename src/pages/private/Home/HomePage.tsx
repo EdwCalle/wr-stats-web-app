@@ -1,10 +1,11 @@
+import CrudMatchProvider from '@/context/CrudMatchContext'
 import { useMatch } from '@/context/MatchContext'
-import CrudMatch from '@/pages/private/Home/CrudMatch/CrudMatch'
 import CardCalendar from '@components/CardCalendar/CardCalendar'
 import Main from '@components/Layout/Main/Main'
 import useRankedTiers from '@hooks/useRankedTiers'
 import useSeasons from '@hooks/useSeasons'
 import CardDetails from './CardDetails/CardDetails'
+import CrudMatch from './CrudMatch/CrudMatch'
 function HomePage() {
   // from here:
   // currentMatch
@@ -31,11 +32,12 @@ function HomePage() {
           currentMatch={currentMatch}
           matches={matches}
         />
-        <CardDetails currentMatch={currentMatch} />
-
-        <CrudMatch currentMatch={currentMatch} rankedTiers={rankedTiers} />
+        <CrudMatchProvider>
+          <CardDetails currentMatch={currentMatch} />
+          <CrudMatch rankedTiers={rankedTiers} />
+        </CrudMatchProvider>
       </Main>
     )
-  } else return <>not loaded resources 2</>
+  } else return <>not loaded resources rankedTiers and matchces</>
 }
 export default HomePage

@@ -1,24 +1,28 @@
-import { Match } from '@/models/match.model'
+import { useCrudMatch } from '@/context/CrudMatchContext'
 import { RankedTier } from '@/models/rankedTier.models'
 import CounterBox from '@components/CounterBox/CounterBox'
 import Form from '@components/Form/Form'
 import Modal from '@components/Modal/Modal'
 import RangeInput from '@components/RangeInput/RangeInput'
-import useCrudMatch from '@hooks/useCrudMatch'
 type CrudMatchProps = {
-  currentMatch: Match | undefined
   rankedTiers: RankedTier[]
 }
 
-function CrudMatch({ currentMatch, rankedTiers }: CrudMatchProps) {
-  const { localMatch, onChangeCounter, onChangeRange } =
-    useCrudMatch(currentMatch)
+function CrudMatch({ rankedTiers }: CrudMatchProps) {
+  const { localMatch, onChangeCounter, onChangeRange, cancelCrudMatch } =
+    useCrudMatch()
 
   const onSubmit = () => {
     console.log('sending new match:', localMatch)
   }
+
   return (
-    <Modal elementID={'crudMatch'} title='CRUD match' onConfirm={onSubmit}>
+    <Modal
+      elementID={'crudMatch'}
+      title='CRUD match'
+      onConfirm={onSubmit}
+      onCancel={cancelCrudMatch}
+    >
       <Form>
         <fieldset>
           <dl>
