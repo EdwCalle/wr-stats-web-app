@@ -2,7 +2,7 @@ import CrudMatchProvider from '@/context/CrudMatchContext'
 import { useMatch } from '@/context/MatchContext'
 import CardCalendar from '@components/CardCalendar/CardCalendar'
 import Main from '@components/Layout/Main/Main'
-import useRankedTiers from '@hooks/useRankedTiers'
+import useRankedTiers from '@hooks/useRankedTier'
 import useSeasons from '@hooks/useSeasons'
 import CardDetails from './CardDetails/CardDetails'
 import CrudMatch from './CrudMatch/CrudMatch'
@@ -25,6 +25,7 @@ function HomePage() {
   if (!rankedTiers || !seasons) return <>not loaded resources</>
 
   if (rankedTiers && matches) {
+    console.log('why 2')
     return (
       <Main title='HOME'>
         <CardCalendar

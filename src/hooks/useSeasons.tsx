@@ -1,13 +1,12 @@
 import { Season } from '@/models/season.model'
-import { apiToSeasons, getSeasons } from '@/services/season.service'
-import { SeasonApi } from '@utils/interfaces/api.interface'
+import { SeasonService } from '@/services/season.service'
 import { useEffect, useState } from 'react'
 
 const useSeasons = () => {
   const [seasons, setSeasons] = useState<Season[]>()
   const loadSeasons = async () => {
-    const seasonsApi: SeasonApi[] = await getSeasons()
-    const newSeasons = apiToSeasons(seasonsApi)
+    const res = await SeasonService.findAll()
+    const newSeasons = SeasonService.toSeasons(res.data)
     setSeasons([...newSeasons])
   }
   useEffect(() => {

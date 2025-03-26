@@ -20,7 +20,8 @@ interface MatchProviderProps {
 }
 export const useMatch = () => {
   const context = useContext(MatchContext)
-  if (!context) throw new Error('UseMatches must be used within a TaskProvider')
+  if (!context)
+    throw new Error('UseMatches must be used within a MatchProvider')
   return context
 }
 function MatchProvider({ children }: MatchProviderProps) {
@@ -30,13 +31,14 @@ function MatchProvider({ children }: MatchProviderProps) {
     setCurrentMatch(newMatch)
   }
   const getMatchByDate = (date: Date) => {
-    const foundMatch = MatchService.getMatchByDate(matches, date)
+    const foundMatch = MatchService.findOneByDate(matches, date)
     if (foundMatch) setCurrentMatch(foundMatch)
     else setCurrentMatch(undefined)
   }
   const getMatches = async () => {
-    const newMatches = await MatchService.getAllMatches2()
-    setMatches([...newMatches])
+    const res = await MatchService.findAll()
+    const newMatches = MatchService.toMatches(res.data)
+    setMatches(newMatches)
   }
   useEffect(() => {
     getMatches()
