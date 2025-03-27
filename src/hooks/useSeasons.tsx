@@ -12,6 +12,6 @@ const useSeasons = () => {
   useEffect(() => {
     loadSeasons()
   }, [])
-  return { seasons }
+  return { seasons, loadSeasons }
 }
 export default useSeasons

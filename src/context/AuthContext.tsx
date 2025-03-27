@@ -96,8 +96,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     removeToken()
   }
   useEffect(() => {
-    autoLogin()
     console.log('first time: authcontext')
+    autoLogin()
   }, [])
   return (
     <AuthContext.Provider

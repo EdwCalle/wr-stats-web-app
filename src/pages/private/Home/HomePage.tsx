@@ -2,40 +2,25 @@ import CrudMatchProvider from '@/context/CrudMatchContext'
 import { useMatch } from '@/context/MatchContext'
 import CardCalendar from '@components/CardCalendar/CardCalendar'
 import Main from '@components/Layout/Main/Main'
-import useRankedTiers from '@hooks/useRankedTier'
-import useSeasons from '@hooks/useSeasons'
 import CardDetails from './CardDetails/CardDetails'
-import CrudMatch from './CrudMatch/CrudMatch'
 function HomePage() {
-  // from here:
-  // currentMatch
-  // get matches
-  // get seasonsProfile
-  // get rankedTiers
+  const { currentMatch, matches, getMatchByDate, isLoading } = useMatch()
+  // console.log('render home page:', matches.length)
 
-  const { currentMatch, matches, getMatchByDate } = useMatch()
-  const { seasons } = useSeasons()
-  const { rankedTiers } = useRankedTiers()
+  if (isLoading) return <>not loaded resources</>
 
-  const onSelectDate = (date: Date) => {
-    console.log('from onSelectDate:', date)
-    getMatchByDate(date)
-  }
-
-  if (!rankedTiers || !seasons) return <>not loaded resources</>
-
-  if (rankedTiers && matches) {
-    console.log('why 2')
+  if (!isLoading) {
+    console.log('render: fragment HomePage')
     return (
       <Main title='HOME'>
         <CardCalendar
-          onSelectDate={onSelectDate}
+          onSelectDate={getMatchByDate}
           currentMatch={currentMatch}
           matches={matches}
         />
         <CrudMatchProvider>
           <CardDetails currentMatch={currentMatch} />
-          <CrudMatch rankedTiers={rankedTiers} />
+          {/* <CrudMatch rankedTiers={rankedTiers} /> */}
         </CrudMatchProvider>
       </Main>
     )

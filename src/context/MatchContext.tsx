@@ -1,5 +1,7 @@
 import { Match } from '@/models/match.model'
+import { RankedTier } from '@/models/rankedTier.models'
 import MatchService from '@/services/match.service'
+import useRankedTiers from '@hooks/useRankedTier'
 import {
   createContext,
   ReactNode,
@@ -9,10 +11,12 @@ import {
 } from 'react'
 interface MatchContextType {
   currentMatch: Match | undefined
-  // setCurrentMatch: (newMatch: Match) => void
   createMatch: (newMatch: Match) => void
   getMatchByDate: (date: Date) => void
   matches: Match[]
+  rankedTiers: RankedTier[] | undefined
+  isLoading?: boolean
+  // seasons: Season[] | undefined
 }
 const MatchContext = createContext<MatchContextType | undefined>(undefined)
 interface MatchProviderProps {
@@ -25,8 +29,11 @@ export const useMatch = () => {
   return context
 }
 function MatchProvider({ children }: MatchProviderProps) {
-  const [matches, setMatches] = useState<Match[]>([])
   const [currentMatch, setCurrentMatch] = useState<Match | undefined>()
+  const [isLoading, setIsloading] = useState(true)
+  const { rankedTiers, loadRankedTiers } = useRankedTiers()
+  const [matches, setMatches] = useState<Match[]>([])
+  // const { seasons, loadSeasons } = useSeasons()
   const createMatch = (newMatch: Match) => {
     setCurrentMatch(newMatch)
   }
@@ -38,12 +45,24 @@ function MatchProvider({ children }: MatchProviderProps) {
   const getMatches = async () => {
     const res = await MatchService.findAll()
     const newMatches = MatchService.toMatches(res.data)
-    setMatches(newMatches)
+    setMatches([...newMatches])
+  }
+  const loadData = async () => {
+    await loadRankedTiers()
+    await getMatches()
+    getMatchByDate(new Date())
+    setIsloading(false)
   }
   useEffect(() => {
-    getMatches()
-    getMatchByDate(new Date())
+    loadData()
   }, [])
+  // console.log(
+  //   'i render:',
+  //   isLoading,
+  //   currentMatch,
+  //   matches.length,
+  //   rankedTiers?.length,
+  // )
   return (
     <MatchContext.Provider
       value={{
@@ -51,6 +70,8 @@ function MatchProvider({ children }: MatchProviderProps) {
         createMatch,
         getMatchByDate: getMatchByDate,
         matches,
+        isLoading,
+        rankedTiers,
       }}
     >
       {children}

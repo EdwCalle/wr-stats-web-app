@@ -1,11 +1,11 @@
 import { RankedTier } from '@/models/rankedTier.models'
 import { RankedTierService } from '@/services/rankedTier.service'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { toast } from 'react-toastify'
 
 const useRankedTiers = () => {
   const [rankedTiers, setRankedTiers] = useState<RankedTier[]>()
-  const loadData = async () => {
+  const loadRankedTiers = async () => {
     try {
       const res = await RankedTierService.findAll()
       const newRankedTiers = RankedTierService.toRankedTiers(res.data)
@@ -14,9 +14,7 @@ const useRankedTiers = () => {
       toast.error(`Error on get RankedTiers: ${error}`)
     }
   }
-  useEffect(() => {
-    loadData()
-  }, [])
-  return { rankedTiers }
+
+  return { rankedTiers, loadRankedTiers }
 }
 export default useRankedTiers
