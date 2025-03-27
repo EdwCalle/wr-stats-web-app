@@ -4,14 +4,21 @@ import { ChipColor } from '@components/Chip/Chip'
 import Main from '@components/Layout/Main/Main'
 import Table from '@components/Table/Table'
 import { useEffect, useState } from 'react'
+import { toast } from 'react-toastify'
+
 function MatchesPage() {
-  const [matches, setMatches] = useState<
+  const [data, setData] = useState<
     Array<{ [key: string]: string | number | boolean | null }>
   >([])
 
   const getMatches = async () => {
-    const matches = await MatchService.findAll()
-    setMatches(matches)
+    try {
+      const res = await MatchService.findAll()
+      const matches = MatchService.toMatchesTable(res.data)
+      setData(matches)
+    } catch (error) {
+      toast.error(`error on get matches ${error}`)
+    }
   }
 
   useEffect(() => {
@@ -26,7 +33,7 @@ function MatchesPage() {
             { propName: 'defeats', color: ChipColor.bad },
             { propName: 'marks', color: ChipColor.neutral },
           ]}
-          data={matches}
+          data={data}
         />
       </Card>
     </Main>

@@ -14,7 +14,7 @@ interface MatchContextType {
   createMatch: (newMatch: Match) => void
   getMatchByDate: (date: Date) => void
   matches: Match[]
-  rankedTiers: RankedTier[] | undefined
+  rankedTiers: RankedTier[]
   isLoading?: boolean
   // seasons: Season[] | undefined
 }
@@ -38,6 +38,8 @@ function MatchProvider({ children }: MatchProviderProps) {
     setCurrentMatch(newMatch)
   }
   const getMatchByDate = (date: Date) => {
+    console.log('first date', matches[0].date.toISOString())
+    console.log('on click date:', date.toISOString())
     const foundMatch = MatchService.findOneByDate(matches, date)
     if (foundMatch) setCurrentMatch(foundMatch)
     else setCurrentMatch(undefined)
