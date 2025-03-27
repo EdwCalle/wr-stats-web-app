@@ -2,8 +2,10 @@ import { Match } from '@/models/match.model'
 import Card from '@components/Card/Card'
 import CounterView from '@components/CounterView/CounterView'
 import useCalendar from '@hooks/useCalendar'
+import { newDate } from '@utils/logic'
 import { useState } from 'react'
 import Calendar from 'react-calendar'
+import { LooseValue } from 'react-calendar/src/shared/types.js'
 import './Calendar.css'
 import css from './CardCalendar.module.css'
 
@@ -12,21 +14,16 @@ type CardCalendarProps = {
   matches: Match[]
   onSelectDate: (date: Date) => void
 }
-//TO DO
-//fix date type, here use value
-type ValuePiece = Date | null
-
-type Value = ValuePiece | [ValuePiece, ValuePiece]
 
 function CardCalendar({
   currentMatch,
   onSelectDate,
   matches,
 }: CardCalendarProps) {
-  const [currentDate, setCurrentDate] = useState<Value>(new Date())
-  const { tileContent } = useCalendar({ matches })
+  const [currentDate, setCurrentDate] = useState<LooseValue>(newDate())
+  const { tileClassName } = useCalendar({ matches })
 
-  const onChange = (date: Value) => {
+  const onChange = (date: LooseValue) => {
     setCurrentDate(date)
     onSelectDate(date as Date)
   }
@@ -41,11 +38,11 @@ function CardCalendar({
         <Calendar
           showNeighboringMonth={false}
           calendarType='gregory'
-          minDate={new Date('2021-01-08')}
-          maxDate={new Date()}
+          minDate={new Date(2021, 1, 8, 0)}
+          maxDate={newDate()}
           onChange={(value) => onChange(value)}
           value={currentDate}
-          tileClassName={tileContent}
+          tileClassName={tileClassName}
         />
       </section>
     </Card>

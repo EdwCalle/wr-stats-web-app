@@ -6,8 +6,16 @@ export const formatDate = (isoDate: string): string => {
 }
 export const toLocalDate = (isoDate: string): Date => {
   const date = new Date(isoDate)
-  date.setHours(0)
+  date.setHours(0, 0, 0, 0)
   return date
+}
+export const newDate = () => {
+  const date = new Date()
+  date.setHours(0, 0, 0, 0)
+  return date
+}
+export const compareDate = (date1: Date, date2: Date) => {
+  return date1.toISOString() === date2.toISOString()
 }
 export function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
