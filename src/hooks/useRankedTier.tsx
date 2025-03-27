@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { toast } from 'react-toastify'
 
 const useRankedTiers = () => {
-  const [rankedTiers, setRankedTiers] = useState<RankedTier[]>()
+  const [rankedTiers, setRankedTiers] = useState<RankedTier[]>([])
   const loadRankedTiers = async () => {
     try {
       const res = await RankedTierService.findAll()

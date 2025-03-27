@@ -3,8 +3,10 @@ import { useMatch } from '@/context/MatchContext'
 import CardCalendar from '@components/CardCalendar/CardCalendar'
 import Main from '@components/Layout/Main/Main'
 import CardDetails from './CardDetails/CardDetails'
+import CrudMatch from './CrudMatch/CrudMatch'
 function HomePage() {
-  const { currentMatch, matches, getMatchByDate, isLoading } = useMatch()
+  const { currentMatch, rankedTiers, matches, getMatchByDate, isLoading } =
+    useMatch()
   // console.log('render home page:', matches.length)
 
   if (isLoading) return <>not loaded resources</>
@@ -20,7 +22,7 @@ function HomePage() {
         />
         <CrudMatchProvider>
           <CardDetails currentMatch={currentMatch} />
-          {/* <CrudMatch rankedTiers={rankedTiers} /> */}
+          <CrudMatch rankedTiers={rankedTiers} />
         </CrudMatchProvider>
       </Main>
     )

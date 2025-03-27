@@ -1,6 +1,4 @@
-import { formatDate } from '@utils/logic'
 import { TierSeason, TierType } from '../utils/enums/rankedTier.enum'
-import { MatchApi } from '../utils/interfaces/api.interface'
 import { RankedTier } from './rankedTier.models'
 import { SeasonProfile } from './seasonProfile.model'
 
@@ -30,34 +28,7 @@ export interface Stats {
 }
 
 // export type MatchI = Match | undefined
-//extra function
 
-export const MatchforTable = (matchApi: MatchApi) => {
-  try {
-    return {
-      _id: matchApi._id,
-      date: formatDate(matchApi.date),
-      seasonProfileID: matchApi.seasonProfileID._id,
-      rankedTierName: matchApi.range.rankedTierID.tierName,
-      divisionLvl: matchApi.range.divisionLvl,
-      marks: matchApi.range.marks,
-      rankedTierID: matchApi.range.rankedTierID._id,
-      tierName: matchApi.range.rankedTierID.tierName,
-      tierType: matchApi.range.rankedTierID.tierType as TierType,
-      tierSeason: matchApi.range.rankedTierID.tierSeason as TierSeason,
-      minMarks: matchApi.range.rankedTierID.minMarks,
-      maxMarks: matchApi.range.rankedTierID.maxMarks,
-      victories: matchApi.victories,
-      defeats: matchApi.defeats,
-    }
-  } catch (error) {
-    throw new Error(
-      `from match.model,  Error on cast api to match:${matchApi._id} ${error}`,
-    )
-  }
-}
-
-// const ParseToLocalDate
 // export type MatchKeys = keyof Match
 // export function getKeys(obj: Match): (keyof MatchKeys)[] {
 //   return Object.keys(obj) as (keyof MatchKeys)[]

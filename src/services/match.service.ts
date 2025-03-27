@@ -1,6 +1,7 @@
 import { Match, Stats } from '@/models/match.model'
+import { TierSeason, TierType } from '@utils/enums/rankedTier.enum'
 import { MatchApi } from '@utils/interfaces/api.interface'
-import { toLocalDate } from '@utils/logic'
+import { formatDate, toLocalDate } from '@utils/logic'
 import axios from './axios.service'
 import { RankedTierService } from './rankedTier.service'
 import { SeasonProfileService } from './seasonProfile.service'
@@ -66,6 +67,7 @@ class MatchService {
       throw new Error(`WRError on cast matchAPi: ${error} ,${matchApi._id}`)
     }
   }
+
   static getStats = (
     lastAccumDiff: number,
     victories: number,
@@ -76,6 +78,49 @@ class MatchService {
     const diff = victories - defeats
     const acumDiff = diff + lastAccumDiff
     return { playedTime, totalMatches, diff, acumDiff }
+  }
+
+  //extra function
+  static toMatchesTable = (matchesApi: MatchApi[]) => {
+    try {
+      let totalAcumDiff = 0
+      return matchesApi.map((match: MatchApi) => {
+        const stats = this.getStats(
+          totalAcumDiff,
+          match.victories,
+          match.defeats,
+        )
+        totalAcumDiff += stats.diff
+        return { ...this.toMatchTable(match), ...stats }
+      })
+    } catch (error) {
+      throw Error(`Error on creating stats for Matches table:${error}`)
+    }
+  }
+
+  static toMatchTable = (matchApi: MatchApi) => {
+    try {
+      return {
+        _id: matchApi._id,
+        date: formatDate(matchApi.date),
+        seasonProfileID: matchApi.seasonProfileID._id,
+        rankedTierName: matchApi.range.rankedTierID.tierName,
+        divisionLvl: matchApi.range.divisionLvl,
+        marks: matchApi.range.marks,
+        rankedTierID: matchApi.range.rankedTierID._id,
+        tierName: matchApi.range.rankedTierID.tierName,
+        tierType: matchApi.range.rankedTierID.tierType as TierType,
+        tierSeason: matchApi.range.rankedTierID.tierSeason as TierSeason,
+        minMarks: matchApi.range.rankedTierID.minMarks,
+        maxMarks: matchApi.range.rankedTierID.maxMarks,
+        victories: matchApi.victories,
+        defeats: matchApi.defeats,
+      }
+    } catch (error) {
+      throw new Error(
+        `from match.model,  Error on cast api to match:${matchApi._id} ${error}`,
+      )
+    }
   }
 }
 
