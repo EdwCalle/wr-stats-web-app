@@ -8,7 +8,6 @@ type ValuePiece = Date | null
 type Value = ValuePiece | [ValuePiece, ValuePiece]
 
 const useCalendar = ({ matches }: useCalendarProps) => {
-  console.log('lenght of matches:', matches.length)
   const tileContent = useCallback(
     ({ date, view }: { date: Value; view: string }) => {
       // Add class to tiles in month view only
