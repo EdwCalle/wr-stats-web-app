@@ -2,6 +2,7 @@ import { Match } from '@/models/match.model'
 import { RankedTier } from '@/models/rankedTier.models'
 import MatchService from '@/services/match.service'
 import useRankedTiers from '@hooks/useRankedTier'
+import { newDate } from '@utils/logic'
 import {
   createContext,
   ReactNode,
@@ -38,7 +39,7 @@ function MatchProvider({ children }: MatchProviderProps) {
     setCurrentMatch(newMatch)
   }
   const getMatchByDate = (date: Date) => {
-    console.log('first date', matches[0].date.toISOString())
+    // console.log('first date', matches[0].date.toISOString())
     console.log('on click date:', date.toISOString())
     const foundMatch = MatchService.findOneByDate(matches, date)
     if (foundMatch) setCurrentMatch(foundMatch)
@@ -52,7 +53,7 @@ function MatchProvider({ children }: MatchProviderProps) {
   const loadData = async () => {
     await loadRankedTiers()
     await getMatches()
-    getMatchByDate(new Date())
+    getMatchByDate(newDate())
     setIsloading(false)
   }
   useEffect(() => {

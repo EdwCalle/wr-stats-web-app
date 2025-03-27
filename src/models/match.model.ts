@@ -1,3 +1,4 @@
+import { newDate } from '@utils/logic'
 import { TierSeason, TierType } from '../utils/enums/rankedTier.enum'
 import { RankedTier } from './rankedTier.models'
 import { SeasonProfile } from './seasonProfile.model'
@@ -36,7 +37,7 @@ export interface Stats {
 
 export const newMatch: Match = {
   _id: 'new',
-  date: new Date(),
+  date: newDate(),
   victories: 0,
   defeats: 0,
   seasonProfile: {
@@ -44,8 +45,8 @@ export const newMatch: Match = {
     season: {
       _id: 'new',
       seasonName: 'no selected',
-      startDate: new Date(),
-      finishDate: new Date(),
+      startDate: newDate(),
+      finishDate: newDate(),
     },
     totalMatches: 0,
     winRate: 0,

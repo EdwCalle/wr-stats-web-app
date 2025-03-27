@@ -1,23 +1,20 @@
 import { Match } from '@/models/match.model'
+import { compareDate } from '@utils/logic'
 import { useCallback } from 'react'
+import { LooseValue } from 'react-calendar/src/shared/types.js'
 interface useCalendarProps {
   matches: Match[]
 }
-type ValuePiece = Date | null
-
-type Value = ValuePiece | [ValuePiece, ValuePiece]
 
 const useCalendar = ({ matches }: useCalendarProps) => {
-  const tileContent = useCallback(
-    ({ date, view }: { date: Value; view: string }) => {
+  const tileClassName = useCallback(
+    ({ date, view }: { date: LooseValue; view: string }) => {
       // Add class to tiles in month view only
       //TO DO
       //fix conflicts with timezone
       if (view !== 'month' || !(date instanceof Date)) return null
 
-      const foundMatch = matches.find(
-        (match) => match.date.getTime() === date.getTime(),
-      )
+      const foundMatch = matches.find((match) => compareDate(match.date, date))
 
       if (!foundMatch) return 'newMatch'
       if (!foundMatch.stats) return 'noStats'
@@ -32,7 +29,7 @@ const useCalendar = ({ matches }: useCalendarProps) => {
     },
     [matches],
   )
-  return { tileContent }
+  return { tileClassName }
 }
 
 export default useCalendar
