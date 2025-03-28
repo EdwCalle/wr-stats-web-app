@@ -3,7 +3,6 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import './App.css'
 import { AuthProvider } from './context/AuthContext'
-import MatchProvider from './context/MatchContext'
 import HomePage from './pages/private/Home/HomePage'
 import MatchesPage from './pages/private/Matches/MatchesPage'
 import StatsPage from './pages/private/Stats/StatsPage'
@@ -25,14 +24,7 @@ function App() {
 
             <Route path='/player' element={<Navigate to='/player/home' />} />
             <Route path='/player/*' element={<UserProfile />}>
-              <Route
-                path='home'
-                element={
-                  <MatchProvider>
-                    <HomePage />
-                  </MatchProvider>
-                }
-              />
+              <Route path='home' element={<HomePage />} />
               <Route path='stats' element={<StatsPage />} />
               <Route path='matches' element={<MatchesPage />} />
               <Route path='*' element={<>404 not found page</>} />

@@ -1,7 +1,7 @@
+import useAuth from '@/context/AuthContext'
+import Header from '@components/Layout/Header/Header'
+import Navbar from '@components/Layout/NavBar/Navbar'
 import { Navigate, Outlet } from 'react-router-dom'
-import useAuth from '../../context/AuthContext'
-import Header from '../../components/Layout/Header/Header'
-import Navbar from '../../components/Layout/NavBar/Navbar'
 
 function UserProfile() {
   const { currentUser, isLoading } = useAuth()
