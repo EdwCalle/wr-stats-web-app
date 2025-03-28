@@ -4,7 +4,7 @@ import { RankedTier } from './rankedTier.models'
 import { SeasonProfile } from './seasonProfile.model'
 
 export interface Match {
-  _id: string
+  _id: string | null
   date: Date
   victories: number
   defeats: number
@@ -36,7 +36,7 @@ export interface Stats {
 // }
 
 export const newMatch: Match = {
-  _id: 'new',
+  _id: null,
   date: newDate(),
   victories: 0,
   defeats: 0,
