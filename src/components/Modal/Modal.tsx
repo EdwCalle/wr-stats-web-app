@@ -35,7 +35,10 @@ function Modal({
         <Button variant='warning' handleClick={onConfirm}>
           confirm
         </Button>
-        <Button handleClick={onCancel}>cancel</Button>
+        {onCancel && <Button handleClick={onCancel}>cancel</Button>}
+        {!onCancel && (
+          <Button handleClick={() => closeModal(elementID)}>cancel</Button>
+        )}
       </footer>
     </dialog>
   )
