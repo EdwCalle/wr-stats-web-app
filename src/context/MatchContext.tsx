@@ -10,6 +10,7 @@ import {
   useEffect,
   useState,
 } from 'react'
+import { toast } from 'react-toastify'
 interface MatchContextType {
   currentMatch: Match | undefined
   createMatch: (newMatch: Match) => void
@@ -35,7 +36,14 @@ function MatchProvider({ children }: MatchProviderProps) {
   const { rankedTiers, loadRankedTiers } = useRankedTiers()
   const [matches, setMatches] = useState<Match[]>([])
   // const { seasons, loadSeasons } = useSeasons()
-  const createMatch = (newMatch: Match) => {
+  const createMatch = async (newMatch: Match) => {
+    try {
+      const result = await MatchService.createOne(newMatch)
+      toast(`Created ok.  ${result}`)
+    } catch (error) {
+      console.log('error')
+      toast.error(`error on create match.  ${error}`)
+    }
     setCurrentMatch(newMatch)
   }
   const getMatchByDate = (date: Date) => {

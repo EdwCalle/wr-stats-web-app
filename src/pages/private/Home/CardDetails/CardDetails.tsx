@@ -8,9 +8,10 @@ import RangeInfo from '@components/RangeInfo/RangeInfo'
 
 interface CardDetailsProps {
   currentMatch: Match | undefined
+  date: Date
 }
 
-function CardDetails({ currentMatch }: CardDetailsProps) {
+function CardDetails({ currentMatch, date }: CardDetailsProps) {
   const { resetCrudMatch } = useCrudMatch()
   if (currentMatch)
     return (
@@ -58,7 +59,7 @@ function CardDetails({ currentMatch }: CardDetailsProps) {
           {/* TO DO
           fix footer, button should go to footer
           */}
-          <Button handleClick={() => resetCrudMatch(currentMatch)}>
+          <Button handleClick={() => resetCrudMatch(currentMatch, date)}>
             Edit Match
           </Button>
         </Card>
@@ -68,7 +69,7 @@ function CardDetails({ currentMatch }: CardDetailsProps) {
     return (
       <>
         <Card title='Match Details' subtitle=''>
-          <Button handleClick={() => resetCrudMatch(undefined)}>
+          <Button handleClick={() => resetCrudMatch(undefined, date)}>
             new Match
           </Button>
         </Card>
