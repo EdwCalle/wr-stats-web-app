@@ -1,5 +1,5 @@
 import useAuth from '@/context/AuthContext'
-import Confirm from '@components/Modal/Confirm'
+import Modal from '@components/Modal/Modal'
 import Settings from '@components/Modal/Settings'
 import useModal from '@hooks/useModal'
 import { CiLogout, CiMenuBurger, CiSettings } from 'react-icons/ci'
@@ -42,10 +42,9 @@ function Header() {
         <CiSettings size={28} />
       </button>
       <Settings />
-      <Confirm
-        titleMessage='are you sure to log out?'
-        onConfirm={handleLogout}
-      />
+      <Modal elementID='confirm' title='logout' onConfirm={handleLogout}>
+        are you sure to log out?
+      </Modal>
     </header>
   )
 }
