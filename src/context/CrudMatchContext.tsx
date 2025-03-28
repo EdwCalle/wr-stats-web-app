@@ -5,7 +5,7 @@ interface CrudMatchContextType {
   localMatch: Match
   onChangeCounter: (victories: number, defeats: number) => void
   onChangeRange: (range: Ranged) => void
-  resetCrudMatch: (match: Match | undefined) => void
+  resetCrudMatch: (match: Match | undefined, date: Date) => void
   cancelCrudMatch: () => void
 }
 const CrudMatchContext = createContext<CrudMatchContextType | undefined>(
@@ -35,9 +35,9 @@ function CrudMatchProvider({ children }: CrudMatchProviderProps) {
     match.range = range
     setLocalMatch(match)
   }
-  const resetCrudMatch = (match: Match | undefined) => {
+  const resetCrudMatch = (match: Match | undefined, date: Date) => {
     if (match) setLocalMatch(match)
-    else setLocalMatch(newMatch)
+    else setLocalMatch({ ...newMatch, date })
     openModal('crudMatch')
   }
   const cancelCrudMatch = () => {

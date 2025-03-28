@@ -1,4 +1,5 @@
 import { useCrudMatch } from '@/context/CrudMatchContext'
+import { useMatch } from '@/context/MatchContext'
 import { RankedTier } from '@/models/rankedTier.models'
 import CounterBox from '@components/CounterBox/CounterBox'
 import Form from '@components/Form/Form'
@@ -11,9 +12,11 @@ type CrudMatchProps = {
 function CrudMatch({ rankedTiers }: CrudMatchProps) {
   const { localMatch, onChangeCounter, onChangeRange, cancelCrudMatch } =
     useCrudMatch()
+  const { createMatch } = useMatch()
 
-  const onSubmit = () => {
+  const onSubmit = async () => {
     console.log('sending new match:', localMatch)
+    createMatch(localMatch)
   }
 
   return (

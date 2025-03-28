@@ -1,7 +1,7 @@
 import { Match, Stats } from '@/models/match.model'
 import { TierSeason, TierType } from '@utils/enums/rankedTier.enum'
 import { MatchApi } from '@utils/interfaces/api.interface'
-import { formatDate, toLocalDate } from '@utils/logic'
+import { compareDate, formatDate, toApiDate, toLocalDate } from '@utils/logic'
 import axios from './axios.service'
 import { RankedTierService } from './rankedTier.service'
 import { SeasonProfileService } from './seasonProfile.service'
@@ -24,13 +24,17 @@ class MatchService {
   }
 
   static findOneByDate(matches: Match[], date: Date): Match | undefined {
-    const foundMatch = matches.find(
-      (match) => match.date.getTime() === date.getTime(),
-    )
+    const foundMatch = matches.find((match) => compareDate(match.date, date))
     return foundMatch
+  }
+  static createOne = async (match: Match) => {
+    const data = this.toCreateMatchDTO(match)
+    const res = await axios.post(MATCHES_GET_URL, data)
+    console.log(res.data)
   }
 
   //customLogic
+
   static toMatches = (matchesApi: MatchApi[]): Match[] => {
     try {
       let totalAcumDiff = 0
@@ -65,6 +69,17 @@ class MatchService {
       }
     } catch (error) {
       throw new Error(`WRError on cast matchAPi: ${error} ,${matchApi._id}`)
+    }
+  }
+  static toCreateMatchDTO = (match: Match) => {
+    return {
+      date: toApiDate(match.date),
+      victories: match.victories,
+      defeats: match.defeats,
+      range: {
+        rankedTierID: match.range.rankedTier._id,
+        ...match.range,
+      },
     }
   }
 

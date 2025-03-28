@@ -22,10 +22,9 @@ function CardCalendar({
 }: CardCalendarProps) {
   const [currentDate, setCurrentDate] = useState<LooseValue>(newDate())
   const { tileClassName } = useCalendar({ matches })
-
   const onChange = (date: LooseValue) => {
-    setCurrentDate(date)
     onSelectDate(date as Date)
+    setCurrentDate(date)
   }
   return (
     <Card

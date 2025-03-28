@@ -6,7 +6,13 @@ export const formatDate = (isoDate: string): string => {
 }
 export const toLocalDate = (isoDate: string): Date => {
   const date = new Date(isoDate)
-  date.setHours(0, 0, 0, 0)
+  const offset = date.getTimezoneOffset()
+  date.setMinutes(offset)
+  return date
+}
+export const toApiDate = (date: Date) => {
+  const offset = date.getTimezoneOffset()
+  date.setMinutes(-offset)
   return date
 }
 export const newDate = () => {
