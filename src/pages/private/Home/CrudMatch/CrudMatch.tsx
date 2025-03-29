@@ -28,7 +28,7 @@ function CrudMatch({ rankedTiers, currentMatch, onSubmit }: CrudMatchProps) {
             <dt>season:</dt>
             <dd>{localMatch.seasonProfile.season.seasonName}</dd>
             <dt>date:</dt>
-            <dd>{localMatch.date.toLocaleDateString()}</dd>
+            <dd>{localMatch.date.toDateString()}</dd>
           </dl>
 
           <CounterBox updateMatch={onChangeCounter} match={localMatch} />

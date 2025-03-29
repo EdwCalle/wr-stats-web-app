@@ -11,8 +11,8 @@ export const toLocalDate = (isoDate: string): Date => {
   return date
 }
 export const toApiDate = (date: Date) => {
-  const offset = date.getTimezoneOffset()
-  date.setMinutes(-offset)
+  // const offset = date.getTimezoneOffset()
+  // date.setMinutes(-offset)
   return date
 }
 export const newDate = () => {
