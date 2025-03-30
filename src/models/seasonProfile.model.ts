@@ -7,3 +7,11 @@ export interface SeasonProfile {
   winRate: number
   totalMatches: number
 }
+
+export interface CreateSeasonProfileDto {
+  id?: string
+  seasonID: string
+  userID?: string
+  winRate?: number
+  totalMatches?: number
+}

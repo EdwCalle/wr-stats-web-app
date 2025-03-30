@@ -13,7 +13,11 @@ export const useCrudMatch = (currentMatch: Match) => {
     match.defeats = defeats
     setLocalMatch(match)
   }
-
+  const onChangeSeason = (seasonID: string) => {
+    const match = { ...localMatch }
+    match.seasonProfile.season._id = seasonID
+    setLocalMatch(match)
+  }
   const onChangeRange = (range: Ranged) => {
     const match = { ...localMatch }
     match.range = range
@@ -34,6 +38,7 @@ export const useCrudMatch = (currentMatch: Match) => {
 
   return {
     localMatch,
+    onChangeSeason,
     onChangeCounter,
     onChangeRange,
     resetCrudMatch,

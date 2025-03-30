@@ -1,12 +1,47 @@
-import { SeasonProfile } from '@/models/seasonProfile.model'
+import {
+  CreateSeasonProfileDto,
+  SeasonProfile,
+} from '@/models/seasonProfile.model'
 import { SeasonProfileApi } from '@utils/interfaces/api.interface'
-import api from './axios.service'
+import axios from './axios.service'
 import { SeasonService } from './season.service'
 const SEASONS_URL = `season-profile`
 
 export class SeasonProfileService {
   static findAll = async () => {
-    return await api.get(SEASONS_URL)
+    return await axios.get(SEASONS_URL)
+  }
+  static createOne = async (data: CreateSeasonProfileDto) => {
+    const res = await axios.post(SEASONS_URL, data)
+    return res.data
+  }
+  static findOneBySeason = async (
+    seasonID: string,
+  ): Promise<SeasonProfile | undefined> => {
+    const res = await this.findAll()
+    const seasonsProfile = this.toSeasonsProfile(res.data)
+    return seasonsProfile.find((item) => item.season._id === seasonID)
+  }
+
+  //extra logic
+  static autoCreateOne = async (seasonID: string) => {
+    const foundSeasonProfile = await this.findOneBySeason(seasonID)
+    if (!foundSeasonProfile) {
+      const sp = await SeasonProfileService.createOne({
+        seasonID,
+        winRate: 0,
+        totalMatches: 0,
+      })
+      return SeasonProfileService.toSeasonProfile(sp)
+    }
+    return foundSeasonProfile
+  }
+
+  // cast
+  static toSeasonsProfile = (
+    seasonProfilesApi: SeasonProfileApi[],
+  ): SeasonProfile[] => {
+    return seasonProfilesApi.map((item) => this.toSeasonProfile(item))
   }
 
   static toSeasonProfile = (

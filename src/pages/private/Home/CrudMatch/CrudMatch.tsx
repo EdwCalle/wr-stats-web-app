@@ -1,20 +1,40 @@
 import { Match } from '@/models/match.model'
 import { RankedTier } from '@/models/rankedTier.models'
+import { Season } from '@/models/season.model'
 import CounterBox from '@components/CounterBox/CounterBox'
 import Form from '@components/Form/Form'
 import Modal from '@components/Modal/Modal'
 import RangeInput from '@components/RangeInput/RangeInput'
+import Select from '@components/Select/Select'
 import { useCrudMatch } from '@hooks/useCrudMatch'
 type CrudMatchProps = {
   currentMatch: Match
   rankedTiers: RankedTier[]
+  seasons: Season[]
   onSubmit: (match: Match) => void
 }
 
-function CrudMatch({ rankedTiers, currentMatch, onSubmit }: CrudMatchProps) {
-  const { localMatch, onChangeCounter, onChangeRange, cancelCrudMatch } =
-    useCrudMatch(currentMatch)
-
+function CrudMatch({
+  rankedTiers,
+  seasons,
+  currentMatch,
+  onSubmit,
+}: CrudMatchProps) {
+  const {
+    localMatch,
+    onChangeSeason,
+    onChangeCounter,
+    onChangeRange,
+    cancelCrudMatch,
+  } = useCrudMatch(currentMatch)
+  const seasonOptions = seasons.map(({ _id, seasonName }) => ({
+    id: _id,
+    value: seasonName,
+  }))
+  const selectedOption = {
+    id: localMatch.seasonProfile.season._id,
+    value: localMatch.seasonProfile.season.seasonName,
+  }
   return (
     <Modal
       elementID={'crudMatch'}
@@ -24,13 +44,14 @@ function CrudMatch({ rankedTiers, currentMatch, onSubmit }: CrudMatchProps) {
     >
       <Form>
         <fieldset>
-          <dl>
-            <dt>season:</dt>
-            <dd>{localMatch.seasonProfile.season.seasonName}</dd>
-            <dt>date:</dt>
-            <dd>{localMatch.date.toDateString()}</dd>
-          </dl>
-
+          <legend>{localMatch.date.toDateString()}</legend>
+          <Select
+            name='seasons'
+            label='select season'
+            onSelectedOption={onChangeSeason}
+            options={seasonOptions}
+            selectedOption={selectedOption}
+          />
           <CounterBox updateMatch={onChangeCounter} match={localMatch} />
           <RangeInput
             range={localMatch.range}
