@@ -5,6 +5,7 @@ import { newDate } from '@utils/logic'
 import { showError } from '@utils/modules/HandleErrors'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
+import { useMatches } from './useMatches'
 import useSeasons from './useSeasons'
 
 export const useMatch = () => {
@@ -12,7 +13,7 @@ export const useMatch = () => {
   const [isLoading, setIsloading] = useState(true)
   const { rankedTiers, loadRankedTiers } = useRankedTiers()
   const { seasons, loadSeasons } = useSeasons()
-  const [matches, setMatches] = useState<Match[]>([])
+  const { matches, loadMatches, getMatches } = useMatches()
   const createMatch = async (newMatch: Match) => {
     try {
       const result = await MatchService.createOne(newMatch)
@@ -28,13 +29,11 @@ export const useMatch = () => {
     if (foundMatch) setCurrentMatch(foundMatch)
     else setCurrentMatch(emptyMatch(date, seasons[0], rankedTiers[0]))
   }
-  const getMatches = async () => {
-    const res = await MatchService.findAll()
-    const newMatches = MatchService.toMatches(res.data)
-    setMatches([...newMatches])
-  }
+
   const loadData = async () => {
     await Promise.all([loadRankedTiers(), getMatches(), loadSeasons()])
+    const newMatches = await getMatches()
+    loadMatches(newMatches)
   }
   useEffect(() => {
     loadData()
