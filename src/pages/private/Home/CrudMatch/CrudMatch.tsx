@@ -1,5 +1,5 @@
 import { Match } from '@/models/match.model'
-import { RankedTier } from '@/models/rankedTier.models'
+import { RankedTier } from '@/models/rankedTier.model'
 import { Season } from '@/models/season.model'
 import CounterBox from '@components/CounterBox/CounterBox'
 import Form from '@components/Form/Form'

@@ -1,7 +1,7 @@
 import { Season } from './season.model'
 
 export interface SeasonProfile {
-  _id: string
+  _id: string | null
   season: Season
   //   user: string
   winRate: number

@@ -1,4 +1,4 @@
-import { RankedTier } from '@/models/rankedTier.models'
+import { RankedTier } from '@/models/rankedTier.model'
 import { TierSeason, TierType } from '@utils/enums/rankedTier.enum'
 import { RankedTierApi } from '@utils/interfaces/api.interface'
 import axios from './axios.service'

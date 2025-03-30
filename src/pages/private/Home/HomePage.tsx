@@ -13,11 +13,9 @@ function HomePage() {
     seasons,
     isLoading,
   } = useMatch()
-
   if (isLoading) return <>not loaded resources</>
-  else {
+  if (!isLoading && currentMatch) {
     console.log('render: fragment HomePage')
-    // console.log(currentMatch)
     return (
       <Main title='HOME'>
         <CardCalendar
@@ -36,4 +34,5 @@ function HomePage() {
     )
   }
 }
+
 export default HomePage

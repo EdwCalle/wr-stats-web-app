@@ -1,4 +1,4 @@
-import { Match, newMatch, Ranged } from '@/models/match.model'
+import { Match, Ranged } from '@/models/match.model'
 import useModal from '@hooks/useModal'
 import { useEffect, useState } from 'react'
 // interface useCrudMatchProps {
@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 // }
 export const useCrudMatch = (currentMatch: Match) => {
   const [localMatch, setLocalMatch] = useState<Match>(currentMatch)
-  const { openModal, closeModal } = useModal()
+  const { closeModal } = useModal()
   const onChangeCounter = (victories: number, defeats: number) => {
     const match = { ...localMatch }
     match.victories = victories
@@ -23,13 +23,9 @@ export const useCrudMatch = (currentMatch: Match) => {
     match.range = range
     setLocalMatch(match)
   }
-  const resetCrudMatch = (match: Match | undefined, date: Date) => {
-    if (match) setLocalMatch(match)
-    else setLocalMatch({ ...newMatch, date })
-    openModal('crudMatch')
-  }
+
   const cancelCrudMatch = () => {
-    setLocalMatch(newMatch)
+    setLocalMatch(currentMatch)
     closeModal('crudMatch')
   }
   useEffect(() => {
@@ -41,7 +37,6 @@ export const useCrudMatch = (currentMatch: Match) => {
     onChangeSeason,
     onChangeCounter,
     onChangeRange,
-    resetCrudMatch,
     cancelCrudMatch,
   }
 }

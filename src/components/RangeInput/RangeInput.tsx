@@ -1,5 +1,5 @@
 import { Ranged } from '@/models/match.model'
-import { RankedTier } from '@/models/rankedTier.models'
+import { RankedTier } from '@/models/rankedTier.model'
 import RangeInfo from '@components/RangeInfo/RangeInfo'
 import Select from '@components/Select/Select'
 import Slider from '@components/Slider/Slider'

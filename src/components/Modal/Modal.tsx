@@ -46,7 +46,6 @@ function Modal({
         containerId='modal'
         position='top-right'
         theme='colored'
-        pauseOnHover={false}
       />
     </dialog>
   )
