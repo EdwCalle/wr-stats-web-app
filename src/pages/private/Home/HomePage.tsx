@@ -10,6 +10,7 @@ function HomePage() {
     matches,
     getMatchByDate,
     createMatch,
+    seasons,
     isLoading,
   } = useMatch()
 
@@ -29,6 +30,7 @@ function HomePage() {
           currentMatch={currentMatch}
           onSubmit={createMatch}
           rankedTiers={rankedTiers}
+          seasons={seasons}
         />
       </Main>
     )

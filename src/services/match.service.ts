@@ -28,9 +28,12 @@ class MatchService {
     return foundMatch
   }
   static createOne = async (match: Match) => {
+    const seasonID = match.seasonProfile.season._id
+    match.seasonProfile = await SeasonProfileService.autoCreateOne(seasonID)
     const data = this.toCreateMatchDTO(match)
     const res = await axios.post(MATCHES_GET_URL, data)
     console.log(res.data)
+    return res
   }
 
   //customLogic
@@ -76,6 +79,7 @@ class MatchService {
       date: toApiDate(match.date),
       victories: match.victories,
       defeats: match.defeats,
+      seasonProfileID: match.seasonProfile._id,
       range: {
         rankedTierID: match.range.rankedTier._id,
         ...match.range,

@@ -2,6 +2,7 @@ import Button from '@components/Button/Button'
 import useModal from '@hooks/useModal'
 import { ReactNode } from 'react'
 import { IoIosCloseCircle } from 'react-icons/io'
+import { ToastContainer } from 'react-toastify'
 import css from './Modal.module.css'
 
 type ModalProps = {
@@ -40,6 +41,13 @@ function Modal({
           <Button handleClick={() => closeModal(elementID)}>cancel</Button>
         )}
       </footer>
+
+      <ToastContainer
+        containerId='modal'
+        position='top-right'
+        theme='colored'
+        pauseOnHover={false}
+      />
     </dialog>
   )
 }
