@@ -1,17 +1,23 @@
 import { Season } from '@/models/season.model'
 import { SeasonService } from '@/services/season.service'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { toast } from 'react-toastify'
 
 const useSeasons = () => {
   const [seasons, setSeasons] = useState<Season[]>([])
-  const loadSeasons = async () => {
-    const res = await SeasonService.findAll()
-    const newSeasons = SeasonService.toSeasons(res.data)
-    setSeasons([...newSeasons])
+  const loadSeasons = (items: Season[]) => {
+    setSeasons([...items])
   }
-  useEffect(() => {
-    loadSeasons()
-  }, [])
-  return { seasons, loadSeasons }
+  const getSeasons = async () => {
+    try {
+      const res = await SeasonService.findAll()
+      return SeasonService.toSeasons(res.data)
+    } catch (error) {
+      toast.error(`Error on get seasons: ${error}`)
+      return []
+    }
+  }
+
+  return { seasons, getSeasons, loadSeasons }
 }
 export default useSeasons
