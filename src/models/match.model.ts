@@ -11,8 +11,7 @@ export interface Match {
   range: RangeWR
   stats?: Stats
 }
-//TO DO
-//Fix conflic with global name Range
+
 export interface RangeWR {
   // rankedTierID: string
   rankedTier: RankedTier
@@ -48,5 +47,17 @@ export const emptyMatch = (
       marks: rankedTier.minMarks ?? 0,
       rankedTier: { ...rankedTier },
     },
+  }
+}
+
+export interface CreateMatchDTO {
+  date: string
+  victories: number
+  defeats: number
+  seasonProfileID: string
+  range: {
+    rankedTierID: string
+    divisionLvl: number
+    marks: number
   }
 }

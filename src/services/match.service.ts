@@ -1,4 +1,4 @@
-import { Match, Stats } from '@/models/match.model'
+import { CreateMatchDTO, Match, Stats } from '@/models/match.model'
 import { TierSeason, TierType } from '@utils/enums/rankedTier.enum'
 import { MatchApi } from '@utils/interfaces/api.interface'
 import { compareDate, formatDate, toApiDate, toLocalDate } from '@utils/logic'
@@ -28,12 +28,12 @@ class MatchService {
     return foundMatch
   }
   static createOne = async (match: Match) => {
-    const seasonID = match.seasonProfile.season._id
-    match.seasonProfile = await SeasonProfileService.autoCreateOne(seasonID)
-    const data = this.toCreateMatchDTO(match)
-    const res = await axios.post(MATCHES_GET_URL, data)
-    console.log(res.data)
-    return res
+    const clonedMatch = structuredClone(match)
+    const seasonID = clonedMatch.seasonProfile.season._id
+    clonedMatch.seasonProfile =
+      await SeasonProfileService.autoCreateOne(seasonID)
+    const matchDTO = this.toCreateMatchDTO(clonedMatch)
+    return axios.post(MATCHES_GET_URL, matchDTO)
   }
 
   //customLogic
@@ -77,15 +77,18 @@ class MatchService {
       throw new Error(`WRError on cast matchAPi: ${error} ,${matchApi._id}`)
     }
   }
-  static toCreateMatchDTO = (match: Match) => {
+  static toCreateMatchDTO = (match: Match): CreateMatchDTO => {
+    if (match.seasonProfile._id === null)
+      throw new Error('error on parsing match to createDTO')
     return {
-      date: toApiDate(match.date),
+      date: toApiDate(match.date).toISOString(),
       victories: match.victories,
       defeats: match.defeats,
       seasonProfileID: match.seasonProfile._id,
       range: {
         rankedTierID: match.range.rankedTier._id,
-        ...match.range,
+        divisionLvl: match.range.divisionLvl,
+        marks: match.range.marks,
       },
     }
   }

@@ -19,6 +19,7 @@ export const useMatch = () => {
   const createMatch = async (newMatch: Match) => {
     try {
       const result = await MatchService.createOne(newMatch)
+      console.log(result.data)
       toast(`Created ok.  ${result.data}`)
     } catch (error) {
       showError(error, 'Error on create match', 'modal')
