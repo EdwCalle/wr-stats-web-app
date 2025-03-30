@@ -1,4 +1,4 @@
-import { Ranged } from '@/models/match.model'
+import { RangeWR } from '@/models/match.model'
 import { RankedTier } from '@/models/rankedTier.model'
 import RangeInfo from '@components/RangeInfo/RangeInfo'
 import Select from '@components/Select/Select'
@@ -7,9 +7,9 @@ import { DIVISION } from '@utils/constants/constants'
 import { TierType } from '@utils/enums/rankedTier.enum'
 import css from './RangeInput.module.css'
 interface RangeInputProps {
-  range: Ranged
+  range: RangeWR
   rankedTiers: RankedTier[]
-  onChangeRangeInput: (range: Ranged) => void
+  onChangeRangeInput: (range: RangeWR) => void
 }
 function RangeInput({
   range,

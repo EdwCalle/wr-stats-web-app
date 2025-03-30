@@ -1,4 +1,4 @@
-import { Match, Ranged } from '@/models/match.model'
+import { Match, RangeWR } from '@/models/match.model'
 import useModal from '@hooks/useModal'
 import { useEffect, useState } from 'react'
 // interface useCrudMatchProps {
@@ -20,7 +20,7 @@ export const useCrudMatch = (currentMatch: Match) => {
     match.seasonProfile.season._id = seasonID
     setLocalMatch(match)
   }
-  const onChangeRange = (range: Ranged) => {
+  const onChangeRange = (range: RangeWR) => {
     const match = structuredClone(localMatch)
     match.range = range
     setLocalMatch(match)

@@ -1,8 +1,8 @@
-import { Ranged } from '@/models/match.model'
+import { RangeWR } from '@/models/match.model'
 import MultipleSelect from '@components/MultipleSelect/MultipleSelect'
 import { DIVISION, SEASONS, TIER } from '@utils/constants/constants'
 interface RangeFormProps {
-  range: Ranged
+  range: RangeWR
 }
 function RangeForm({ range }: RangeFormProps) {
   return (
