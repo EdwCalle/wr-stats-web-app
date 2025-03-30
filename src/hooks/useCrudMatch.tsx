@@ -5,31 +5,33 @@ import { useEffect, useState } from 'react'
 //   currentMatch: Match
 // }
 export const useCrudMatch = (currentMatch: Match) => {
-  const [localMatch, setLocalMatch] = useState<Match>(currentMatch)
+  const [localMatch, setLocalMatch] = useState<Match>(
+    structuredClone(currentMatch),
+  )
   const { closeModal } = useModal()
   const onChangeCounter = (victories: number, defeats: number) => {
-    const match = { ...localMatch }
+    const match = structuredClone(localMatch)
     match.victories = victories
     match.defeats = defeats
     setLocalMatch(match)
   }
   const onChangeSeason = (seasonID: string) => {
-    const match = { ...localMatch }
+    const match = structuredClone(localMatch)
     match.seasonProfile.season._id = seasonID
     setLocalMatch(match)
   }
   const onChangeRange = (range: Ranged) => {
-    const match = { ...localMatch }
+    const match = structuredClone(localMatch)
     match.range = range
     setLocalMatch(match)
   }
-
   const cancelCrudMatch = () => {
-    setLocalMatch(currentMatch)
+    setLocalMatch(structuredClone(currentMatch))
     closeModal('crudMatch')
   }
   useEffect(() => {
-    if (currentMatch !== localMatch) setLocalMatch(currentMatch)
+    if (currentMatch !== localMatch)
+      setLocalMatch(structuredClone(currentMatch))
   }, [currentMatch])
 
   return {

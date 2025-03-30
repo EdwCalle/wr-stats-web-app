@@ -1,15 +1,13 @@
-import { Match } from '@/models/match.model'
 import Counter from './Counter/Counter'
 import './CounterBox.css'
 
 type CounterBoxProps = {
-  match: Match
+  victories: number
+  defeats: number
   updateMatch: (victories: number, defeats: number) => void
 }
 
-function CounterBox({ match, updateMatch }: CounterBoxProps) {
-  const { victories, defeats } = match
-
+function CounterBox({ victories, defeats, updateMatch }: CounterBoxProps) {
   const updateVictories = (value: number) => {
     updateMatch(value, defeats)
   }

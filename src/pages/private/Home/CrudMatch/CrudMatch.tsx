@@ -52,7 +52,11 @@ function CrudMatch({
             options={seasonOptions}
             selectedOption={selectedOption}
           />
-          <CounterBox updateMatch={onChangeCounter} match={localMatch} />
+          <CounterBox
+            updateMatch={onChangeCounter}
+            victories={localMatch.victories}
+            defeats={localMatch.defeats}
+          />
           <RangeInput
             range={localMatch.range}
             rankedTiers={rankedTiers}
