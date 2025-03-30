@@ -25,19 +25,24 @@ function RangeInput({
       (item) => item._id === rankedTierID,
     )
     if (foundRankedTier) {
-      range.rankedTier = foundRankedTier
-      range.marks = range.rankedTier.minMarks
+      const newRange = structuredClone(range)
+      newRange.rankedTier = foundRankedTier
+      newRange.marks = foundRankedTier.minMarks ?? 0
+      onChangeRangeInput(newRange)
+    } else {
+      throw Error('error on getting rankedTier')
     }
-    onChangeRangeInput({ ...range })
   }
 
   const onChangeDivisionLvl = (divisionLvl: string) => {
-    range.divisionLvl = Number(divisionLvl)
-    onChangeRangeInput({ ...range })
+    const newRange = structuredClone(range)
+    newRange.divisionLvl = Number(divisionLvl)
+    onChangeRangeInput(newRange)
   }
   const onChangeMarks = (marks: string) => {
-    range.marks = Number(parseInt(marks))
-    onChangeRangeInput({ ...range })
+    const newRange = structuredClone(range)
+    newRange.marks = Number(marks)
+    onChangeRangeInput(newRange)
   }
   return (
     <div className={css.range}>
@@ -62,13 +67,15 @@ function RangeInput({
           }}
         />
       )}
-      <Slider
-        defaultValue={range.marks}
-        min={range.rankedTier.minMarks}
-        max={range.rankedTier.maxMarks}
-        onChange={onChangeMarks}
-        label='marks'
-      />
+      {range.rankedTier.tierType !== TierType.EMPTY && (
+        <Slider
+          defaultValue={range.marks}
+          min={range.rankedTier.minMarks}
+          max={range.rankedTier.maxMarks}
+          onChange={onChangeMarks}
+          label='marks'
+        />
+      )}
     </div>
   )
 }

@@ -22,6 +22,8 @@ export const useCrudMatch = (currentMatch: Match) => {
   }
   const onChangeRange = (range: RangeWR) => {
     const match = structuredClone(localMatch)
+    //TO DO
+    // WARNING WITH THE COPY
     match.range = range
     setLocalMatch(match)
   }
