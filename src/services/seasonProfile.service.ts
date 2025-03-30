@@ -49,7 +49,9 @@ export class SeasonProfileService {
   ): SeasonProfile => {
     try {
       return {
-        ...seasonProfileApi,
+        _id: seasonProfileApi._id,
+        totalMatches: seasonProfileApi.totalMatches,
+        winRate: seasonProfileApi.winRate,
         season: SeasonService.toSeason(seasonProfileApi.seasonID),
       }
     } catch (error) {

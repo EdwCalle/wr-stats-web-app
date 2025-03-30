@@ -12,7 +12,8 @@ export class SeasonService {
   static toSeason = (seasonApi: SeasonApi): Season => {
     try {
       return {
-        ...seasonApi,
+        _id: seasonApi._id,
+        seasonName: seasonApi.seasonName,
         startDate: new Date(seasonApi.startDate),
         finishDate: seasonApi.finishDate
           ? new Date(seasonApi.finishDate)

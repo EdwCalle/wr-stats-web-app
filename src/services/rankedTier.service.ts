@@ -13,7 +13,10 @@ export class RankedTierService {
   static toRankedTier = (rankedTierApi: RankedTierApi): RankedTier => {
     try {
       return {
-        ...rankedTierApi,
+        _id: rankedTierApi._id,
+        minMarks: rankedTierApi.minMarks,
+        maxMarks: rankedTierApi.maxMarks,
+        tierName: rankedTierApi.tierName,
         tierSeason: rankedTierApi.tierSeason as TierSeason,
         tierType: rankedTierApi.tierType as TierType,
       }
