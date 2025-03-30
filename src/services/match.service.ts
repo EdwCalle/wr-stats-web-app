@@ -58,16 +58,19 @@ class MatchService {
   static toMatch = (matchApi: MatchApi): Match => {
     try {
       return {
-        ...matchApi,
+        _id: matchApi._id,
+        victories: matchApi.victories,
+        defeats: matchApi.defeats,
         date: toLocalDate(matchApi.date),
         seasonProfile: SeasonProfileService.toSeasonProfile(
           matchApi.seasonProfileID,
         ),
         range: {
-          ...matchApi.range,
           rankedTier: RankedTierService.toRankedTier(
             matchApi.range.rankedTierID,
           ),
+          divisionLvl: matchApi.range.divisionLvl,
+          marks: matchApi.range.marks,
         },
       }
     } catch (error) {
