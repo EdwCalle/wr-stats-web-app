@@ -1,4 +1,4 @@
-import { RankedTier } from '@/models/rankedTier.models'
+import { RankedTier } from '@/models/rankedTier.model'
 import { RankedTierService } from '@/services/rankedTier.service'
 import { useState } from 'react'
 import { toast } from 'react-toastify'

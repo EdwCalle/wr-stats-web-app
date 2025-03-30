@@ -1,14 +1,15 @@
-import { Match, newMatch } from '@/models/match.model'
+import { emptyMatch, Match } from '@/models/match.model'
 import MatchService from '@/services/match.service'
 import useRankedTiers from '@hooks/useRankedTier'
 // import { newDate } from '@utils/logic'
+import { newDate } from '@utils/logic'
 import { AxiosError } from 'axios'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import useSeasons from './useSeasons'
 
 export const useMatch = () => {
-  const [currentMatch, setCurrentMatch] = useState<Match>(newMatch)
+  const [currentMatch, setCurrentMatch] = useState<Match>()
   const [isLoading, setIsloading] = useState(true)
   const { rankedTiers, loadRankedTiers } = useRankedTiers()
   const { seasons, loadSeasons } = useSeasons()
@@ -41,7 +42,7 @@ export const useMatch = () => {
     console.log('getMatchByDate:', date.toISOString())
     const foundMatch = MatchService.findOneByDate(matches, date)
     if (foundMatch) setCurrentMatch(foundMatch)
-    else setCurrentMatch({ ...newMatch, date })
+    else setCurrentMatch(emptyMatch(date, seasons[0], rankedTiers[0]))
   }
   const getMatches = async () => {
     const res = await MatchService.findAll()
@@ -50,11 +51,17 @@ export const useMatch = () => {
   }
   const loadData = async () => {
     await Promise.all([loadRankedTiers(), getMatches(), loadSeasons()])
-    setIsloading(false)
   }
   useEffect(() => {
     loadData()
   }, [])
+
+  useEffect(() => {
+    if (seasons.length != 0 && rankedTiers.length != 0) {
+      getMatchByDate(newDate())
+      setIsloading(false)
+    }
+  }, [matches, seasons, rankedTiers])
 
   // console.log(
   //   'i render:',

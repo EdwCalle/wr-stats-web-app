@@ -1,6 +1,5 @@
-import { newDate } from '@utils/logic'
-import { TierSeason, TierType } from '../utils/enums/rankedTier.enum'
-import { RankedTier } from './rankedTier.models'
+import { RankedTier } from './rankedTier.model'
+import { Season } from './season.model'
 import { SeasonProfile } from './seasonProfile.model'
 
 export interface Match {
@@ -28,39 +27,26 @@ export interface Stats {
   acumDiff: number
 }
 
-// export type MatchI = Match | undefined
-
-// export type MatchKeys = keyof Match
-// export function getKeys(obj: Match): (keyof MatchKeys)[] {
-//   return Object.keys(obj) as (keyof MatchKeys)[]
-// }
-
-export const newMatch: Match = {
-  _id: null,
-  date: newDate(),
-  victories: 0,
-  defeats: 0,
-  seasonProfile: {
-    _id: 'new',
-    season: {
-      _id: 'new',
-      seasonName: 'no selected',
-      startDate: newDate(),
-      finishDate: newDate(),
+export const emptyMatch = (
+  date: Date,
+  season: Season,
+  rankedTier: RankedTier,
+): Match => {
+  return {
+    _id: null,
+    date: date,
+    victories: 0,
+    defeats: 0,
+    seasonProfile: {
+      _id: null,
+      season: season,
+      totalMatches: 0,
+      winRate: 0,
     },
-    totalMatches: 0,
-    winRate: 0,
-  },
-  range: {
-    divisionLvl: 1,
-    marks: 100,
-    rankedTier: {
-      _id: '67acc1fd7b95c60b11008d21',
-      tierName: 'gold',
-      tierType: TierType.DIVISION,
-      tierSeason: TierSeason.CUSTOM,
-      minMarks: 0,
-      maxMarks: 100,
+    range: {
+      divisionLvl: 1,
+      marks: 0,
+      rankedTier: rankedTier,
     },
-  },
+  }
 }
