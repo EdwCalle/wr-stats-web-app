@@ -1,7 +1,6 @@
 import { emptyMatch, Match } from '@/models/match.model'
 import MatchService from '@/services/match.service'
 import useRankedTiers from '@hooks/useRankedTier'
-// import { newDate } from '@utils/logic'
 import { newDate } from '@utils/logic'
 import { AxiosError } from 'axios'
 import { useEffect, useState } from 'react'
@@ -35,7 +34,6 @@ export const useMatch = () => {
           containerId: 'modal',
         })
     }
-    setCurrentMatch(newMatch)
   }
   const getMatchByDate = (date: Date) => {
     // console.log('first date', matches[0].date.toISOString())

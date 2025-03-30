@@ -1,10 +1,9 @@
-import { Match } from '@/models/match.model'
 import css from './CounterView.module.css'
 type CounterViewProps = {
-  match: Match
+  victories: number
+  defeats: number
 }
-function CounterView({ match }: CounterViewProps) {
-  const { victories, defeats } = match
+function CounterView({ victories, defeats }: CounterViewProps) {
   return (
     <>
       <div className={css.counterView}>

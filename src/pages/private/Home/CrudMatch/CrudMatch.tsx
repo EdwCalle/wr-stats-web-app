@@ -31,7 +31,7 @@ function CrudMatch({
     id: _id,
     value: seasonName,
   }))
-  const selectedOption = {
+  const selectedSeason = {
     id: localMatch.seasonProfile.season._id,
     value: localMatch.seasonProfile.season.seasonName,
   }
@@ -50,7 +50,7 @@ function CrudMatch({
             label='select season'
             onSelectedOption={onChangeSeason}
             options={seasonOptions}
-            selectedOption={selectedOption}
+            selectedOption={selectedSeason}
           />
           <CounterBox
             updateMatch={onChangeCounter}

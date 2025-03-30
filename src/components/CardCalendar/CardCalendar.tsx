@@ -29,7 +29,12 @@ function CardCalendar({
       subtitle={currentMatch.date.toLocaleString()}
     >
       <section className={css.cardCalendar}>
-        {currentMatch && <CounterView match={currentMatch} />}
+        {currentMatch && (
+          <CounterView
+            defeats={currentMatch.defeats}
+            victories={currentMatch.victories}
+          />
+        )}
         {!currentMatch && <>no match</>}
         <Calendar
           showNeighboringMonth={false}
