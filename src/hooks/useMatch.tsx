@@ -2,7 +2,7 @@ import { emptyMatch, Match } from '@/models/match.model'
 import MatchService from '@/services/match.service'
 import useRankedTiers from '@hooks/useRankedTier'
 import { newDate } from '@utils/logic'
-import { AxiosError } from 'axios'
+import { showError } from '@utils/modules/HandleErrors'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import useSeasons from './useSeasons'
@@ -18,21 +18,7 @@ export const useMatch = () => {
       const result = await MatchService.createOne(newMatch)
       toast(`Created ok.  ${result.data}`)
     } catch (error) {
-      console.log('error:', error)
-      if (error instanceof AxiosError) {
-        const copy = error.response?.data
-        if (copy)
-          toast.error(`error on create match. ${copy.message}`, {
-            containerId: 'modal',
-          })
-        else
-          toast.error(`error on create match. `, {
-            containerId: 'modal',
-          })
-      } else
-        toast.error(`error on create match. `, {
-          containerId: 'modal',
-        })
+      showError(error, 'Error on create match', 'modal')
     }
   }
   const getMatchByDate = (date: Date) => {
