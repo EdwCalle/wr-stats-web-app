@@ -8,12 +8,12 @@ export interface Match {
   victories: number
   defeats: number
   seasonProfile: SeasonProfile
-  range: Ranged
+  range: RangeWR
   stats?: Stats
 }
 //TO DO
 //Fix conflic with global name Range
-export interface Ranged {
+export interface RangeWR {
   // rankedTierID: string
   rankedTier: RankedTier
   divisionLvl: number
@@ -39,14 +39,14 @@ export const emptyMatch = (
     defeats: 0,
     seasonProfile: {
       _id: null,
-      season: season,
+      season: { ...season },
       totalMatches: 0,
       winRate: 0,
     },
     range: {
       divisionLvl: 1,
-      marks: 0,
-      rankedTier: rankedTier,
+      marks: rankedTier.minMarks ?? 0,
+      rankedTier: { ...rankedTier },
     },
   }
 }

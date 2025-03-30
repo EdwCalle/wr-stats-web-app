@@ -2,7 +2,7 @@
 import Tooltip from '@components/Tooltip/Tooltip'
 import { imagesTier } from '@utils/constants/constants'
 import imgMark from '../../assets/mark.webp'
-import { Ranged } from '../../models/match.model'
+import { RangeWR } from '../../models/match.model'
 import css from './RangeInfo.module.css'
 //TO DO
 //Change range interface name
@@ -11,7 +11,7 @@ export enum RangeType {
   compact,
 }
 type RangeInfoProps = {
-  range: Ranged
+  range: RangeWR
   type?: RangeType
 }
 // const rangeTest: Ranged = {
