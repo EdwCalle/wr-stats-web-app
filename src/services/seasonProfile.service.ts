@@ -27,12 +27,12 @@ export class SeasonProfileService {
   static autoCreateOne = async (seasonID: string) => {
     const foundSeasonProfile = await this.findOneBySeason(seasonID)
     if (!foundSeasonProfile) {
-      const sp = await SeasonProfileService.createOne({
+      const newSeasonProfile = await SeasonProfileService.createOne({
         seasonID,
         winRate: 0,
         totalMatches: 0,
       })
-      return SeasonProfileService.toSeasonProfile(sp)
+      return SeasonProfileService.toSeasonProfile(newSeasonProfile)
     }
     return foundSeasonProfile
   }
