@@ -28,6 +28,8 @@ function RangeInput({
       const newRange = structuredClone(range)
       newRange.rankedTier = foundRankedTier
       newRange.marks = foundRankedTier.minMarks ?? 0
+      if (foundRankedTier.tierType !== TierType.DIVISION)
+        newRange.divisionLvl = 0
       onChangeRangeInput(newRange)
     } else {
       throw Error('error on getting rankedTier')
