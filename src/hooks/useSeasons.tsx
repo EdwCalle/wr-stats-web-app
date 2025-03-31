@@ -1,5 +1,6 @@
 import { Season } from '@/models/season.model'
 import { SeasonService } from '@/services/season.service'
+import { Option } from '@components/Select/Select'
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 
@@ -17,7 +18,17 @@ const useSeasons = () => {
       return []
     }
   }
+  const autoLoadSeasons = async () => {
+    const items = await getSeasons()
+    setSeasons([...items])
+  }
 
-  return { seasons, getSeasons, loadSeasons }
+  const toSeasonsOptions = (): Option[] => {
+    return seasons.map((item) => ({
+      id: item._id,
+      value: item.seasonName,
+    }))
+  }
+  return { seasons, getSeasons, loadSeasons, autoLoadSeasons, toSeasonsOptions }
 }
 export default useSeasons

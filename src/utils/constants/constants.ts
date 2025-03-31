@@ -1,14 +1,16 @@
-export const TIER = [
-  'bronze',
-  'gold',
-  // '',
-  'emerald',
-  'diamond',
-  'master',
-  'grand master',
-  'challenger',
-  'soberano',
-]
+import { Option } from '@components/Select/Select'
+
+// export const TIER = [
+//   'bronze',
+//   'gold',
+//   // '',
+//   'emerald',
+//   'diamond',
+//   'master',
+//   'grand master',
+//   'challenger',
+//   'soberano',
+// ]
 export const DIVISION = [
   { id: '1', value: 'I' },
   { id: '2', value: 'II' },
@@ -16,39 +18,20 @@ export const DIVISION = [
   { id: '3', value: 'III' },
   { id: '4', value: 'IV' },
 ]
-interface Scales {
-  label: string
-  value: number | string
-}
-export const TIME_SCALE: Scales[] = [
-  { label: 'day', value: 'day' },
-  { label: 'month', value: 'month' },
-  { label: 'year', value: 'year' },
-  { label: '10 matchs', value: '10 matchs' },
-  { label: '50 matchs', value: '50 matchs' },
-  { label: '100 matchs', value: '100 matchs' },
-  { label: '200 matchs', value: '200 matchs' },
-  { label: '500 matchs', value: '500 matchs' },
+
+export const TIME_SCALE: Option[] = [
+  { value: 'day', id: 'day' },
+  { value: 'month', id: 'month' },
+  { value: 'year', id: 'year' },
+  { value: '10 matchs', id: '10 matchs' },
+  { value: '50 matchs', id: '50 matchs' },
+  { value: '100 matchs', id: '100 matchs' },
+  { value: '200 matchs', id: '200 matchs' },
+  { value: '500 matchs', id: '500 matchs' },
 ]
-export const FILTER_SEASONS: Scales[] = [
-  { label: 'compare', value: 'compare' },
-  { label: 'by season', value: 'by_season' },
-]
-export const SEASONS = [
-  { id: 'S1', value: 'S1' },
-  { id: 'S2', value: 'S2' },
-  { id: 'S3', value: 'S3' },
-  { id: 'S4', value: 'S4' },
-  { id: 'S5', value: 'S5' },
-  { id: 'S6', value: 'S6' },
-  { id: 'S7', value: 'S7' },
-  { id: 'S8', value: 'S8' },
-  { id: 'S9', value: 'S9' },
-  { id: 'S10', value: 'S10' },
-  { id: 'S11', value: 'S11' },
-  { id: 'S12', value: 'S12' },
-  { id: 'S13', value: 'S13' },
-  { id: 'S14', value: 'S14' },
+export const FILTER_SEASONS: Option[] = [
+  { value: 'compare', id: 'compare' },
+  { value: 'by season', id: 'by_season' },
 ]
 
 export const imagesTier = {
