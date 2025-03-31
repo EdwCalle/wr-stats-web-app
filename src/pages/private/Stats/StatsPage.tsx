@@ -3,9 +3,9 @@ import Main from '../../../components/Layout/Main/Main'
 
 function StatsPage() {
   return (
-    <Main title='STATS'>
+    <Main title='STATS' isFullSize>
       <CardChart />
-      <CardChart />
+      {/* <CardChart /> */}
     </Main>
   )
 }

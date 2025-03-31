@@ -1,6 +1,7 @@
 import {
   CreateMatchDTO,
   Match,
+  QueryMatchesDto,
   Stats,
   UpdateMatchDTO,
 } from '@/models/match.model'
@@ -25,10 +26,12 @@ class MatchService {
    * @param limit limit por page of matches
    * @returns matches with limited items at specified page
    */
-  static async findAll(page = 1, limit = 0) {
+  static async findAll(query: QueryMatchesDto) {
     const params = new URLSearchParams()
-    params.append('page', `${page}`)
-    params.append('limit', `${limit}`)
+    params.append('page', `${query.page}`)
+    params.append('limit', `${query.limit}`)
+    if (query.seasonProfileID !== '')
+      params.append('seasonProfileID', query.seasonProfileID)
     // params.append('seasonProfileID', '')
     return await axios.get(MATCHES_GET_URL, { params: params })
   }

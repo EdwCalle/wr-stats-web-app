@@ -62,17 +62,7 @@ export interface CreateMatchDTO {
     marks: number
   }
 }
-export interface CreateMatchDTO {
-  date: string
-  victories: number
-  defeats: number
-  seasonProfileID: string
-  range: {
-    rankedTierID: string
-    divisionLvl: number
-    marks: number
-  }
-}
+
 export interface UpdateMatchDTO {
   // date: string
   victories: number
@@ -83,4 +73,10 @@ export interface UpdateMatchDTO {
     divisionLvl: number
     marks: number
   }
+}
+
+export interface QueryMatchesDto {
+  page: number
+  limit: number
+  seasonProfileID: string
 }

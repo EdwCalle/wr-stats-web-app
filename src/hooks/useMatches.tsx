@@ -1,4 +1,4 @@
-import { Match } from '@/models/match.model'
+import { Match, QueryMatchesDto } from '@/models/match.model'
 import MatchService from '@/services/match.service'
 import { formatDate } from '@utils/modules/TimeWR'
 import { useState } from 'react'
@@ -10,13 +10,25 @@ export const useMatches = () => {
     setMatches([...items])
   }
 
-  const getMatches = async () => {
-    const res = await MatchService.findAll()
+  const getMatches = async (
+    query: QueryMatchesDto = {
+      page: 1,
+      limit: 0,
+      seasonProfileID: '',
+    },
+  ) => {
+    const res = await MatchService.findAll(query)
     return MatchService.toMatches(res.data)
   }
 
-  const autoLoadMatches = async () => {
-    const items = await getMatches()
+  const autoLoadMatches = async (
+    query: QueryMatchesDto = {
+      page: 1,
+      limit: 0,
+      seasonProfileID: '',
+    },
+  ) => {
+    const items = await getMatches(query)
     setMatches([...items])
   }
   const toMatchesOptions = () => {

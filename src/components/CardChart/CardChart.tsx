@@ -2,7 +2,7 @@ import Card from '@components/Card/Card'
 import LineChart from '@components/LineChart/LineChart'
 import Select from '@components/Select/Select'
 import { useMatches } from '@hooks/useMatches'
-import useSeasons from '@hooks/useSeasons'
+import { useSeasonProfile } from '@hooks/useSeasonProfile'
 import { useSelect } from '@hooks/useSelect'
 import { FILTER_SEASONS, TIME_SCALE } from '@utils/constants/constants'
 import { useEffect } from 'react'
@@ -10,10 +10,10 @@ import css from './CardChart.module.css'
 
 function CardChart() {
   const { autoLoadMatches, toMatchesOptions } = useMatches()
-  const { autoLoadSeasons, toSeasonsOptions } = useSeasons()
+  const { autoLoadSeasonsProfile, toSeasonsProfileOptions } = useSeasonProfile()
 
   const matchesOptions = toMatchesOptions()
-  const seasonsOptions = toSeasonsOptions()
+  const seasonsOptions = toSeasonsProfileOptions()
 
   const seasonModeFilter = useSelect(FILTER_SEASONS)
   const seasonFilter = useSelect(seasonsOptions)
@@ -21,12 +21,15 @@ function CardChart() {
 
   const loadData = async () => {
     await autoLoadMatches()
-    await autoLoadSeasons()
+    await autoLoadSeasonsProfile()
   }
   useEffect(() => {
     loadData()
   }, [])
-
+  const onSelectedSeason = (seasonProfileID: string) => {
+    seasonFilter[1](seasonProfileID)
+    autoLoadMatches({ seasonProfileID, page: 1, limit: 0 })
+  }
   console.log('a lot of')
   return (
     <Card>
@@ -43,7 +46,7 @@ function CardChart() {
           label='select season'
           options={seasonsOptions}
           selectedOption={seasonFilter[0]}
-          onSelectedOption={seasonFilter[1]}
+          onSelectedOption={onSelectedSeason}
         />
       </form>
       <section className={css.chartContainer}>
