@@ -1,0 +1,40 @@
+/* repeated, PLEASE REDUCE CODE */
+
+.chip {
+  text-align: center;
+  width: 40px;
+  display: block;
+  margin: auto;
+  margin-right: 0;
+  color: var(--primary-color);
+  background-color: var(--third-color);
+  padding: 4px;
+  border-radius: 10px;
+}
+
+/* types */
+
+.extended {
+  width: auto;
+}
+
+/* Colors */
+.default {
+  background-color: #86909e;
+}
+.good {
+  /* background-color: green; */
+  background: rgba(0, 255, 83, 1) 62%;
+}
+.neutral {
+  background-color: aqua;
+}
+.regular {
+  background-color: orange;
+}
+.bad {
+  background-color: red;
+}
+.none {
+  background-color: #ffffff00;
+}

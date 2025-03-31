@@ -1,0 +1,14 @@
+.range {
+  padding-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 5px;
+  justify-items: center;
+}
+/* its two, due to the first element is the legend */
+.range > *:nth-child(1) {
+  grid-row: span 3 / span 3;
+  /* width: 100%; */
+  width: max-content;
+}

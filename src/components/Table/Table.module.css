@@ -1,0 +1,38 @@
+.section {
+  width: 100%;
+  max-height: 100%;
+  overflow: auto;
+  text-align: end;
+  font-size: small;
+  /* box-shadow: 10px 10px 158px 12px rgb(22, 23, 23); */
+}
+
+.table {
+  table-layout: fixed;
+  width: max-content;
+  border-collapse: collapse;
+  color: var(--secondary-color);
+
+  /* background-color: aqua; */
+}
+
+.thead {
+  border-bottom: 1px solid;
+  text-align: center;
+  color: var(--primary-color);
+  position: sticky;
+  top: 0;
+  background-color: var(--secondary-bg-color);
+}
+
+.tr:nth-child(odd) {
+  background-color: var(--third-bg-color);
+}
+
+.th {
+  padding: 20px;
+}
+.td {
+  white-space: nowrap;
+  padding: 5px 20px;
+}

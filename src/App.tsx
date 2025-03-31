@@ -1,29 +1,44 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import LandingPage from './pages/LandingProfile/LandingPage'
-import UserProfile from './pages/NormalUser/UserProfile'
-import HomePage from './pages/NormalUser/Home/HomePage'
-import StatsPage from './pages/NormalUser/Stats/StatsPage'
-import MatchesPage from './pages/NormalUser/Matches/MatchesPage'
 import 'normalize.css'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
 import './App.css'
+import { AuthProvider } from './context/AuthContext'
+import HomePage from './pages/private/Home/HomePage'
+import MatchesPage from './pages/private/Matches/MatchesPage'
+import StatsPage from './pages/private/Stats/StatsPage'
+import UserProfile from './pages/private/UserProfile'
+import LandingPage from './pages/public/LandingPage'
+import LoginPage from './pages/public/LoginPage'
+import RegisterPage from './pages/public/RegisterPage'
 
 function App() {
   return (
     <>
-      <BrowserRouter>
-        <Routes>
-          <Route path='/landingPage' element={<LandingPage />}></Route>
-          <Route path='/' element={<Navigate to='/landingPage' />} />
-          <Route path='/player' element={<Navigate to='/player/home' />} />
-          <Route path='/player/*' element={<UserProfile />}>
-            <Route path='home' element={<HomePage />}></Route>
-            <Route path='stats' element={<StatsPage />}></Route>
-            <Route path='sheets' element={<MatchesPage />}></Route>
-            <Route path='*' element={<>404 not found page</>}></Route>
-          </Route>
-          <Route path='*' element={<>404 not found page</>}></Route>
-        </Routes>
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<LandingPage />} />
+
+            <Route path='/login' element={<LoginPage />} />
+            <Route path='/register' element={<RegisterPage />} />
+
+            <Route path='/player' element={<Navigate to='/player/home' />} />
+            <Route path='/player/*' element={<UserProfile />}>
+              <Route path='home' element={<HomePage />} />
+              <Route path='stats' element={<StatsPage />} />
+              <Route path='matches' element={<MatchesPage />} />
+              <Route path='*' element={<>404 not found page</>} />
+            </Route>
+
+            <Route path='*' element={<>404 not found page</>} />
+          </Routes>
+        </BrowserRouter>
+        <ToastContainer
+          position='bottom-center'
+          theme='colored'
+          pauseOnHover={false}
+        />
+      </AuthProvider>
     </>
   )
 }

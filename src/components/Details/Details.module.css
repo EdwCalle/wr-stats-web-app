@@ -1,0 +1,28 @@
+.content {
+  max-width: 225px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+/* 
+.info {
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  row-gap: 3px;
+} */
+.detail {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  align-items: center;
+  justify-items: stretch;
+  width: 100%;
+}
+.detailInfo {
+  text-align: left;
+  font-size: 12px;
+}

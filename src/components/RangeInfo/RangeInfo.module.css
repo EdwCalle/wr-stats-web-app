@@ -1,0 +1,40 @@
+.rangeInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.rangeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto auto;
+  align-items: center;
+  justify-items: center;
+  row-gap: 5px;
+}
+.rangeImage {
+  display: block;
+  width: 70px;
+
+  grid-area: 1/ 2 /2 /3;
+
+  /* margin: auto; */
+}
+.rangeTier {
+  color: var(--secondary-color);
+  font-size: 16px;
+  margin: 0;
+
+  grid-area: 2 /2 /3/ 3;
+}
+.rangeViewMarks {
+  font-size: 16px;
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+
+  grid-area: 3/2 /4 /3;
+}
+.rangeMarks {
+  width: 20px;
+}
