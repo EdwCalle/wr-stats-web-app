@@ -12,7 +12,7 @@ import {
   removeToken,
 } from '../services/auth.service'
 import { User } from '../utils/interfaces/user.interface'
-import { delay } from '../utils/logic'
+import { delay } from '../utils/modules/TimeWR'
 import { LoginValues } from '../utils/validations/login-schema'
 import { RegisterValues } from '../utils/validations/register-schema'
 

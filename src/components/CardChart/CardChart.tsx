@@ -4,7 +4,7 @@ import Select from '@components/Select/Select'
 import { useMatches } from '@hooks/useMatches'
 import { useSelect } from '@hooks/useSelect'
 import { FILTER_SEASONS, SEASONS, TIME_SCALE } from '@utils/constants/constants'
-import { formatDate } from '@utils/logic'
+import { formatDate } from '@utils/modules/TimeWR'
 import { useEffect } from 'react'
 import css from './CardChart.module.css'
 

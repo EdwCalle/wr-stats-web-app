@@ -1,5 +1,5 @@
 import { Match } from '@/models/match.model'
-import { compareDate } from '@utils/logic'
+import { compareDate } from '@utils/modules/TimeWR'
 import { useCallback } from 'react'
 import { LooseValue } from 'react-calendar/src/shared/types.js'
 interface useCalendarProps {

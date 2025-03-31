@@ -6,7 +6,12 @@ import {
 } from '@/models/match.model'
 import { TierSeason, TierType } from '@utils/enums/rankedTier.enum'
 import { MatchApi } from '@utils/interfaces/api.interface'
-import { compareDate, formatDate, toApiDate, toLocalDate } from '@utils/logic'
+import {
+  compareDate,
+  formatDate,
+  toApiDate,
+  toLocalDate,
+} from '@utils/modules/TimeWR'
 import axios from './axios.service'
 import { RankedTierService } from './rankedTier.service'
 import { SeasonProfileService } from './seasonProfile.service'
