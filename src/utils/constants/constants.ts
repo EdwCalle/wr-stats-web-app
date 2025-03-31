@@ -21,14 +21,14 @@ interface Scales {
   value: number | string
 }
 export const TIME_SCALE: Scales[] = [
-  { label: 'day', value: 0 },
-  { label: 'month', value: 1 },
-  { label: 'year', value: 2 },
-  { label: '10 matchs', value: 3 },
-  { label: '50 matchs', value: 4 },
-  { label: '100 matchs', value: 5 },
-  { label: '200 matchs', value: 6 },
-  { label: '500 matchs', value: 7 },
+  { label: 'day', value: 'day' },
+  { label: 'month', value: 'month' },
+  { label: 'year', value: 'year' },
+  { label: '10 matchs', value: '10 matchs' },
+  { label: '50 matchs', value: '50 matchs' },
+  { label: '100 matchs', value: '100 matchs' },
+  { label: '200 matchs', value: '200 matchs' },
+  { label: '500 matchs', value: '500 matchs' },
 ]
 export const FILTER_SEASONS: Scales[] = [
   { label: 'compare', value: 'compare' },

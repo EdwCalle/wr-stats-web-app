@@ -4,7 +4,6 @@ import { useState } from 'react'
 
 export const useMatches = () => {
   const [matches, setMatches] = useState<Match[]>([])
-
   const loadMatches = async (items: Match[]) => {
     setMatches([...items])
   }

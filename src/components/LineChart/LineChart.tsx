@@ -1,4 +1,4 @@
-import { createChart, ColorType } from 'lightweight-charts'
+import { ColorType, createChart } from 'lightweight-charts'
 import { useEffect, useRef } from 'react'
 type ChartComponentProps = {
   data: { time: string; value: number }[]
@@ -41,10 +41,14 @@ export const ChartComponent = (props: ChartComponentProps) => {
       },
     })
     chart.timeScale().fitContent()
-    const newSeries = chart.addAreaSeries({
-      lineColor,
-      topColor: areaTopColor,
-      bottomColor: areaBottomColor,
+    const newSeries = chart.addBaselineSeries({
+      baseValue: { type: 'price', price: 0 },
+      topLineColor: 'rgba(76, 175, 80, 1)', // Green color
+      topFillColor1: 'rgba(76, 175, 80, 0.05)', // Light green
+      topFillColor2: 'rgba(76, 175, 80, 0.28)', // Semi-transparent green
+      bottomLineColor: 'rgba(239, 83, 80, 1)', // Red color
+      bottomFillColor1: 'rgba(239, 83, 80, 0.28)', // Semi-transparent red
+      bottomFillColor2: 'rgba(239, 83, 80, 0.05)', // Light red
     })
     newSeries.priceScale().applyOptions({
       borderColor: backgroundColor,
