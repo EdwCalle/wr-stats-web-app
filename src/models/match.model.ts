@@ -1,3 +1,4 @@
+import { TierType } from '@utils/enums/rankedTier.enum'
 import { RankedTier } from './rankedTier.model'
 import { Season } from './season.model'
 import { SeasonProfile } from './seasonProfile.model'
@@ -43,7 +44,7 @@ export const emptyMatch = (
       winRate: 0,
     },
     range: {
-      divisionLvl: 1,
+      divisionLvl: rankedTier.tierType === TierType.DIVISION ? 1 : 0,
       marks: rankedTier.minMarks ?? 0,
       rankedTier: { ...rankedTier },
     },
