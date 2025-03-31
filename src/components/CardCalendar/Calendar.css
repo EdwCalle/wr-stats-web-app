@@ -200,6 +200,9 @@ button.match {
   border-bottom-left-radius: 0;
   background-color: rgba(0, 0, 0, 0.795);
 }
+button.react-calendar__tile--active {
+  background: #006edc;
+}
 button.new {
 }
 /*  */
