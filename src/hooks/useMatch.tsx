@@ -21,8 +21,11 @@ export const useMatch = () => {
   const { closeModal } = useModal()
 
   const createMatch = async (newMatch: Match) => {
+    const isCreateAction = newMatch._id === null
     try {
-      const result = await MatchService.createOne(newMatch)
+      let result = undefined
+      if (isCreateAction) result = await MatchService.createOne(newMatch)
+      else result = await MatchService.updateOne(newMatch)
 
       const newMatches = await getMatches()
       loadFirstCurrentMatch(
@@ -33,10 +36,12 @@ export const useMatch = () => {
       )
       loadMatches(newMatches)
       closeModal('crudMatch')
-      toast(`Match created successfully`)
+      if (isCreateAction) toast(`Match created successfully`)
+      else toast(`Match updated successfully`)
       console.log(result.data)
     } catch (error) {
-      showError(error, 'Error on create match', 'modal')
+      if (isCreateAction) showError(error, 'Error on create match', 'modal')
+      else showError(error, 'Error on update match', 'modal')
     }
   }
   const getMatchByDate = (date: Date) => {
