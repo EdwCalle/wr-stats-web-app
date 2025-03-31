@@ -8,6 +8,7 @@ import { showError } from '@utils/modules/HandleErrors'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 import { useMatches } from './useMatches'
+import useModal from './useModal'
 import useSeasons from './useSeasons'
 
 export const useMatch = () => {
@@ -16,11 +17,24 @@ export const useMatch = () => {
   const { rankedTiers, loadRankedTiers, getRankedTiers } = useRankedTiers()
   const { seasons, loadSeasons, getSeasons } = useSeasons()
   const { matches, loadMatches, getMatches } = useMatches()
+
+  const { closeModal } = useModal()
+
   const createMatch = async (newMatch: Match) => {
     try {
       const result = await MatchService.createOne(newMatch)
+
+      const newMatches = await getMatches()
+      loadFirstCurrentMatch(
+        seasons[0],
+        rankedTiers[0],
+        newMatches,
+        newMatch.date,
+      )
+      loadMatches(newMatches)
+      closeModal('crudMatch')
+      toast(`Match created successfully`)
       console.log(result.data)
-      toast(`Created ok.  ${result.data}`)
     } catch (error) {
       showError(error, 'Error on create match', 'modal')
     }
@@ -36,8 +50,8 @@ export const useMatch = () => {
     season: Season,
     rankedTier: RankedTier,
     matches: Match[],
+    date: Date,
   ) => {
-    const date = newDate()
     const foundMatch = MatchService.findOneByDate(matches, date)
     if (foundMatch) setCurrentMatch(foundMatch)
     else setCurrentMatch(emptyMatch(date, season, rankedTier))
@@ -51,7 +65,12 @@ export const useMatch = () => {
     loadMatches(newMatches)
     loadRankedTiers(newRankedTiers)
     loadSeasons(newSeasons)
-    loadFirstCurrentMatch(newSeasons[0], rankedTiers[0], newMatches)
+    loadFirstCurrentMatch(
+      newSeasons[0],
+      newRankedTiers[0],
+      newMatches,
+      newDate(),
+    )
     setIsloading(false)
   }
   useEffect(() => {
