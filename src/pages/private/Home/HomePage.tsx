@@ -1,6 +1,6 @@
-import CardCalendar from '@components/CardCalendar/CardCalendar'
 import Main from '@components/Layout/Main/Main'
 import { useMatch } from '@hooks/useMatch'
+import CardCalendar from './CardCalendar/CardCalendar'
 import CardDetails from './CardDetails/CardDetails'
 import CrudMatch from './CrudMatch/CrudMatch'
 function HomePage() {
