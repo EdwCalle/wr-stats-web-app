@@ -1,4 +1,9 @@
-import { CreateMatchDTO, Match, Stats } from '@/models/match.model'
+import {
+  CreateMatchDTO,
+  Match,
+  Stats,
+  UpdateMatchDTO,
+} from '@/models/match.model'
 import { TierSeason, TierType } from '@utils/enums/rankedTier.enum'
 import { MatchApi } from '@utils/interfaces/api.interface'
 import { compareDate, formatDate, toApiDate, toLocalDate } from '@utils/logic'
@@ -34,6 +39,19 @@ class MatchService {
       await SeasonProfileService.autoCreateOne(seasonID)
     const matchDTO = this.toCreateMatchDTO(clonedMatch)
     return axios.post(MATCHES_GET_URL, matchDTO)
+  }
+  static updateOne = async (match: Match) => {
+    const clonedMatch = structuredClone(match)
+    // const seasonID = clonedMatch.seasonProfile.season._id
+    // clonedMatch.seasonProfile =
+    // await SeasonProfileService.autoCreateOne(seasonID)
+
+    const params = new URLSearchParams()
+    params.append('date', toApiDate(match.date).toISOString())
+    const matchDTO = this.toUpdateMatchDTO(clonedMatch)
+    return axios.patch(`${MATCHES_GET_URL}/${match._id}`, matchDTO, {
+      params: params,
+    })
   }
 
   //customLogic
@@ -85,6 +103,19 @@ class MatchService {
       victories: match.victories,
       defeats: match.defeats,
       seasonProfileID: match.seasonProfile._id,
+      range: {
+        rankedTierID: match.range.rankedTier._id,
+        divisionLvl: match.range.divisionLvl,
+        marks: match.range.marks,
+      },
+    }
+  }
+  static toUpdateMatchDTO = (match: Match): UpdateMatchDTO => {
+    if (match.seasonProfile._id === null)
+      throw new Error('error on parsing match to updateDTO')
+    return {
+      victories: match.victories,
+      defeats: match.defeats,
       range: {
         rankedTierID: match.range.rankedTier._id,
         divisionLvl: match.range.divisionLvl,
