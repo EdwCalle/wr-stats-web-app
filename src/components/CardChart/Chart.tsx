@@ -2,16 +2,17 @@ import { ColorType, createChart, IChartApi } from 'lightweight-charts'
 import { useEffect, useRef } from 'react'
 import css from './Chart.module.css'
 
-export interface Axes {
+export interface PointXY {
   time: string
   value: number
+  color?: string
 }
-export type Serie = Axes[]
+export type DataFrame = PointXY[]
 type ChartComponentProps = {
-  data: Serie[] | Serie
+  dataFrame: DataFrame[]
   addSeries: (chart: IChartApi) => void
 }
-function Chart({ data, addSeries }: ChartComponentProps) {
+function Chart({ dataFrame, addSeries }: ChartComponentProps) {
   const chartContainerRef = useRef<HTMLDivElement>(null)
   const handleResize = (chart: IChartApi) => {
     if (!chartContainerRef.current) return
@@ -64,7 +65,7 @@ function Chart({ data, addSeries }: ChartComponentProps) {
       window.removeEventListener('resize', resize)
       chart.remove()
     }
-  }, [data])
+  }, [dataFrame])
   return (
     <div className={css.chartContainer}>
       <div ref={chartContainerRef} className={css.chart} />

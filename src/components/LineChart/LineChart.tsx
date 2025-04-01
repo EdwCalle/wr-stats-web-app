@@ -1,91 +1,48 @@
-import { ColorType, createChart } from 'lightweight-charts'
-import { useEffect, useRef } from 'react'
+import Chart, { DataFrame } from '@components/CardChart/Chart'
+import { IChartApi } from 'lightweight-charts'
+
+const colors = [
+  'rgba(255, 0, 0, 1)',
+  'rgba(0, 128, 0, 1)',
+  'rgba(255, 165, 0, 1)',
+  'rgba(128, 0, 128, 1)',
+  'rgba(255, 255, 0, 1)',
+  'rgba(255, 192, 203, 1)',
+  'rgba(165, 42, 42, 1)',
+  'rgba(0, 255, 255, 1)',
+  'rgba(128, 128, 0, 1)',
+  'rgba(0, 255, 0, 1)',
+  'rgba(255, 20, 147, 1)',
+  'rgba(75, 0, 130, 1)',
+  'rgba(255, 69, 0, 1)',
+  'rgba(0, 191, 255, 1)',
+  'rgba(46, 139, 87, 1)',
+  'rgba(123, 104, 238, 1)',
+  'rgba(255, 228, 181, 1)',
+  'rgba(0, 100, 0, 1)',
+  'rgba(255, 215, 0, 1)',
+  'rgba(138, 43, 226, 1)',
+  'rgba(240, 128, 128, 1)',
+  'rgba(70, 130, 180, 1)',
+  'rgba(210, 105, 30, 1)',
+  'rgba(0, 255, 127, 1)',
+  'rgba(255, 140, 0, 1)',
+  'rgba(199, 21, 133, 1)',
+  'rgba(112, 128, 144, 1)',
+]
+
 type ChartComponentProps = {
-  data: { time: string; value: number }[]
-  className: string
-  colors?: {
-    backgroundColor?: string
-    lineColor?: string
-    textColor?: string
-    areaTopColor?: string
-    areaBottomColor?: string
+  data: DataFrame[]
+}
+function LineChart({ data }: ChartComponentProps) {
+  const addSeries = (chart: IChartApi) => {
+    data.forEach((item, index) => {
+      const color = colors[index % colors.length]
+      const newSeries = chart.addLineSeries({ color })
+      newSeries.setData(item)
+    })
   }
-}
-export const ChartComponent = (props: ChartComponentProps) => {
-  const {
-    data,
-    className,
-    colors: {
-      backgroundColor = 'transparent',
-      lineColor = 'rgba( 239, 83, 80, 1)',
-      textColor = 'white',
-      areaTopColor = 'rgba( 239, 83, 80, 0.05)',
-      areaBottomColor = 'rgba( 239, 83, 80, 0.28)',
-    } = {},
-  } = props
-
-  const chartContainerRef = useRef<HTMLDivElement>(null)
-
-  useEffect(() => {
-    if (!chartContainerRef.current) return
-    const chart = createChart(chartContainerRef.current, {
-      layout: {
-        background: { type: ColorType.Solid, color: backgroundColor },
-        textColor,
-      },
-      width: chartContainerRef.current?.clientWidth ?? 0,
-      height: chartContainerRef.current?.clientHeight ?? 0,
-      grid: {
-        vertLines: { visible: false },
-        horzLines: { visible: false },
-      },
-    })
-    chart.timeScale().fitContent()
-    const newSeries = chart.addBaselineSeries({
-      baseValue: { type: 'price', price: 0 },
-      topLineColor: 'rgba(76, 175, 80, 1)', // Green color
-      topFillColor1: 'rgba(76, 175, 80, 0.05)', // Light green
-      topFillColor2: 'rgba(76, 175, 80, 0.28)', // Semi-transparent green
-      bottomLineColor: 'rgba(239, 83, 80, 1)', // Red color
-      bottomFillColor1: 'rgba(239, 83, 80, 0.28)', // Semi-transparent red
-      bottomFillColor2: 'rgba(239, 83, 80, 0.05)', // Light red
-    })
-    newSeries.priceScale().applyOptions({
-      borderColor: backgroundColor,
-    })
-
-    newSeries.setData(data)
-
-    const handleResize = () => {
-      chart.applyOptions({
-        width: chartContainerRef.current?.clientWidth ?? 0,
-        height: chartContainerRef.current?.clientHeight ?? 0,
-      })
-    }
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-
-      chart.remove()
-    }
-  }, [
-    data,
-    backgroundColor,
-    lineColor,
-    textColor,
-    areaTopColor,
-    areaBottomColor,
-  ])
-
-  return <div className={className} ref={chartContainerRef} />
+  return <Chart addSeries={addSeries} dataFrame={data} />
 }
 
-function LineChart(props: ChartComponentProps) {
-  return (
-    <>
-      <ChartComponent {...props}></ChartComponent>
-    </>
-  )
-}
 export default LineChart

@@ -1,20 +1,17 @@
-import Chart, { Serie } from '@components/CardChart/Chart'
+import Chart, { DataFrame } from '@components/CardChart/Chart'
 import { IChartApi } from 'lightweight-charts'
 
 type ChartComponentProps = {
-  data: Serie
+  data: DataFrame
+  //   compareData?: DataFrame
 }
 function BaseLineChart({ data }: ChartComponentProps) {
+  const dataFrames: DataFrame[] = [data]
   const addSeries = (chart: IChartApi) => {
-    const newSeries = chart.addBaselineSeries({
-      //     color: backgroundColor,
-      baseValue: { type: 'price', price: 0 },
-      //   })
-    })
+    const newSeries = chart.addBaselineSeries()
     newSeries.setData(data)
   }
-
-  return <Chart addSeries={addSeries} data={data} />
+  return <Chart addSeries={addSeries} dataFrame={dataFrames} />
 }
 
 export default BaseLineChart

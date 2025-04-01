@@ -1,5 +1,6 @@
 import BaseLineChart from '@components/BaseLineChart/BaseLineChart'
 import Card from '@components/Card/Card'
+import LineChart from '@components/LineChart/LineChart'
 import Select from '@components/Select/Select'
 import { useMatches } from '@hooks/useMatches'
 import { useSeasonProfile } from '@hooks/useSeasonProfile'
@@ -48,6 +49,20 @@ function CardChart() {
           onSelectedOption={onSelectedSeason}
         />
       </form>
+      <LineChart
+        data={[
+          // matchesOptions,
+          matchesOptions.slice(0, 11),
+          matchesOptions.slice(20, 30),
+          matchesOptions.slice(30, 40),
+          matchesOptions.slice(40, 50),
+          matchesOptions.slice(50, 60),
+          matchesOptions.slice(60, 70),
+          matchesOptions.slice(70, 80),
+          matchesOptions.slice(80, 90),
+          matchesOptions.slice(90, 100),
+        ]}
+      />
       <BaseLineChart data={matchesOptions} />
       <form>
         <Select
