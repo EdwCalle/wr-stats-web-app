@@ -4,9 +4,16 @@ type FormProps = {
   children: ReactNode
   onSubmit?: (e?: BaseSyntheticEvent) => Promise<void>
 }
+
 function Form({ onSubmit, children }: FormProps) {
+  const handleSubmit = (e: BaseSyntheticEvent) => {
+    e.preventDefault()
+    if (onSubmit) {
+      onSubmit(e)
+    }
+  }
   return (
-    <form className={css.form} onSubmit={onSubmit}>
+    <form className={css.form} onSubmit={handleSubmit}>
       {children}
     </form>
   )

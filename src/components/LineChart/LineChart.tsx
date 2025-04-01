@@ -35,7 +35,6 @@ type ChartComponentProps = {
   data: DataFrame[]
 }
 function LineChart({ data }: ChartComponentProps) {
-  console.log('my data', data)
   const addSeries = (chart: IChartApi) => {
     data.forEach((item, index) => {
       const color = colors[index % colors.length]

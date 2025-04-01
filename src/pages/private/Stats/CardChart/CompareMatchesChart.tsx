@@ -1,10 +1,11 @@
+import Button from '@components/Button/Button'
 import { DataFrame } from '@components/Chart/Chart'
 import Form from '@components/Form/Form'
 import LineChart from '@components/LineChart/LineChart'
 import MultipleSelect from '@components/MultipleSelect/MultipleSelect'
 import { Option } from '@components/Select/Select'
 import { useMatches } from '@hooks/useMatches'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface CompareMatchesChartProps {
   seasonsProfile: Option[]
@@ -12,12 +13,14 @@ interface CompareMatchesChartProps {
 
 function CompareMatchesChart({ seasonsProfile }: CompareMatchesChartProps) {
   const { autoLoadMatches, getDataFrame } = useMatches()
-  const [selectedSeasons, setSelectedSeasons] = useState<string[]>([])
   const [dataframe, setDataframe] = useState<DataFrame[]>([])
-  const onSelectedSeasons = async (seasons: string[]) => {
-    setSelectedSeasons([...seasons])
-    const da = await getDataFrame(selectedSeasons)
-    setDataframe(da)
+
+  const seasonsRef = useRef<string[]>([])
+
+  const onSubmit = async () => {
+    console.log('from filter:', seasonsRef.current)
+    const data = await getDataFrame(seasonsRef.current)
+    setDataframe(data)
   }
 
   useEffect(() => {
@@ -25,17 +28,24 @@ function CompareMatchesChart({ seasonsProfile }: CompareMatchesChartProps) {
   }, [])
 
   return (
-    <Form>
-      <fieldset>
-        <MultipleSelect
-          name='seasons'
-          options={seasonsProfile}
-          label='select seasons'
-          onChange={onSelectedSeasons}
-        />
-      </fieldset>
+    <>
+      <Form onSubmit={onSubmit}>
+        <fieldset>
+          <MultipleSelect
+            name='seasons'
+            options={seasonsProfile}
+            onChange={(values) => {
+              seasonsRef.current = [...values]
+            }}
+            label='select seasons'
+          />
+          <Button variant='primary' type='submit'>
+            Apply
+          </Button>
+        </fieldset>
+      </Form>
       <LineChart data={dataframe} />
-    </Form>
+    </>
   )
 }
 
