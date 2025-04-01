@@ -1,12 +1,11 @@
+import BaseLineChart from '@components/BaseLineChart/BaseLineChart'
 import Card from '@components/Card/Card'
-import LineChart from '@components/LineChart/LineChart'
 import Select from '@components/Select/Select'
 import { useMatches } from '@hooks/useMatches'
 import { useSeasonProfile } from '@hooks/useSeasonProfile'
 import { useSelect } from '@hooks/useSelect'
 import { FILTER_SEASONS, TIME_SCALE } from '@utils/constants/constants'
 import { useEffect } from 'react'
-import css from './CardChart.module.css'
 
 function CardChart() {
   const { autoLoadMatches, toMatchesOptions } = useMatches()
@@ -49,10 +48,7 @@ function CardChart() {
           onSelectedOption={onSelectedSeason}
         />
       </form>
-      <section className={css.chartContainer}>
-        <LineChart className={css.chart} data={matchesOptions} />
-      </section>
-
+      <BaseLineChart data={matchesOptions} />
       <form>
         <Select
           name='timeScales'
