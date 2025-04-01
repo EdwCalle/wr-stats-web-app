@@ -12,8 +12,6 @@
   color: var(--secondary-color);
   border: none;
   box-sizing: border-box;
-
-  scrollbar-color: var(--third-bg-color) transparent;
 }
 .modal[open]::backdrop {
   background-color: rgba(0, 0, 0, 0.721);
