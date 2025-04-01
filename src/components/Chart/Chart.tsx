@@ -5,12 +5,12 @@ import css from './Chart.module.css'
 export interface PointXY {
   time: string
   value: number
-  color?: string
 }
 export type DataFrame = PointXY[]
 type ChartComponentProps = {
   dataFrame: DataFrame[]
   addSeries: (chart: IChartApi) => void
+  isXscaleNumber: boolean
 }
 function Chart({ dataFrame, addSeries }: ChartComponentProps) {
   const chartContainerRef = useRef<HTMLDivElement>(null)
@@ -21,15 +21,6 @@ function Chart({ dataFrame, addSeries }: ChartComponentProps) {
       height: chartContainerRef.current.clientHeight,
     })
   }
-
-  // const getNewSeries = (chart: IChartApi, data: Serie[]) => {
-  //   return data.map((item, index) => {
-  //     const r = Math.round((index * 255) / data.length)
-  //     const g = Math.round(255 - (index * 255) / data.length)
-  //     const b = 150
-  //     return getNewSerie(chart, item, `rgb(${r}, ${g}, ${b})`)
-  //   })
-  // }
 
   useEffect(() => {
     if (!chartContainerRef.current) return
@@ -45,12 +36,12 @@ function Chart({ dataFrame, addSeries }: ChartComponentProps) {
         vertLines: { visible: false },
         horzLines: { visible: false },
       },
-      // timeScale: {
-      //   timeVisible: true,
-      //   tickMarkFormatter: (time: number) => {
-      //     return time + 1
-      //   },
-      // },
+      timeScale: {
+        timeVisible: true,
+        tickMarkFormatter: (time: number) => {
+          return time + 1
+        },
+      },
     })
 
     chart.timeScale().fitContent()

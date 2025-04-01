@@ -37,6 +37,37 @@ export const useMatches = () => {
       value: item.stats?.acumDiff ?? 0,
     }))
   }
+  const getDataFrame = async (seasonProfileIDs: string[]) => {
+    try {
+      const dataframes = await Promise.all(
+        seasonProfileIDs.map(async (seasonProfileID) => {
+          const newMatches = await getMatches({
+            seasonProfileID,
+            limit: 0,
+            page: 1,
+          })
+
+          const data = newMatches.map((item, index) => {
+            const date = new Date(0)
+            date.setDate(date.getDate() + index)
+            const time = formatDate(date.toISOString())
+            return {
+              time,
+              value: item.stats?.acumDiff ?? 0,
+            }
+          })
+
+          return data // Return the processed data for each seasonProfileID
+        }),
+      )
+
+      console.log(dataframes)
+      return dataframes
+    } catch (error) {
+      console.error('Error in getDataFrame:', error)
+      return [] // Or throw the error, depending on how you want to handle it
+    }
+  }
 
   return {
     matches,
@@ -44,5 +75,6 @@ export const useMatches = () => {
     loadMatches,
     autoLoadMatches,
     toMatchesOptions,
+    getDataFrame,
   }
 }

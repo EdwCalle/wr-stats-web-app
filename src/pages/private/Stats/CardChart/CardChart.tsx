@@ -8,6 +8,7 @@ import { useSeasonProfile } from '@hooks/useSeasonProfile'
 import { useSelect } from '@hooks/useSelect'
 import { SEASON_MODE } from '@utils/constants/constants'
 import { useEffect } from 'react'
+import CompareMatchesChart from './CompareMatchesChart'
 
 function CardChart() {
   const { autoLoadMatches, toMatchesOptions } = useMatches()
@@ -41,6 +42,7 @@ function CardChart() {
         selectedOption={selectedMode}
         onSelectedOption={updateSelectedMode}
       />
+      <CompareMatchesChart seasonsProfile={toSeasonsProfileOptions()} />
 
       {selectedMode.id === 'by_season' && (
         <>
