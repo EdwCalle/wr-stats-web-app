@@ -1,4 +1,4 @@
-import Chart, { DataFrame } from '@components/CardChart/Chart'
+import Chart, { DataFrame } from '@components/Chart/Chart'
 import { IChartApi } from 'lightweight-charts'
 
 const colors = [

@@ -29,9 +29,9 @@ export const TIME_SCALE: Option[] = [
   { value: '200 matchs', id: '200 matchs' },
   { value: '500 matchs', id: '500 matchs' },
 ]
-export const FILTER_SEASONS: Option[] = [
-  { value: 'compare', id: 'compare' },
+export const SEASON_MODE: Option[] = [
   { value: 'by season', id: 'by_season' },
+  { value: 'compare', id: 'compare' },
 ]
 
 export const imagesTier = {
