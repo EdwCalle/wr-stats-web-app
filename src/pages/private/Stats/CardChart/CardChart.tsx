@@ -31,7 +31,7 @@ function CardChart() {
   }, [])
   const onSelectedSeason = (seasonProfileID: string) => {
     seasonFilter[1](seasonProfileID)
-    autoLoadMatches({ seasonProfileID, page: 1, limit: 0 })
+    autoLoadMatches()
   }
   return (
     <Card>

@@ -10,25 +10,13 @@ export const useMatches = () => {
     setMatches([...items])
   }
 
-  const getMatches = async (
-    query: QueryMatchesDto = {
-      page: 1,
-      limit: 0,
-      seasonProfileID: '',
-    },
-  ) => {
+  const getMatches = async (query?: QueryMatchesDto) => {
     const res = await MatchService.findAll(query)
     return MatchService.toMatches(res.data)
   }
 
-  const autoLoadMatches = async (
-    query: QueryMatchesDto = {
-      page: 1,
-      limit: 0,
-      seasonProfileID: '',
-    },
-  ) => {
-    const items = await getMatches(query)
+  const autoLoadMatches = async () => {
+    const items = await getMatches()
     setMatches([...items])
   }
   const toMatchesOptions = () => {

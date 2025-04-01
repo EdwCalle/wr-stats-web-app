@@ -76,7 +76,7 @@ export interface UpdateMatchDTO {
 }
 
 export interface QueryMatchesDto {
-  page: number
-  limit: number
-  seasonProfileID: string
+  page?: number
+  limit?: number
+  seasonProfileID?: string
 }

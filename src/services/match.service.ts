@@ -22,16 +22,15 @@ const MATCHES_GET_URL = `matches`
 class MatchService {
   /**
    *
-   * @param page number of start counting matches
-   * @param limit limit por page of matches
-   * @returns matches with limited items at specified page
+   * @param props
+   * @returns
    */
-  static async findAll(query: QueryMatchesDto) {
+  static async findAll(query?: QueryMatchesDto) {
+    const { page = 1, limit = 0, seasonProfileID } = query || {}
     const params = new URLSearchParams()
-    params.append('page', `${query.page}`)
-    params.append('limit', `${query.limit}`)
-    if (query.seasonProfileID !== '')
-      params.append('seasonProfileID', query.seasonProfileID)
+    params.append('page', `${page}`)
+    params.append('limit', `${limit}`)
+    if (seasonProfileID) params.append('seasonProfileID', seasonProfileID)
     // params.append('seasonProfileID', '')
     return await axios.get(MATCHES_GET_URL, { params: params })
   }
