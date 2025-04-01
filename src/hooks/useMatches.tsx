@@ -19,12 +19,21 @@ export const useMatches = () => {
     const items = await getMatches()
     setMatches([...items])
   }
-  const toMatchesOptions = () => {
-    return matches.map((item) => ({
-      time: formatDate(item.date.toISOString()),
-      value: item.stats?.acumDiff ?? 0,
-    }))
+
+  const toMatchOption = (match: Match) => {
+    return {
+      time: formatDate(match.date.toISOString()),
+      value: match.stats?.acumDiff ?? 0,
+    }
   }
+
+  const getMatchesBySeason = (seasonID: string) => {
+    if (seasonID === 'all') return matches.map(toMatchOption)
+    return matches
+      .filter((match) => match.seasonProfile._id === seasonID)
+      .map(toMatchOption)
+  }
+
   const getDataFrame = async (seasonProfileIDs: string[]) => {
     try {
       const dataframes = await Promise.all(
@@ -62,7 +71,7 @@ export const useMatches = () => {
     getMatches,
     loadMatches,
     autoLoadMatches,
-    toMatchesOptions,
     getDataFrame,
+    getMatchesBySeason,
   }
 }

@@ -38,7 +38,7 @@ export const useSeasonProfile = () => {
           value: item.season.seasonName,
         }
       })
-    return [{ id: '', value: 'allMatches' }, ...options]
+    return [...options]
   }
   return {
     seasonsProfile,

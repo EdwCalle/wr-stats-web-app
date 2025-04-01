@@ -39,7 +39,7 @@ function Chart({ dataFrame, addSeries }: ChartComponentProps) {
       timeScale: {
         timeVisible: true,
         tickMarkFormatter: (time: number) => {
-          return time + 1
+          return time
         },
       },
     })

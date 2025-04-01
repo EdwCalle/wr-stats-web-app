@@ -4,17 +4,18 @@ import Form from '@components/Form/Form'
 import LineChart from '@components/LineChart/LineChart'
 import MultipleSelect from '@components/MultipleSelect/MultipleSelect'
 import { Option } from '@components/Select/Select'
-import { useMatches } from '@hooks/useMatches'
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 interface CompareMatchesChartProps {
   seasonsProfile: Option[]
+  getDataFrame: (seasonsProfileIds: string[]) => Promise<DataFrame[]>
 }
 
-function CompareMatchesChart({ seasonsProfile }: CompareMatchesChartProps) {
-  const { autoLoadMatches, getDataFrame } = useMatches()
+function CompareMatchesChart({
+  seasonsProfile,
+  getDataFrame,
+}: CompareMatchesChartProps) {
   const [dataframe, setDataframe] = useState<DataFrame[]>([])
-
   const seasonsRef = useRef<string[]>([])
 
   const onSubmit = async () => {
@@ -22,10 +23,6 @@ function CompareMatchesChart({ seasonsProfile }: CompareMatchesChartProps) {
     const data = await getDataFrame(seasonsRef.current)
     setDataframe(data)
   }
-
-  useEffect(() => {
-    autoLoadMatches()
-  }, [])
 
   return (
     <>
