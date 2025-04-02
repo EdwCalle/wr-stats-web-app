@@ -1,3 +1,5 @@
+import Pagination from '@components/Pagination/Pagination'
+import usePagination from '@hooks/usePagination'
 import Chip, { ChipColor } from '../Chip/Chip'
 import css from './Table.module.css'
 
@@ -28,8 +30,22 @@ const Table = ({ data, customCells }: TableProps) => {
 
   const headers = getCustomCells(data[0], customCells)
 
+  const { start, end, currentPage, handleNext, handlePrev } = usePagination({
+    limit: 100,
+    total: data.length,
+  })
+  const filterData = data.slice(start, end)
+
   return (
     <>
+      <Pagination
+        currentPage={currentPage}
+        end={end}
+        start={start}
+        total={data.length}
+        onNextPage={handleNext}
+        onPrevPage={handlePrev}
+      />
       <section className={css.section}>
         <table className={css.table}>
           <thead className={css.thead}>
@@ -42,7 +58,7 @@ const Table = ({ data, customCells }: TableProps) => {
             </tr>
           </thead>
           <tbody>
-            {data.map((row, rowIndex) => (
+            {filterData.map((row, rowIndex) => (
               <tr key={rowIndex} className={css.tr}>
                 {headers.map((header) => (
                   <td key={header.propName} className={css.td}>

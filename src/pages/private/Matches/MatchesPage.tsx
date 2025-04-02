@@ -1,32 +1,25 @@
-import MatchService from '@/services/match.service'
-import Card from '@components/Card/Card'
+import Card, { CardType } from '@components/Card/Card'
 import { ChipColor } from '@components/Chip/Chip'
 import Main from '@components/Layout/Main/Main'
 import Table from '@components/Table/Table'
+import { useMatches } from '@hooks/useMatches'
 import { useEffect, useState } from 'react'
-import { toast } from 'react-toastify'
-
+// export function getTableHeaders(params: object) {
+//   return Object.keys(params)
+// }
 function MatchesPage() {
   const [data, setData] = useState<
     Array<{ [key: string]: string | number | boolean | null }>
   >([])
 
-  const getMatches = async () => {
-    try {
-      const res = await MatchService.findAll()
-      const matches = MatchService.toMatchesTable(res.data)
-      setData(matches)
-    } catch (error) {
-      toast.error(`error on get matches ${error}`)
-    }
-  }
+  const { getMatchesTable } = useMatches()
 
   useEffect(() => {
-    getMatches()
+    getMatchesTable().then((item) => setData(item))
   }, [])
   return (
     <Main title='Matches' isFullSize={true}>
-      <Card>
+      <Card type={CardType.table} title='Matchs Played' subtitle=''>
         <Table
           customCells={[
             { propName: 'victories', color: ChipColor.good },

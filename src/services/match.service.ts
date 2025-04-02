@@ -5,7 +5,6 @@ import {
   Stats,
   UpdateMatchDTO,
 } from '@/models/match.model'
-import { TierSeason, TierType } from '@utils/enums/rankedTier.enum'
 import { MatchApi } from '@utils/interfaces/api.interface'
 import {
   compareDate,
@@ -154,7 +153,7 @@ class MatchService {
           match.defeats,
         )
         totalAcumDiff += stats.diff
-        return { ...this.toMatchTable(match), ...stats }
+        return { ...stats, ...this.toMatchTable(match) }
       })
     } catch (error) {
       throw Error(`Error on creating stats for Matches table:${error}`)
@@ -164,16 +163,17 @@ class MatchService {
   static toMatchTable = (matchApi: MatchApi) => {
     try {
       return {
-        _id: matchApi._id,
+        // _id: matchApi._id,
         date: formatDate(matchApi.date),
-        seasonProfileID: matchApi.seasonProfileID._id,
-        rankedTierName: matchApi.range.rankedTierID.tierName,
+        saeason: matchApi.seasonProfileID.seasonID.seasonName,
+        // seasonProfileID: matchApi.seasonProfileID._id,
+        tierName: matchApi.range.rankedTierID.tierName,
         divisionLvl: matchApi.range.divisionLvl,
         marks: matchApi.range.marks,
-        rankedTierID: matchApi.range.rankedTierID._id,
-        tierName: matchApi.range.rankedTierID.tierName,
-        tierType: matchApi.range.rankedTierID.tierType as TierType,
-        tierSeason: matchApi.range.rankedTierID.tierSeason as TierSeason,
+        // rankedTierID: matchApi.range.rankedTierID._id,
+        // tierName: matchApi.range.rankedTierID.tierName,
+        // tierType: matchApi.range.rankedTierID.tierType as TierType,
+        // tierSeason: matchApi.range.rankedTierID.tierSeason as TierSeason,
         minMarks: matchApi.range.rankedTierID.minMarks,
         maxMarks: matchApi.range.rankedTierID.maxMarks,
         victories: matchApi.victories,

@@ -22,6 +22,10 @@
   /* border-width: 0; */
   background: none;
 }
+.button:disabled {
+  border-color: transparent;
+  background: var(--third-bg-color);
+}
 
 .warning {
   background-color: red;

@@ -4,6 +4,7 @@ interface ButtonProps {
   children: ReactNode
   variant?: 'primary' | 'secondary' | 'warning'
   type?: 'button' | 'submit'
+  disabled?: boolean
   handleClick?: () => void
 }
 const getCssType = (variant: string) => {
@@ -16,10 +17,12 @@ function Button({
   handleClick,
   variant = 'primary',
   type = 'button',
+  disabled = false,
 }: ButtonProps) {
   const cssType = getCssType(variant)
   return (
     <button
+      disabled={disabled}
       className={`${css.button} ${cssType}`}
       type={type}
       onClick={handleClick}

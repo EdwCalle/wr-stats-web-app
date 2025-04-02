@@ -66,6 +66,11 @@ export const useMatches = () => {
     }
   }
 
+  const getMatchesTable = async () => {
+    const res = await MatchService.findAll()
+    return MatchService.toMatchesTable(res.data)
+  }
+
   return {
     matches,
     getMatches,
@@ -73,5 +78,6 @@ export const useMatches = () => {
     autoLoadMatches,
     getDataFrame,
     getMatchesBySeason,
+    getMatchesTable,
   }
 }

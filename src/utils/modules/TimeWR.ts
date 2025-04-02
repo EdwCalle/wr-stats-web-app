@@ -26,7 +26,3 @@ export const compareDate = (date1: Date, date2: Date) => {
 export function delay(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
-
-export function getTableHeaders(params: object) {
-  return Object.keys(params)
-}
