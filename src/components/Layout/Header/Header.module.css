@@ -25,17 +25,3 @@
   font-size: 20px;
   margin-left: 10px;
 }
-.button {
-  display: block;
-  background-color: transparent;
-  color: white;
-  border: 0;
-}
-.checkbox {
-  display: none;
-}
-.label {
-  cursor: pointer;
-  width: min-content;
-  margin: auto;
-}

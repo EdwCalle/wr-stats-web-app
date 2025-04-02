@@ -1,4 +1,5 @@
 import useAuth from '@/context/AuthContext'
+import ButtonIcon from '@components/ButtonIcon/ButtonIcon'
 import Modal from '@components/Modal/Modal'
 import Settings from '@components/Modal/Settings'
 import useModal from '@hooks/useModal'
@@ -16,32 +17,25 @@ function Header() {
   }
   return (
     <header className={css.header}>
-      <label className={css.label}>
-        <input
-          type='checkbox'
-          name='toggleMenu'
-          className={`toggleMenu ${css.checkbox}`}
-        />
+      <ButtonIcon type='input'>
+        <input type='checkbox' name='toggleMenu' className='toggleMenu' />
         <CiMenuBurger size={28} />
-      </label>
+      </ButtonIcon>
       <h1 className={css.h1}>WR STATS</h1>
-      <button
-        className={css.button}
+      <ButtonIcon
         onClick={() => {
           openModal('settings')
         }}
       >
         <CiSettings size={28} />
-      </button>
-      <button
-        className={css.button}
+      </ButtonIcon>
+      <ButtonIcon
         onClick={() => {
           openModal('confirm')
         }}
       >
         <CiLogout size={28} />
-      </button>
-
+      </ButtonIcon>
       <Settings />
       <Modal elementID='confirm' title='logout' onConfirm={handleLogout}>
         are you sure to log out?

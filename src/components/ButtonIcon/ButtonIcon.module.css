@@ -1,0 +1,15 @@
+.button {
+  cursor: pointer;
+  display: block;
+  background-color: transparent;
+  color: white;
+  border: 0;
+}
+.label {
+  cursor: pointer;
+  width: min-content;
+  margin: auto;
+}
+.label input[type='checkbox'] {
+  display: none;
+}

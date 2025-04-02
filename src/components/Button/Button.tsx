@@ -10,6 +10,7 @@ interface ButtonProps {
 const getCssType = (variant: string) => {
   if (variant === 'warning') return css.warning
   if (variant === 'secondary') return css.secondary
+  if (variant === 'icon') return css.secondary
   return ''
 }
 function Button({
