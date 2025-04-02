@@ -28,19 +28,20 @@ function Header() {
       <button
         className={css.button}
         onClick={() => {
-          openModal('confirm')
-        }}
-      >
-        <CiLogout size={28} />
-      </button>
-      <button
-        className={css.button}
-        onClick={() => {
           openModal('settings')
         }}
       >
         <CiSettings size={28} />
       </button>
+      <button
+        className={css.button}
+        onClick={() => {
+          openModal('confirm')
+        }}
+      >
+        <CiLogout size={28} />
+      </button>
+
       <Settings />
       <Modal elementID='confirm' title='logout' onConfirm={handleLogout}>
         are you sure to log out?
