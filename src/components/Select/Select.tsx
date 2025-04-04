@@ -1,7 +1,7 @@
 import css from './Select.module.css'
 //TO DO
 export interface Option {
-  id: string
+  id: string | number
   value: string | number
 }
 

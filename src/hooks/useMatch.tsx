@@ -3,12 +3,9 @@ import { RankedTier } from '@/models/rankedTier.model'
 import { Season } from '@/models/season.model'
 import MatchService from '@/services/match.service'
 import useRankedTiers from '@hooks/useRankedTier'
-import { showError } from '@utils/modules/HandleErrors'
 import { newDate } from '@utils/modules/TimeWR'
 import { useEffect, useState } from 'react'
-import { toast } from 'react-toastify'
 import { useMatches } from './useMatches'
-import useModal from './useModal'
 import useSeasons from './useSeasons'
 
 export const useMatch = () => {
@@ -17,41 +14,6 @@ export const useMatch = () => {
   const { rankedTiers, loadRankedTiers, getRankedTiers } = useRankedTiers()
   const { seasons, loadSeasons, getSeasons } = useSeasons()
   const { matches, loadMatches, getMatches } = useMatches()
-
-  const { closeModal } = useModal()
-
-  const createMatch = async (newMatch: Match) => {
-    const isCreateAction = newMatch._id === null
-    try {
-      let result = undefined
-      if (isCreateAction) result = await MatchService.createOne(newMatch)
-      else result = await MatchService.updateOne(newMatch)
-
-      const newMatches = await getMatches()
-      loadFirstCurrentMatch(
-        seasons[0],
-        rankedTiers[0],
-        newMatches,
-        newMatch.date,
-      )
-      loadMatches(newMatches)
-      closeModal('crudMatch')
-      if (isCreateAction) toast(`Match created successfully`)
-      else toast(`Match updated successfully`)
-      console.log(result.data)
-    } catch (error) {
-      if (isCreateAction) showError(error, 'Error on create match', 'modal')
-      else showError(error, 'Error on update match', 'modal')
-    }
-  }
-  const onDeleteMatch = async (id: string | null, date: Date) => {
-    try {
-      await MatchService.deleteOne(id, date)
-      toast(`Match deleted successfully`)
-    } catch (error) {
-      showError(error, 'Error on delete match', 'modal')
-    }
-  }
 
   const getMatchByDate = (date: Date) => {
     // console.log('first date', matches[0].date.toISOString())
@@ -71,7 +33,7 @@ export const useMatch = () => {
     else setCurrentMatch(emptyMatch(date, season, rankedTier))
   }
 
-  const loadData = async () => {
+  const loadData = async (date: Date) => {
     const newMatches = await getMatches()
     const newRankedTiers = await getRankedTiers()
     const newSeasons = await getSeasons()
@@ -79,16 +41,11 @@ export const useMatch = () => {
     loadMatches(newMatches)
     loadRankedTiers(newRankedTiers)
     loadSeasons(newSeasons)
-    loadFirstCurrentMatch(
-      newSeasons[0],
-      newRankedTiers[0],
-      newMatches,
-      newDate(),
-    )
+    loadFirstCurrentMatch(newSeasons[0], newRankedTiers[0], newMatches, date)
     setIsloading(false)
   }
   useEffect(() => {
-    loadData()
+    loadData(newDate())
   }, [])
 
   // useEffect(() => {
@@ -109,12 +66,11 @@ export const useMatch = () => {
   console.log('render: useMatch')
   return {
     currentMatch,
-    createMatch,
     getMatchByDate,
     matches,
     rankedTiers,
     seasons,
-    onDeleteMatch,
+    loadData,
     isLoading,
   }
 }

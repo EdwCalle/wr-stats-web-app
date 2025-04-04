@@ -9,10 +9,9 @@ function HomePage() {
     rankedTiers,
     matches,
     getMatchByDate,
-    createMatch,
     seasons,
     isLoading,
-    onDeleteMatch,
+    loadData,
   } = useMatch()
   if (isLoading) return <>not loaded resources</>
   if (!isLoading && currentMatch) {
@@ -27,10 +26,9 @@ function HomePage() {
         <CardDetails currentMatch={currentMatch} />
         <CrudMatch
           currentMatch={currentMatch}
-          onSubmit={createMatch}
           rankedTiers={rankedTiers}
           seasons={seasons}
-          onDeleteMatch={onDeleteMatch}
+          onSubmitted={loadData}
         />
       </Main>
     )

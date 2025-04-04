@@ -13,24 +13,24 @@ type CrudMatchProps = {
   currentMatch: Match
   rankedTiers: RankedTier[]
   seasons: Season[]
-  onSubmit: (match: Match) => void
-  onDeleteMatch: (id: string | null, date: Date) => void
+  onSubmitted: (date: Date) => Promise<void>
 }
 
 function CrudMatch({
   rankedTiers,
   seasons,
   currentMatch,
-  onSubmit,
-  onDeleteMatch,
+  onSubmitted,
 }: CrudMatchProps) {
   const {
     localMatch,
     onChangeSeason,
     onChangeCounter,
     onChangeRange,
+    onConfirm,
+    onDeleteMatch,
     cancelCrudMatch,
-  } = useCrudMatch(currentMatch)
+  } = useCrudMatch({ currentMatch, onSubmitted })
   const seasonOptions = seasons.map(({ _id, seasonName }) => ({
     id: _id,
     value: seasonName,
@@ -39,11 +39,12 @@ function CrudMatch({
     id: localMatch.seasonProfile.season._id,
     value: localMatch.seasonProfile.season.seasonName,
   }
+
   return (
     <Modal
       elementID={'crudMatch'}
       title='CRUD match'
-      onConfirm={() => onSubmit(localMatch)}
+      onConfirm={onConfirm}
       onCancel={cancelCrudMatch}
     >
       <Form>

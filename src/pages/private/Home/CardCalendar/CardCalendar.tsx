@@ -2,7 +2,7 @@ import { Match } from '@/models/match.model'
 import Card from '@components/Card/Card'
 import CounterView from '@components/CounterView/CounterView'
 import useCalendar from '@hooks/useCalendar'
-import { newDate } from '@utils/modules/TimeWR'
+import { newDate, toApiDate } from '@utils/modules/TimeWR'
 import Calendar from 'react-calendar'
 import { LooseValue } from 'react-calendar/src/shared/types.js'
 import './Calendar.css'
@@ -21,7 +21,8 @@ function CardCalendar({
 }: CardCalendarProps) {
   const { tileClassName } = useCalendar({ matches })
   const onChange = (date: LooseValue) => {
-    onSelectDate(date as Date)
+    const newDate = toApiDate(date as Date)
+    onSelectDate(newDate)
   }
   return (
     <Card
