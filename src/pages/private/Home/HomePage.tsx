@@ -12,6 +12,7 @@ function HomePage() {
     createMatch,
     seasons,
     isLoading,
+    onDeleteMatch,
   } = useMatch()
   if (isLoading) return <>not loaded resources</>
   if (!isLoading && currentMatch) {
@@ -29,6 +30,7 @@ function HomePage() {
           onSubmit={createMatch}
           rankedTiers={rankedTiers}
           seasons={seasons}
+          onDeleteMatch={onDeleteMatch}
         />
       </Main>
     )

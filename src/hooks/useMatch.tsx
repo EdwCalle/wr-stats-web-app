@@ -44,6 +44,15 @@ export const useMatch = () => {
       else showError(error, 'Error on update match', 'modal')
     }
   }
+  const onDeleteMatch = async (id: string | null, date: Date) => {
+    try {
+      await MatchService.deleteOne(id, date)
+      toast(`Match deleted successfully`)
+    } catch (error) {
+      showError(error, 'Error on delete match', 'modal')
+    }
+  }
+
   const getMatchByDate = (date: Date) => {
     // console.log('first date', matches[0].date.toISOString())
     console.log('getMatchByDate:', date.toISOString())
@@ -105,6 +114,7 @@ export const useMatch = () => {
     matches,
     rankedTiers,
     seasons,
+    onDeleteMatch,
     isLoading,
   }
 }

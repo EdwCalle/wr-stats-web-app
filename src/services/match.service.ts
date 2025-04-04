@@ -59,6 +59,13 @@ class MatchService {
       params: params,
     })
   }
+  static deleteOne = (id: string | null, date: Date) => {
+    const params = new URLSearchParams()
+    params.append('date', toApiDate(date).toISOString())
+    return axios.delete(`${MATCHES_GET_URL}/${id}`, {
+      params: params,
+    })
+  }
 
   //customLogic
 

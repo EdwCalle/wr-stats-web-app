@@ -1,17 +1,20 @@
 import { Match } from '@/models/match.model'
 import { RankedTier } from '@/models/rankedTier.model'
 import { Season } from '@/models/season.model'
+import ButtonIcon from '@components/ButtonIcon/ButtonIcon'
 import CounterBox from '@components/CounterBox/CounterBox'
 import Form from '@components/Form/Form'
 import Modal from '@components/Modal/Modal'
 import RangeInput from '@components/RangeInput/RangeInput'
 import Select from '@components/Select/Select'
 import { useCrudMatch } from '@hooks/useCrudMatch'
+import { CiTrash } from 'react-icons/ci'
 type CrudMatchProps = {
   currentMatch: Match
   rankedTiers: RankedTier[]
   seasons: Season[]
   onSubmit: (match: Match) => void
+  onDeleteMatch: (id: string | null, date: Date) => void
 }
 
 function CrudMatch({
@@ -19,6 +22,7 @@ function CrudMatch({
   seasons,
   currentMatch,
   onSubmit,
+  onDeleteMatch,
 }: CrudMatchProps) {
   const {
     localMatch,
@@ -62,6 +66,15 @@ function CrudMatch({
             rankedTiers={rankedTiers}
             onChangeRangeInput={onChangeRange}
           />
+          {localMatch._id && (
+            <ButtonIcon
+              onClick={() => {
+                onDeleteMatch(localMatch._id, localMatch.date)
+              }}
+            >
+              <CiTrash size={28} />
+            </ButtonIcon>
+          )}
         </fieldset>
       </Form>
     </Modal>
