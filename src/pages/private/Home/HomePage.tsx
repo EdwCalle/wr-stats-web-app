@@ -1,4 +1,5 @@
 import Main from '@components/Layout/Main/Main'
+import Loader from '@components/Loader/Loader'
 import { useMatch } from '@hooks/useMatch'
 import CardCalendar from './CardCalendar/CardCalendar'
 import CardDetails from './CardDetails/CardDetails'
@@ -13,7 +14,7 @@ function HomePage() {
     isLoading,
     loadData,
   } = useMatch()
-  if (isLoading) return <>not loaded resources</>
+  if (isLoading) return <Loader />
   if (!isLoading && currentMatch) {
     console.log('render: fragment HomePage')
     return (
