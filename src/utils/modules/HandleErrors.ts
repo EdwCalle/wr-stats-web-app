@@ -9,7 +9,7 @@ import { toast } from 'react-toastify'
 export const showError = (
   error: unknown,
   customMessage: string,
-  containerId: string,
+  containerId?: string,
 ) => {
   console.log('handle error:', error)
   let localMessage = customMessage
@@ -19,6 +19,6 @@ export const showError = (
     localMessage = `${customMessage}: ${error.message}`
   if (!(error instanceof AxiosError))
     localMessage = `${customMessage}: ${error}`
-
-  toast.error(localMessage, { containerId })
+  if (containerId) toast.error(localMessage, { containerId })
+  else toast.error(localMessage)
 }

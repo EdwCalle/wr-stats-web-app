@@ -27,9 +27,10 @@ function CrudMatch({
     onChangeSeason,
     onChangeCounter,
     onChangeRange,
-    onConfirm,
     onDeleteMatch,
-    cancelCrudMatch,
+    onConfirm,
+    onCancel,
+    isLoading,
   } = useCrudMatch({ currentMatch, onSubmitted })
   const seasonOptions = seasons.map(({ _id, seasonName }) => ({
     id: _id,
@@ -45,7 +46,8 @@ function CrudMatch({
       elementID={'crudMatch'}
       title='CRUD match'
       onConfirm={onConfirm}
-      onCancel={cancelCrudMatch}
+      onCancel={onCancel}
+      isLoading={isLoading}
     >
       <Form>
         <fieldset>
@@ -71,7 +73,7 @@ function CrudMatch({
           {localMatch._id && (
             <ButtonIcon
               onClick={() => {
-                onDeleteMatch(localMatch._id, localMatch.date)
+                onDeleteMatch()
               }}
             >
               <CiTrash size={28} />

@@ -15,6 +15,7 @@ export const useCrudMatch = ({
   const [localMatch, setLocalMatch] = useState<Match>(
     structuredClone(currentMatch),
   )
+  const [isLoading, setIsloading] = useState(false)
   const { closeModal } = useModal()
 
   const onChangeCounter = (victories: number, defeats: number) => {
@@ -39,43 +40,53 @@ export const useCrudMatch = ({
   }
 
   const oncreateMatch = async () => {
-    const newMatch = structuredClone(localMatch)
     try {
+      setIsloading(true)
+      const newMatch = structuredClone(localMatch)
       const result = await MatchService.createOne(newMatch)
-      closeModal('crudMatch')
       toast(`Match created successfully`)
+      closeModal('crudMatch')
       onSubmitted(newMatch.date)
       console.log(result.data)
     } catch (error) {
       showError(error, 'Error on create match', 'modal')
+    } finally {
+      setIsloading(false)
     }
   }
   const onUpdateMatch = async () => {
-    const newMatch = structuredClone(localMatch)
     try {
+      setIsloading(true)
+      const newMatch = structuredClone(localMatch)
       const result = await MatchService.updateOne(newMatch)
       closeModal('crudMatch')
-      toast(`Match updated successfully`)
       onSubmitted(newMatch.date)
       console.log(result.data)
+      toast(`Match updated successfully`)
     } catch (error) {
       showError(error, 'Error on update match', 'modal')
+    } finally {
+      setIsloading(false)
     }
   }
-  const onDeleteMatch = async (id: string | null, date: Date) => {
+  const onDeleteMatch = async () => {
     try {
-      await MatchService.deleteOne(id, date)
+      setIsloading(true)
+      const newMatch = structuredClone(localMatch)
+      const result = await MatchService.deleteOne(newMatch._id, newMatch.date)
+      onSubmitted(newMatch.date)
+      console.log(result.data)
       closeModal('crudMatch')
-      toast(`Match deleted successfully`)
-      onSubmitted(date)
+      toast.info(`Match deleted successfully`)
     } catch (error) {
       showError(error, 'Error on delete match', 'modal')
+    } finally {
+      setIsloading(false)
     }
   }
 
-  const cancelCrudMatch = () => {
+  const onCancel = () => {
     setLocalMatch(structuredClone(currentMatch))
-    closeModal('crudMatch')
   }
   const onConfirm = () => {
     if (localMatch._id && localMatch._id !== null) onUpdateMatch()
@@ -92,8 +103,9 @@ export const useCrudMatch = ({
     onChangeSeason,
     onChangeCounter,
     onChangeRange,
-    cancelCrudMatch,
-    onConfirm,
     onDeleteMatch,
+    onCancel,
+    onConfirm,
+    isLoading,
   }
 }
