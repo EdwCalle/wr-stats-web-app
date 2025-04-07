@@ -9,6 +9,7 @@ interface SelectProps {
   selectedOption: Option
   options: Option[]
   label?: string
+  disabled?: boolean
   name: string
   onSelectedOption: (id: string) => void
 }
@@ -18,6 +19,7 @@ function Select({
   options,
   onSelectedOption,
   label = 'select items',
+  disabled = false,
   name,
 }: SelectProps) {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -32,6 +34,7 @@ function Select({
         className={css.select}
         value={selectedOption.id}
         onChange={handleChange}
+        disabled={disabled}
       >
         {options.map((option) => (
           <option key={option.id} value={option.id}>

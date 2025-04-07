@@ -56,6 +56,7 @@ function CrudMatch({
             onSelectedOption={onChangeSeason}
             options={seasonOptions}
             selectedOption={selectedSeason}
+            disabled={localMatch._id ? true : false}
           />
           <CounterBox
             updateMatch={onChangeCounter}
