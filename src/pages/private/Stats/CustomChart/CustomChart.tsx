@@ -5,7 +5,7 @@ import Loader from '@components/Loader/Loader'
 import MultipleSelect from '@components/MultipleSelect/MultipleSelect'
 import { Option } from '@components/Select/Select'
 import { showError } from '@utils/modules/HandleErrors'
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 interface CustomChartProps {
   options: Option[]
@@ -34,6 +34,9 @@ function CustomChart({ options, label, name, getDataFrame }: CustomChartProps) {
     seasonsRef.current = [...seasonsID]
     onSubmit()
   }
+  useEffect(() => {
+    onSubmit()
+  }, [])
 
   return (
     <>

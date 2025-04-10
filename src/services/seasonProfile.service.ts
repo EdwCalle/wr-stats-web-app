@@ -1,3 +1,4 @@
+import { Match } from '@/models/match.model'
 import {
   CreateSeasonProfileDto,
   SeasonProfile,
@@ -22,7 +23,15 @@ export class SeasonProfileService {
     const seasonsProfile = this.toSeasonsProfile(res.data)
     return seasonsProfile.find((item) => item.season._id === seasonID)
   }
-
+  static findAllByMatches = async (
+    matches: Match[],
+  ): Promise<SeasonProfile[]> => {
+    const res = await this.findAll()
+    const seasonsProfile = this.toSeasonsProfile(res.data)
+    return seasonsProfile.filter((seasonProfile) =>
+      matches.some((match) => match.seasonProfile._id === seasonProfile._id),
+    )
+  }
   //extra logic
   static autoCreateOne = async (seasonID: string) => {
     const foundSeasonProfile = await this.findOneBySeason(seasonID)
