@@ -6,13 +6,13 @@ import { useState } from 'react'
 export const useMatches = () => {
   const [matches, setMatches] = useState<Match[]>([])
 
-  const loadMatches = async (items: Match[]) => {
-    setMatches([...items])
-  }
-
   const getMatches = async (query?: QueryMatchesDto) => {
     const res = await MatchService.findAll(query)
     return MatchService.toMatches(res.data)
+  }
+
+  const loadMatches = async (items: Match[]) => {
+    setMatches([...items])
   }
 
   const autoLoadMatches = async () => {
@@ -20,55 +20,51 @@ export const useMatches = () => {
     setMatches([...items])
   }
 
-  const toMatchOption = (match: Match) => {
+  const toMachPointXY = (match: Match) => {
     return {
       time: formatDate(match.date.toISOString()),
       value: match.stats?.acumDiff ?? 0,
     }
   }
 
-  const getMatchesBySeason = (seasonID: string) => {
-    if (seasonID === 'all') return matches.map(toMatchOption)
-    return matches
-      .filter((match) => match.seasonProfile._id === seasonID)
-      .map(toMatchOption)
+  const getMatchesBySeason = (seasonProfileID: string) => {
+    console.log(matches)
+    if (seasonProfileID === 'all') return matches
+    return matches.filter(
+      (match) => match.seasonProfile._id === seasonProfileID,
+    )
   }
 
-  const getDataFrame = async (seasonProfileIDs: string[]) => {
-    try {
-      const dataframes = await Promise.all(
-        seasonProfileIDs.map(async (seasonProfileID) => {
-          const newMatches = await getMatches({
-            seasonProfileID,
-            limit: 0,
-            page: 1,
-          })
+  const getMatchesbyCompare = async (seasonProfileIDs: string[]) => {
+    if (seasonProfileIDs.length == 0)
+      return [getMatchesBySeason('all').map(toMachPointXY)]
+    if (seasonProfileIDs.length == 1)
+      return [getMatchesBySeason(seasonProfileIDs[0]).map(toMachPointXY)]
 
-          const data = newMatches.map((item, index) => {
-            const date = new Date(0)
-            date.setDate(date.getDate() + index)
-            const time = formatDate(date.toISOString())
-            return {
-              time,
-              value: item.stats?.acumDiff ?? 0,
-            }
-          })
+    const dataframes = await Promise.all(
+      seasonProfileIDs.map(async (seasonProfileID) => {
+        const newMatches = getMatchesBySeason(seasonProfileID)
 
-          return data // Return the processed data for each seasonProfileID
-        }),
-      )
+        const data = newMatches.map((item, index) => {
+          const date = new Date(0)
+          date.setDate(date.getDate() + index)
+          const time = formatDate(date.toISOString())
+          return {
+            time,
+            value: item.stats?.acumDiff ?? 0,
+          }
+        })
+        return data
+      }),
+    )
 
-      console.log(dataframes)
-      return dataframes
-    } catch (error) {
-      console.error('Error in getDataFrame:', error)
-      return [] // Or throw the error, depending on how you want to handle it
-    }
+    return dataframes
   }
 
-  const getMatchesTable = async () => {
-    const res = await MatchService.findAll()
-    return MatchService.toMatchesTable(res.data)
+  const getMatchesTable = () => {
+    return MatchService.toTable(
+      matches.sort((a, b) => b.date.getTime() - a.date.getTime()),
+    )
   }
 
   return {
@@ -76,7 +72,7 @@ export const useMatches = () => {
     getMatches,
     loadMatches,
     autoLoadMatches,
-    getDataFrame,
+    getMatchesbyCompare,
     getMatchesBySeason,
     getMatchesTable,
   }

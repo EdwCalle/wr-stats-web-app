@@ -38,6 +38,7 @@ class MatchService {
     const foundMatch = matches.find((match) => compareDate(match.date, date))
     return foundMatch
   }
+
   static createOne = async (match: Match) => {
     const clonedMatch = structuredClone(match)
     const seasonID = clonedMatch.seasonProfile.season._id
@@ -67,7 +68,7 @@ class MatchService {
     })
   }
 
-  //customLogic
+  //custom Logic
 
   static toMatches = (matchesApi: MatchApi[]): Match[] => {
     try {
@@ -85,7 +86,6 @@ class MatchService {
       throw Error(`Error on creating stats for Matches:${error}`)
     }
   }
-
   static toMatch = (matchApi: MatchApi): Match => {
     try {
       return {
@@ -150,45 +150,31 @@ class MatchService {
   }
 
   //extra function
-  static toMatchesTable = (matchesApi: MatchApi[]) => {
+  static toTable = (matches: Match[]) => {
     try {
-      let totalAcumDiff = 0
-      return matchesApi.map((match: MatchApi) => {
-        const stats = this.getStats(
-          totalAcumDiff,
-          match.victories,
-          match.defeats,
-        )
-        totalAcumDiff += stats.diff
-        return { ...stats, ...this.toMatchTable(match) }
-      })
+      return matches.map(this.toRow)
     } catch (error) {
       throw Error(`Error on creating stats for Matches table:${error}`)
     }
   }
 
-  static toMatchTable = (matchApi: MatchApi) => {
+  static toRow = (match: Match) => {
     try {
       return {
-        // _id: matchApi._id,
-        date: formatDate(matchApi.date),
-        saeason: matchApi.seasonProfileID.seasonID.seasonName,
-        // seasonProfileID: matchApi.seasonProfileID._id,
-        tierName: matchApi.range.rankedTierID.tierName,
-        divisionLvl: matchApi.range.divisionLvl,
-        marks: matchApi.range.marks,
-        // rankedTierID: matchApi.range.rankedTierID._id,
-        // tierName: matchApi.range.rankedTierID.tierName,
-        // tierType: matchApi.range.rankedTierID.tierType as TierType,
-        // tierSeason: matchApi.range.rankedTierID.tierSeason as TierSeason,
-        minMarks: matchApi.range.rankedTierID.minMarks,
-        maxMarks: matchApi.range.rankedTierID.maxMarks,
-        victories: matchApi.victories,
-        defeats: matchApi.defeats,
+        date: formatDate(match.date.toISOString()),
+        saeason: match.seasonProfile.season.seasonName,
+        tierName: match.range.rankedTier.tierName,
+        divisionLvl: match.range.divisionLvl,
+        marks: match.range.marks,
+        minMarks: match.range.rankedTier.minMarks,
+        maxMarks: match.range.rankedTier.maxMarks,
+        victories: match.victories,
+        defeats: match.defeats,
+        ...match.stats,
       }
     } catch (error) {
       throw new Error(
-        `from match.model,  Error on cast api to match:${matchApi._id} ${error}`,
+        `from match.model,  Error on cast api to match:${match._id} ${error}`,
       )
     }
   }

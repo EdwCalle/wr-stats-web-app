@@ -10,7 +10,7 @@ export type DataFrame = PointXY[]
 type ChartComponentProps = {
   dataFrame: DataFrame[]
   addSeries: (chart: IChartApi) => void
-  isXscaleNumber: boolean
+  isXscaleNumber?: boolean
 }
 function Chart({ dataFrame, addSeries }: ChartComponentProps) {
   const chartContainerRef = useRef<HTMLDivElement>(null)

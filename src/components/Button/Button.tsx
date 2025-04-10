@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import css from './Button.module.css'
 interface ButtonProps {
   children: ReactNode
-  variant?: 'primary' | 'secondary' | 'warning'
+  variant?: 'primary' | 'secondary' | 'warning' | 'icon'
   type?: 'button' | 'submit'
   disabled?: boolean
   handleClick?: () => void
@@ -10,7 +10,7 @@ interface ButtonProps {
 const getCssType = (variant: string) => {
   if (variant === 'warning') return css.warning
   if (variant === 'secondary') return css.secondary
-  if (variant === 'icon') return css.secondary
+  if (variant === 'icon') return css.icon
   return ''
 }
 function Button({

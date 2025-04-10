@@ -3,19 +3,16 @@ import { ChipColor } from '@components/Chip/Chip'
 import Main from '@components/Layout/Main/Main'
 import Table from '@components/Table/Table'
 import { useMatches } from '@hooks/useMatches'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 // export function getTableHeaders(params: object) {
 //   return Object.keys(params)
 // }
 function MatchesPage() {
-  const [data, setData] = useState<
-    Array<{ [key: string]: string | number | boolean | null }>
-  >([])
+  const { autoLoadMatches, getMatchesTable } = useMatches()
 
-  const { getMatchesTable } = useMatches()
-
+  const data = getMatchesTable()
   useEffect(() => {
-    getMatchesTable().then((item) => setData(item))
+    autoLoadMatches()
   }, [])
   return (
     <Main title='Matches' isFullSize={true}>

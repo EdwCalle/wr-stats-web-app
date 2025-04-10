@@ -34,3 +34,8 @@
 .secondary {
   background-color: var(--secondary-color);
 }
+
+.icon {
+  background-color: transparent;
+  border: none;
+}
