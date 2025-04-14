@@ -1,5 +1,5 @@
 .chart {
-  width: 90%;
+  width: 100%;
   min-height: 200px;
   height: auto;
   max-height: 250px;
@@ -15,4 +15,5 @@
   width: 100%;
   min-height: 250px;
   height: fit-content;
+  position: relative;
 }

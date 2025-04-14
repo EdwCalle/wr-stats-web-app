@@ -1,6 +1,4 @@
-import BaseLineChart from '@components/BaseLineChart/BaseLineChart'
-import { DataFrame } from '@components/Chart/Chart'
-import LineChart from '@components/LineChart/LineChart'
+import Chart, { DataFrame } from '@components/Chart/Chart'
 import Loader from '@components/Loader/Loader'
 import MultipleSelect from '@components/MultipleSelect/MultipleSelect'
 import { Option } from '@components/Select/Select'
@@ -11,7 +9,7 @@ interface CustomChartProps {
   options: Option[]
   name: string
   label: string
-  getDataFrame: (ids: string[]) => Promise<DataFrame[]>
+  getDataFrame: (ids: string[]) => DataFrame[]
 }
 
 function CustomChart({ options, label, name, getDataFrame }: CustomChartProps) {
@@ -48,8 +46,12 @@ function CustomChart({ options, label, name, getDataFrame }: CustomChartProps) {
       />
       {isLoading && <Loader label='loading chart' />}
       {dataframe.length == 0 && <>0 filters</>}
-      {dataframe.length == 1 && <BaseLineChart data={dataframe[0]} />}
-      {dataframe.length > 1 && <LineChart data={dataframe} />}
+      {dataframe.length == 1 && (
+        <Chart dataFrame={dataframe} type='baselineSeries' />
+      )}
+      {dataframe.length > 1 && (
+        <Chart dataFrame={dataframe} type='lineSeries' />
+      )}
     </>
   )
 }
