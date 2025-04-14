@@ -1,4 +1,4 @@
-import Chart, { DataFrame } from '@components/Chart/Chart'
+import Chart, { SeriesData } from '@components/Chart/Chart'
 import Loader from '@components/Loader/Loader'
 import MultipleSelect from '@components/MultipleSelect/MultipleSelect'
 import { Option } from '@components/Select/Select'
@@ -9,17 +9,22 @@ interface CustomChartProps {
   options: Option[]
   name: string
   label: string
-  getDataFrame: (ids: string[]) => DataFrame[]
+  getSeriesData: (ids: string[]) => SeriesData[]
 }
 
-function CustomChart({ options, label, name, getDataFrame }: CustomChartProps) {
-  const [dataframe, setDataframe] = useState<DataFrame[]>([])
+function CustomChart({
+  options,
+  label,
+  name,
+  getSeriesData,
+}: CustomChartProps) {
+  const [dataframe, setDataframe] = useState<SeriesData[]>([])
   const [isLoading, setisLoading] = useState(false)
   const seasonsRef = useRef<string[]>([])
   const onSubmit = async () => {
     try {
       setisLoading(true)
-      const data = await getDataFrame(seasonsRef.current)
+      const data = getSeriesData(seasonsRef.current)
       setDataframe(data)
     } catch (error) {
       showError(error, 'error on loading data')
@@ -47,10 +52,10 @@ function CustomChart({ options, label, name, getDataFrame }: CustomChartProps) {
       {isLoading && <Loader label='loading chart' />}
       {dataframe.length == 0 && <>0 filters</>}
       {dataframe.length == 1 && (
-        <Chart dataFrame={dataframe} type='baselineSeries' />
+        <Chart multiSeries={dataframe} type='baselineSeries' />
       )}
       {dataframe.length > 1 && (
-        <Chart dataFrame={dataframe} type='lineSeries' />
+        <Chart multiSeries={dataframe} type='lineSeries' />
       )}
     </>
   )

@@ -31,7 +31,7 @@ function StatsPage() {
       <Card title='Winrate by season' subtitle=''>
         <CustomChart
           options={seasonsOptions}
-          getDataFrame={getMatchesbyCompare}
+          getSeriesData={getMatchesbyCompare}
           label=''
           name='date_winrate'
         />
@@ -39,7 +39,7 @@ function StatsPage() {
       <Card title='Range by season' subtitle=''>
         <CustomChart
           options={seasonsOptions}
-          getDataFrame={getMatchesbyCompare}
+          getSeriesData={getMatchesbyCompare}
           label=''
           name='date_range'
         />

@@ -1,18 +1,24 @@
-import { ColorType, createChart, IChartApi } from 'lightweight-charts'
+import { ColorType, createChart, IChartApi, LineData } from 'lightweight-charts'
 import { useEffect, useRef } from 'react'
 import css from './Chart.module.css'
 
 export interface PointXY {
   time: string | number
   value: number
+  extraInfo?: string
 }
-export type DataFrame = PointXY[]
+
+export interface SeriesData {
+  dataframe: PointXY[]
+  color?: string
+  label?: string
+}
 type ChartComponentProps = {
-  dataFrame: DataFrame[]
+  multiSeries: SeriesData[]
   isXscaleNumber?: boolean
   type: 'lineSeries' | 'baselineSeries'
 }
-function Chart({ dataFrame, type }: ChartComponentProps) {
+function Chart({ multiSeries, type }: ChartComponentProps) {
   const chartContainerRef = useRef<HTMLDivElement>(null)
   const tooltipRef = useRef<HTMLDivElement>(null)
 
@@ -57,33 +63,52 @@ function Chart({ dataFrame, type }: ChartComponentProps) {
 
     const seriesArray = []
     if (type === 'baselineSeries')
-      dataFrame.forEach((item) => {
+      multiSeries.forEach((item) => {
         const newSeries = chart.addBaselineSeries()
-        newSeries.setData(item)
+        newSeries.setData(item.dataframe as LineData[])
         seriesArray.push(newSeries)
       })
     else
-      dataFrame.forEach((item) => {
-        const newSeries = chart.addLineSeries()
-        newSeries.setData(item)
+      multiSeries.forEach((item) => {
+        const { dataframe, color } = item
+        const newSeries = chart.addLineSeries({ color })
+        newSeries.setData(dataframe as LineData[])
         seriesArray.push(newSeries)
       })
 
     // update tooltip
+    // chart.subscribeClick((param) => {
+    //   if (param.time) {
+    //     multiSeries.forEach((element) => {
+    //       const tes = element.dataframe.filter(
+    //         (item) => item.time === param.time,
+    //       )
+    //       console.log(tes)
+    //     })
+    //   }
+    // })
     chart.subscribeCrosshairMove((param) => {
       if (!tooltipRef.current) return
       if (
-        param.point === undefined ||
+        // param.point === undefined ||
         !param.time ||
-        param.point.x < 0 ||
-        param.point.y < 0 ||
+        // param.point.y < 0 ||
+        // param.point.x < 0 ||
         seriesArray.length == 0
       ) {
         tooltipRef.current.style.display = 'none'
       } else {
         // const dateStr = param.time
         tooltipRef.current.style.display = 'block'
-        tooltipRef.current.innerHTML = `<div>x:${param.time}</div>`
+        tooltipRef.current.innerHTML = `<div>x: ${param.time}</div>`
+        // let text = ''
+        // for (let index = 0; index < seriesArray.length; index++) {
+        //   const newSeries = seriesArray[index]
+        //   const data = param.seriesData.get(newSeries)
+
+        //   text += data.value
+        // }
+        // tooltipRef.current.innerHTML = `<div>1: ${text}</div>`
 
         // let prices = ''
         // seriesArray.forEach((element) => {
@@ -112,7 +137,7 @@ function Chart({ dataFrame, type }: ChartComponentProps) {
       window.removeEventListener('resize', resize)
       chart.remove()
     }
-  }, [dataFrame])
+  }, [multiSeries])
   return (
     <div className={css.chartContainer}>
       <div ref={chartContainerRef} className={css.chart} />
@@ -120,6 +145,24 @@ function Chart({ dataFrame, type }: ChartComponentProps) {
         ref={tooltipRef}
         style={{ position: 'absolute', top: 0, left: 15 }}
       />
+      {/* <div>selected series</div> */}
+      <ul
+        style={{
+          listStyleType: 'none',
+          display: 'flex',
+          flexDirection: 'row',
+          flexWrap: 'wrap',
+          fontSize: '12px',
+          gap: '5px',
+        }}
+      >
+        {multiSeries.length >= 2 &&
+          multiSeries.map((item) => (
+            <li key={item.label} style={{ color: item.color }}>
+              {item.label}
+            </li>
+          ))}
+      </ul>
     </div>
   )
 }
