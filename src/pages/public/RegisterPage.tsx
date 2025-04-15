@@ -1,15 +1,18 @@
+import useAuth from '@/context/AuthContext'
+import Button from '@components/Button/Button'
+import Form from '@components/Form/Form'
+import Input from '@components/Input/Input'
+import Loader from '@components/Loader/Loader'
 import { zodResolver } from '@hookform/resolvers/zod'
+import {
+  registerSchema,
+  RegisterValues,
+} from '@utils/validations/register-schema'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
-import Form from '../../components/Form/Form'
-import Input from '../../components/Input/Input'
-import useAuth from '../../context/AuthContext'
-import {
-  registerSchema,
-  RegisterValues,
-} from '../../utils/validations/register-schema'
+
 function RegisterPage() {
   const {
     control,
@@ -18,7 +21,7 @@ function RegisterPage() {
   } = useForm<RegisterValues>({
     resolver: zodResolver(registerSchema),
   })
-  const { signup, currentUser, authErrors } = useAuth()
+  const { signup, currentUser, authErrors, isLoading } = useAuth()
   const navigate = useNavigate()
   const onSubmit = handleSubmit((data) => {
     console.log('from submit:', data)
@@ -32,6 +35,7 @@ function RegisterPage() {
   useEffect(() => {
     if (currentUser) navigate('/player')
   }, [currentUser])
+  if (isLoading) return <Loader label='loading page...' />
 
   return (
     <>
@@ -62,10 +66,15 @@ function RegisterPage() {
             control={control}
             label='confirm Password'
             name='confirmPassword'
+            type='password'
             error={errors.confirmPassword}
           />
 
-          <button>Sign Up</button>
+          {isLoading ? (
+            <Loader label='register...' />
+          ) : (
+            <Button type='submit'>Sign Up</Button>
+          )}
           {/* <>OR</>
         <img
           src={loginIMG}

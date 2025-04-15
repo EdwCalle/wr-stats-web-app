@@ -71,6 +71,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       setCurrentUser(undefined)
       setAuthErrors(error as Error)
+      throw error
     } finally {
       setIsLoading(false)
     }
