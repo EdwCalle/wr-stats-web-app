@@ -11,19 +11,25 @@ export enum CardType {
 interface CardProps {
   title?: string
   subtitle?: string
-  type?: CardType
+  type?: 'default' | 'details' | 'calendar' | 'table'
   children: ReactNode
 }
-const cssCardType: { [key in CardType]: string } = {
-  [CardType.default]: css.default,
-  [CardType.details]: css.details,
-  [CardType.calendar]: css.calendar,
-  [CardType.table]: css.table,
+const cssCardType = (type?: 'default' | 'details' | 'calendar' | 'table') => {
+  switch (type) {
+    case 'details':
+      return css.details
+    case 'calendar':
+      return css.calendar
+    case 'table':
+      return css.table
+    default:
+      return css.default
+  }
 }
 function Card({
-  title = 'some title',
-  subtitle = 'some subtitle',
-  type = CardType.default,
+  title = '',
+  subtitle = '',
+  type = 'default',
   children,
   // footerTitle = 'footer title',
 }: CardProps) {
@@ -33,7 +39,7 @@ function Card({
         <h3 className={css.cardTitle}>{title}</h3>
         <h4 className={css.cardSubtitle}>{subtitle}</h4>
       </header>
-      <section className={cssCardType[type]}>{children}</section>
+      <section className={cssCardType(type)}>{children}</section>
       {/* <footer>{footerTitle}</footer> */}
     </article>
   )
