@@ -4,10 +4,7 @@ import Form from '@components/Form/Form'
 import Input from '@components/Input/Input'
 import Loader from '@components/Loader/Loader'
 import { zodResolver } from '@hookform/resolvers/zod'
-import {
-  registerSchema,
-  RegisterValues,
-} from '@utils/validations/register-schema'
+import { signupSchema, SignupValues } from '@utils/validations/signup.schema'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
@@ -18,8 +15,8 @@ function RegisterPage() {
     control,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterValues>({
-    resolver: zodResolver(registerSchema),
+  } = useForm<SignupValues>({
+    resolver: zodResolver(signupSchema),
   })
   const { signup, currentUser, authErrors, isLoading } = useAuth()
   const navigate = useNavigate()

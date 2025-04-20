@@ -6,7 +6,7 @@ import Form from '@components/Form/Form'
 import Input from '@components/Input/Input'
 import Loader from '@components/Loader/Loader'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { loginSchema, LoginValues } from '@utils/validations/login-schema'
+import { loginSchema, LoginValues } from '@utils/validations/login.schema'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
@@ -21,11 +21,11 @@ function LoginPage() {
   } = useForm<LoginValues>({
     resolver: zodResolver(loginSchema),
   })
-  const { signin, currentUser, authErrors, isLoading } = useAuth()
+  const { login, currentUser, isLoading, authErrors } = useAuth()
   const navigate = useNavigate()
   const onSubmit = handleSubmit((data) => {
     console.log('from submit:', data)
-    signin(data)
+    login(data)
   })
   //TO DO
   //add auto login, fix the user cannot get loging if he is logged

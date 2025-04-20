@@ -5,20 +5,16 @@ import {
   useEffect,
   useState,
 } from 'react'
-import {
-  checkTokenRequest,
-  loginRequest,
-  registerRequest,
-  removeToken,
-} from '../services/auth.service'
-import { User } from '../utils/interfaces/user.interface'
-import { delay } from '../utils/modules/TimeWR'
-import { LoginValues } from '../utils/validations/login-schema'
-import { RegisterValues } from '../utils/validations/register-schema'
+
+import { AuthService } from '@/services/auth.service'
+import { User } from '@utils/interfaces/user.interface'
+import { delay } from '@utils/modules/TimeWR'
+import { LoginValues } from '@utils/validations/login.schema'
+import { SignupValues } from '@utils/validations/signup.schema'
 
 export interface AuthContextType {
-  signin: (user: LoginValues) => void
-  signup: (user: RegisterValues) => void
+  login: (user: LoginValues) => void
+  signup: (user: SignupValues) => void
   logout: () => void
   isLoading: boolean
   currentUser?: User
@@ -39,12 +35,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [currentUser, setCurrentUser] = useState<User>()
   const [authErrors, setAuthErrors] = useState<Error | undefined>(undefined)
   const [isLoading, setIsLoading] = useState(true)
-  const signin = async (loginValues: LoginValues) => {
+  const login = async (loginValues: LoginValues) => {
     try {
       setIsLoading(true)
 
-      const authCredentials = await loginRequest(loginValues)
-      const userProfile = await checkTokenRequest()
+      const authCredentials = await AuthService.login(loginValues)
+      const userProfile = await AuthService.checkToken()
 
       console.log('from signin, authCredentials:', authCredentials)
       console.log('from signin, userProfile', userProfile)
@@ -57,13 +53,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsLoading(false)
     }
   }
-  const signup = async (registerValues: RegisterValues) => {
+  const signup = async (registerValues: SignupValues) => {
     try {
       setIsLoading(true)
 
-      const registerUser = await registerRequest(registerValues)
-      const authCredentials = await loginRequest(registerValues)
-      const userProfile = await checkTokenRequest()
+      const registerUser = await AuthService.signup(registerValues)
+      const authCredentials = await AuthService.login(registerValues)
+      const userProfile = await AuthService.checkToken()
       console.log('from register, registerUser:', registerUser)
       console.log('from register, authCredentials', authCredentials)
       console.log('from register, userProfile', userProfile)
@@ -79,7 +75,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const autoLogin = async () => {
     try {
       await delay(2000)
-      const userProfile = await checkTokenRequest()
+      const userProfile = await AuthService.checkToken()
       console.log('from autoLogin, userProfile:', userProfile)
       setCurrentUser(userProfile)
     } catch (error) {
@@ -94,7 +90,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
   const logout = () => {
     setCurrentUser(undefined)
-    removeToken()
+    AuthService.removeToken()
   }
   useEffect(() => {
     console.log('first time: authcontext')
@@ -103,12 +99,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   return (
     <AuthContext.Provider
       value={{
-        signin,
+        login,
         signup,
         logout,
         currentUser,
         authErrors,
-        isLoading: isLoading,
+        isLoading,
       }}
     >
       {children}
