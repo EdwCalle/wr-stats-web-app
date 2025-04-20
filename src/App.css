@@ -46,6 +46,6 @@
       'nav content content'; */
   gap: 10px;
   padding: 10px 10px;
-  height: 100vh;
+  min-height: 100vh;
   box-sizing: border-box;
 }

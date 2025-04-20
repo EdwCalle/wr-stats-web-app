@@ -7,6 +7,7 @@ import HomePage from './pages/private/Home/HomePage'
 import MatchesPage from './pages/private/Matches/MatchesPage'
 import StatsPage from './pages/private/Stats/StatsPage'
 import UserProfile from './pages/private/UserProfile'
+import GuestProfile from './pages/public/GuestProfile'
 import LandingPage from './pages/public/LandingPage'
 import LoginPage from './pages/public/LoginPage'
 import RegisterPage from './pages/public/RegisterPage'
@@ -17,11 +18,12 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<LandingPage />} />
-
-            <Route path='/login' element={<LoginPage />} />
-            <Route path='/register' element={<RegisterPage />} />
-
+            <Route path='/*' element={<GuestProfile />}>
+              <Route path='' element={<LandingPage />} />
+              <Route path='login' element={<LoginPage />} />
+              <Route path='signup' element={<RegisterPage />} />
+              <Route path='*' element={<>404 not found page</>} />
+            </Route>
             <Route path='/player' element={<Navigate to='/player/home' />} />
             <Route path='/player/*' element={<UserProfile />}>
               <Route path='home' element={<HomePage />} />
@@ -29,7 +31,6 @@ function App() {
               <Route path='matches' element={<MatchesPage />} />
               <Route path='*' element={<>404 not found page</>} />
             </Route>
-
             <Route path='*' element={<>404 not found page</>} />
           </Routes>
         </BrowserRouter>
