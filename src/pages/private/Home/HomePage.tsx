@@ -26,12 +26,12 @@ function HomePage() {
     console.log('render: fragment HomePage')
     return (
       <Main title='HOME'>
+        <CardDetails currentMatch={currentMatch} />
         <CardCalendar
           onSelectDate={getMatchByDate}
           currentMatch={currentMatch}
           matches={matches}
         />
-        <CardDetails currentMatch={currentMatch} />
         <CrudMatch
           currentMatch={currentMatch}
           rankedTiers={rankedTiers}
