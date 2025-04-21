@@ -5,6 +5,9 @@ import { AuthService } from './auth.service'
 const api = axios.create({
   baseURL: API_BASE_URL,
 })
+export const authApi = axios.create({
+  baseURL: API_BASE_URL,
+})
 api.interceptors.request.use(
   (config) => {
     const token = AuthService.getAuthToken()

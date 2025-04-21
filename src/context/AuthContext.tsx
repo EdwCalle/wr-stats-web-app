@@ -8,13 +8,14 @@ import {
 
 import { AuthService } from '@/services/auth.service'
 import { User } from '@utils/interfaces/user.interface'
+import { showError } from '@utils/modules/HandleErrors'
 import { delay } from '@utils/modules/TimeWR'
 import { LoginValues } from '@utils/validations/login.schema'
 import { SignupValues } from '@utils/validations/signup.schema'
 
 export interface AuthContextType {
-  login: (user: LoginValues) => void
-  signup: (user: SignupValues) => void
+  login: (user: LoginValues) => Promise<void>
+  signup: (user: SignupValues) => Promise<void>
   logout: () => void
   isLoading: boolean
   currentUser?: User
@@ -33,8 +34,8 @@ export default function useAuth() {
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [currentUser, setCurrentUser] = useState<User>()
-  const [authErrors, setAuthErrors] = useState<Error | undefined>(undefined)
-  const [isLoading, setIsLoading] = useState(true)
+  // const [authErrors, setAuthErrors] = useState<Error | undefined>(undefined)
+  const [isLoading, setIsLoading] = useState(false)
   const login = async (loginValues: LoginValues) => {
     try {
       setIsLoading(true)
@@ -47,8 +48,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setCurrentUser(userProfile)
     } catch (error) {
       setCurrentUser(undefined)
-      setAuthErrors(error as Error)
-      throw error
+      // setAuthErrors(error as Error)
+      // throw error
+      showError(error, 'error on login')
     } finally {
       setIsLoading(false)
     }
@@ -66,8 +68,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setCurrentUser(userProfile)
     } catch (error) {
       setCurrentUser(undefined)
-      setAuthErrors(error as Error)
-      throw error
+      showError(error, 'error on signup')
+      console.log('error on signup')
+      // setAuthErrors(error as Error)
+      // throw error
     } finally {
       setIsLoading(false)
     }
@@ -103,7 +107,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         signup,
         logout,
         currentUser,
-        authErrors,
+        // authErrors,
         isLoading,
       }}
     >
