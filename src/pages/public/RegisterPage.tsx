@@ -8,7 +8,6 @@ import { signupSchema, SignupValues } from '@utils/validations/signup.schema'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify'
 
 function RegisterPage() {
   const {
@@ -18,17 +17,17 @@ function RegisterPage() {
   } = useForm<SignupValues>({
     resolver: zodResolver(signupSchema),
   })
-  const { signup, currentUser, authErrors, isLoading } = useAuth()
+  const { signup, currentUser, isLoading } = useAuth()
   const navigate = useNavigate()
-  const onSubmit = handleSubmit((data) => {
+  const onSubmit = handleSubmit(async (data) => {
     console.log('from submit:', data)
-    signup(data)
+    await signup(data)
   })
-  useEffect(() => {
-    if (authErrors) {
-      toast.error(authErrors.message.toString())
-    }
-  }, [authErrors])
+  // useEffect(() => {
+  //   if (authErrors) {
+  //     toast.error(authErrors.message.toString())
+  //   }
+  // }, [authErrors])
   useEffect(() => {
     if (currentUser) navigate('/player')
   }, [currentUser])

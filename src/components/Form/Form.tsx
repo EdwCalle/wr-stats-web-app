@@ -6,10 +6,10 @@ type FormProps = {
 }
 
 function Form({ onSubmit, children }: FormProps) {
-  const handleSubmit = (e: BaseSyntheticEvent) => {
+  const handleSubmit = async (e: BaseSyntheticEvent) => {
     e.preventDefault()
     if (onSubmit) {
-      onSubmit(e)
+      await onSubmit(e)
     }
   }
   return (
