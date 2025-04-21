@@ -42,6 +42,7 @@ function RegisterPage() {
             control={control}
             label='username'
             name='username'
+            autoComplete='username'
             error={errors.username}
           />
           <Input
@@ -56,6 +57,7 @@ function RegisterPage() {
             label='password'
             name='password'
             type='password'
+            autoComplete='new-password'
             error={errors.password}
           />
           <Input
@@ -63,6 +65,7 @@ function RegisterPage() {
             label='confirm Password'
             name='confirmPassword'
             type='password'
+            autoComplete='new-password'
             error={errors.confirmPassword}
           />
 

@@ -49,6 +49,7 @@ function LoginPage() {
           control={control}
           label='username/email'
           type='text'
+          autoComplete='username'
           error={errors.email}
         />
         <Input
@@ -56,6 +57,7 @@ function LoginPage() {
           control={control}
           label='password'
           type='password'
+          autoComplete='current-password'
           error={errors.password}
         />
         <Button type='submit'>Log IN</Button>

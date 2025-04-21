@@ -1,3 +1,4 @@
+import { HTMLInputAutoCompleteAttribute } from 'react'
 import { Control, Controller, FieldError } from 'react-hook-form'
 import css from './Input.module.css'
 type InputProps = {
@@ -10,6 +11,7 @@ type InputProps = {
   type?: string
   error?: FieldError
   defaultValue?: string | number
+  autoComplete?: HTMLInputAutoCompleteAttribute | undefined
 }
 
 function Input({
@@ -18,6 +20,7 @@ function Input({
   label,
   type,
   defaultValue = '',
+  autoComplete,
   error,
 }: InputProps) {
   const cssError = error ? `${css.span} ${css.error}` : `${css.span}`
@@ -33,7 +36,12 @@ function Input({
           name={name}
           control={control}
           render={({ field }) => (
-            <input type={type} {...field} className={cssInput} />
+            <input
+              type={type}
+              {...field}
+              className={cssInput}
+              autoComplete={autoComplete}
+            />
           )}
         />
         <span className={cssError}>{error?.message}</span>
