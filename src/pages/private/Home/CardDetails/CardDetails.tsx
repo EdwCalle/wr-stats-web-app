@@ -1,6 +1,6 @@
 import { Match } from '@/models/match.model'
 import Button from '@components/Button/Button'
-import Card, { CardType } from '@components/Card/Card'
+import Card from '@components/Card/Card'
 import { ChipColor } from '@components/Chip/Chip'
 import Details from '@components/Details/Details'
 import RangeInfo from '@components/RangeInfo/RangeInfo'
@@ -14,7 +14,7 @@ function CardDetails({ currentMatch }: CardDetailsProps) {
   const { openModal } = useModal()
   if (currentMatch._id === null)
     return (
-      <Card title='Match Details' subtitle=''>
+      <Card title='Match Details'>
         <Button handleClick={() => openModal('crudMatch')}>new Match</Button>
       </Card>
     )
@@ -23,7 +23,7 @@ function CardDetails({ currentMatch }: CardDetailsProps) {
       <Card
         title='Match Details'
         subtitle={currentMatch.seasonProfile.season.seasonName}
-        type={CardType.details}
+        type='details'
       >
         <RangeInfo range={currentMatch.range} />
         <Details

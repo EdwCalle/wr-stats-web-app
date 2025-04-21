@@ -38,7 +38,7 @@ function StatsPage() {
   if (matches.length == 0) return <ErrorMessage message='not matches founded' />
   return (
     <Main title='STATS'>
-      <Card title='Winrate by season' subtitle=''>
+      <Card title='Winrate by season'>
         <CustomChart
           options={seasonsOptions}
           getSeriesData={getMatchesbyCompare}
@@ -46,7 +46,7 @@ function StatsPage() {
           name='date_winrate'
         />
       </Card>
-      <Card title='Range by season' subtitle=''>
+      <Card title='Range by season'>
         <CustomChart
           options={seasonsOptions}
           getSeriesData={getMatchesbyCompare}

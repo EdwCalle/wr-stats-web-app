@@ -1,4 +1,4 @@
-import Card, { CardType } from '@components/Card/Card'
+import Card from '@components/Card/Card'
 import { ChipColor } from '@components/Chip/Chip'
 import Main from '@components/Layout/Main/Main'
 import Loader from '@components/Loader/Loader'
@@ -30,7 +30,7 @@ function MatchesPage() {
   if (isLoading) return <Loader label='loading matches...' />
   return (
     <Main title='Matches' isFullSize={true}>
-      <Card type={CardType.table} title='Matchs Played' subtitle=''>
+      <Card type='table' title='Matchs Played'>
         <Table
           customCells={[
             { propName: 'victories', color: ChipColor.good },

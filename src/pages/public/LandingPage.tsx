@@ -1,6 +1,6 @@
 import imgDetail from '@assets/landing/detail.png'
 import imgStats from '@assets/landing/stats.png'
-import Card, { CardType } from '@components/Card/Card'
+import Card from '@components/Card/Card'
 function LandingPage() {
   return (
     <>
@@ -19,17 +19,12 @@ function LandingPage() {
           width: '100%',
         }}
       >
-        <Card
-          // title='Save your daily matches victories and defats...'
-          title=''
-          subtitle=''
-          type={CardType.details}
-        >
+        <Card type='details'>
           <p>Save your daily matches victories and defats...</p>
           <img src={imgDetail} alt='daily match register example' />
           {/* <img src={imgMatch} alt='daily match register example' /> */}
         </Card>
-        <Card title='' subtitle='' type={CardType.details}>
+        <Card type='details'>
           <p>Watch your winrate progress...</p>
           <img src={imgStats} alt='matches by winrate chart example' />
         </Card>
