@@ -9,7 +9,9 @@ function GuestProfile() {
     <div className='body-landingPage'>
       {/* the div sytles come from App.css */}
       <header className={css.header}>
-        <h1 className={css.h1}>WR STATS</h1>
+        <h1 className={css.h1}>
+          <NavLink to={'/'}>WR STATS</NavLink>
+        </h1>
         <nav className={css.nav}>
           <NavLink
             to={'/'}

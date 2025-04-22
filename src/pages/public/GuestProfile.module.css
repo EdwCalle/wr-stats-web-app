@@ -6,10 +6,17 @@
   /* gap: 10px; */
   /* height: 100%; */
 }
-.h1 {
+/* .h1 {
   color: var(--primary-color);
   font-size: x-large;
   text-align: center;
+} */
+.h1 a {
+  color: var(--primary-color);
+
+  font-size: x-large;
+  text-align: center;
+  text-decoration: none;
 }
 
 .main img {

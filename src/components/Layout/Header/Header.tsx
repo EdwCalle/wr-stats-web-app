@@ -4,7 +4,7 @@ import Modal from '@components/Modal/Modal'
 import Settings from '@components/Modal/Settings'
 import useModal from '@hooks/useModal'
 import { CiLogout, CiMenuBurger, CiSettings } from 'react-icons/ci'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import css from './Header.module.css'
 
 function Header() {
@@ -21,7 +21,9 @@ function Header() {
         <input type='checkbox' name='toggleMenu' className='toggleMenu' />
         <CiMenuBurger size={28} />
       </ButtonIcon>
-      <h1 className={css.h1}>WR STATS</h1>
+      <h1 className={css.h1}>
+        <NavLink to={'/player'}>WR STATS</NavLink>
+      </h1>
       <ButtonIcon
         onClick={() => {
           openModal('settings')

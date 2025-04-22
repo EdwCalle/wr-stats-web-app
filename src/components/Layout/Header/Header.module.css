@@ -25,3 +25,8 @@
   font-size: 20px;
   margin-left: 10px;
 }
+
+.h1 a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
