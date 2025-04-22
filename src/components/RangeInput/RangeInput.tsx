@@ -64,7 +64,7 @@ function RangeInput({
           onSelectedOption={onChangeDivisionLvl}
           options={DIVISION}
           selectedOption={{
-            id: range.divisionLvl,
+            id: `${range.divisionLvl}`,
             value: range.divisionLvl,
           }}
         />
