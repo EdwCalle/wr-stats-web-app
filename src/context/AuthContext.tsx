@@ -35,7 +35,7 @@ export default function useAuth() {
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [currentUser, setCurrentUser] = useState<User>()
   // const [authErrors, setAuthErrors] = useState<Error | undefined>(undefined)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const login = async (loginValues: LoginValues) => {
     try {
       setIsLoading(true)

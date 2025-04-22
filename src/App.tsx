@@ -18,14 +18,14 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            <Route path='/*' element={<GuestProfile />}>
-              <Route path='' element={<LandingPage />} />
+            <Route element={<GuestProfile />}>
+              <Route index element={<LandingPage />} />
               <Route path='login' element={<LoginPage />} />
               <Route path='signup' element={<RegisterPage />} />
               <Route path='*' element={<>404 not found page</>} />
             </Route>
-            <Route path='/player' element={<Navigate to='/player/home' />} />
-            <Route path='/player/*' element={<UserProfile />}>
+            <Route path='player' element={<Navigate to='/player/home' />} />
+            <Route path='player/*' element={<UserProfile />}>
               <Route path='home' element={<HomePage />} />
               <Route path='stats' element={<StatsPage />} />
               <Route path='matches' element={<MatchesPage />} />
