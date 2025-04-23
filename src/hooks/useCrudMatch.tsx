@@ -2,6 +2,7 @@ import { Match, RangeWR } from '@/models/match.model'
 import MatchService from '@/services/match.service'
 import useModal from '@hooks/useModal'
 import { showError } from '@utils/modules/HandleErrors'
+import { toWRDateString } from '@utils/modules/TimeWR'
 import { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
 interface useCrudMatchProps {
@@ -81,6 +82,19 @@ export const useCrudMatch = ({
       setIsloading(false)
     }
   }
+  const onCopyMatch = async () => {
+    const { _id, date, victories, defeats, range } = localMatch
+    const copiedText = _id
+      ? `${toWRDateString(date)} ${victories}-${defeats} tier:${range.rankedTier.tierName} lvl:${range.divisionLvl} marks:${range.marks}/${range.rankedTier.maxMarks}`
+      : 'error'
+
+    try {
+      await navigator.clipboard.writeText(copiedText)
+      toast.info('copied!!', { containerId: 'modal' })
+    } catch (error) {
+      showError(error, 'Error on copy match')
+    }
+  }
 
   const onCancel = () => {
     setLocalMatch(structuredClone(currentMatch))
@@ -101,6 +115,7 @@ export const useCrudMatch = ({
     onChangeCounter,
     onChangeRange,
     onDeleteMatch,
+    onCopyMatch,
     onCancel,
     onConfirm,
     isLoading,

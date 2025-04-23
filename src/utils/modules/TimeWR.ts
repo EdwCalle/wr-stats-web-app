@@ -1,5 +1,8 @@
 //TO DO IMPORTANT
 //add securty in nosql injection and others securities options (backend)
+export const toWRDateString = (date: Date): string => {
+  return date.toISOString().substring(0, 10)
+}
 export const formatDate = (isoDate: string): string => {
   const date = new Date(isoDate)
   return date.toISOString().substring(0, 10)

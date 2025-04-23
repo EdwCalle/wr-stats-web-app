@@ -1,14 +1,14 @@
 import { Match } from '@/models/match.model'
 import { RankedTier } from '@/models/rankedTier.model'
 import { Season } from '@/models/season.model'
-import ButtonIcon from '@components/ButtonIcon/ButtonIcon'
 import CounterBox from '@components/CounterBox/CounterBox'
 import Form from '@components/Form/Form'
 import Modal from '@components/Modal/Modal'
 import RangeInput from '@components/RangeInput/RangeInput'
 import Select from '@components/Select/Select'
 import { useCrudMatch } from '@hooks/useCrudMatch'
-import { CiTrash } from 'react-icons/ci'
+import { toWRDateString } from '@utils/modules/TimeWR'
+import Menu from './Menu/Menu'
 type CrudMatchProps = {
   currentMatch: Match
   rankedTiers: RankedTier[]
@@ -28,6 +28,7 @@ function CrudMatch({
     onChangeCounter,
     onChangeRange,
     onDeleteMatch,
+    onCopyMatch,
     onConfirm,
     onCancel,
     isLoading,
@@ -51,7 +52,13 @@ function CrudMatch({
     >
       <Form>
         <fieldset>
-          <legend>{localMatch.date.toDateString()}</legend>
+          <legend>
+            {toWRDateString(localMatch.date)}
+            {localMatch._id && (
+              <Menu onDelete={onDeleteMatch} onCopy={onCopyMatch} />
+            )}
+          </legend>
+
           <Select
             name='seasons'
             label='select season'
@@ -70,15 +77,6 @@ function CrudMatch({
             rankedTiers={rankedTiers}
             onChangeRangeInput={onChangeRange}
           />
-          {localMatch._id && (
-            <ButtonIcon
-              onClick={() => {
-                onDeleteMatch()
-              }}
-            >
-              <CiTrash size={28} />
-            </ButtonIcon>
-          )}
         </fieldset>
       </Form>
     </Modal>

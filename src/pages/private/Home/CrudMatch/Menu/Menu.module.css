@@ -1,0 +1,8 @@
+.menu {
+  display: flex;
+  justify-content: end;
+  /* width: 100%; */
+  /* border-bottom: 1px solid var(--primary-color); */
+  /* position: sticky; */
+  /* top: 40px; */
+}
