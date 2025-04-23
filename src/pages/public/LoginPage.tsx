@@ -23,7 +23,6 @@ function LoginPage() {
   const { login, currentUser, isLoading } = useAuth()
   const navigate = useNavigate()
   const onSubmit = handleSubmit(async (data) => {
-    console.log('from submit:', data)
     await login(data)
   })
   //TO DO
@@ -32,7 +31,6 @@ function LoginPage() {
   // useEffect(() => {
   //   if (authErrors) {
   //     toast.error(authErrors.message.toString())
-  //     console.log('fui yo')
   //   }
   // }, [authErrors])
   useEffect(() => {

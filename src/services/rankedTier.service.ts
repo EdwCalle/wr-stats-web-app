@@ -21,7 +21,6 @@ export class RankedTierService {
         tierType: rankedTierApi.tierType as TierType,
       }
     } catch (error) {
-      console.log(error)
       throw Error(`Error on cast RankedTierApi:${error}`)
     }
   }

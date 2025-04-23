@@ -43,11 +43,10 @@ export const useCrudMatch = ({
     try {
       setIsloading(true)
       const newMatch = structuredClone(localMatch)
-      const result = await MatchService.createOne(newMatch)
+      await MatchService.createOne(newMatch)
       toast.info(`Match created successfully`)
       closeModal('crudMatch')
       onSubmitted(newMatch.date)
-      console.log(result.data)
     } catch (error) {
       showError(error, 'Error on create match', 'modal')
     } finally {
@@ -58,10 +57,9 @@ export const useCrudMatch = ({
     try {
       setIsloading(true)
       const newMatch = structuredClone(localMatch)
-      const result = await MatchService.updateOne(newMatch)
+      MatchService.updateOne(newMatch)
       closeModal('crudMatch')
       onSubmitted(newMatch.date)
-      console.log(result.data)
       toast.info(`Match updated successfully`)
     } catch (error) {
       showError(error, 'Error on update match', 'modal')
@@ -73,9 +71,8 @@ export const useCrudMatch = ({
     try {
       setIsloading(true)
       const newMatch = structuredClone(localMatch)
-      const result = await MatchService.deleteOne(newMatch._id, newMatch.date)
+      await MatchService.deleteOne(newMatch._id, newMatch.date)
       onSubmitted(newMatch.date)
-      console.log(result.data)
       closeModal('crudMatch')
       toast.info(`Match deleted successfully`)
     } catch (error) {

@@ -18,8 +18,6 @@ export const useMatch = () => {
   const { matches, loadMatches, getMatches } = useMatches()
 
   const getMatchByDate = (date: Date) => {
-    // console.log('first date', matches[0].date.toISOString())
-    console.log('getMatchByDate:', date.toISOString())
     const foundMatch = MatchService.findOneByDate(matches, date)
     if (foundMatch) setCurrentMatch(foundMatch)
     else setCurrentMatch(emptyMatch(date, seasons[0], rankedTiers[0]))
@@ -61,7 +59,6 @@ export const useMatch = () => {
 
   // useEffect(() => {
   //   if (seasons.length != 0 && rankedTiers.length != 0) {
-  //     console.log('again')
   //     getMatchByDate(newDate())
   //     setIsloading(false)
   //   }
@@ -74,7 +71,6 @@ export const useMatch = () => {
   //   matches.length,
   //   rankedTiers.length,
   // )
-  console.log('render: useMatch')
   return {
     currentMatch,
     getMatchByDate,

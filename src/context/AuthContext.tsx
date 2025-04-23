@@ -40,11 +40,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       setIsLoading(true)
 
-      const authCredentials = await AuthService.login(loginValues)
+      await AuthService.login(loginValues)
       const userProfile = await AuthService.checkToken()
 
-      console.log('from signin, authCredentials:', authCredentials)
-      console.log('from signin, userProfile', userProfile)
       setCurrentUser(userProfile)
     } catch (error) {
       setCurrentUser(undefined)
@@ -58,18 +56,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const signup = async (registerValues: SignupValues) => {
     try {
       setIsLoading(true)
-
-      const registerUser = await AuthService.signup(registerValues)
-      const authCredentials = await AuthService.login(registerValues)
+      await AuthService.signup(registerValues)
+      await AuthService.login(registerValues)
       const userProfile = await AuthService.checkToken()
-      console.log('from register, registerUser:', registerUser)
-      console.log('from register, authCredentials', authCredentials)
-      console.log('from register, userProfile', userProfile)
+
       setCurrentUser(userProfile)
     } catch (error) {
       setCurrentUser(undefined)
       showError(error, 'error on signup')
-      console.log('error on signup')
       // setAuthErrors(error as Error)
       // throw error
     } finally {
@@ -80,7 +74,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       await delay(2000)
       const userProfile = await AuthService.checkToken()
-      console.log('from autoLogin, userProfile:', userProfile)
       setCurrentUser(userProfile)
     } catch (error) {
       setCurrentUser(undefined)

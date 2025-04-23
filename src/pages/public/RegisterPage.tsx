@@ -20,7 +20,6 @@ function RegisterPage() {
   const { signup, currentUser, isLoading } = useAuth()
   const navigate = useNavigate()
   const onSubmit = handleSubmit(async (data) => {
-    console.log('from submit:', data)
     await signup(data)
   })
   // useEffect(() => {

@@ -18,7 +18,6 @@ const usePagination = ({ page = 1, limit, total }: Interval) => {
       setCurrentPage(currentPage - 1)
     }
   }
-  //   console.log('c', currentPage, 's', start, 'e', end, 't', total)
   return { currentPage, start, end, handleNext, handlePrev }
 }
 
