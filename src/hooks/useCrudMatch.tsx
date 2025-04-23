@@ -44,7 +44,7 @@ export const useCrudMatch = ({
       setIsloading(true)
       const newMatch = structuredClone(localMatch)
       const result = await MatchService.createOne(newMatch)
-      toast(`Match created successfully`)
+      toast.info(`Match created successfully`)
       closeModal('crudMatch')
       onSubmitted(newMatch.date)
       console.log(result.data)
@@ -62,7 +62,7 @@ export const useCrudMatch = ({
       closeModal('crudMatch')
       onSubmitted(newMatch.date)
       console.log(result.data)
-      toast(`Match updated successfully`)
+      toast.info(`Match updated successfully`)
     } catch (error) {
       showError(error, 'Error on update match', 'modal')
     } finally {

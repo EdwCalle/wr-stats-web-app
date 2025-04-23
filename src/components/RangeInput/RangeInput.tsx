@@ -48,36 +48,40 @@ function RangeInput({
   }
   return (
     <div className={css.range}>
-      <RangeInfo range={range} />
-      <Select
-        name='tierName'
-        onSelectedOption={onChangeRankedTier}
-        options={rankedOptions}
-        selectedOption={{
-          id: range.rankedTier._id,
-          value: range.rankedTier.tierName,
-        }}
-      />
-      {range.rankedTier.tierType === TierType.DIVISION && (
+      <div>
         <Select
-          name='divisionLvl'
-          onSelectedOption={onChangeDivisionLvl}
-          options={DIVISION}
+          name='tierName'
+          label='tier'
+          onSelectedOption={onChangeRankedTier}
+          options={rankedOptions}
           selectedOption={{
-            id: `${range.divisionLvl}`,
-            value: range.divisionLvl,
+            id: range.rankedTier._id,
+            value: range.rankedTier.tierName,
           }}
         />
-      )}
-      {range.rankedTier.tierType !== TierType.EMPTY && (
-        <Slider
-          defaultValue={range.marks}
-          min={range.rankedTier.minMarks}
-          max={range.rankedTier.maxMarks}
-          onChange={onChangeMarks}
-          label='marks'
-        />
-      )}
+        {range.rankedTier.tierType === TierType.DIVISION && (
+          <Select
+            name='divisionLvl'
+            label='lvl'
+            onSelectedOption={onChangeDivisionLvl}
+            options={DIVISION}
+            selectedOption={{
+              id: `${range.divisionLvl}`,
+              value: range.divisionLvl,
+            }}
+          />
+        )}
+        {range.rankedTier.tierType !== TierType.EMPTY && (
+          <Slider
+            defaultValue={range.marks}
+            min={range.rankedTier.minMarks}
+            max={range.rankedTier.maxMarks}
+            onChange={onChangeMarks}
+            label='marks'
+          />
+        )}
+      </div>
+      <RangeInfo range={range} />
     </div>
   )
 }
