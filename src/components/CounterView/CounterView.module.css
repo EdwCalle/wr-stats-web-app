@@ -1,7 +1,7 @@
 .counterView {
-  display: flex;
-  flex-wrap: nowrap;
-  /* border: 1px solid; */
+  display: grid;
+  grid-template-columns: 1fr 10px 1fr;
+
   border-radius: 60px;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@
   background-color: #323840a5;
   background-blend-mode: multiply;
 
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 
   width: 90%;
   /* margin: 0 auto; */
