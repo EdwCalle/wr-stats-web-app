@@ -21,6 +21,8 @@ function CardCalendar({
 }: CardCalendarProps) {
   const { tileClassName } = useCalendar({ matches })
   const onChange = (date: LooseValue) => {
+    //TO DO
+    //HANDLE errors in date
     const newDate = toApiDate(date as Date)
     onSelectDate(newDate)
   }

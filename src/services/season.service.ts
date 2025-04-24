@@ -1,5 +1,6 @@
 import { Season } from '@/models/season.model'
 import { SeasonApi } from '@utils/interfaces/api.interface'
+import { toLocalDate } from '@utils/modules/TimeWR'
 import api from './axios.service'
 const SEASONS_URL = `seasons`
 export class SeasonService {
@@ -14,7 +15,7 @@ export class SeasonService {
       return {
         _id: seasonApi._id,
         seasonName: seasonApi.seasonName,
-        startDate: new Date(seasonApi.startDate),
+        startDate: toLocalDate(seasonApi.startDate),
         finishDate: seasonApi.finishDate
           ? new Date(seasonApi.finishDate)
           : null,

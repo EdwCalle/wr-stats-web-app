@@ -9,7 +9,6 @@ import {
 import { AuthService } from '@/services/auth.service'
 import { User } from '@utils/interfaces/user.interface'
 import { showError } from '@utils/modules/HandleErrors'
-import { delay } from '@utils/modules/TimeWR'
 import { LoginValues } from '@utils/validations/login.schema'
 import { SignupValues } from '@utils/validations/signup.schema'
 
@@ -72,7 +71,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
   const autoLogin = async () => {
     try {
-      await delay(2000)
       const userProfile = await AuthService.checkToken()
       setCurrentUser(userProfile)
     } catch (error) {

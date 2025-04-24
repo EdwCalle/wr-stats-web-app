@@ -1,7 +1,7 @@
 import { Match, QueryMatchesDto } from '@/models/match.model'
 import MatchService from '@/services/match.service'
 import { SeriesData } from '@components/Chart/Chart'
-import { formatDate } from '@utils/modules/TimeWR'
+import { toWRDateString } from '@utils/modules/TimeWR'
 import { useState } from 'react'
 
 export const useMatches = () => {
@@ -23,7 +23,7 @@ export const useMatches = () => {
 
   const toMachPointXY = (match: Match) => {
     return {
-      time: formatDate(match.date.toISOString()),
+      time: toWRDateString(match.date),
       value: match.stats?.acumDiff ?? 0,
     }
   }

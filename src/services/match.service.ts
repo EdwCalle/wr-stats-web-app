@@ -8,9 +8,10 @@ import {
 import { MatchApi } from '@utils/interfaces/api.interface'
 import {
   compareDate,
-  formatDate,
   toApiDate,
+  toApiDateString,
   toLocalDate,
+  toWRDateString,
 } from '@utils/modules/TimeWR'
 import axios from './axios.service'
 import { RankedTierService } from './rankedTier.service'
@@ -112,7 +113,7 @@ class MatchService {
     if (match.seasonProfile._id === null)
       throw new Error('error on parsing match to createDTO')
     return {
-      date: toApiDate(match.date).toISOString(),
+      date: toApiDateString(match.date),
       victories: match.victories,
       defeats: match.defeats,
       seasonProfileID: match.seasonProfile._id,
@@ -161,7 +162,7 @@ class MatchService {
   static toRow = (match: Match) => {
     try {
       return {
-        date: formatDate(match.date.toISOString()),
+        date: toWRDateString(match.date),
         saeason: match.seasonProfile.season.seasonName,
         tierName: match.range.rankedTier.tierName,
         divisionLvl: match.range.divisionLvl,
