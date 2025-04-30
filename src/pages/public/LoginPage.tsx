@@ -43,12 +43,12 @@ function LoginPage() {
       <fieldset>
         <legend>Login</legend>
         <Input
-          name='email'
+          name='credential'
           control={control}
           label='username/email'
           type='text'
           autoComplete='username'
-          error={errors.email}
+          error={errors.credential}
         />
         <Input
           name='password'

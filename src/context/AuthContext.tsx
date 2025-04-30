@@ -56,7 +56,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       setIsLoading(true)
       await AuthService.signup(registerValues)
-      await AuthService.login(registerValues)
+      await AuthService.login({
+        credential: registerValues.username, // or registerValues.username based on your logic
+        password: registerValues.password,
+      })
       const userProfile = await AuthService.checkToken()
 
       setCurrentUser(userProfile)
