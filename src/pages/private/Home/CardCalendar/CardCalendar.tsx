@@ -29,7 +29,7 @@ function CardCalendar({
   return (
     <Card
       title='Stats from date selected'
-      subtitle={currentMatch.date.toLocaleString()}
+      subtitle={currentMatch.date.toDateString()}
     >
       <section className={css.cardCalendar}>
         {currentMatch && (
