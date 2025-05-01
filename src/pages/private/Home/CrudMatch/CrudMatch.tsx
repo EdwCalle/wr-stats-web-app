@@ -61,7 +61,7 @@ function CrudMatch({
 
           <Select
             name='seasons'
-            label='select season'
+            label='season'
             onSelectedOption={onChangeSeason}
             options={seasonOptions}
             selectedOption={selectedSeason}

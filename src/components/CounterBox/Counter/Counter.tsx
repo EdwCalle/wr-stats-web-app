@@ -22,7 +22,6 @@ function Counter({
   }
   return (
     <div className='counter-box'>
-      <h3 className='counter-box-title'>{counterValue}</h3>
       <div className={`counter-box-button ${CounterType}`}>
         <button type='button' onClick={onDelete}>
           -
@@ -32,6 +31,7 @@ function Counter({
           +
         </button>
       </div>
+      <h3 className='counter-box-title'>{counterValue}</h3>
     </div>
   )
 }

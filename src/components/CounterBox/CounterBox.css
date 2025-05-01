@@ -12,6 +12,8 @@
   padding: 4px;
   justify-content: center;
 
+  border: 1px solid var(--primary-color);
+
   /* border-radius: 20px 0 0 20px; */
 }
 .counter-box-title {
