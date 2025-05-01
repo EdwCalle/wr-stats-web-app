@@ -38,7 +38,22 @@ function RangeInfo({ type = RangeType.info, range }: RangeInfoProps) {
       ? (rankedTier.tierName as keyof typeof imagesTier)
       : 'default'
 
-  const fullTierName = `${rankedTier.tierName} ${divisionLvl}`
+  const toRoman = (num: number): string => {
+    switch (num) {
+      case 1:
+        return 'I'
+      case 2:
+        return 'II'
+      case 3:
+        return 'III'
+      case 4:
+        return 'IV'
+      default:
+        return ''
+    }
+  }
+
+  const fullTierName = `${rankedTier.tierName} ${toRoman(divisionLvl)}`
   const fullMarks = `${marks}/${rankedTier.maxMarks}`
   const minMaxMarks = `${rankedTier.minMarks}/${rankedTier.maxMarks}`
 
