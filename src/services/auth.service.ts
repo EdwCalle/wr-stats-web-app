@@ -15,7 +15,10 @@ export class AuthService {
     return result
   }
   static async signup(signupValues: SignupValues) {
-    const response = await authApi.post(SIGNUP_URL, signupValues)
+    const response = await authApi.post(SIGNUP_URL, {
+      ...signupValues,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    })
     const result = response.data
     return result
   }

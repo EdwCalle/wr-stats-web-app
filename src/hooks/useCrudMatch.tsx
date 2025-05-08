@@ -58,7 +58,7 @@ export const useCrudMatch = ({
     try {
       setIsloading(true)
       const newMatch = structuredClone(localMatch)
-      MatchService.updateOne(newMatch)
+      await MatchService.updateOne(newMatch)
       closeModal('crudMatch')
       onSubmitted(newMatch.date)
       toast.info(`Match updated successfully`)

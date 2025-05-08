@@ -50,9 +50,11 @@ export const emptyMatch = (
     },
   }
 }
-
-export interface CreateMatchDTO {
+export interface FilterDateDto {
   date: string
+  timezone: string
+}
+export interface CreateMatchDTO {
   victories: number
   defeats: number
   seasonProfileID: string

@@ -9,6 +9,7 @@ import css from './Modal.module.css'
 type ModalProps = {
   elementID: string
   title?: string
+  variant?: 'confirm' | 'info'
   onConfirm?: () => void
   onCancel?: () => void
   children: ReactNode
@@ -20,6 +21,7 @@ function Modal({
   children,
   onCancel,
   onConfirm,
+  variant = 'confirm',
   isLoading = false,
 }: ModalProps) {
   const { closeModal } = useModal()
@@ -42,10 +44,17 @@ function Modal({
           <Loader label='' />
         ) : (
           <>
-            <Button variant='warning' handleClick={onConfirm}>
-              confirm
-            </Button>
-            <Button handleClick={onCloseModal}>cancel</Button>
+            {variant === 'confirm' && (
+              <>
+                <Button variant='warning' handleClick={onConfirm}>
+                  confirm
+                </Button>
+                <Button handleClick={onCloseModal}>cancel</Button>
+              </>
+            )}
+            {variant === 'info' && (
+              <Button handleClick={onCloseModal}>confirm</Button>
+            )}
           </>
         )}
       </footer>

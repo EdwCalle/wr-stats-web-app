@@ -1,5 +1,6 @@
 import {
   CreateMatchDTO,
+  FilterDateDto,
   Match,
   QueryMatchesDto,
   Stats,
@@ -8,7 +9,6 @@ import {
 import { MatchApi } from '@utils/interfaces/api.interface'
 import {
   compareDate,
-  toApiDate,
   toApiDateString,
   toLocalDate,
   toWRDateString,
@@ -46,26 +46,26 @@ class MatchService {
     clonedMatch.seasonProfile =
       await SeasonProfileService.autoCreateOne(seasonID)
     const matchDTO = this.toCreateMatchDTO(clonedMatch)
-    return axios.post(MATCHES_GET_URL, matchDTO)
+    const params = this.getFilterDateMatchParams(match.date)
+    return axios.post(MATCHES_GET_URL, matchDTO, { params })
   }
+
   static updateOne = async (match: Match) => {
     const clonedMatch = structuredClone(match)
     // const seasonID = clonedMatch.seasonProfile.season._id
     // clonedMatch.seasonProfile =
     // await SeasonProfileService.autoCreateOne(seasonID)
 
-    const params = new URLSearchParams()
-    params.append('date', toApiDate(match.date).toISOString())
     const matchDTO = this.toUpdateMatchDTO(clonedMatch)
+    const params = this.getFilterDateMatchParams(match.date)
     return axios.patch(`${MATCHES_GET_URL}/${match._id}`, matchDTO, {
       params: params,
     })
   }
   static deleteOne = (id: string | null, date: Date) => {
-    const params = new URLSearchParams()
-    params.append('date', toApiDate(date).toISOString())
+    const params = this.getFilterDateMatchParams(date)
     return axios.delete(`${MATCHES_GET_URL}/${id}`, {
-      params: params,
+      params,
     })
   }
 
@@ -109,11 +109,16 @@ class MatchService {
       throw new Error(`WRError on cast matchAPi: ${error} ,${matchApi._id}`)
     }
   }
+  static toFilterDateMatchDto = (date: Date): FilterDateDto => {
+    return {
+      date: toApiDateString(date),
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+    }
+  }
   static toCreateMatchDTO = (match: Match): CreateMatchDTO => {
     if (match.seasonProfile._id === null)
       throw new Error('error on parsing match to createDTO')
     return {
-      date: toApiDateString(match.date),
       victories: match.victories,
       defeats: match.defeats,
       seasonProfileID: match.seasonProfile._id,
@@ -178,6 +183,14 @@ class MatchService {
         `from match.model,  Error on cast api to match:${match._id} ${error}`,
       )
     }
+  }
+
+  static getFilterDateMatchParams = (date: Date) => {
+    const filterDateMatchDto = this.toFilterDateMatchDto(date)
+    const params = new URLSearchParams()
+    params.append('date', filterDateMatchDto.date)
+    params.append('timezone', filterDateMatchDto.timezone)
+    return params
   }
 }
 

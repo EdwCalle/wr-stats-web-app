@@ -6,7 +6,7 @@ import Modal from './Modal'
 function Settings() {
   const { currentUser } = useAuth()
   return (
-    <Modal elementID={'settings'} title='Settings'>
+    <Modal elementID={'settings'} title='Settings' variant='info'>
       <Form>
         <fieldset>
           <legend>Profile info</legend>
@@ -15,6 +15,8 @@ function Settings() {
           <span>{currentUser?.username}</span>
           <span>email</span>
           <span>{currentUser?.email}</span>
+          <span>account timezone</span>
+          <span>{currentUser?.timezone}</span>
         </fieldset>
         {/* <fieldset>
           <legend>Change Password</legend>
