@@ -35,19 +35,19 @@ export const SEASON_MODE: Option[] = [
 ]
 
 export const imagesTier = {
-  iron: '/src/assets/ranks/iron.webp',
-  bronze: '/src/assets/ranks/bronze.webp',
-  silver: '/src/assets/ranks/silver.webp',
-  gold: '/src/assets/ranks/gold.webp',
-  platinum: '/src/assets/ranks/platinum.webp',
-  emerald: '/src/assets/ranks/emerald.webp',
-  diamond: '/src/assets/ranks/diamond.webp',
-  master: '/src/assets/ranks/master.webp',
-  grandmaster: '/src/assets/ranks/grandmaster.webp',
-  challenger: '/src/assets/ranks/challenger.webp',
-  default: '/src/assets/ranks/default.webp',
-  'master S09': '/src/assets/ranks/master.webp',
-  'grandmaster S09': '/src/assets/ranks/grandmaster.webp',
+  iron: '/ranks/iron.webp',
+  bronze: '/ranks/bronze.webp',
+  silver: '/ranks/silver.webp',
+  gold: '/ranks/gold.webp',
+  platinum: '/ranks/platinum.webp',
+  emerald: '/ranks/emerald.webp',
+  diamond: '/ranks/diamond.webp',
+  master: '/ranks/master.webp',
+  grandmaster: '/ranks/grandmaster.webp',
+  challenger: '/ranks/challenger.webp',
+  default: '/ranks/default.webp',
+  'master S09': '/ranks/master.webp',
+  'grandmaster S09': '/ranks/grandmaster.webp',
 }
 // TO DO
 // fix ts problems ❌
