@@ -47,7 +47,7 @@ export const useMatch = () => {
       loadFirstCurrentMatch(newSeasons[0], newRankedTiers[0], newMatches, date)
       setMatchError(undefined)
     } catch (error) {
-      showError(error, 'error on load data in main page')
+      showError(error, 'error loading the data on the main page')
       setMatchError(error as Error)
     } finally {
       setIsloading(false)

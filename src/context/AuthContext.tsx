@@ -47,7 +47,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setCurrentUser(undefined)
       // setAuthErrors(error as Error)
       // throw error
-      showError(error, 'error on login')
+      showError(error, 'error logging in')
     } finally {
       setIsLoading(false)
     }
@@ -65,7 +65,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setCurrentUser(userProfile)
     } catch (error) {
       setCurrentUser(undefined)
-      showError(error, 'error on signup')
+      showError(error, 'error signing up')
       // setAuthErrors(error as Error)
       // throw error
     } finally {

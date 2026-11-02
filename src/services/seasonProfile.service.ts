@@ -64,7 +64,7 @@ export class SeasonProfileService {
         season: SeasonService.toSeason(seasonProfileApi.seasonID),
       }
     } catch (error) {
-      throw Error(`Error on cast SeasonProfileApi:, ${error}`)
+      throw Error(`Error casting SeasonProfileApi:, ${error}`)
     }
   }
 }

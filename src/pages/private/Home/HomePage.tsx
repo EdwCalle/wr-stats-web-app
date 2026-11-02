@@ -20,7 +20,7 @@ function HomePage() {
   if (matchError) return <ErrorMessage />
   if (!currentMatch)
     return (
-      <ErrorMessage message='error on loading resources, please reload the page or retry later' />
+      <ErrorMessage message='error loading resources, please reload the page or retry later' />
     )
   if (currentMatch) {
     console.log('render: fragment HomePage')

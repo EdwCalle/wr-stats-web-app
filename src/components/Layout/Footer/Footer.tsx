@@ -8,8 +8,8 @@ function Footer() {
         <dd>edwincalle95@gmail.com</dd>
         <dt>DISCLAIMER:</dt>
         <dd>
-          This app is created with the objective of learning and demonstration,
-          ADD COPYRGIHT
+          This application was developed for learning and demonstration purposes
+          only. It may contain errors or unexpected behavior.
         </dd>
       </dl>
     </footer>

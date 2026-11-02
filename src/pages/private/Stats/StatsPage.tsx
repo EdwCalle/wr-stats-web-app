@@ -34,8 +34,8 @@ function StatsPage() {
   const seasonsOptions = toSeasonsProfileOptions()
   if (isLoading) return <Loader label='loading stats...' />
   if (seasonsProfile.length == 0)
-    return <ErrorMessage message='not seasons founded' />
-  if (matches.length == 0) return <ErrorMessage message='not matches founded' />
+    return <ErrorMessage message='no seasons found' />
+  if (matches.length == 0) return <ErrorMessage message='No matches found' />
   return (
     <Main title='STATS' isFullSize>
       <Card title='Winrate by season' type='table'>

@@ -21,7 +21,7 @@ export class RankedTierService {
         tierType: rankedTierApi.tierType as TierType,
       }
     } catch (error) {
-      throw Error(`Error on cast RankedTierApi:${error}`)
+      throw Error(`Error casting RankedTierApi:${error}`)
     }
   }
 }

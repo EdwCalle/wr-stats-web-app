@@ -49,7 +49,7 @@ export const useCrudMatch = ({
       closeModal('crudMatch')
       onSubmitted(newMatch.date)
     } catch (error) {
-      showError(error, 'Error on create match', 'modal')
+      showError(error, 'Error creating the match', 'modal')
     } finally {
       setIsloading(false)
     }
@@ -63,7 +63,7 @@ export const useCrudMatch = ({
       onSubmitted(newMatch.date)
       toast.info(`Match updated successfully`)
     } catch (error) {
-      showError(error, 'Error on update match', 'modal')
+      showError(error, 'Error updating the match', 'modal')
     } finally {
       setIsloading(false)
     }
@@ -77,7 +77,7 @@ export const useCrudMatch = ({
       closeModal('crudMatch')
       toast.info(`Match deleted successfully`)
     } catch (error) {
-      showError(error, 'Error on delete match', 'modal')
+      showError(error, 'Error deleting the match', 'modal')
     } finally {
       setIsloading(false)
     }
@@ -92,7 +92,7 @@ export const useCrudMatch = ({
       await navigator.clipboard.writeText(copiedText)
       toast.info('copied!!', { containerId: 'modal' })
     } catch (error) {
-      showError(error, 'Error on copy match')
+      showError(error, 'Error copying the match')
     }
   }
 

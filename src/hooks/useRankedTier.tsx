@@ -13,7 +13,7 @@ const useRankedTiers = () => {
       const res = await RankedTierService.findAll()
       return RankedTierService.toRankedTiers(res.data)
     } catch (error) {
-      toast.error(`Error on get RankedTiers: ${error}`)
+      toast.error(`Error fetching ranked tiers: ${error}`)
       return []
     }
   }

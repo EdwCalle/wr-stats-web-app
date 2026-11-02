@@ -14,7 +14,7 @@ const useSeasons = () => {
       const res = await SeasonService.findAll()
       return SeasonService.toSeasons(res.data)
     } catch (error) {
-      toast.error(`Error on get seasons: ${error}`)
+      toast.error(`Error fetching seasons: ${error}`)
       return []
     }
   }

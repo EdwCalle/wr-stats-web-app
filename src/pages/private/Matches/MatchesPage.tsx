@@ -19,7 +19,7 @@ function MatchesPage() {
       setIsLoading(true)
       await autoLoadMatches()
     } catch (error) {
-      showError(error, 'error on loading matches table')
+      showError(error, 'error loading matches table')
     } finally {
       setIsLoading(false)
     }

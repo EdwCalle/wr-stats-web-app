@@ -21,7 +21,7 @@ export class SeasonService {
           : null,
       }
     } catch (error) {
-      throw Error(`Error on cast seasonApi:, ${error}`)
+      throw Error(`Error casting seasonApi:, ${error}`)
     }
   }
 }

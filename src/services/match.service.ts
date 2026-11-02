@@ -84,7 +84,7 @@ class MatchService {
         return { ...this.toMatch(match), stats }
       })
     } catch (error) {
-      throw Error(`Error on creating stats for Matches:${error}`)
+      throw Error(`Error creating stats for Matches:${error}`)
     }
   }
   static toMatch = (matchApi: MatchApi): Match => {
@@ -117,7 +117,7 @@ class MatchService {
   }
   static toCreateMatchDTO = (match: Match): CreateMatchDTO => {
     if (match.seasonProfile._id === null)
-      throw new Error('error on parsing match to createDTO')
+      throw new Error('error parsing match to createDTO')
     return {
       victories: match.victories,
       defeats: match.defeats,
@@ -131,7 +131,7 @@ class MatchService {
   }
   static toUpdateMatchDTO = (match: Match): UpdateMatchDTO => {
     if (match.seasonProfile._id === null)
-      throw new Error('error on parsing match to updateDTO')
+      throw new Error('error parsing match to updateDTO')
     return {
       victories: match.victories,
       defeats: match.defeats,
@@ -160,7 +160,7 @@ class MatchService {
     try {
       return matches.map(this.toRow)
     } catch (error) {
-      throw Error(`Error on creating stats for Matches table:${error}`)
+      throw Error(`Error creating stats for Matches table:${error}`)
     }
   }
 
@@ -180,7 +180,7 @@ class MatchService {
       }
     } catch (error) {
       throw new Error(
-        `from match.model,  Error on cast api to match:${match._id} ${error}`,
+        `from match.model,  Error converting API response to Match schema:${match._id} ${error}`,
       )
     }
   }
