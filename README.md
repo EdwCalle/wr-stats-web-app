@@ -21,6 +21,13 @@ The project aims to introduce additional features, including:
 
 > **Disclaimer:** This application was developed for learning and demonstration purposes only. It is a prototype and may contain bugs, inaccurate data, or unexpected behavior.
 
+### Preview Example
+<img width="720" height="400" alt="image" src="https://github.com/user-attachments/assets/cd6de1f8-3852-4dc0-ae50-4e4f3976497f" />
+
+<img width="720" height="400" alt="image" src="https://github.com/user-attachments/assets/c5ae171d-dd08-4ad5-a161-c771cbd300fb" />
+
+
+
 ## Tech Stack
 
 - **Frontend:** React + Vite
@@ -39,11 +46,7 @@ Make sure the following tools are installed:
 
 **1. Start the backend API**
 
-Before running WR Stats, make sure the backend API is running locally.
-
-Follow the backend setup instructions to start the API at:
-
-`http://localhost:3000/`
+Before running WR Stats, make sure the backend API is running locally, Follow [the backend setup instructions](https://github.com/EdwCalle/wr-stats-api-app/blob/main/README.md) to start the API.
 
 **2. Clone the repository**
 
@@ -87,7 +90,7 @@ To explore and test the application, you can log in using the following demo cre
 | Field | Value |
 |---|---|
 | **Username** | `demo` |
-| **Password** | `user1234` |
+| **Password** | `demo111A!` |
 
 > **Note:** This account is intended for testing and demonstration purposes only. Make sure the backend API is running and the sample database has been successfully restored before logging in.
 
