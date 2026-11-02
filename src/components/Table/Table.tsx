@@ -38,14 +38,6 @@ const Table = ({ data, customCells }: TableProps) => {
 
   return (
     <>
-      <Pagination
-        currentPage={currentPage}
-        end={end}
-        start={start}
-        total={data.length}
-        onNextPage={handleNext}
-        onPrevPage={handlePrev}
-      />
       <section className={css.section}>
         <table className={css.table}>
           <thead className={css.thead}>
@@ -74,6 +66,14 @@ const Table = ({ data, customCells }: TableProps) => {
           </tbody>
         </table>
       </section>
+      <Pagination
+        currentPage={currentPage}
+        end={end}
+        start={start}
+        total={data.length}
+        onNextPage={handleNext}
+        onPrevPage={handlePrev}
+      />
     </>
   )
 }
