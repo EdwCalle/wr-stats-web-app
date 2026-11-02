@@ -1,8 +1,8 @@
 .chart {
   width: 100%;
   min-height: 200px;
-  height: auto;
-  max-height: 250px;
+  height: 80%;
+  /* max-height: 250px; */
   display: block;
   background: linear-gradient(225deg, #3f403d 0%, #1320d38f 100%);
   /* background-color: red; */
@@ -15,6 +15,7 @@
   justify-content: center;
   width: 100%;
   min-height: 250px;
-  height: fit-content;
+  /* height: fit-content; */
   position: relative;
+  flex: 1;
 }

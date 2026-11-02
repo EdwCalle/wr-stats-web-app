@@ -50,7 +50,7 @@ function CustomChart({
         onChange={onChange}
       />
       {isLoading && <Loader label='loading chart' />}
-      {dataframe.length == 0 && <>0 filters</>}
+      {dataframe.length == 0 && <span>0 filters</span>}
       {dataframe.length == 1 && (
         <Chart multiSeries={dataframe} type='baselineSeries' />
       )}

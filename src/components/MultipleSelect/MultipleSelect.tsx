@@ -45,6 +45,7 @@ function MultipleSelect({
             onChange={() => setIsOpen((prev) => !prev)}
           />
         </label>
+
         <div className={isOpen ? css.select : `${css.select} ${css.hidden}`}>
           {options.map((option) => (
             <label key={option.id} className={css.optionView}>

@@ -50,10 +50,16 @@ function Chart({ multiSeries, type }: ChartComponentProps) {
         },
       },
       timeScale: {
+        borderColor: '#ffffff3f',
+
         // timeVisible: true,
         tickMarkFormatter: (time: number) => {
-          return time
+          if (type === 'baselineSeries') return time
+          return ''
         },
+      },
+      rightPriceScale: {
+        borderColor: '#ffffff3f',
       },
     })
 
@@ -140,29 +146,42 @@ function Chart({ multiSeries, type }: ChartComponentProps) {
   }, [multiSeries])
   return (
     <div className={css.chartContainer}>
-      <div ref={chartContainerRef} className={css.chart} />
-      <div
-        ref={tooltipRef}
-        style={{ position: 'absolute', top: 0, left: 15 }}
-      />
-      {/* <div>selected series</div> */}
+      <div>selected seaons</div>
       <ul
         style={{
-          listStyleType: 'none',
+          listStyle: 'none',
           display: 'flex',
           flexDirection: 'row',
           flexWrap: 'wrap',
           fontSize: '12px',
-          gap: '5px',
+          gap: '15px',
         }}
       >
-        {multiSeries.length >= 2 &&
+        {multiSeries.length >= 1 &&
           multiSeries.map((item) => (
-            <li key={item.label} style={{ color: item.color }}>
-              {item.label}
+            <li
+              key={item.label}
+              style={{ color: item.color, textTransform: 'lowercase' }}
+            >
+              {'- ' + item.label}
             </li>
           ))}
       </ul>
+      <span
+        style={{ fontSize: '12px', textAlign: 'right', marginBottom: '5px' }}
+      >
+        winrate
+      </span>
+      <div ref={chartContainerRef} className={css.chart} />
+      <div
+        ref={tooltipRef}
+        style={{ position: 'absolute', inset: '0 0 0 0' }}
+      />
+      <span
+        style={{ fontSize: '12px', marginTop: '10px', textAlign: 'center' }}
+      >
+        {multiSeries.length > 1 ? 'seasons' : 'date'}
+      </span>
     </div>
   )
 }

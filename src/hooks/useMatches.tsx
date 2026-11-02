@@ -54,13 +54,15 @@ export const useMatches = () => {
       ]
     }
 
-    if (seasonProfileIDs.length == 1)
+    if (seasonProfileIDs.length == 1) {
+      const matchBySeason = getMatchesBySeason(seasonProfileIDs[0])
       return [
         {
-          dataframe: getMatchesBySeason(seasonProfileIDs[0]).map(toMachPointXY),
-          label: seasonProfileIDs[0],
+          dataframe: matchBySeason.map(toMachPointXY),
+          label: matchBySeason[0].seasonProfile.season.seasonName,
         },
       ]
+    }
 
     return seasonProfileIDs.map((seasonProfileID, index) => {
       const newMatches = getMatchesBySeason(seasonProfileID)
